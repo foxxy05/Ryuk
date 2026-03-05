@@ -1,0 +1,195 @@
+!SESSION 2026-03-05 19:38:50.807 -----------------------------------------------
+eclipse.buildId=Version 1.19.0
+java.version=21.0.3
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_IN
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -data G:\WINDOWS\EVERYTHING\COLLEGE\AUTOMATONS\2026\R1\Ryuk
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2026-03-05 19:38:59.075
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2026-03-05 19:38:59.077
+!MESSAGE Log4j2 initialized with config file G:\WINDOWS\EVERYTHING\COLLEGE\AUTOMATONS\2026\R1\Ryuk\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2026-03-05 19:39:04.125
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.cdt.core 1 0 2026-03-05 19:57:01.358
+!MESSAGE Indexed '0001_3_WHEEL_OMNI_INIT' (23 sources, 85 headers) in 7.42 sec: 5,864 declarations; 33,386 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.0051%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2026-03-05 20:06:35.462
+!MESSAGE Indexed 'wot' (23 sources, 85 headers) in 3.02 sec: 5,864 declarations; 33,386 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.0051%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2026-03-05 21:36:30.842
+!MESSAGE Indexed '0001_3_WHEEL_OMNI_INIT' (25 sources, 87 headers) in 3.71 sec: 7,624 declarations; 59,817 references; 0 unresolved inclusions; 1 syntax errors; 22 unresolved names (0.033%)
+!SESSION 2026-03-05 22:09:34.302 -----------------------------------------------
+eclipse.buildId=Version 1.19.0
+java.version=21.0.3
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_IN
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2026-03-05 22:09:40.357
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2026-03-05 22:09:40.385
+!MESSAGE Log4j2 initialized with config file G:\WINDOWS\EVERYTHING\COLLEGE\AUTOMATONS\2026\R1\Ryuk\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2026-03-05 22:09:48.492
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.equinox.p2.metadata.repository 4 0 2026-03-05 22:10:34.929
+!MESSAGE Unexpected error loading extension: org.eclipse.equinox.p2.metadata.repository.XZedRepository
+!STACK 0
+java.lang.IllegalStateException: bundle org.eclipse.equinox.p2.repository is not started
+	at org.eclipse.equinox.internal.p2.repository.Activator.getContext(Activator.java:65)
+	at org.eclipse.equinox.internal.p2.repository.Activator.getParserFactory(Activator.java:75)
+	at org.eclipse.equinox.internal.p2.persistence.XMLParser.<init>(XMLParser.java:55)
+	at org.eclipse.equinox.internal.p2.metadata.repository.io.MetadataParser.<init>(MetadataParser.java:41)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryIO$Parser.<init>(MetadataRepositoryIO.java:190)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryIO.read(MetadataRepositoryIO.java:64)
+	at org.eclipse.equinox.internal.p2.metadata.repository.XZedSimpleMetadataRepositoryFactory.load(XZedSimpleMetadataRepositoryFactory.java:86)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.factoryLoad(MetadataRepositoryManager.java:63)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:799)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:697)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:110)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:105)
+	at org.eclipse.equinox.internal.p2.metadata.repository.CompositeMetadataRepository.addChild(CompositeMetadataRepository.java:161)
+	at org.eclipse.equinox.internal.p2.metadata.repository.CompositeMetadataRepository.<init>(CompositeMetadataRepository.java:93)
+	at org.eclipse.equinox.internal.p2.metadata.repository.CompositeMetadataRepositoryFactory.load(CompositeMetadataRepositoryFactory.java:124)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.factoryLoad(MetadataRepositoryManager.java:63)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:799)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:697)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:110)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:105)
+	at org.eclipse.equinox.internal.p2.updatechecker.UpdateChecker.getAvailableRepositories(UpdateChecker.java:164)
+	at org.eclipse.equinox.internal.p2.updatechecker.UpdateChecker.checkForUpdates(UpdateChecker.java:144)
+	at org.eclipse.equinox.internal.p2.updatechecker.UpdateChecker$UpdateCheckThread.run(UpdateChecker.java:83)
+
+!ENTRY org.eclipse.equinox.p2.metadata.repository 4 0 2026-03-05 22:10:34.980
+!MESSAGE Unexpected error loading extension: org.eclipse.equinox.p2.metadata.repository.simpleRepository
+!STACK 0
+java.lang.IllegalArgumentException: Cache manager service not available
+	at org.eclipse.equinox.internal.p2.metadata.repository.SimpleMetadataRepositoryFactory.getLocalFile(SimpleMetadataRepositoryFactory.java:68)
+	at org.eclipse.equinox.internal.p2.metadata.repository.SimpleMetadataRepositoryFactory.load(SimpleMetadataRepositoryFactory.java:89)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.factoryLoad(MetadataRepositoryManager.java:63)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:799)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:697)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:110)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:105)
+	at org.eclipse.equinox.internal.p2.metadata.repository.CompositeMetadataRepository.addChild(CompositeMetadataRepository.java:161)
+	at org.eclipse.equinox.internal.p2.metadata.repository.CompositeMetadataRepository.<init>(CompositeMetadataRepository.java:93)
+	at org.eclipse.equinox.internal.p2.metadata.repository.CompositeMetadataRepositoryFactory.load(CompositeMetadataRepositoryFactory.java:124)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.factoryLoad(MetadataRepositoryManager.java:63)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:799)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:697)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:110)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:105)
+	at org.eclipse.equinox.internal.p2.updatechecker.UpdateChecker.getAvailableRepositories(UpdateChecker.java:164)
+	at org.eclipse.equinox.internal.p2.updatechecker.UpdateChecker.checkForUpdates(UpdateChecker.java:144)
+	at org.eclipse.equinox.internal.p2.updatechecker.UpdateChecker$UpdateCheckThread.run(UpdateChecker.java:83)
+
+!ENTRY org.eclipse.equinox.p2.metadata.repository 4 0 2026-03-05 22:10:34.987
+!MESSAGE Unexpected error loading extension: org.eclipse.equinox.p2.metadata.repository.compositeRepository
+!STACK 0
+java.lang.IllegalStateException: bundle org.eclipse.equinox.p2.repository is not started
+	at org.eclipse.equinox.internal.p2.repository.Activator.getContext(Activator.java:65)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.restoreFromSystemProperty(AbstractRepositoryManager.java:1031)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.restoreRepositories(AbstractRepositoryManager.java:1051)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.getRepositoryProperty(AbstractRepositoryManager.java:583)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:715)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:110)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:105)
+	at org.eclipse.equinox.internal.p2.metadata.repository.CompositeMetadataRepository.addChild(CompositeMetadataRepository.java:161)
+	at org.eclipse.equinox.internal.p2.metadata.repository.CompositeMetadataRepository.<init>(CompositeMetadataRepository.java:93)
+	at org.eclipse.equinox.internal.p2.metadata.repository.CompositeMetadataRepositoryFactory.load(CompositeMetadataRepositoryFactory.java:124)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.factoryLoad(MetadataRepositoryManager.java:63)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:799)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:697)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:110)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:105)
+	at org.eclipse.equinox.internal.p2.updatechecker.UpdateChecker.getAvailableRepositories(UpdateChecker.java:164)
+	at org.eclipse.equinox.internal.p2.updatechecker.UpdateChecker.checkForUpdates(UpdateChecker.java:144)
+	at org.eclipse.equinox.internal.p2.updatechecker.UpdateChecker$UpdateCheckThread.run(UpdateChecker.java:83)
+
+!ENTRY org.eclipse.equinox.p2.metadata.repository 4 1000 2026-03-05 22:10:34.988
+!MESSAGE No repository found at https://sw-center.st.com/stm32cubeide/updatesite1.
+
+!ENTRY org.eclipse.equinox.p2.updatechecker 4 0 2026-03-05 22:10:34.988
+!MESSAGE Exception in update check thread
+!STACK 0
+java.lang.IllegalStateException: bundle org.eclipse.equinox.p2.repository is not started
+	at org.eclipse.equinox.internal.p2.repository.Activator.getContext(Activator.java:65)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.getPreferences(AbstractRepositoryManager.java:518)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.remember(AbstractRepositoryManager.java:914)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.addRepository(AbstractRepositoryManager.java:178)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.addRepository(AbstractRepositoryManager.java:163)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:684)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:110)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:105)
+	at org.eclipse.equinox.internal.p2.updatechecker.UpdateChecker.getAvailableRepositories(UpdateChecker.java:164)
+	at org.eclipse.equinox.internal.p2.updatechecker.UpdateChecker.checkForUpdates(UpdateChecker.java:144)
+	at org.eclipse.equinox.internal.p2.updatechecker.UpdateChecker$UpdateCheckThread.run(UpdateChecker.java:83)
+!SESSION 2026-03-05 22:10:35.858 -----------------------------------------------
+eclipse.buildId=Version 1.19.0
+java.version=21.0.3
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_IN
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -data G:\WINDOWS\EVERYTHING\COLLEGE\AUTOMATONS\2026\R1\Ryuk
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2026-03-05 22:10:43.356
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2026-03-05 22:10:43.356
+!MESSAGE Log4j2 initialized with config file G:\WINDOWS\EVERYTHING\COLLEGE\AUTOMATONS\2026\R1\Ryuk\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2026-03-05 22:10:52.915
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.core.jobs 2 2 2026-03-05 22:10:56.757
+!MESSAGE Job found still running after platform shutdown.  Jobs should be canceled by the plugin that scheduled them during shutdown: org.eclipse.ui.internal.Workbench$39 RUNNING
+	 at java.desktop/javax.swing.text.StyleContext$SmallAttributeSet.updateResolveParent(StyleContext.java:839)
+	 at java.desktop/javax.swing.text.StyleContext$SmallAttributeSet.<init>(StyleContext.java:835)
+	 at java.desktop/javax.swing.text.html.StyleSheet$SmallConversionSet.<init>(StyleSheet.java:861)
+	 at java.desktop/javax.swing.text.html.StyleSheet.createSmallAttributeSet(StyleSheet.java:695)
+	 at java.desktop/javax.swing.text.StyleContext.getImmutableUniqueSet(StyleContext.java:540)
+	 at java.desktop/javax.swing.text.StyleContext.addAttributes(StyleContext.java:359)
+	 at java.desktop/javax.swing.text.html.StyleSheet.addAttributes(StyleSheet.java:621)
+	 at java.desktop/javax.swing.text.AbstractDocument$AbstractElement.addAttributes(AbstractDocument.java:2028)
+	 at java.desktop/javax.swing.text.AbstractDocument$AbstractElement.<init>(AbstractDocument.java:1820)
+	 at java.desktop/javax.swing.text.AbstractDocument$LeafElement.<init>(AbstractDocument.java:2549)
+	 at java.desktop/javax.swing.text.html.HTMLDocument$RunElement.<init>(HTMLDocument.java:4406)
+	 at java.desktop/javax.swing.text.html.HTMLDocument.createLeafElement(HTMLDocument.java:568)
+	 at java.desktop/javax.swing.text.DefaultStyledDocument$ElementBuffer.insertElement(DefaultStyledDocument.java:1901)
+	 at java.desktop/javax.swing.text.DefaultStyledDocument$ElementBuffer.create(DefaultStyledDocument.java:1513)
+	 at java.desktop/javax.swing.text.DefaultStyledDocument.create(DefaultStyledDocument.java:153)
+	 at java.desktop/javax.swing.text.html.HTMLDocument.create(HTMLDocument.java:472)
+	 at java.desktop/javax.swing.text.html.HTMLDocument$HTMLReader.flushBuffer(HTMLDocument.java:4024)
+	 at java.desktop/javax.swing.text.html.HTMLDocument$HTMLReader.flush(HTMLDocument.java:2732)
+	 at java.desktop/javax.swing.text.html.HTMLEditorKit.read(HTMLEditorKit.java:320)
+	 at java.desktop/javax.swing.plaf.basic.BasicHTML.createHTMLView(BasicHTML.java:73)
+	 at java.desktop/javax.swing.plaf.basic.BasicHTML.updateRenderer(BasicHTML.java:225)
+	 at java.desktop/javax.swing.plaf.basic.BasicLabelUI.propertyChange(BasicLabelUI.java:493)
+	 at java.desktop/java.beans.PropertyChangeSupport.fire(PropertyChangeSupport.java:343)
+	 at java.desktop/java.beans.PropertyChangeSupport.firePropertyChange(PropertyChangeSupport.java:335)
+	 at java.desktop/java.beans.PropertyChangeSupport.firePropertyChange(PropertyChangeSupport.java:268)
+	 at java.desktop/java.awt.Component.firePropertyChange(Component.java:8717)
+	 at java.desktop/javax.swing.JLabel.setText(JLabel.java:341)
+	 at com.st.microxplorer.maingui.HomeProjectLinePanel.<init>(HomeProjectLinePanel.java:93)
+	 at com.st.microxplorer.maingui.HomeProjectPanel.updateOpenedProjectsList(HomeProjectPanel.java:107)
+	 at com.st.microxplorer.maingui.HomeProjectPanel.<init>(HomeProjectPanel.java:73)
+	 at com.st.microxplorer.maingui.HomePanel.InitStartupPanel(HomePanel.java:116)
+	 at com.st.microxplorer.maingui.HomePanel.<init>(HomePanel.java:81)
+	 at com.st.microxplorer.maingui.MainPanel.initialization(MainPanel.java:398)
+	 at com.st.microxplorer.maingui.AppletMainFrameCubeIde.init(AppletMainFrameCubeIde.java:242)
+	 at com.st.stm32cube.common.mx.core.CubeMxInstance.<init>(CubeMxInstance.java:117)
+	 at com.st.stm32cube.common.mx.core.CubeMxInstance.getInstance(CubeMxInstance.java:91)
+	 at com.st.stm32cube.common.mx.userauth.UserAuthAdapter.<init>(UserAuthAdapter.java:25)
+	 at com.st.stm32cube.common.mx.userauth.UserAuthProvider.getUserAuthAdapter(UserAuthProvider.java:16)
+	 at com.st.stm32cube.common.ecosystemintegration.ui.core.MCUEcoSystemIntegrationUiHelper.getUserAuth(MCUEcoSystemIntegrationUiHelper.java:100)
+	 at com.st.stm32cube.ide.mcu.userauth.UserAuthStartup.earlyStartup(UserAuthStartup.java:32)
+	 at org.eclipse.ui.internal.EarlyStartupRunnable.runEarlyStartup(EarlyStartupRunnable.java:79)
+	 at org.eclipse.ui.internal.EarlyStartupRunnable.run(EarlyStartupRunnable.java:55)
+	 at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:47)
+	 at org.eclipse.ui.internal.Workbench$39.run(Workbench.java:2733)
+	 at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)

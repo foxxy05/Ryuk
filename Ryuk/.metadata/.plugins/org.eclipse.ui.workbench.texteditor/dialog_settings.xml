@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<item key="hasShownOverlayPopupBefore" value="true"/>
+	<item key="replaceBarOpen" value="true"/>
+	<list key="replacehistory">
+		<item value="CAN2"/>
+		<item value="can2"/>
+		<item value="hcan2"/>
+		<item value="hi2c1"/>
+		<item value="hi2c2"/>
+	</list>
+	<list key="searchhistory">
+		<item value="can2"/>
+		<item value="CAN1"/>
+		<item value="can1"/>
+		<item value="hcan1"/>
+		<item value="BS1"/>
+		<item value="CAN"/>
+		<item value="hi2c2"/>
+	</list>
+</section>
