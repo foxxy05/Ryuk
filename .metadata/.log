@@ -16,3 +16,21 @@ Command-line arguments:  -os win32 -ws win32 -arch x86_64 -data G:\WINDOWS\EVERY
 
 !ENTRY org.eclipse.cdt.core 1 0 2026-03-05 22:12:48.965
 !MESSAGE Indexed '0001_3_WHEEL_OMNI_INIT' (25 sources, 123 headers) in 7.14 sec: 14,761 declarations; 82,402 references; 5 unresolved inclusions; 1,446 syntax errors; 1,888 unresolved names (1.9%)
+!SESSION 2026-03-06 18:27:32.256 -----------------------------------------------
+eclipse.buildId=Version 1.19.0
+java.version=21.0.3
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_IN
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY org.eclipse.core.resources 2 10035 2026-03-06 18:27:37.122
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2026-03-06 18:27:44.635
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2026-03-06 18:27:44.635
+!MESSAGE Log4j2 initialized with config file G:\WINDOWS\EVERYTHING\COLLEGE\AUTOMATONS\2026\RYUK\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2026-03-06 18:27:58.352
+!MESSAGE Started RMI Server, listening on port 41337
