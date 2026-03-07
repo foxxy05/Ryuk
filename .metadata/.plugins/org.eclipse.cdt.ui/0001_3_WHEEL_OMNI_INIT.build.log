@@ -1,20 +1,17 @@
-10:38:15 **** Incremental Build of configuration Debug for project 0001_3_WHEEL_OMNI_INIT ****
+10:48:33 **** Incremental Build of configuration Debug for project 0001_3_WHEEL_OMNI_INIT ****
 make -j4 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:571:25: warning: implicit declaration of function 'CDC_Transmit_FS' [-Wimplicit-function-declaration]
-  571 |                         CDC_Transmit_FS((uint8_t*)msg, len);
-      |                         ^~~~~~~~~~~~~~~
-../Core/Src/main.c: At top level:
-../Core/Src/main.c:104:29: warning: 'canRxHeader' defined but not used [-Wunused-variable]
-  104 | static CAN_RxHeaderTypeDef  canRxHeader;
-      |                             ^~~~~~~~~~~
 arm-none-eabi-gcc -o "0001_3_WHEEL_OMNI_INIT.elf" @"objects.list"   -mcpu=cortex-m4 -T"G:\WINDOWS\EVERYTHING\COLLEGE\AUTOMATONS\2026\RYUK\0001_3_WHEEL_OMNI_INIT\STM32F446ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="0001_3_WHEEL_OMNI_INIT.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
-C:/STM/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/bin/ld.exe: ./Core/Src/main.o: in function `main':
-G:/WINDOWS/EVERYTHING/COLLEGE/AUTOMATONS/2026/RYUK/0001_3_WHEEL_OMNI_INIT/Debug/../Core/Src/main.c:571:(.text.main+0x246): undefined reference to `CDC_Transmit_FS'
-collect2.exe: error: ld returned 1 exit status
-make: *** [makefile:64: 0001_3_WHEEL_OMNI_INIT.elf] Error 1
-"make -j4 all" terminated with exit code 2. Build might be incomplete.
+Finished building target: 0001_3_WHEEL_OMNI_INIT.elf
+ 
+arm-none-eabi-size  0001_3_WHEEL_OMNI_INIT.elf 
+arm-none-eabi-objdump -h -S 0001_3_WHEEL_OMNI_INIT.elf  > "0001_3_WHEEL_OMNI_INIT.list"
+   text	   data	    bss	    dec	    hex	filename
+  53828	    492	   3284	  57604	   e104	0001_3_WHEEL_OMNI_INIT.elf
+Finished building: default.size.stdout
+ 
+Finished building: 0001_3_WHEEL_OMNI_INIT.list
+ 
 
-10:38:18 Build Failed. 2 errors, 2 warnings. (took 3s.962ms)
+10:48:38 Build Finished. 0 errors, 0 warnings. (took 4s.916ms)
 

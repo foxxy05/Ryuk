@@ -21,6 +21,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+#include<EncoderLib.h>
 #include<stdlib.h>
 #include<stdio.h>
 #include<stdbool.h>
@@ -108,7 +109,6 @@ volatile bool canDataReady = false;
 int LX = 0, LY = 0, RX = 0, RY = 0;
 
 // ===================== CONSTANTS =====================
-#define wheelRadius       0.075
 #define length       	  1
 #define MAX_PWM           60
 #define DEADZONE     	  35
@@ -163,6 +163,35 @@ PID_t OmegaPID = {
     .integral = 0.0f,
     .previousTime = 0
 };
+
+// ===================== OdoETRY VARS =====================
+#define perpendicularOffset 0.200
+#define parallelOffset      0.200
+#define wheelRadius 		0.075
+#define CPR         		8192.0f
+
+
+EncoderInstance_t FEnc;
+EncoderInstance_t LEnc;
+EncoderInstance_t REnc;
+
+typedef struct
+{
+    // Global pose
+    double xPosition;
+    double yPosition;
+    double thetaPosition;
+
+    // Previous heading
+    double prevTheta;
+
+    // Previous encoder counts
+    long prevF;
+    long prevL;
+    long prevR;
+
+} Odometry_t;
+Odometry_t Odo;
 
 
 
@@ -417,7 +446,87 @@ void PIDReset(PID_t *pid){
     pid->previousTime = HAL_GetTick();
 }
 
-// =====================  FUNCTIONS =====================
+// ===================== ODOMETRY =====================
+void EncodersInit()
+{
+    HAL_TIM_Encoder_Start(&htim1, TIM_CHANNEL_ALL);
+    HAL_TIM_Encoder_Start(&htim2, TIM_CHANNEL_ALL);
+    HAL_TIM_Encoder_Start(&htim3, TIM_CHANNEL_ALL);
+
+    resetEncoder(&FEnc);
+    resetEncoder(&LEnc);
+    resetEncoder(&REnc);
+}
+
+void EncodersUpdate(){
+	updateEncoder(&FEnc, &htim1);
+	updateEncoder(&LEnc, &htim2);
+	updateEncoder(&REnc, &htim3);
+}
+
+void OdometryInit(Odometry_t *Odo)
+{
+	EncodersInit();
+
+    // Capture initial encoder counts
+    Odo->prevF = FEnc.position;
+    Odo->prevL = LEnc.position;
+    Odo->prevR = REnc.position;
+
+    // Reset global pose
+    Odo->xPosition  		= 0.0;
+    Odo->yPosition 			= 0.0;
+    Odo->thetaPosition 		= 0.0;
+
+    // Store initial heading reference
+    Odo->prevTheta = degree2radian(IMU_TICK_HEADING);
+}
+
+void OdometryUpdate(Odometry_t *Odo)
+{
+	EncodersUpdate();
+
+	long FCount 	= FEnc.position;
+	long LCount 	= LEnc.position;
+	long RCount 	= REnc.position;
+
+    long dF 		= FCount - Odo->prevF;
+    int32_t dL 		= LCount - Odo->prevL;
+    int32_t dR 		= RCount - Odo->prevR;
+
+    double theta = degree2radian(Robot.currentAngle);
+
+    double delTheta = theta - Odo->prevTheta;
+
+    if(delTheta > PI) delTheta -= 2*PI;
+    if(delTheta < -PI) delTheta += 2*PI;
+
+    double midTheta = Odo->prevTheta + delTheta * 0.5f;
+
+    double deltaX = (dF / CPR) * 2 * PI * wheelRadius;
+    double deltaY = (((dL + dR) * 0.5f) / CPR) * 2 * PI * wheelRadius;
+
+    deltaX += delTheta * perpendicularOffset;
+    deltaY -= delTheta * parallelOffset;
+
+    float dxG = deltaX * cosf(midTheta) - deltaY * sinf(midTheta);
+    float dyG = deltaX * sinf(midTheta) + deltaY * cosf(midTheta);
+
+    Odo->xPosition 			+= dxG;
+    Odo->yPosition 			+= dyG;
+    Odo->thetaPosition 		 = theta;
+
+    Odo->prevF = FCount;
+    Odo->prevL = LCount;
+    Odo->prevR = RCount;
+    Odo->prevTheta = theta;
+}
+
+void PrintOdometry(Odometry_t *Odo)
+{
+    int len = sprintf(msg, "X: %.3f  Y: %.3f  Theta: %.2f\r\n", Odo->xPosition, Odo->yPosition, radian2degree(Odo->thetaPosition));
+    HAL_UART_Transmit(&huart3, (uint8_t*)msg, len, HAL_MAX_DELAY);
+}
 
 
 
@@ -488,6 +597,8 @@ int main(void)
 //  HAL_TIM_PWM_Start(&htim13, TIM_CHANNEL_1);
 //  HAL_TIM_PWM_Start(&htim14, TIM_CHANNEL_1);
 
+  // ===================== BNO CONFIGURATIONS =====================//
+  HAL_TIM_Base_Start_IT(&htim6);
   BNO055_Init();
 
   // ===================== CAN CONFIGURATIONS =====================
@@ -502,12 +613,13 @@ int main(void)
   	canFilter.FilterActivation = ENABLE;
 
   	HAL_CAN_ConfigFilter(&hcan1, &canFilter);
-
   	// THEN start CAN
   	HAL_CAN_Start(&hcan1);
-
   	// THEN activate interrupt
   	HAL_CAN_ActivateNotification(&hcan1, CAN_IT_RX_FIFO0_MSG_PENDING);
+
+  	// ===================== ODOMETRY CONFIGURATIONS =====================
+  	OdometryInit(&Odo);
 
   	// ===================== MOTOR CONFIGURATIONS =====================
   	MotorInit(&motorFW, TIM4, FW_LPWM, FW_RPWM, MAX_PWM);
@@ -536,14 +648,19 @@ int main(void)
   			}
 
   			if (IMU_TICK) {
+
   			    IMUTicKUpdate();
   			    Robot.currentAngle = IMU_TICK_HEADING;
+
+  			    OdometryUpdate(&Odo);
+  			    PrintOdometry(&Odo);
 
   			    if (!imuInitialized) {
   			        Robot.targetAngle = Robot.currentAngle;
   			        OmegaPID.previousTime = HAL_GetTick();
   			        imuInitialized = true;
   			    }
+
   			    IMU_TICK = false;
   			}
 
@@ -903,9 +1020,9 @@ static void MX_TIM4_Init(void)
 
   /* USER CODE END TIM4_Init 1 */
   htim4.Instance = TIM4;
-  htim4.Init.Prescaler = 0;
+  htim4.Init.Prescaler = 34;
   htim4.Init.CounterMode = TIM_COUNTERMODE_UP;
-  htim4.Init.Period = 65535;
+  htim4.Init.Period = 255;
   htim4.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
   htim4.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
   if (HAL_TIM_PWM_Init(&htim4) != HAL_OK)
@@ -964,9 +1081,9 @@ static void MX_TIM5_Init(void)
 
   /* USER CODE END TIM5_Init 1 */
   htim5.Instance = TIM5;
-  htim5.Init.Prescaler = 0;
+  htim5.Init.Prescaler = 34;
   htim5.Init.CounterMode = TIM_COUNTERMODE_UP;
-  htim5.Init.Period = 4294967295;
+  htim5.Init.Period = 255;
   htim5.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
   htim5.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
   if (HAL_TIM_PWM_Init(&htim5) != HAL_OK)
@@ -1020,9 +1137,9 @@ static void MX_TIM6_Init(void)
 
   /* USER CODE END TIM6_Init 1 */
   htim6.Instance = TIM6;
-  htim6.Init.Prescaler = 0;
+  htim6.Init.Prescaler = 8999;
   htim6.Init.CounterMode = TIM_COUNTERMODE_UP;
-  htim6.Init.Period = 65535;
+  htim6.Init.Period = 99;
   htim6.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
   if (HAL_TIM_Base_Init(&htim6) != HAL_OK)
   {
@@ -1458,7 +1575,21 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
+{
+    if (htim->Instance == TIM6)
+    {
+        IMU_TICK = true;
+    }
+}
 
+void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan) {
+    if (HAL_CAN_GetRxMessage(hcan, CAN_RX_FIFO0, &canRxHeader, canRxData) == HAL_OK) {
+        if (canRxHeader.StdId == CONTROLLER_CAN_ID) {
+            canDataReady = true;
+        }
+    }
+}
 /* USER CODE END 4 */
 
 /**
