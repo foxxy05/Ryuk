@@ -1,0 +1,817 @@
+10:28:06 **** Clean-only build of configuration Debug for project 0001_3_WHEEL_OMNI_INIT ****
+make -j4 clean 
+rm -rf ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.cyclo ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.d ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.su ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_can.cyclo ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_can.d ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_can.o ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_can.su ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.cyclo ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.d ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.o ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.su ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.cyclo ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.d ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.o ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.su ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.cyclo ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.d ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.o ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.su ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.cyclo ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.d ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.o ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.su ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.cyclo ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.d ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.o ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.su ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.cyclo ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.d ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.o ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.su ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.cyclo ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.d ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.o ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.su ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.cyclo ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.d ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.o ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.su ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c.cyclo ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c.d ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c.o ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c.su ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c_ex.cyclo ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c_ex.d ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c_ex.o ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c_ex.su ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.cyclo ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.d ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.o ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.su ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.cyclo ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.d ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.o ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.su ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.cyclo ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.d ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.o ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.su ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.cyclo ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.d ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.o ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.su ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.cyclo ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.d ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.o ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.su ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.cyclo ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.d ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.o ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.su ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.cyclo ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.d ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.o ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.su
+rm -rf ./Core/Startup/startup_stm32f446zetx.d ./Core/Startup/startup_stm32f446zetx.o
+rm -rf ./Core/Src/main.cyclo ./Core/Src/main.d ./Core/Src/main.o ./Core/Src/main.su ./Core/Src/stm32f4xx_hal_msp.cyclo ./Core/Src/stm32f4xx_hal_msp.d ./Core/Src/stm32f4xx_hal_msp.o ./Core/Src/stm32f4xx_hal_msp.su ./Core/Src/stm32f4xx_it.cyclo ./Core/Src/stm32f4xx_it.d ./Core/Src/stm32f4xx_it.o ./Core/Src/stm32f4xx_it.su ./Core/Src/syscalls.cyclo ./Core/Src/syscalls.d ./Core/Src/syscalls.o ./Core/Src/syscalls.su ./Core/Src/sysmem.cyclo ./Core/Src/sysmem.d ./Core/Src/sysmem.o ./Core/Src/sysmem.su ./Core/Src/system_stm32f4xx.cyclo ./Core/Src/system_stm32f4xx.d ./Core/Src/system_stm32f4xx.o ./Core/Src/system_stm32f4xx.su
+rm -rf 0001_3_WHEEL_OMNI_INIT.elf 0001_3_WHEEL_OMNI_INIT.list 0001_3_WHEEL_OMNI_INIT.map default.size.stdout
+ 
+10:28:11 **** Build of configuration Debug for project 0001_3_WHEEL_OMNI_INIT ****
+make -j4 all 
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_can.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_can.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_can.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_can.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c_ex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.o"
+arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Core/Startup/startup_stm32f446zetx.d" -MT"Core/Startup/startup_stm32f446zetx.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Startup/startup_stm32f446zetx.o" "../Core/Startup/startup_stm32f446zetx.s"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/stm32f4xx_hal_msp.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f4xx_hal_msp.d" -MT"Core/Src/stm32f4xx_hal_msp.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f4xx_hal_msp.o"
+arm-none-eabi-gcc "../Core/Src/stm32f4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f4xx_it.d" -MT"Core/Src/stm32f4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f4xx_it.o"
+arm-none-eabi-gcc "../Core/Src/syscalls.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/syscalls.d" -MT"Core/Src/syscalls.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/syscalls.o"
+../Core/Src/main.c:47:10: error: unknown type name 'bool'
+   47 | volatile bool IMU_TICK = false;
+      |          ^~~~
+../Core/Src/main.c:47:26: error: 'false' undeclared here (not in a function)
+   47 | volatile bool IMU_TICK = false;
+      |                          ^~~~~
+../Core/Src/main.c:21:1: note: 'false' is defined in header '<stdbool.h>'; did you forget to '#include <stdbool.h>'?
+   20 | #include "main.h"
+  +++ |+#include <stdbool.h>
+   21 | 
+../Core/Src/main.c:49:1: error: unknown type name 'bool'
+   49 | bool imuInitialized = false;
+      | ^~~~
+../Core/Src/main.c:49:1: note: 'bool' is defined in header '<stdbool.h>'; did you forget to '#include <stdbool.h>'?
+../Core/Src/main.c:60:1: error: unknown type name 'bool'
+   60 | bool L1;
+      | ^~~~
+../Core/Src/main.c:60:1: note: 'bool' is defined in header '<stdbool.h>'; did you forget to '#include <stdbool.h>'?
+../Core/Src/main.c:61:1: error: unknown type name 'bool'
+   61 | bool R1;
+      | ^~~~
+../Core/Src/main.c:61:1: note: 'bool' is defined in header '<stdbool.h>'; did you forget to '#include <stdbool.h>'?
+../Core/Src/main.c:63:1: error: unknown type name 'bool'
+   63 | bool right;
+      | ^~~~
+../Core/Src/main.c:63:1: note: 'bool' is defined in header '<stdbool.h>'; did you forget to '#include <stdbool.h>'?
+../Core/Src/main.c:64:1: error: unknown type name 'bool'
+   64 | bool down;
+      | ^~~~
+../Core/Src/main.c:64:1: note: 'bool' is defined in header '<stdbool.h>'; did you forget to '#include <stdbool.h>'?
+../Core/Src/main.c:65:1: error: unknown type name 'bool'
+   65 | bool up;
+      | ^~~~
+../Core/Src/main.c:65:1: note: 'bool' is defined in header '<stdbool.h>'; did you forget to '#include <stdbool.h>'?
+../Core/Src/main.c:66:1: error: unknown type name 'bool'
+   66 | bool left;
+      | ^~~~
+../Core/Src/main.c:66:1: note: 'bool' is defined in header '<stdbool.h>'; did you forget to '#include <stdbool.h>'?
+../Core/Src/main.c:67:1: error: unknown type name 'bool'
+   67 | bool square;
+      | ^~~~
+../Core/Src/main.c:67:1: note: 'bool' is defined in header '<stdbool.h>'; did you forget to '#include <stdbool.h>'?
+../Core/Src/main.c:68:1: error: unknown type name 'bool'
+   68 | bool cross;
+      | ^~~~
+../Core/Src/main.c:68:1: note: 'bool' is defined in header '<stdbool.h>'; did you forget to '#include <stdbool.h>'?
+../Core/Src/main.c:69:1: error: unknown type name 'bool'
+   69 | bool circle;
+      | ^~~~
+../Core/Src/main.c:69:1: note: 'bool' is defined in header '<stdbool.h>'; did you forget to '#include <stdbool.h>'?
+../Core/Src/main.c:70:1: error: unknown type name 'bool'
+   70 | bool triangle;
+      | ^~~~
+../Core/Src/main.c:70:1: note: 'bool' is defined in header '<stdbool.h>'; did you forget to '#include <stdbool.h>'?
+../Core/Src/main.c:102:10: error: unknown type name 'bool'
+  102 | volatile bool canDataReady = false;
+      |          ^~~~
+../Core/Src/main.c: In function 'reMapData':
+../Core/Src/main.c:327:9: warning: implicit declaration of function 'abs' [-Wimplicit-function-declaration]
+  327 |     if (abs(LX) < DEADZONE) LX = 0;
+      |         ^~~
+../Core/Src/main.c:21:1: note: include '<stdlib.h>' or provide a declaration of 'abs'
+   20 | #include "main.h"
+  +++ |+#include <stdlib.h>
+   21 | 
+../Core/Src/main.c:329:18: warning: 'abs' argument 1 promotes to 'double' where 'int' is expected in a call to built-in function declared without prototype [-Wbuiltin-declaration-mismatch]
+  329 |     if (abs(Robot.Omega) < DEADZONE) Robot.Omega = 0;
+      |             ~~~~~^~~~~~
+<built-in>: note: built-in 'abs' declared here
+../Core/Src/main.c: In function 'KinematicsControl':
+../Core/Src/main.c:363:37: warning: implicit declaration of function 'cosf' [-Wimplicit-function-declaration]
+  363 |         robot->VxG = ( robot->Vx) * cosf(theta) + (robot->Vy) * sinf(theta);
+      |                                     ^~~~
+../Core/Src/main.c:21:1: note: include '<math.h>' or provide a declaration of 'cosf'
+   20 | #include "main.h"
+  +++ |+#include <math.h>
+   21 | 
+../Core/Src/main.c:363:37: warning: incompatible implicit declaration of built-in function 'cosf' [-Wbuiltin-declaration-mismatch]
+  363 |         robot->VxG = ( robot->Vx) * cosf(theta) + (robot->Vy) * sinf(theta);
+      |                                     ^~~~
+../Core/Src/main.c:363:37: note: include '<math.h>' or provide a declaration of 'cosf'
+../Core/Src/main.c:363:65: warning: implicit declaration of function 'sinf' [-Wimplicit-function-declaration]
+  363 |         robot->VxG = ( robot->Vx) * cosf(theta) + (robot->Vy) * sinf(theta);
+      |                                                                 ^~~~
+../Core/Src/main.c:363:65: note: include '<math.h>' or provide a declaration of 'sinf'
+../Core/Src/main.c:363:65: warning: incompatible implicit declaration of built-in function 'sinf' [-Wbuiltin-declaration-mismatch]
+../Core/Src/main.c:363:65: note: include '<math.h>' or provide a declaration of 'sinf'
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:540:50: error: 'true' undeclared (first use in this function)
+  540 |                                 imuInitialized = true;
+      |                                                  ^~~~
+../Core/Src/main.c:540:50: note: 'true' is defined in header '<stdbool.h>'; did you forget to '#include <stdbool.h>'?
+../Core/Src/main.c:540:50: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c:549:29: warning: implicit declaration of function 'fabsf' [-Wimplicit-function-declaration]
+  549 |                         if (fabsf(Robot.Omega) < 5.0f) {
+      |                             ^~~~~
+../Core/Src/main.c:549:29: note: include '<math.h>' or provide a declaration of 'fabsf'
+../Core/Src/main.c:549:29: warning: incompatible implicit declaration of built-in function 'fabsf' [-Wbuiltin-declaration-mismatch]
+../Core/Src/main.c:549:29: note: include '<math.h>' or provide a declaration of 'fabsf'
+../Core/Src/main.c:565:35: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+  565 |                         int len = sprintf(msg, "Angle: %.2f\r\n", Robot.currentAngle);
+      |                                   ^~~~~~~
+../Core/Src/main.c:21:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+   20 | #include "main.h"
+  +++ |+#include <stdio.h>
+   21 | 
+../Core/Src/main.c:565:35: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+  565 |                         int len = sprintf(msg, "Angle: %.2f\r\n", Robot.currentAngle);
+      |                                   ^~~~~~~
+../Core/Src/main.c:565:35: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c:566:25: warning: implicit declaration of function 'CDC_Transmit_FS' [-Wimplicit-function-declaration]
+  566 |                         CDC_Transmit_FS((uint8_t*)msg, len);
+      |                         ^~~~~~~~~~~~~~~
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:99:29: warning: 'canRxHeader' defined but not used [-Wunused-variable]
+   99 | static CAN_RxHeaderTypeDef  canRxHeader;
+      |                             ^~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+10:28:15 **** Incremental Build of configuration Debug for project 0002_3_DEAD_WHEEL ****
+make -j4 all 
+arm-none-eabi-gcc -o "0002_3_DEAD_WHEEL.elf" @"objects.list"   -mcpu=cortex-m4 -T"G:\WINDOWS\EVERYTHING\COLLEGE\AUTOMATONS\2026\RYUK\0002_3_DEAD_WHEEL\STM32F446ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="0002_3_DEAD_WHEEL.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+C:/STM/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/bin/ld.exe: ./Core/Src/main.o: in function `main':
+G:/WINDOWS/EVERYTHING/COLLEGE/AUTOMATONS/2026/RYUK/0002_3_DEAD_WHEEL/Debug/../Core/Src/main.c:571:(.text.main+0x246): undefined reference to `CDC_Transmit_FS'
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:64: 0002_3_DEAD_WHEEL.elf] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+10:28:59 **** Incremental Build of configuration Debug for project 0001_3_WHEEL_OMNI_INIT ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/sysmem.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/sysmem.d" -MT"Core/Src/sysmem.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/sysmem.o"
+arm-none-eabi-gcc "../Core/Src/system_stm32f4xx.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/system_stm32f4xx.d" -MT"Core/Src/system_stm32f4xx.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/system_stm32f4xx.o"
+../Core/Src/main.c:47:10: error: unknown type name 'bool'
+   47 | volatile bool IMU_TICK = false;
+      |          ^~~~
+../Core/Src/main.c:47:26: error: 'false' undeclared here (not in a function)
+   47 | volatile bool IMU_TICK = false;
+      |                          ^~~~~
+../Core/Src/main.c:21:1: note: 'false' is defined in header '<stdbool.h>'; did you forget to '#include <stdbool.h>'?
+   20 | #include "main.h"
+  +++ |+#include <stdbool.h>
+   21 | 
+../Core/Src/main.c:49:1: error: unknown type name 'bool'
+   49 | bool imuInitialized = false;
+      | ^~~~
+../Core/Src/main.c:49:1: note: 'bool' is defined in header '<stdbool.h>'; did you forget to '#include <stdbool.h>'?
+../Core/Src/main.c:60:1: error: unknown type name 'bool'
+   60 | bool L1;
+      | ^~~~
+../Core/Src/main.c:60:1: note: 'bool' is defined in header '<stdbool.h>'; did you forget to '#include <stdbool.h>'?
+../Core/Src/main.c:61:1: error: unknown type name 'bool'
+   61 | bool R1;
+      | ^~~~
+../Core/Src/main.c:61:1: note: 'bool' is defined in header '<stdbool.h>'; did you forget to '#include <stdbool.h>'?
+../Core/Src/main.c:63:1: error: unknown type name 'bool'
+   63 | bool right;
+      | ^~~~
+../Core/Src/main.c:63:1: note: 'bool' is defined in header '<stdbool.h>'; did you forget to '#include <stdbool.h>'?
+../Core/Src/main.c:64:1: error: unknown type name 'bool'
+   64 | bool down;
+      | ^~~~
+../Core/Src/main.c:64:1: note: 'bool' is defined in header '<stdbool.h>'; did you forget to '#include <stdbool.h>'?
+../Core/Src/main.c:65:1: error: unknown type name 'bool'
+   65 | bool up;
+      | ^~~~
+../Core/Src/main.c:65:1: note: 'bool' is defined in header '<stdbool.h>'; did you forget to '#include <stdbool.h>'?
+../Core/Src/main.c:66:1: error: unknown type name 'bool'
+   66 | bool left;
+      | ^~~~
+../Core/Src/main.c:66:1: note: 'bool' is defined in header '<stdbool.h>'; did you forget to '#include <stdbool.h>'?
+../Core/Src/main.c:67:1: error: unknown type name 'bool'
+   67 | bool square;
+      | ^~~~
+../Core/Src/main.c:67:1: note: 'bool' is defined in header '<stdbool.h>'; did you forget to '#include <stdbool.h>'?
+../Core/Src/main.c:68:1: error: unknown type name 'bool'
+   68 | bool cross;
+      | ^~~~
+../Core/Src/main.c:68:1: note: 'bool' is defined in header '<stdbool.h>'; did you forget to '#include <stdbool.h>'?
+../Core/Src/main.c:69:1: error: unknown type name 'bool'
+   69 | bool circle;
+      | ^~~~
+../Core/Src/main.c:69:1: note: 'bool' is defined in header '<stdbool.h>'; did you forget to '#include <stdbool.h>'?
+../Core/Src/main.c:70:1: error: unknown type name 'bool'
+   70 | bool triangle;
+      | ^~~~
+../Core/Src/main.c:70:1: note: 'bool' is defined in header '<stdbool.h>'; did you forget to '#include <stdbool.h>'?
+../Core/Src/main.c:102:10: error: unknown type name 'bool'
+  102 | volatile bool canDataReady = false;
+      |          ^~~~
+../Core/Src/main.c: In function 'reMapData':
+../Core/Src/main.c:327:9: warning: implicit declaration of function 'abs' [-Wimplicit-function-declaration]
+  327 |     if (abs(LX) < DEADZONE) LX = 0;
+      |         ^~~
+../Core/Src/main.c:21:1: note: include '<stdlib.h>' or provide a declaration of 'abs'
+   20 | #include "main.h"
+  +++ |+#include <stdlib.h>
+   21 | 
+../Core/Src/main.c:329:18: warning: 'abs' argument 1 promotes to 'double' where 'int' is expected in a call to built-in function declared without prototype [-Wbuiltin-declaration-mismatch]
+  329 |     if (abs(Robot.Omega) < DEADZONE) Robot.Omega = 0;
+      |             ~~~~~^~~~~~
+<built-in>: note: built-in 'abs' declared here
+../Core/Src/main.c: In function 'KinematicsControl':
+../Core/Src/main.c:363:37: warning: implicit declaration of function 'cosf' [-Wimplicit-function-declaration]
+  363 |         robot->VxG = ( robot->Vx) * cosf(theta) + (robot->Vy) * sinf(theta);
+      |                                     ^~~~
+../Core/Src/main.c:21:1: note: include '<math.h>' or provide a declaration of 'cosf'
+   20 | #include "main.h"
+  +++ |+#include <math.h>
+   21 | 
+../Core/Src/main.c:363:37: warning: incompatible implicit declaration of built-in function 'cosf' [-Wbuiltin-declaration-mismatch]
+  363 |         robot->VxG = ( robot->Vx) * cosf(theta) + (robot->Vy) * sinf(theta);
+      |                                     ^~~~
+../Core/Src/main.c:363:37: note: include '<math.h>' or provide a declaration of 'cosf'
+../Core/Src/main.c:363:65: warning: implicit declaration of function 'sinf' [-Wimplicit-function-declaration]
+  363 |         robot->VxG = ( robot->Vx) * cosf(theta) + (robot->Vy) * sinf(theta);
+      |                                                                 ^~~~
+../Core/Src/main.c:363:65: note: include '<math.h>' or provide a declaration of 'sinf'
+../Core/Src/main.c:363:65: warning: incompatible implicit declaration of built-in function 'sinf' [-Wbuiltin-declaration-mismatch]
+../Core/Src/main.c:363:65: note: include '<math.h>' or provide a declaration of 'sinf'
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:540:50: error: 'true' undeclared (first use in this function)
+  540 |                                 imuInitialized = true;
+      |                                                  ^~~~
+../Core/Src/main.c:540:50: note: 'true' is defined in header '<stdbool.h>'; did you forget to '#include <stdbool.h>'?
+../Core/Src/main.c:540:50: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c:549:29: warning: implicit declaration of function 'fabsf' [-Wimplicit-function-declaration]
+  549 |                         if (fabsf(Robot.Omega) < 5.0f) {
+      |                             ^~~~~
+../Core/Src/main.c:549:29: note: include '<math.h>' or provide a declaration of 'fabsf'
+../Core/Src/main.c:549:29: warning: incompatible implicit declaration of built-in function 'fabsf' [-Wbuiltin-declaration-mismatch]
+../Core/Src/main.c:549:29: note: include '<math.h>' or provide a declaration of 'fabsf'
+../Core/Src/main.c:565:35: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+  565 |                         int len = sprintf(msg, "Angle: %.2f\r\n", Robot.currentAngle);
+      |                                   ^~~~~~~
+../Core/Src/main.c:21:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+   20 | #include "main.h"
+  +++ |+#include <stdio.h>
+   21 | 
+../Core/Src/main.c:565:35: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+  565 |                         int len = sprintf(msg, "Angle: %.2f\r\n", Robot.currentAngle);
+      |                                   ^~~~~~~
+../Core/Src/main.c:565:35: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c:566:25: warning: implicit declaration of function 'CDC_Transmit_FS' [-Wimplicit-function-declaration]
+  566 |                         CDC_Transmit_FS((uint8_t*)msg, len);
+      |                         ^~~~~~~~~~~~~~~
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:99:29: warning: 'canRxHeader' defined but not used [-Wunused-variable]
+   99 | static CAN_RxHeaderTypeDef  canRxHeader;
+      |                             ^~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+10:29:00 **** Incremental Build of configuration Debug for project 0002_3_DEAD_WHEEL ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c:104:29: warning: 'canRxHeader' defined but not used [-Wunused-variable]
+  104 | static CAN_RxHeaderTypeDef  canRxHeader;
+      |                             ^~~~~~~~~~~
+arm-none-eabi-gcc -o "0002_3_DEAD_WHEEL.elf" @"objects.list"   -mcpu=cortex-m4 -T"G:\WINDOWS\EVERYTHING\COLLEGE\AUTOMATONS\2026\RYUK\0002_3_DEAD_WHEEL\STM32F446ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="0002_3_DEAD_WHEEL.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 0002_3_DEAD_WHEEL.elf
+ 
+arm-none-eabi-size  0002_3_DEAD_WHEEL.elf 
+arm-none-eabi-objdump -h -S 0002_3_DEAD_WHEEL.elf  > "0002_3_DEAD_WHEEL.list"
+   text	   data	    bss	    dec	    hex	filename
+  52972	    492	   3252	  56716	   dd8c	0002_3_DEAD_WHEEL.elf
+Finished building: default.size.stdout
+ 
+Finished building: 0002_3_DEAD_WHEEL.list
+ 
+10:35:27 **** Incremental Build of configuration Debug for project 0001_3_WHEEL_OMNI_INIT ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'MX_TIM14_Init':
+../Core/Src/main.c:1569:15: error: invalid storage class for function 'MX_GPIO_Init'
+ 1569 |   static void MX_GPIO_Init(void);
+      |               ^~~~~~~~~~~~
+../Core/Src/main.c:1570:15: error: invalid storage class for function 'MX_CAN1_Init'
+ 1570 |   static void MX_CAN1_Init(void);
+      |               ^~~~~~~~~~~~
+../Core/Src/main.c:1571:15: error: invalid storage class for function 'MX_CAN2_Init'
+ 1571 |   static void MX_CAN2_Init(void);
+      |               ^~~~~~~~~~~~
+../Core/Src/main.c:1572:15: error: invalid storage class for function 'MX_I2C1_Init'
+ 1572 |   static void MX_I2C1_Init(void);
+      |               ^~~~~~~~~~~~
+../Core/Src/main.c:1573:15: error: invalid storage class for function 'MX_TIM1_Init'
+ 1573 |   static void MX_TIM1_Init(void);
+      |               ^~~~~~~~~~~~
+../Core/Src/main.c:1574:15: error: invalid storage class for function 'MX_TIM2_Init'
+ 1574 |   static void MX_TIM2_Init(void);
+      |               ^~~~~~~~~~~~
+../Core/Src/main.c:1575:15: error: invalid storage class for function 'MX_TIM3_Init'
+ 1575 |   static void MX_TIM3_Init(void);
+      |               ^~~~~~~~~~~~
+../Core/Src/main.c:1576:15: error: invalid storage class for function 'MX_TIM4_Init'
+ 1576 |   static void MX_TIM4_Init(void);
+      |               ^~~~~~~~~~~~
+../Core/Src/main.c:1577:15: error: invalid storage class for function 'MX_TIM5_Init'
+ 1577 |   static void MX_TIM5_Init(void);
+      |               ^~~~~~~~~~~~
+../Core/Src/main.c:1578:15: error: invalid storage class for function 'MX_TIM8_Init'
+ 1578 |   static void MX_TIM8_Init(void);
+      |               ^~~~~~~~~~~~
+../Core/Src/main.c:1579:15: error: invalid storage class for function 'MX_TIM9_Init'
+ 1579 |   static void MX_TIM9_Init(void);
+      |               ^~~~~~~~~~~~
+../Core/Src/main.c:1580:15: error: invalid storage class for function 'MX_TIM10_Init'
+ 1580 |   static void MX_TIM10_Init(void);
+      |               ^~~~~~~~~~~~~
+../Core/Src/main.c:1581:15: error: invalid storage class for function 'MX_TIM11_Init'
+ 1581 |   static void MX_TIM11_Init(void);
+      |               ^~~~~~~~~~~~~
+../Core/Src/main.c:1582:15: error: invalid storage class for function 'MX_TIM12_Init'
+ 1582 |   static void MX_TIM12_Init(void);
+      |               ^~~~~~~~~~~~~
+../Core/Src/main.c:1583:15: error: invalid storage class for function 'MX_TIM13_Init'
+ 1583 |   static void MX_TIM13_Init(void);
+      |               ^~~~~~~~~~~~~
+../Core/Src/main.c:1584:15: error: invalid storage class for function 'MX_TIM14_Init'
+ 1584 |   static void MX_TIM14_Init(void);
+      |               ^~~~~~~~~~~~~
+../Core/Src/main.c:1585:15: error: invalid storage class for function 'MX_USART3_UART_Init'
+ 1585 |   static void MX_USART3_UART_Init(void);
+      |               ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:1586:15: error: invalid storage class for function 'MX_TIM6_Init'
+ 1586 |   static void MX_TIM6_Init(void);
+      |               ^~~~~~~~~~~~
+../Core/Src/main.c:1600:16: error: invalid storage class for function 'NormalizeAngle'
+ 1600 |   static float NormalizeAngle(float angle);
+      |                ^~~~~~~~~~~~~~
+../Core/Src/main.c:1604:8: error: conflicting types for 'MotorSet'; have 'void(Motor_t *, int16_t)' {aka 'void(Motor_t *, short int)'}
+ 1604 |   void MotorSet(Motor_t *motor, int16_t speed);
+      |        ^~~~~~~~
+../Core/Src/main.c:349:6: note: previous definition of 'MotorSet' with type 'void(Motor_t *, int16_t)' {aka 'void(Motor_t *, short int)'}
+  349 | void MotorSet(Motor_t *motor, int16_t speed){
+      |      ^~~~~~~~
+../Core/Src/main.c:1605:8: error: conflicting types for 'MotorInit'; have 'void(Motor_t *, TIM_TypeDef *, uint32_t,  uint32_t,  int16_t)' {aka 'void(Motor_t *, TIM_TypeDef *, long unsigned int,  long unsigned int,  short int)'}
+ 1605 |   void MotorInit(Motor_t *motor,        TIM_TypeDef *TIMx, uint32_t channelLeft, uint32_t channelRight, int16_t maxPWM);
+      |        ^~~~~~~~~
+../Core/Src/main.c:342:6: note: previous definition of 'MotorInit' with type 'void(Motor_t *, TIM_TypeDef *, uint32_t,  uint32_t,  int16_t)' {aka 'void(Motor_t *, TIM_TypeDef *, long unsigned int,  long unsigned int,  short int)'}
+  342 | void MotorInit(Motor_t *motor,  TIM_TypeDef *TIMx, uint32_t channelLeft, uint32_t channelRight, int16_t maxPWM){
+      |      ^~~~~~~~~
+../Core/Src/main.c:1606:8: error: conflicting types for 'KinematicsControl'; have 'void(RobotControl_t *)'
+ 1606 |   void KinematicsControl(RobotControl_t *robot);
+      |        ^~~~~~~~~~~~~~~~~
+../Core/Src/main.c:365:6: note: previous definition of 'KinematicsControl' with type 'void(RobotControl_t *)'
+  365 | void KinematicsControl(RobotControl_t *robot){
+      |      ^~~~~~~~~~~~~~~~~
+../Core/Src/main.c:1607:8: error: conflicting types for 'KinematicsDrive'; have 'void(RobotControl_t *)'
+ 1607 |   void KinematicsDrive(RobotControl_t *robot);
+      |        ^~~~~~~~~~~~~~~
+../Core/Src/main.c:381:6: note: previous definition of 'KinematicsDrive' with type 'void(RobotControl_t *)'
+  381 | void KinematicsDrive(RobotControl_t *robot){
+      |      ^~~~~~~~~~~~~~~
+../Core/Src/main.c:1609:8: error: conflicting types for 'RobotUpdateAngle'; have 'void(RobotControl_t *)'
+ 1609 |   void RobotUpdateAngle(RobotControl_t *robot);
+      |        ^~~~~~~~~~~~~~~~
+../Core/Src/main.c:388:6: note: previous definition of 'RobotUpdateAngle' with type 'void(RobotControl_t *)'
+  388 | void RobotUpdateAngle(RobotControl_t *robot){
+      |      ^~~~~~~~~~~~~~~~
+../Core/Src/main.c:1610:9: error: conflicting types for 'PIDCompute'; have 'float(PID_t *, float)'
+ 1610 |   float PIDCompute(PID_t *pid, float error);
+      |         ^~~~~~~~~~
+../Core/Src/main.c:392:7: note: previous definition of 'PIDCompute' with type 'float(PID_t *, float)'
+  392 | float PIDCompute(PID_t *pid, float error){
+      |       ^~~~~~~~~~
+../Core/Src/main.c:1611:8: error: conflicting types for 'PIDReset'; have 'void(PID_t *)'
+ 1611 |   void PIDReset(PID_t *pid);
+      |        ^~~~~~~~
+../Core/Src/main.c:414:6: note: previous definition of 'PIDReset' with type 'void(PID_t *)'
+  414 | void PIDReset(PID_t *pid){
+      |      ^~~~~~~~
+../Core/Src/main.c:1615:9: error: redefinition of 'degree2radian'
+ 1615 |   float degree2radian(float angle) {
+      |         ^~~~~~~~~~~~~
+../Core/Src/main.c:250:7: note: previous definition of 'degree2radian' with type 'float(float)'
+  250 | float degree2radian(float angle) {
+      |       ^~~~~~~~~~~~~
+../Core/Src/main.c:1619:9: error: redefinition of 'radian2degree'
+ 1619 |   float radian2degree(float angle) {
+      |         ^~~~~~~~~~~~~
+../Core/Src/main.c:254:7: note: previous definition of 'radian2degree' with type 'float(float)'
+  254 | float radian2degree(float angle) {
+      |       ^~~~~~~~~~~~~
+../Core/Src/main.c:1623:8: error: redefinition of 'map'
+ 1623 |   long map(long x, long in_min, long in_max, long out_min, long out_max) {
+      |        ^~~
+../Core/Src/main.c:258:6: note: previous definition of 'map' with type 'long int(long int,  long int,  long int,  long int,  long int)'
+  258 | long map(long x, long in_min, long in_max, long out_min, long out_max) {
+      |      ^~~
+../Core/Src/main.c:1627:9: error: redefinition of 'constrain'
+ 1627 |   float constrain(float num, float min, float max) {
+      |         ^~~~~~~~~
+../Core/Src/main.c:262:7: note: previous definition of 'constrain' with type 'float(float,  float,  float)'
+  262 | float constrain(float num, float min, float max) {
+      |       ^~~~~~~~~
+../Core/Src/main.c:1642:8: error: redefinition of 'BNO055_Init'
+ 1642 |   void BNO055_Init(void){
+      |        ^~~~~~~~~~~
+../Core/Src/main.c:277:6: note: previous definition of 'BNO055_Init' with type 'void(void)'
+  277 | void BNO055_Init(void){
+      |      ^~~~~~~~~~~
+../Core/Src/main.c:1664:16: error: invalid storage class for function 'NormalizeAngle'
+ 1664 |   static float NormalizeAngle(float angle){
+      |                ^~~~~~~~~~~~~~
+../Core/Src/main.c:1670:8: error: redefinition of 'IMUTicKUpdate'
+ 1670 |   void IMUTicKUpdate(void){
+      |        ^~~~~~~~~~~~~
+../Core/Src/main.c:305:6: note: previous definition of 'IMUTicKUpdate' with type 'void(void)'
+  305 | void IMUTicKUpdate(void){
+      |      ^~~~~~~~~~~~~
+../Core/Src/main.c:1678:8: error: redefinition of 'reMapData'
+ 1678 |   void reMapData(void) {
+      |        ^~~~~~~~~
+../Core/Src/main.c:313:6: note: previous definition of 'reMapData' with type 'void(void)'
+  313 | void reMapData(void) {
+      |      ^~~~~~~~~
+../Core/Src/main.c:1707:8: error: static declaration of 'MotorInit' follows non-static declaration
+ 1707 |   void MotorInit(Motor_t *motor,        TIM_TypeDef *TIMx, uint32_t channelLeft, uint32_t channelRight, int16_t maxPWM){
+      |        ^~~~~~~~~
+../Core/Src/main.c:1605:8: note: previous declaration of 'MotorInit' with type 'void(Motor_t *, TIM_TypeDef *, uint32_t,  uint32_t,  int16_t)' {aka 'void(Motor_t *, TIM_TypeDef *, long unsigned int,  long unsigned int,  short int)'}
+ 1605 |   void MotorInit(Motor_t *motor,        TIM_TypeDef *TIMx, uint32_t channelLeft, uint32_t channelRight, int16_t maxPWM);
+      |        ^~~~~~~~~
+../Core/Src/main.c:1714:8: error: static declaration of 'MotorSet' follows non-static declaration
+ 1714 |   void MotorSet(Motor_t *motor, int16_t speed){
+      |        ^~~~~~~~
+../Core/Src/main.c:1604:8: note: previous declaration of 'MotorSet' with type 'void(Motor_t *, int16_t)' {aka 'void(Motor_t *, short int)'}
+ 1604 |   void MotorSet(Motor_t *motor, int16_t speed);
+      |        ^~~~~~~~
+../Core/Src/main.c:1730:8: error: static declaration of 'KinematicsControl' follows non-static declaration
+ 1730 |   void KinematicsControl(RobotControl_t *robot){
+      |        ^~~~~~~~~~~~~~~~~
+../Core/Src/main.c:1606:8: note: previous declaration of 'KinematicsControl' with type 'void(RobotControl_t *)'
+ 1606 |   void KinematicsControl(RobotControl_t *robot);
+      |        ^~~~~~~~~~~~~~~~~
+../Core/Src/main.c:1746:8: error: static declaration of 'KinematicsDrive' follows non-static declaration
+ 1746 |   void KinematicsDrive(RobotControl_t *robot){
+      |        ^~~~~~~~~~~~~~~
+../Core/Src/main.c:1607:8: note: previous declaration of 'KinematicsDrive' with type 'void(RobotControl_t *)'
+ 1607 |   void KinematicsDrive(RobotControl_t *robot);
+      |        ^~~~~~~~~~~~~~~
+../Core/Src/main.c:1753:8: error: static declaration of 'RobotUpdateAngle' follows non-static declaration
+ 1753 |   void RobotUpdateAngle(RobotControl_t *robot){
+      |        ^~~~~~~~~~~~~~~~
+../Core/Src/main.c:1609:8: note: previous declaration of 'RobotUpdateAngle' with type 'void(RobotControl_t *)'
+ 1609 |   void RobotUpdateAngle(RobotControl_t *robot);
+      |        ^~~~~~~~~~~~~~~~
+../Core/Src/main.c:1757:9: error: static declaration of 'PIDCompute' follows non-static declaration
+ 1757 |   float PIDCompute(PID_t *pid, float error){
+      |         ^~~~~~~~~~
+../Core/Src/main.c:1610:9: note: previous declaration of 'PIDCompute' with type 'float(PID_t *, float)'
+ 1610 |   float PIDCompute(PID_t *pid, float error);
+      |         ^~~~~~~~~~
+../Core/Src/main.c:1779:8: error: static declaration of 'PIDReset' follows non-static declaration
+ 1779 |   void PIDReset(PID_t *pid){
+      |        ^~~~~~~~
+../Core/Src/main.c:1611:8: note: previous declaration of 'PIDReset' with type 'void(PID_t *)'
+ 1611 |   void PIDReset(PID_t *pid);
+      |        ^~~~~~~~
+../Core/Src/main.c:1795:7: warning: 'main' is normally a non-static function [-Wmain]
+ 1795 |   int main(void)
+      |       ^~~~
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:1936:25: warning: implicit declaration of function 'CDC_Transmit_FS' [-Wimplicit-function-declaration]
+ 1936 |                         CDC_Transmit_FS((uint8_t*)msg, len);
+      |                         ^~~~~~~~~~~~~~~
+../Core/Src/main.c: In function 'MX_TIM14_Init':
+../Core/Src/main.c:1947:8: error: redefinition of 'SystemClock_Config'
+ 1947 |   void SystemClock_Config(void)
+      |        ^~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:582:6: note: previous definition of 'SystemClock_Config' with type 'void(void)'
+  582 | void SystemClock_Config(void)
+      |      ^~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:2001:15: error: invalid storage class for function 'MX_CAN1_Init'
+ 2001 |   static void MX_CAN1_Init(void)
+      |               ^~~~~~~~~~~~
+../Core/Src/main.c:2038:15: error: invalid storage class for function 'MX_CAN2_Init'
+ 2038 |   static void MX_CAN2_Init(void)
+      |               ^~~~~~~~~~~~
+../Core/Src/main.c:2075:15: error: invalid storage class for function 'MX_I2C1_Init'
+ 2075 |   static void MX_I2C1_Init(void)
+      |               ^~~~~~~~~~~~
+../Core/Src/main.c:2109:15: error: invalid storage class for function 'MX_TIM1_Init'
+ 2109 |   static void MX_TIM1_Init(void)
+      |               ^~~~~~~~~~~~
+../Core/Src/main.c:2159:15: error: invalid storage class for function 'MX_TIM2_Init'
+ 2159 |   static void MX_TIM2_Init(void)
+      |               ^~~~~~~~~~~~
+../Core/Src/main.c:2208:15: error: invalid storage class for function 'MX_TIM3_Init'
+ 2208 |   static void MX_TIM3_Init(void)
+      |               ^~~~~~~~~~~~
+../Core/Src/main.c:2257:15: error: invalid storage class for function 'MX_TIM4_Init'
+ 2257 |   static void MX_TIM4_Init(void)
+      |               ^~~~~~~~~~~~
+../Core/Src/main.c:2318:15: error: invalid storage class for function 'MX_TIM5_Init'
+ 2318 |   static void MX_TIM5_Init(void)
+      |               ^~~~~~~~~~~~
+../Core/Src/main.c:2375:15: error: invalid storage class for function 'MX_TIM6_Init'
+ 2375 |   static void MX_TIM6_Init(void)
+      |               ^~~~~~~~~~~~
+../Core/Src/main.c:2413:15: error: invalid storage class for function 'MX_TIM8_Init'
+ 2413 |   static void MX_TIM8_Init(void)
+      |               ^~~~~~~~~~~~
+../Core/Src/main.c:2496:15: error: invalid storage class for function 'MX_TIM9_Init'
+ 2496 |   static void MX_TIM9_Init(void)
+      |               ^~~~~~~~~~~~
+../Core/Src/main.c:2542:15: error: invalid storage class for function 'MX_TIM10_Init'
+ 2542 |   static void MX_TIM10_Init(void)
+      |               ^~~~~~~~~~~~~
+../Core/Src/main.c:2588:15: error: invalid storage class for function 'MX_TIM11_Init'
+ 2588 |   static void MX_TIM11_Init(void)
+      |               ^~~~~~~~~~~~~
+../Core/Src/main.c:2634:15: error: invalid storage class for function 'MX_TIM12_Init'
+ 2634 |   static void MX_TIM12_Init(void)
+      |               ^~~~~~~~~~~~~
+../Core/Src/main.c:2680:15: error: invalid storage class for function 'MX_TIM13_Init'
+ 2680 |   static void MX_TIM13_Init(void)
+      |               ^~~~~~~~~~~~~
+../Core/Src/main.c:2726:15: error: invalid storage class for function 'MX_TIM14_Init'
+ 2726 |   static void MX_TIM14_Init(void)
+      |               ^~~~~~~~~~~~~
+../Core/Src/main.c:2772:15: error: invalid storage class for function 'MX_USART3_UART_Init'
+ 2772 |   static void MX_USART3_UART_Init(void)
+      |               ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:2805:15: error: invalid storage class for function 'MX_GPIO_Init'
+ 2805 |   static void MX_GPIO_Init(void)
+      |               ^~~~~~~~~~~~
+../Core/Src/main.c:1473:31: warning: unused variable 'RY' [-Wunused-variable]
+ 1473 |   int LX = 0, LY = 0, RX = 0, RY = 0;
+      |                               ^~
+../Core/Src/main.c:1473:23: warning: unused variable 'RX' [-Wunused-variable]
+ 1473 |   int LX = 0, LY = 0, RX = 0, RY = 0;
+      |                       ^~
+../Core/Src/main.c:1469:31: warning: unused variable 'canRxHeader' [-Wunused-variable]
+ 1469 |   static CAN_RxHeaderTypeDef  canRxHeader;
+      |                               ^~~~~~~~~~~
+../Core/Src/main.c:1440:8: warning: variable 'triangle' set but not used [-Wunused-but-set-variable]
+ 1440 |   bool triangle;
+      |        ^~~~~~~~
+../Core/Src/main.c:1439:8: warning: variable 'circle' set but not used [-Wunused-but-set-variable]
+ 1439 |   bool circle;
+      |        ^~~~~~
+../Core/Src/main.c:1438:8: warning: variable 'cross' set but not used [-Wunused-but-set-variable]
+ 1438 |   bool cross;
+      |        ^~~~~
+../Core/Src/main.c:1437:8: warning: variable 'square' set but not used [-Wunused-but-set-variable]
+ 1437 |   bool square;
+      |        ^~~~~~
+../Core/Src/main.c:1436:8: warning: variable 'left' set but not used [-Wunused-but-set-variable]
+ 1436 |   bool left;
+      |        ^~~~
+../Core/Src/main.c:1435:8: warning: variable 'up' set but not used [-Wunused-but-set-variable]
+ 1435 |   bool up;
+      |        ^~
+../Core/Src/main.c:1434:8: warning: variable 'down' set but not used [-Wunused-but-set-variable]
+ 1434 |   bool down;
+      |        ^~~~
+../Core/Src/main.c:1433:8: warning: variable 'right' set but not used [-Wunused-but-set-variable]
+ 1433 |   bool right;
+      |        ^~~~~
+../Core/Src/main.c:1431:8: warning: unused variable 'R1' [-Wunused-variable]
+ 1431 |   bool R1;
+      |        ^~
+../Core/Src/main.c:1430:8: warning: unused variable 'L1' [-Wunused-variable]
+ 1430 |   bool L1;
+      |        ^~
+../Core/Src/main.c:1425:8: warning: unused variable 'dataBuffer' [-Wunused-variable]
+ 1425 |   char dataBuffer[100];
+      |        ^~~~~~~~~~
+../Core/Src/main.c:1424:11: warning: unused variable 'data' [-Wunused-variable]
+ 1424 |   uint8_t data[arraySize];
+      |           ^~~~
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:2805:15: warning: 'MX_GPIO_Init' defined but not used [-Wunused-function]
+ 2805 |   static void MX_GPIO_Init(void)
+      |               ^~~~~~~~~~~~
+../Core/Src/main.c:2772:15: warning: 'MX_USART3_UART_Init' defined but not used [-Wunused-function]
+ 2772 |   static void MX_USART3_UART_Init(void)
+      |               ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:2726:15: warning: 'MX_TIM14_Init' defined but not used [-Wunused-function]
+ 2726 |   static void MX_TIM14_Init(void)
+      |               ^~~~~~~~~~~~~
+../Core/Src/main.c:2680:15: warning: 'MX_TIM13_Init' defined but not used [-Wunused-function]
+ 2680 |   static void MX_TIM13_Init(void)
+      |               ^~~~~~~~~~~~~
+../Core/Src/main.c:2634:15: warning: 'MX_TIM12_Init' defined but not used [-Wunused-function]
+ 2634 |   static void MX_TIM12_Init(void)
+      |               ^~~~~~~~~~~~~
+../Core/Src/main.c:2588:15: warning: 'MX_TIM11_Init' defined but not used [-Wunused-function]
+ 2588 |   static void MX_TIM11_Init(void)
+      |               ^~~~~~~~~~~~~
+../Core/Src/main.c:2542:15: warning: 'MX_TIM10_Init' defined but not used [-Wunused-function]
+ 2542 |   static void MX_TIM10_Init(void)
+      |               ^~~~~~~~~~~~~
+../Core/Src/main.c:2496:15: warning: 'MX_TIM9_Init' defined but not used [-Wunused-function]
+ 2496 |   static void MX_TIM9_Init(void)
+      |               ^~~~~~~~~~~~
+../Core/Src/main.c:2413:15: warning: 'MX_TIM8_Init' defined but not used [-Wunused-function]
+ 2413 |   static void MX_TIM8_Init(void)
+      |               ^~~~~~~~~~~~
+../Core/Src/main.c:2375:15: warning: 'MX_TIM6_Init' defined but not used [-Wunused-function]
+ 2375 |   static void MX_TIM6_Init(void)
+      |               ^~~~~~~~~~~~
+../Core/Src/main.c:2318:15: warning: 'MX_TIM5_Init' defined but not used [-Wunused-function]
+ 2318 |   static void MX_TIM5_Init(void)
+      |               ^~~~~~~~~~~~
+../Core/Src/main.c:2257:15: warning: 'MX_TIM4_Init' defined but not used [-Wunused-function]
+ 2257 |   static void MX_TIM4_Init(void)
+      |               ^~~~~~~~~~~~
+../Core/Src/main.c:2208:15: warning: 'MX_TIM3_Init' defined but not used [-Wunused-function]
+ 2208 |   static void MX_TIM3_Init(void)
+      |               ^~~~~~~~~~~~
+../Core/Src/main.c:2159:15: warning: 'MX_TIM2_Init' defined but not used [-Wunused-function]
+ 2159 |   static void MX_TIM2_Init(void)
+      |               ^~~~~~~~~~~~
+../Core/Src/main.c:2109:15: warning: 'MX_TIM1_Init' defined but not used [-Wunused-function]
+ 2109 |   static void MX_TIM1_Init(void)
+      |               ^~~~~~~~~~~~
+../Core/Src/main.c:2075:15: warning: 'MX_I2C1_Init' defined but not used [-Wunused-function]
+ 2075 |   static void MX_I2C1_Init(void)
+      |               ^~~~~~~~~~~~
+../Core/Src/main.c:2038:15: warning: 'MX_CAN2_Init' defined but not used [-Wunused-function]
+ 2038 |   static void MX_CAN2_Init(void)
+      |               ^~~~~~~~~~~~
+../Core/Src/main.c:2001:15: warning: 'MX_CAN1_Init' defined but not used [-Wunused-function]
+ 2001 |   static void MX_CAN1_Init(void)
+      |               ^~~~~~~~~~~~
+../Core/Src/main.c:1947:8: warning: 'SystemClock_Config' defined but not used [-Wunused-function]
+ 1947 |   void SystemClock_Config(void)
+      |        ^~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:1795:7: warning: 'main' defined but not used [-Wunused-function]
+ 1795 |   int main(void)
+      |       ^~~~
+../Core/Src/main.c:1753:8: warning: 'RobotUpdateAngle' defined but not used [-Wunused-function]
+ 1753 |   void RobotUpdateAngle(RobotControl_t *robot){
+      |        ^~~~~~~~~~~~~~~~
+../Core/Src/main.c:1619:9: warning: 'radian2degree' defined but not used [-Wunused-function]
+ 1619 |   float radian2degree(float angle) {
+      |         ^~~~~~~~~~~~~
+../Core/Src/main.c:104:29: warning: 'canRxHeader' defined but not used [-Wunused-variable]
+  104 | static CAN_RxHeaderTypeDef  canRxHeader;
+      |                             ^~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+10:37:48 **** Incremental Build of configuration Debug for project 0001_3_WHEEL_OMNI_INIT ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c:47:10: error: unknown type name 'bool'
+   47 | volatile bool IMU_TICK = false;
+      |          ^~~~
+../Core/Src/main.c:47:26: error: 'false' undeclared here (not in a function)
+   47 | volatile bool IMU_TICK = false;
+      |                          ^~~~~
+../Core/Src/main.c:21:1: note: 'false' is defined in header '<stdbool.h>'; did you forget to '#include <stdbool.h>'?
+   20 | #include "main.h"
+  +++ |+#include <stdbool.h>
+   21 | 
+../Core/Src/main.c:49:1: error: unknown type name 'bool'
+   49 | bool imuInitialized = false;
+      | ^~~~
+../Core/Src/main.c:49:1: note: 'bool' is defined in header '<stdbool.h>'; did you forget to '#include <stdbool.h>'?
+../Core/Src/main.c:60:1: error: unknown type name 'bool'
+   60 | bool L1;
+      | ^~~~
+../Core/Src/main.c:60:1: note: 'bool' is defined in header '<stdbool.h>'; did you forget to '#include <stdbool.h>'?
+../Core/Src/main.c:61:1: error: unknown type name 'bool'
+   61 | bool R1;
+      | ^~~~
+../Core/Src/main.c:61:1: note: 'bool' is defined in header '<stdbool.h>'; did you forget to '#include <stdbool.h>'?
+../Core/Src/main.c:63:1: error: unknown type name 'bool'
+   63 | bool right;
+      | ^~~~
+../Core/Src/main.c:63:1: note: 'bool' is defined in header '<stdbool.h>'; did you forget to '#include <stdbool.h>'?
+../Core/Src/main.c:64:1: error: unknown type name 'bool'
+   64 | bool down;
+      | ^~~~
+../Core/Src/main.c:64:1: note: 'bool' is defined in header '<stdbool.h>'; did you forget to '#include <stdbool.h>'?
+../Core/Src/main.c:65:1: error: unknown type name 'bool'
+   65 | bool up;
+      | ^~~~
+../Core/Src/main.c:65:1: note: 'bool' is defined in header '<stdbool.h>'; did you forget to '#include <stdbool.h>'?
+../Core/Src/main.c:66:1: error: unknown type name 'bool'
+   66 | bool left;
+      | ^~~~
+../Core/Src/main.c:66:1: note: 'bool' is defined in header '<stdbool.h>'; did you forget to '#include <stdbool.h>'?
+../Core/Src/main.c:67:1: error: unknown type name 'bool'
+   67 | bool square;
+      | ^~~~
+../Core/Src/main.c:67:1: note: 'bool' is defined in header '<stdbool.h>'; did you forget to '#include <stdbool.h>'?
+../Core/Src/main.c:68:1: error: unknown type name 'bool'
+   68 | bool cross;
+      | ^~~~
+../Core/Src/main.c:68:1: note: 'bool' is defined in header '<stdbool.h>'; did you forget to '#include <stdbool.h>'?
+../Core/Src/main.c:69:1: error: unknown type name 'bool'
+   69 | bool circle;
+      | ^~~~
+../Core/Src/main.c:69:1: note: 'bool' is defined in header '<stdbool.h>'; did you forget to '#include <stdbool.h>'?
+../Core/Src/main.c:70:1: error: unknown type name 'bool'
+   70 | bool triangle;
+      | ^~~~
+../Core/Src/main.c:70:1: note: 'bool' is defined in header '<stdbool.h>'; did you forget to '#include <stdbool.h>'?
+../Core/Src/main.c:102:10: error: unknown type name 'bool'
+  102 | volatile bool canDataReady = false;
+      |          ^~~~
+../Core/Src/main.c: In function 'reMapData':
+../Core/Src/main.c:327:9: warning: implicit declaration of function 'abs' [-Wimplicit-function-declaration]
+  327 |     if (abs(LX) < DEADZONE) LX = 0;
+      |         ^~~
+../Core/Src/main.c:21:1: note: include '<stdlib.h>' or provide a declaration of 'abs'
+   20 | #include "main.h"
+  +++ |+#include <stdlib.h>
+   21 | 
+../Core/Src/main.c:329:18: warning: 'abs' argument 1 promotes to 'double' where 'int' is expected in a call to built-in function declared without prototype [-Wbuiltin-declaration-mismatch]
+  329 |     if (abs(Robot.Omega) < DEADZONE) Robot.Omega = 0;
+      |             ~~~~~^~~~~~
+<built-in>: note: built-in 'abs' declared here
+../Core/Src/main.c: In function 'KinematicsControl':
+../Core/Src/main.c:363:37: warning: implicit declaration of function 'cosf' [-Wimplicit-function-declaration]
+  363 |         robot->VxG = ( robot->Vx) * cosf(theta) + (robot->Vy) * sinf(theta);
+      |                                     ^~~~
+../Core/Src/main.c:21:1: note: include '<math.h>' or provide a declaration of 'cosf'
+   20 | #include "main.h"
+  +++ |+#include <math.h>
+   21 | 
+../Core/Src/main.c:363:37: warning: incompatible implicit declaration of built-in function 'cosf' [-Wbuiltin-declaration-mismatch]
+  363 |         robot->VxG = ( robot->Vx) * cosf(theta) + (robot->Vy) * sinf(theta);
+      |                                     ^~~~
+../Core/Src/main.c:363:37: note: include '<math.h>' or provide a declaration of 'cosf'
+../Core/Src/main.c:363:65: warning: implicit declaration of function 'sinf' [-Wimplicit-function-declaration]
+  363 |         robot->VxG = ( robot->Vx) * cosf(theta) + (robot->Vy) * sinf(theta);
+      |                                                                 ^~~~
+../Core/Src/main.c:363:65: note: include '<math.h>' or provide a declaration of 'sinf'
+../Core/Src/main.c:363:65: warning: incompatible implicit declaration of built-in function 'sinf' [-Wbuiltin-declaration-mismatch]
+../Core/Src/main.c:363:65: note: include '<math.h>' or provide a declaration of 'sinf'
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:540:50: error: 'true' undeclared (first use in this function)
+  540 |                                 imuInitialized = true;
+      |                                                  ^~~~
+../Core/Src/main.c:540:50: note: 'true' is defined in header '<stdbool.h>'; did you forget to '#include <stdbool.h>'?
+../Core/Src/main.c:540:50: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c:549:29: warning: implicit declaration of function 'fabsf' [-Wimplicit-function-declaration]
+  549 |                         if (fabsf(Robot.Omega) < 5.0f) {
+      |                             ^~~~~
+../Core/Src/main.c:549:29: note: include '<math.h>' or provide a declaration of 'fabsf'
+../Core/Src/main.c:549:29: warning: incompatible implicit declaration of built-in function 'fabsf' [-Wbuiltin-declaration-mismatch]
+../Core/Src/main.c:549:29: note: include '<math.h>' or provide a declaration of 'fabsf'
+../Core/Src/main.c:565:35: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+  565 |                         int len = sprintf(msg, "Angle: %.2f\r\n", Robot.currentAngle);
+      |                                   ^~~~~~~
+../Core/Src/main.c:21:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+   20 | #include "main.h"
+  +++ |+#include <stdio.h>
+   21 | 
+../Core/Src/main.c:565:35: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+  565 |                         int len = sprintf(msg, "Angle: %.2f\r\n", Robot.currentAngle);
+      |                                   ^~~~~~~
+../Core/Src/main.c:565:35: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c:566:25: warning: implicit declaration of function 'CDC_Transmit_FS' [-Wimplicit-function-declaration]
+  566 |                         CDC_Transmit_FS((uint8_t*)msg, len);
+      |                         ^~~~~~~~~~~~~~~
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:99:29: warning: 'canRxHeader' defined but not used [-Wunused-variable]
+   99 | static CAN_RxHeaderTypeDef  canRxHeader;
+      |                             ^~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+10:38:15 **** Incremental Build of configuration Debug for project 0001_3_WHEEL_OMNI_INIT ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:571:25: warning: implicit declaration of function 'CDC_Transmit_FS' [-Wimplicit-function-declaration]
+  571 |                         CDC_Transmit_FS((uint8_t*)msg, len);
+      |                         ^~~~~~~~~~~~~~~
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:104:29: warning: 'canRxHeader' defined but not used [-Wunused-variable]
+  104 | static CAN_RxHeaderTypeDef  canRxHeader;
+      |                             ^~~~~~~~~~~
+arm-none-eabi-gcc -o "0001_3_WHEEL_OMNI_INIT.elf" @"objects.list"   -mcpu=cortex-m4 -T"G:\WINDOWS\EVERYTHING\COLLEGE\AUTOMATONS\2026\RYUK\0001_3_WHEEL_OMNI_INIT\STM32F446ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="0001_3_WHEEL_OMNI_INIT.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+C:/STM/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/bin/ld.exe: ./Core/Src/main.o: in function `main':
+G:/WINDOWS/EVERYTHING/COLLEGE/AUTOMATONS/2026/RYUK/0001_3_WHEEL_OMNI_INIT/Debug/../Core/Src/main.c:571:(.text.main+0x246): undefined reference to `CDC_Transmit_FS'
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:64: 0001_3_WHEEL_OMNI_INIT.elf] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.

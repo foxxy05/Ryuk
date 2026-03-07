@@ -21,7 +21,12 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include<stdlib.h>
+#include<stdio.h>
+#include<stdbool.h>
+#include<stdint.h>
+#include<string.h>
+#include<math.h>
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -483,6 +488,7 @@ int main(void)
 //  HAL_TIM_PWM_Start(&htim13, TIM_CHANNEL_1);
 //  HAL_TIM_PWM_Start(&htim14, TIM_CHANNEL_1);
 
+  HAL_TIM_Base_Start_IT(&htim6);
   BNO055_Init();
 
   // ===================== CAN CONFIGURATIONS =====================
@@ -562,8 +568,8 @@ int main(void)
   			KinematicsControl(&Robot);
   			KinematicsDrive(&Robot);
 
-  			int len = sprintf(msg, "Angle: %.2f\r\n", Robot.currentAngle);
-  			CDC_Transmit_FS((uint8_t*)msg, len);
+//  			int len = sprintf(msg, "Angle: %.2f\r\n", Robot.currentAngle);
+//  			CDC_Transmit_FS((uint8_t*)msg, len);
 
   			//HAL_Delay(5);
   		}
@@ -898,9 +904,9 @@ static void MX_TIM4_Init(void)
 
   /* USER CODE END TIM4_Init 1 */
   htim4.Instance = TIM4;
-  htim4.Init.Prescaler = 0;
+  htim4.Init.Prescaler = 34;
   htim4.Init.CounterMode = TIM_COUNTERMODE_UP;
-  htim4.Init.Period = 65535;
+  htim4.Init.Period = 255;
   htim4.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
   htim4.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
   if (HAL_TIM_PWM_Init(&htim4) != HAL_OK)
@@ -959,9 +965,9 @@ static void MX_TIM5_Init(void)
 
   /* USER CODE END TIM5_Init 1 */
   htim5.Instance = TIM5;
-  htim5.Init.Prescaler = 0;
+  htim5.Init.Prescaler = 34;
   htim5.Init.CounterMode = TIM_COUNTERMODE_UP;
-  htim5.Init.Period = 4294967295;
+  htim5.Init.Period = 255;
   htim5.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
   htim5.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
   if (HAL_TIM_PWM_Init(&htim5) != HAL_OK)
@@ -1015,9 +1021,9 @@ static void MX_TIM6_Init(void)
 
   /* USER CODE END TIM6_Init 1 */
   htim6.Instance = TIM6;
-  htim6.Init.Prescaler = 0;
+  htim6.Init.Prescaler = 8999;
   htim6.Init.CounterMode = TIM_COUNTERMODE_UP;
-  htim6.Init.Period = 65535;
+  htim6.Init.Period = 99;
   htim6.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
   if (HAL_TIM_Base_Init(&htim6) != HAL_OK)
   {
@@ -1453,7 +1459,21 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
+{
+    if (htim->Instance == TIM6)
+    {
+        IMU_TICK = true;
+    }
+}
 
+void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan) {
+    if (HAL_CAN_GetRxMessage(hcan, CAN_RX_FIFO0, &canRxHeader, canRxData) == HAL_OK) {
+        if (canRxHeader.StdId == CONTROLLER_CAN_ID) {
+            canDataReady = true;
+        }
+    }
+}
 /* USER CODE END 4 */
 
 /**
