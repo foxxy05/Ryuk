@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<item key="hasShownOverlayPopupBefore" value="true"/>
+	<item key="replaceBarOpen" value="true"/>
+	<list key="searchhistory">
+		<item value="encoderInstance_t"/>
+		<item value="encoder_instance"/>
+		<item value="PrintOdometry"/>
+		<item value="Odoetry_t"/>
+		<item value="odom"/>
+		<item value="cpr"/>
+		<item value="/* USER CODE BEGIN TIM14_Init 1 */"/>
+		<item value="Fifo"/>
+		<item value="CDC"/>
+	</list>
+	<list key="replacehistory">
+		<item value="EncoderInstance_t"/>
+		<item value="encoderInstance_t"/>
+		<item value="Odometry_t"/>
+		<item value="Odo"/>
+	</list>
+</section>
