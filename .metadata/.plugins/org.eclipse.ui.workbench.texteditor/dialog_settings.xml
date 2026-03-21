@@ -3,6 +3,8 @@
 	<item key="hasShownOverlayPopupBefore" value="true"/>
 	<item key="replaceBarOpen" value="true"/>
 	<list key="searchhistory">
+		<item value="I2CInit"/>
+		<item value="odo"/>
 		<item value="encoderInstance_t"/>
 		<item value="encoder_instance"/>
 		<item value="PrintOdometry"/>
@@ -14,9 +16,9 @@
 		<item value="CDC"/>
 	</list>
 	<list key="replacehistory">
+		<item value="Odo"/>
 		<item value="EncoderInstance_t"/>
 		<item value="encoderInstance_t"/>
 		<item value="Odometry_t"/>
-		<item value="Odo"/>
 	</list>
 </section>
