@@ -34,34 +34,34 @@ $(wildcard ../makefile.init) \
 $(wildcard ../makefile.targets) \
 
 
-BUILD_ARTIFACT_NAME := 0001_3_WHEEL_OMNI_INIT
+BUILD_ARTIFACT_NAME := 0006_3_WHEEL_OMNI_I2C
 BUILD_ARTIFACT_EXTENSION := elf
 BUILD_ARTIFACT_PREFIX :=
 BUILD_ARTIFACT := $(BUILD_ARTIFACT_PREFIX)$(BUILD_ARTIFACT_NAME)$(if $(BUILD_ARTIFACT_EXTENSION),.$(BUILD_ARTIFACT_EXTENSION),)
 
 # Add inputs and outputs from these tool invocations to the build variables 
 EXECUTABLES += \
-0001_3_WHEEL_OMNI_INIT.elf \
+0006_3_WHEEL_OMNI_I2C.elf \
 
 MAP_FILES += \
-0001_3_WHEEL_OMNI_INIT.map \
+0006_3_WHEEL_OMNI_I2C.map \
 
 SIZE_OUTPUT += \
 default.size.stdout \
 
 OBJDUMP_LIST += \
-0001_3_WHEEL_OMNI_INIT.list \
+0006_3_WHEEL_OMNI_I2C.list \
 
 
 # All Target
 all: main-build
 
 # Main-build Target
-main-build: 0001_3_WHEEL_OMNI_INIT.elf secondary-outputs
+main-build: 0006_3_WHEEL_OMNI_I2C.elf secondary-outputs
 
 # Tool invocations
-0001_3_WHEEL_OMNI_INIT.elf 0001_3_WHEEL_OMNI_INIT.map: $(OBJS) $(USER_OBJS) G:\WINDOWS\EVERYTHING\COLLEGE\AUTOMATONS\2026\RYUK\0001_3_WHEEL_OMNI_INIT\STM32F446ZETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "0001_3_WHEEL_OMNI_INIT.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"G:\WINDOWS\EVERYTHING\COLLEGE\AUTOMATONS\2026\RYUK\0001_3_WHEEL_OMNI_INIT\STM32F446ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="0001_3_WHEEL_OMNI_INIT.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+0006_3_WHEEL_OMNI_I2C.elf 0006_3_WHEEL_OMNI_I2C.map: $(OBJS) $(USER_OBJS) G:\WINDOWS\EVERYTHING\COLLEGE\AUTOMATONS\2026\RYUK\0006_3_WHEEL_OMNI_I2C\STM32F446ZETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "0006_3_WHEEL_OMNI_I2C.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"G:\WINDOWS\EVERYTHING\COLLEGE\AUTOMATONS\2026\RYUK\0006_3_WHEEL_OMNI_I2C\STM32F446ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="0006_3_WHEEL_OMNI_I2C.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
@@ -70,14 +70,14 @@ default.size.stdout: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
 	@echo 'Finished building: $@'
 	@echo ' '
 
-0001_3_WHEEL_OMNI_INIT.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "0001_3_WHEEL_OMNI_INIT.list"
+0006_3_WHEEL_OMNI_I2C.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "0006_3_WHEEL_OMNI_I2C.list"
 	@echo 'Finished building: $@'
 	@echo ' '
 
 # Other Targets
 clean:
-	-$(RM) 0001_3_WHEEL_OMNI_INIT.elf 0001_3_WHEEL_OMNI_INIT.list 0001_3_WHEEL_OMNI_INIT.map default.size.stdout
+	-$(RM) 0006_3_WHEEL_OMNI_I2C.elf 0006_3_WHEEL_OMNI_I2C.list 0006_3_WHEEL_OMNI_I2C.map default.size.stdout
 	-@echo ' '
 
 secondary-outputs: $(SIZE_OUTPUT) $(OBJDUMP_LIST)
