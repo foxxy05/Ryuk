@@ -132,7 +132,23 @@ bool reached    = false;
 bool pidEnabled = true;
 
 // ===================== PID CONTROL =====================
+typedef struct {
+    float kp;
+    float ki;
+    float kd;
 
+    float P;
+    float I;
+    float D;
+
+    float error;
+    float prevError;
+    float dError;
+
+    float vel;        // used by linear PID
+    float correction; // used by angular PID
+
+} PID_t;
 
 typedef struct {
     float kp;
@@ -161,7 +177,8 @@ PID_t LinPID = {
     .error      = 0.0f,
     .prevError  = 0.0f,
     .dError     = 0.0f,
-    .controlSignal = 0.0f
+    .vel        = 0.0f,
+    .correction = 0.0f
 };
 
 PID_t AngPID = {
@@ -174,7 +191,8 @@ PID_t AngPID = {
     .error      = 0.0f,
     .prevError  = 0.0f,
     .dError     = 0.0f,
-    .controlSignal = 0.0f
+    .vel        = 0.0f,
+    .correction = 0.0f
 };
 
 float targetHeading   = 0.0f;
@@ -327,7 +345,7 @@ float constrain(float num, float min, float max) {
     else 							return num;
 }
 
-float NormalizeAngle(float angle) {
+static float NormalizeAngle(float angle) {
     if (angle > 180.0f)  			angle -= 360.0f;
     if (angle < -180.0f) 			angle += 360.0f;
     return angle;
@@ -503,7 +521,7 @@ void AngularPIDCompute(PID_t *pid) {
     pid->I = pid->I + (pid->error * (float)dt2 * pid->ki);
     pid->D = (pid->dError / (float)dt2) * pid->kd;
 
-    pid->controlSignal = pid->P + pid->I + pid->D;
+    pid->correction = pid->P + pid->I + pid->D;
 }
 
 // ===================== ODOMETRY =====================
@@ -606,11 +624,11 @@ void Move(float x1, float y1, float x2, float y2) {
     LinPID.I = LinPID.I + (LinPID.error * dt2 * LinPID.ki);
     LinPID.D = (LinPID.dError / dt2) * LinPID.kd;
 
-    LinPID.controlSignal = -(LinPID.P + LinPID.I + LinPID.D);
+    LinPID.vel = -(LinPID.P + LinPID.I + LinPID.D);
 
-//  float PWM1 = constrain(((LinPID.controlSignal * cos(navAngle) - (length * omega))) / radius, -LINEAR_PWM, LINEAR_PWM);
-//  float PWM2 = constrain(((sqrt(3) * LinPID.controlSignal * sin(navAngle) - LinPID.controlSignal * cos(navAngle) - 2 * length * omega) / (2 * radius)), -LINEAR_PWM, LINEAR_PWM);
-//  float PWM3 = constrain((-1 * ((LinPID.controlSignal * cos(navAngle) + sqrt(3) * LinPID.controlSignal * sin(navAngle) + 2 * length * omega) / (2 * radius))), -LINEAR_PWM, LINEAR_PWM);
+//  float PWM1 = constrain(((LinPID.vel * cos(navAngle) - (length * omega))) / radius, -LINEAR_PWM, LINEAR_PWM);
+//  float PWM2 = constrain(((sqrt(3) * LinPID.vel * sin(navAngle) - LinPID.vel * cos(navAngle) - 2 * length * omega) / (2 * radius)), -LINEAR_PWM, LINEAR_PWM);
+//  float PWM3 = constrain((-1 * ((LinPID.vel * cos(navAngle) + sqrt(3) * LinPID.vel * sin(navAngle) + 2 * length * omega) / (2 * radius))), -LINEAR_PWM, LINEAR_PWM);
 
 //  pwmM1 = constrain(PWM1 + AngPID.controlSignal, -MAX_PWM, MAX_PWM);
 //  pwmM2 = constrain(PWM2 + AngPID.controlSignal, -MAX_PWM, MAX_PWM);
@@ -663,7 +681,7 @@ void NavigateTo(float x1, float y1, float x2, float y2) {
             Move(x1, y2, x2, y2);
             sprintf(msg, "x = %.2f   y = %.2f   pwm1 = %d, pwm2 = %d, pwm3 = %d  angle = %.2f   %.2f %.2f\r\n",
                     Odo.xPosition, Odo.yPosition, pwmM1, pwmM2, pwmM3,
-                    Degrees(navAngle), currentHeading, LinPID.controlSignal);
+                    Degrees(navAngle), currentHeading, LinPID.vel);
             HAL_UART_Transmit(&huart3, (uint8_t *)msg, strlen(msg), HAL_MAX_DELAY);
         }
 
@@ -764,7 +782,7 @@ int main(void)
 	      // ONLY CALL WITHOUT NavigateTo
 	  //  RotateMotors(pwmM1, pwmM2, pwmM3);
 
-	  //  sprintf(msg, "HEADING %.2f  PID %d   p = %.2f  i = %.2f   d = %.2f  controlSignal = %.2f \r\n",
+	  //  sprintf(msg, "HEADING %.2f  PID %d   p = %.2f  i = %.2f   d = %.2f  CORRECTION = %.2f \r\n",
 	  //          currentHeading, pidEnabled, AngPID.P, AngPID.I, AngPID.D, AngPID.controlSignal);
 	  //  HAL_UART_Transmit(&huart3, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
 

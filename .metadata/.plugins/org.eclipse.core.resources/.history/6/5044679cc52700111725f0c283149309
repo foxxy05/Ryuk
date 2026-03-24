@@ -132,7 +132,23 @@ bool reached    = false;
 bool pidEnabled = true;
 
 // ===================== PID CONTROL =====================
+typedef struct {
+    float kp;
+    float ki;
+    float kd;
 
+    float P;
+    float I;
+    float D;
+
+    float error;
+    float prevError;
+    float dError;
+
+    float vel;        // used by linear PID
+    float controlSignal; // used by angular PID
+
+} PID_t;
 
 typedef struct {
     float kp;

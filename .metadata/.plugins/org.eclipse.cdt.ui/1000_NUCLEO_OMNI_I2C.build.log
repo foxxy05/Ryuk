@@ -1,0 +1,28 @@
+02:38:31 **** Incremental Build of configuration Debug for project 1000_NUCLEO_OMNI_I2C ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'OdometryUpdate':
+../Core/Src/main.c:528:12: warning: unused variable 'midTheta' [-Wunused-variable]
+  528 |     double midTheta = odo->prevTheta + (delTheta / 2.0);
+      |            ^~~~~~~~
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:288:14: warning: inline function 'Degrees' declared but never defined
+  288 | inline float Degrees(float angle);
+      |              ^~~~~~~
+../Core/Src/main.c:287:14: warning: inline function 'Radians' declared but never defined
+  287 | inline float Radians(float angle);
+      |              ^~~~~~~
+arm-none-eabi-gcc -o "1000_NUCLEO_OMNI_I2C.elf" @"objects.list"   -mcpu=cortex-m4 -T"G:\WINDOWS\EVERYTHING\COLLEGE\AUTOMATONS\2026\RYUK\1000_NUCLEO_OMNI_I2C\STM32F446ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="1000_NUCLEO_OMNI_I2C.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 1000_NUCLEO_OMNI_I2C.elf
+ 
+arm-none-eabi-size  1000_NUCLEO_OMNI_I2C.elf 
+arm-none-eabi-objdump -h -S 1000_NUCLEO_OMNI_I2C.elf  > "1000_NUCLEO_OMNI_I2C.list"
+   text	   data	    bss	    dec	    hex	filename
+  52916	    548	   3048	  56512	   dcc0	1000_NUCLEO_OMNI_I2C.elf
+Finished building: default.size.stdout
+ 
+Finished building: 1000_NUCLEO_OMNI_I2C.list
+ 
+
+02:38:34 Build Finished. 0 errors, 3 warnings. (took 3s.518ms)
+

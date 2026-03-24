@@ -132,7 +132,23 @@ bool reached    = false;
 bool pidEnabled = true;
 
 // ===================== PID CONTROL =====================
+typedef struct {
+    float kp;
+    float ki;
+    float kd;
 
+    float P;
+    float I;
+    float D;
+
+    float error;
+    float prevError;
+    float dError;
+
+    float vel;        // used by linear PID
+    float controlSignal; // used by angular PID
+
+} PID_t;
 
 typedef struct {
     float kp;
@@ -161,6 +177,7 @@ PID_t LinPID = {
     .error      = 0.0f,
     .prevError  = 0.0f,
     .dError     = 0.0f,
+    .vel        = 0.0f,
     .controlSignal = 0.0f
 };
 
@@ -174,6 +191,7 @@ PID_t AngPID = {
     .error      = 0.0f,
     .prevError  = 0.0f,
     .dError     = 0.0f,
+    .vel        = 0.0f,
     .controlSignal = 0.0f
 };
 
