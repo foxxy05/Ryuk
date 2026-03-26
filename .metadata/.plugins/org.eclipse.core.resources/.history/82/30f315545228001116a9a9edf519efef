@@ -304,11 +304,11 @@ void NavigateTo(float x1, float y1, float x2, float y2);
 /* USER CODE BEGIN 0 */
 
 // ===================== UTILITY =====================
-float Radians(float angle) {
+inline float Radians(float angle) {
     return angle * 2 * PI / 360.0f;
 }
 
-float Degrees(float angle) {
+inline float Degrees(float angle) {
     return angle * 360.0f / (2 * PI);
 }
 

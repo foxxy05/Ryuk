@@ -36,6 +36,10 @@
 /* Private typedef -----------------------------------------------------------*/
 /* USER CODE BEGIN PTD */
 
+BTS m1;
+BTS m2;
+BTS m3;
+
 /* USER CODE END PTD */
 
 /* Private define ------------------------------------------------------------*/
@@ -280,8 +284,8 @@ static void MX_TIM5_Init(void);
 
 /* USER CODE BEGIN PFP */
 
-float Radians(float angle);
-float Degrees(float angle);
+inline float Radians(float angle);
+inline float Degrees(float angle);
 float NormalizeAngle(float angle);
 float constrain(float num, float min, float max);
 long map(long x, long in_min, long in_max, long out_min, long out_max);
@@ -304,11 +308,11 @@ void NavigateTo(float x1, float y1, float x2, float y2);
 /* USER CODE BEGIN 0 */
 
 // ===================== UTILITY =====================
-float Radians(float angle) {
+static inline float Radians(float angle) {
     return angle * 2 * PI / 360.0f;
 }
 
-float Degrees(float angle) {
+static inline float Degrees(float angle) {
     return angle * 360.0f / (2 * PI);
 }
 
@@ -391,6 +395,7 @@ void GetAngle(void) {
 
 // ===================== CONTROLLER INPUT =====================
 void GetControllerValue(void) {
+
     if (HAL_OK == (HAL_I2C_Master_Receive(&hi2c2, SLAVE_ADDR << 1, (uint8_t *)data, DATA_SIZE, HAL_MAX_DELAY))) {
 
         Joystick.LX = map(data[0], 0, 255,  127, -127);
@@ -489,6 +494,7 @@ void RotateMotors(int pwm1, int pwm2, int pwm3) {
 
 // ===================== PID CONTROL =====================
 void AngularPIDCompute(PID_t *pid) {
+
     pid->error  = NormalizeAngle(targetHeading - currentHeading);
     pid->dError = pid->error - pid->prevError;
     pid->prevError = pid->error;
@@ -591,7 +597,6 @@ void Move(float x1, float y1, float x2, float y2) {
     currentDistance = sqrt(pow(Odo.xPosition - x1, 2) + pow(Odo.yPosition - y1, 2));
     //navAngle      = atan2(y2 - y1, x2 - x1) - Radians(targetHeading);
     navAngle        = atan2(y2 - Odo.yPosition, x2 - Odo.xPosition) - Radians(targetHeading);
-    if (dt2 <= 0.0f) 						dt2 = 0.001f;
 
     LinPID.error     = targetDistance - currentDistance;
     LinPID.dError    = LinPID.error - LinPID.prevError;
@@ -615,7 +620,7 @@ void Move(float x1, float y1, float x2, float y2) {
     pwmM2 = constrain(AngPID.controlSignal, -MAX_PWM, MAX_PWM);
     pwmM3 = constrain(AngPID.controlSignal, -MAX_PWM, MAX_PWM);
 
-    if (fabs(LinPID.error) < 5) {
+    if (abs(LinPID.error) < 5) {
         reached = true;
         //RotateMotors(0, 0, 0);
     }
@@ -693,6 +698,23 @@ int main(void)
 
   /* USER CODE BEGIN Init */
 
+  // ===================== IMU CONFIGURATION =====================
+  HAL_TIM_Base_Start_IT(&htim5);
+  BNO055_Init();
+
+  // ===================== MOTOR CONFIGURATION =====================
+  InitBTS(&motorM1, &htim9, TIM_CHANNEL_1, &htim9, TIM_CHANNEL_2, 2, 1000);  // PE5   PE6
+  InitBTS(&motorM2, &htim4, TIM_CHANNEL_1, &htim4, TIM_CHANNEL_2, 1, 1000);  // PD12  PD13
+  InitBTS(&motorM3, &htim4, TIM_CHANNEL_3, &htim4, TIM_CHANNEL_4, 1, 1000);  // PD14  PD15
+
+
+  // ===================== ENCODER CONFIGURATION =====================
+  HAL_TIM_Encoder_Start(&htim1, TIM_CHANNEL_ALL);
+  HAL_TIM_Encoder_Start(&htim2, TIM_CHANNEL_ALL);
+  HAL_TIM_Encoder_Start(&htim3, TIM_CHANNEL_ALL);
+
+  currentHeading = 0;
+
 
   /* USER CODE END Init */
 
@@ -715,25 +737,6 @@ int main(void)
   MX_I2C1_Init();
   MX_TIM5_Init();
   /* USER CODE BEGIN 2 */
-  // ===================== IMU CONFIGURATION =====================
-  HAL_TIM_Base_Start_IT(&htim5);
-  BNO055_Init();
-  HAL_Delay(100);           // let BNO settle briefly
-  GetAngle();               // get first real heading
-  targetHeading = currentHeading;
-//  currentHeading = 0;
-
-  // ===================== MOTOR CONFIGURATION =====================
-  InitBTS(&motorM1, &htim9, TIM_CHANNEL_1, &htim9, TIM_CHANNEL_2, 2, 1000);  // PE5   PE6
-  InitBTS(&motorM2, &htim4, TIM_CHANNEL_1, &htim4, TIM_CHANNEL_2, 1, 1000);  // PD12  PD13
-  InitBTS(&motorM3, &htim4, TIM_CHANNEL_3, &htim4, TIM_CHANNEL_4, 1, 1000);  // PD14  PD15
-
-
-  // ===================== ENCODER CONFIGURATION =====================
-  HAL_TIM_Encoder_Start(&htim1, TIM_CHANNEL_ALL);
-  HAL_TIM_Encoder_Start(&htim2, TIM_CHANNEL_ALL);
-  HAL_TIM_Encoder_Start(&htim3, TIM_CHANNEL_ALL);
-
 
 
   /* USER CODE END 2 */
@@ -748,7 +751,7 @@ int main(void)
 
 	  tStart = HAL_GetTick();
 	  dt2    = (tStart - tEnd) / 1000.0f;
-	  tEnd   = HAL_GetTick();
+	  tEnd   = tStart;
 
 	      if (imuTick) {
 	          GetAngle();

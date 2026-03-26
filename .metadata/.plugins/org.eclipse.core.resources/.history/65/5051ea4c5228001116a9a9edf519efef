@@ -280,8 +280,8 @@ static void MX_TIM5_Init(void);
 
 /* USER CODE BEGIN PFP */
 
-float Radians(float angle);
-float Degrees(float angle);
+inline float Radians(float angle);
+inline float Degrees(float angle);
 float NormalizeAngle(float angle);
 float constrain(float num, float min, float max);
 long map(long x, long in_min, long in_max, long out_min, long out_max);
@@ -304,11 +304,11 @@ void NavigateTo(float x1, float y1, float x2, float y2);
 /* USER CODE BEGIN 0 */
 
 // ===================== UTILITY =====================
-float Radians(float angle) {
+inline float Radians(float angle) {
     return angle * 2 * PI / 360.0f;
 }
 
-float Degrees(float angle) {
+inline float Degrees(float angle) {
     return angle * 360.0f / (2 * PI);
 }
 
