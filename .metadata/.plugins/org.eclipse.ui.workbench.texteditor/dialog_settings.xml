@@ -3,6 +3,11 @@
 	<item key="hasShownOverlayPopupBefore" value="true"/>
 	<item key="replaceBarOpen" value="true"/>
 	<list key="searchhistory">
+		<item value="length"/>
+		<item value="odometry"/>
+		<item value="oddmetry"/>
+		<item value="pwr"/>
+		<item value="abs"/>
 		<item value="I2CInit"/>
 		<item value="odo"/>
 		<item value="encoderInstance_t"/>
@@ -13,7 +18,6 @@
 		<item value="cpr"/>
 		<item value="/* USER CODE BEGIN TIM14_Init 1 */"/>
 		<item value="Fifo"/>
-		<item value="CDC"/>
 	</list>
 	<list key="replacehistory">
 		<item value="Odo"/>

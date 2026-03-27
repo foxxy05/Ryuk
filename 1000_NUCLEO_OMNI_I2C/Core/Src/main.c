@@ -21,7 +21,6 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
 #include<stdio.h>
 #include<stdbool.h>
 #include<stdint.h>
@@ -103,13 +102,13 @@ BTS motorM3;
 int pwmM1, pwmM2, pwmM3;
 
 // ===================== CONSTANTS =====================
-#define PI          3.14159265358979323846
-#define radius      1
-#define length      1
-#define MAX_PWM     120
-#define LINEAR_PWM  50
-#define DEADZONE    20
-#define dt          0.001
+#define PI          		3.14159265358979323846
+#define radius      		1
+#define length      		1
+#define MAX_PWM     		120
+#define LINEAR_PWM  		50
+#define DEADZONE    		20
+#define dt          		0.001
 
 // ===================== KINEMATICS / NAVIGATION STATE =====================
 float botVel;
@@ -182,11 +181,14 @@ unsigned long tEnd   = 0;
 float dt2            = 0.0f;
 
 // ===================== ODOMETRY VARS =====================
-#define CPR          8192
-#define WHEEL_RADIUS (5.4f / 2.0f)
-#define LENGTH1      13.5f
-#define LENGTH2      13.5f
-#define LENGTH3      26.0f        // x axis wheel
+#define CPR          	8192
+#define WHEEL_RADIUS 	(5.4f / 2.0f)
+#define LENGTH1      	13.5f
+#define LENGTH2      	13.5f
+#define LENGTH3      	26.0f        // x axis wheel
+#define X_CALIB 		(650.0f / 625.0f)
+#define Y_CALIB 		(650.0f / 620.0f)
+
 encoder_instance FEnc, LEnc, REnc;
 
 typedef struct {
@@ -232,13 +234,6 @@ Odometry_t Odo = {
     .deltaXGlobal  = 0.0,
     .deltaYGlobal  = 0.0
 };
-
-
-
-
-
-
-
 //===========================================================================================================================================================
 
 /* USER CODE END PD */
@@ -332,13 +327,13 @@ float NormalizeAngle(float angle) {
 // ===================== BNO055 / IMU =====================
 void BNO055_Init(void) {
 
-    uint8_t pwr    = BNO055_PWR_NORMAL;
-    uint8_t opr    = BNO055_MODE_NDOF;
-    uint8_t config = BNO055_MODE_CONFIG;
+    uint8_t POWR   = BNO055_PWR_NORMAL;
+    uint8_t OPR    = BNO055_MODE_NDOF;
+    uint8_t CONFIG = BNO055_MODE_CONFIG;
 
-    HAL_I2C_Mem_Write(&hi2c1, BNO055_ADDR, BNO055_REG_OPR, 1, &config, 1, 100); // setting to config mode
-    HAL_I2C_Mem_Write(&hi2c1, BNO055_ADDR, BNO055_REG_PWR, 1, &pwr,    1, 100); // setting bno055 to normal mode
-    HAL_I2C_Mem_Write(&hi2c1, BNO055_ADDR, BNO055_REG_OPR, 1, &opr,    1, 100); // setting to NDOF mode
+    HAL_I2C_Mem_Write(&hi2c1, BNO055_ADDR, BNO055_REG_OPR, 1, &CONFIG, 1, 100); // setting to config mode
+    HAL_I2C_Mem_Write(&hi2c1, BNO055_ADDR, BNO055_REG_PWR, 1, &POWR,   1, 100); // setting bno055 to normal mode
+    HAL_I2C_Mem_Write(&hi2c1, BNO055_ADDR, BNO055_REG_OPR, 1, &OPR,    1, 100); // setting to NDOF mode
 
     HAL_Delay(700);
 }
@@ -435,39 +430,6 @@ void GetControllerValue(void) {
 
 // ===================== MOTOR CONTROL =====================
 
-//  void motor1(int speed) {
-//      if (speed > 0) {
-//          TIM4->CCR1 = speed;     // PD12
-//          TIM4->CCR2 = 0;         // PD13
-//      }
-//      else {
-//          TIM4->CCR1 = 0;
-//          TIM4->CCR2 = -1 * speed;
-//      }
-//  }
-//
-//  void motor2(int speed) {
-//      if (speed > 0) {
-//          TIM4->CCR3 = speed;     // PD14
-//          TIM4->CCR4 = 0;         // PD15
-//      }
-//      else {
-//          TIM4->CCR3 = 0;
-//          TIM4->CCR4 = -1 * speed;
-//      }
-//  }
-//
-//  void motor3(int speed) {
-//      if (speed > 0) {
-//          TIM9->CCR1 = speed;     // PE5
-//          TIM9->CCR2 = 0;         // PE6
-//      }
-//      else {
-//          TIM9->CCR1 = 0;
-//          TIM9->CCR2 = -1 * speed;
-//      }
-//  }
-
 void RotateMotors(int pwm1, int pwm2, int pwm3) {
 
     RotateMotor(&motorM1, pwm1);
@@ -478,12 +440,7 @@ void RotateMotors(int pwm1, int pwm2, int pwm3) {
 //  RotateMotor(&motorM2, AngPID.controlSignal);
 //  RotateMotor(&motorM3, AngPID.controlSignal);
 
-//  motor1(pwm1);
-//  motor2(pwm2);
-//  motor3(pwm3);
-
 //  sprintf(msg, "%d    %d   %d   %f \r\n", pwm1, pwm2, pwm3, currentHeading);
-//  CDC_Transmit_FS(msg, sizeof(msg));
 
 }
 
@@ -532,9 +489,9 @@ void OdometryUpdate(Odometry_t *odo) {
     odo->dR = RCount - odo->prevRCount;
 
     // TRANSLATION
-    odo->deltaX = (odo->dF / CPR) * 2 * PI * WHEEL_RADIUS * 650.0 / 625.0;
+    odo->deltaX = (odo->dF / CPR) * 2 * PI * WHEEL_RADIUS * X_CALIB;
     //odo->deltaY = (((odo->dL + odo->dR) / 2.0) / CPR) * 2 * PI * WHEEL_RADIUS;
-    odo->deltaY = (odo->dL / CPR) * 2 * PI * WHEEL_RADIUS * 650.0 / 620.0;
+    odo->deltaY = (odo->dL / CPR) * 2 * PI * WHEEL_RADIUS * Y_CALIB;
 
     //odo->deltaX -= delTheta * LENGTH3;
     //odo->deltaY -= delTheta * LENGTH1;
@@ -631,11 +588,8 @@ void Move(float x1, float y1, float x2, float y2) {
 }
 
 void NavigateTo(float x1, float y1, float x2, float y2) {
-
     AngularPIDCompute(&AngPID);
-
     if (!vertical) {
-
         if (!reached) {
             Move(x1, y1, x1, y2);
             sprintf(msg, "x = %.2f   y = %.2f  pwm1 = %d, pwm2 = %d, pwm3 = %d, angle = %.2f  %.2f %.2f\r\n",
@@ -681,9 +635,7 @@ void NavigateTo(float x1, float y1, float x2, float y2) {
   */
 int main(void)
 {
-
   /* USER CODE BEGIN 1 */
-
   /* USER CODE END 1 */
 
   /* MCU Configuration--------------------------------------------------------*/
@@ -692,15 +644,12 @@ int main(void)
   HAL_Init();
 
   /* USER CODE BEGIN Init */
-
-
   /* USER CODE END Init */
 
   /* Configure the system clock */
   SystemClock_Config();
 
   /* USER CODE BEGIN SysInit */
-
   /* USER CODE END SysInit */
 
   /* Initialize all configured peripherals */
@@ -735,7 +684,6 @@ int main(void)
   HAL_TIM_Encoder_Start(&htim3, TIM_CHANNEL_ALL);
 
 
-
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -745,7 +693,6 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-
 	  tStart = HAL_GetTick();
 	  dt2    = (tStart - tEnd) / 1000.0f;
 	  tEnd   = HAL_GetTick();
@@ -940,9 +887,7 @@ static void MX_TIM1_Init(void)
     Error_Handler();
   }
   /* USER CODE BEGIN TIM1_Init 2 */
-
   /* USER CODE END TIM1_Init 2 */
-
 }
 
 /**
@@ -952,9 +897,7 @@ static void MX_TIM1_Init(void)
   */
 static void MX_TIM2_Init(void)
 {
-
   /* USER CODE BEGIN TIM2_Init 0 */
-
   /* USER CODE END TIM2_Init 0 */
 
   TIM_Encoder_InitTypeDef sConfig = {0};
@@ -989,9 +932,7 @@ static void MX_TIM2_Init(void)
     Error_Handler();
   }
   /* USER CODE BEGIN TIM2_Init 2 */
-
   /* USER CODE END TIM2_Init 2 */
-
 }
 
 /**
@@ -1001,9 +942,7 @@ static void MX_TIM2_Init(void)
   */
 static void MX_TIM3_Init(void)
 {
-
   /* USER CODE BEGIN TIM3_Init 0 */
-
   /* USER CODE END TIM3_Init 0 */
 
   TIM_Encoder_InitTypeDef sConfig = {0};

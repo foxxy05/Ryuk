@@ -1,4 +1,6 @@
 eclipse.preferences.version=1
+formatter_profile=org.eclipse.cdt.ui.default.kandr_profile
+formatter_settings_version=1
 spelling_locale_initialized=true
 spelling_user_dictionary_encoding=
 useAnnotationsPrefPage=true
