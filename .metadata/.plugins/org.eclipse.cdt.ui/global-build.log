@@ -491,3 +491,752 @@ Finished building: default.size.stdout
  
 Finished building: 1000_NUCLEO_OMNI_I2C.list
  
+22:02:06 **** Build of configuration Debug for project 1001_NUCLEO_OMNI_P2P ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/BTS7960.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/BTS7960.d" -MT"Core/Src/BTS7960.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/BTS7960.o"
+arm-none-eabi-gcc "../Core/Src/Encoderlib.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/Encoderlib.d" -MT"Core/Src/Encoderlib.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Encoderlib.o"
+arm-none-eabi-gcc "../Core/Src/SPIT.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/SPIT.d" -MT"Core/Src/SPIT.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/SPIT.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+In file included from ../Core/Src/SPIT.c:1:
+../Core/Inc/spit.h:46:33: warning: backslash and newline separated by space
+   46 |     double: spitFloatDefault    \
+      |                                  
+In file included from ../Core/Src/main.c:32:
+../Core/Inc/SPIT.h:46:33: warning: backslash and newline separated by space
+   46 |     double: spitFloatDefault    \
+      |                                  
+../Core/Src/main.c: In function 'GetControllerValue':
+../Core/Src/main.c:427:25: error: 'oystick' undeclared (first use in this function); did you mean 'Joystick'?
+  427 |                         oystick.LX, Joystick.LY, Joystick.RX, Joystick.RY, data[4], data[5], data[6], omega);
+      |                         ^~~~~~~
+      |                         Joystick
+../Core/Src/main.c:427:25: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c: In function 'OdometryUpdate':
+../Core/Src/main.c:483:12: warning: unused variable 'midTheta' [-Wunused-variable]
+  483 |     double midTheta = Odo->prevTheta + (delTheta / 2.0);
+      |            ^~~~~~~~
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:697:3: warning: implicit declaration of function 'spitfDefault'; did you mean 'spitDefault'? [-Wimplicit-function-declaration]
+  697 |   spitfDefault(&huart3);
+      |   ^~~~~~~~~~~~
+      |   spitDefault
+../Core/Src/main.c:719:15: warning: implicit declaration of function 'rotate_motor'; did you mean 'RotateMotor'? [-Wimplicit-function-declaration]
+  719 |               rotate_motor(constrain(CORRECTION + PWM1, -MAX_PWM, MAX_PWM),
+      |               ^~~~~~~~~~~~
+      |               RotateMotor
+../Core/Src/main.c:719:38: error: 'CORRECTION' undeclared (first use in this function)
+  719 |               rotate_motor(constrain(CORRECTION + PWM1, -MAX_PWM, MAX_PWM),
+      |                                      ^~~~~~~~~~
+../Core/Src/main.c:719:51: error: 'PWM1' undeclared (first use in this function)
+  719 |               rotate_motor(constrain(CORRECTION + PWM1, -MAX_PWM, MAX_PWM),
+      |                                                   ^~~~
+../Core/Src/main.c:720:47: error: 'PWM2' undeclared (first use in this function)
+  720 |                        constrain(CORRECTION + PWM2, -MAX_PWM, MAX_PWM),
+      |                                               ^~~~
+../Core/Src/main.c:721:67: error: 'PWM3' undeclared (first use in this function)
+  721 |                                            constrain(CORRECTION + PWM3, -MAX_PWM, MAX_PWM));
+      |                                                                   ^~~~
+../Core/Src/main.c:728:15: error: 'pwm1' undeclared (first use in this function); did you mean 'pwmM1'?
+  728 |               pwm1,   pwm2,   pwm3,   current_heading, xPosition, yPosition, i_y);
+      |               ^~~~
+      |               pwmM1
+../Core/Src/main.c:728:23: error: 'pwm2' undeclared (first use in this function); did you mean 'pwmM2'?
+  728 |               pwm1,   pwm2,   pwm3,   current_heading, xPosition, yPosition, i_y);
+      |                       ^~~~
+      |                       pwmM2
+../Core/Src/main.c:728:31: error: 'pwm3' undeclared (first use in this function); did you mean 'pwmM3'?
+  728 |               pwm1,   pwm2,   pwm3,   current_heading, xPosition, yPosition, i_y);
+      |                               ^~~~
+      |                               pwmM3
+../Core/Src/main.c:728:39: error: 'current_heading' undeclared (first use in this function); did you mean 'currentHeading'?
+  728 |               pwm1,   pwm2,   pwm3,   current_heading, xPosition, yPosition, i_y);
+      |                                       ^~~~~~~~~~~~~~~
+      |                                       currentHeading
+../Core/Src/main.c:728:56: error: 'xPosition' undeclared (first use in this function)
+  728 |               pwm1,   pwm2,   pwm3,   current_heading, xPosition, yPosition, i_y);
+      |                                                        ^~~~~~~~~
+../Core/Src/main.c:728:67: error: 'yPosition' undeclared (first use in this function)
+  728 |               pwm1,   pwm2,   pwm3,   current_heading, xPosition, yPosition, i_y);
+      |                                                                   ^~~~~~~~~
+../Core/Src/main.c:728:78: error: 'i_y' undeclared (first use in this function)
+  728 |               pwm1,   pwm2,   pwm3,   current_heading, xPosition, yPosition, i_y);
+      |                                                                              ^~~
+make: *** [Core/Src/subdir.mk:43: Core/Src/main.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+16:15:01 **** Incremental Build of configuration Debug for project 1001_NUCLEO_OMNI_P2P ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/stm32f4xx_hal_msp.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f4xx_hal_msp.d" -MT"Core/Src/stm32f4xx_hal_msp.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f4xx_hal_msp.o"
+arm-none-eabi-gcc "../Core/Src/stm32f4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f4xx_it.d" -MT"Core/Src/stm32f4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f4xx_it.o"
+arm-none-eabi-gcc "../Core/Src/syscalls.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/syscalls.d" -MT"Core/Src/syscalls.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/syscalls.o"
+In file included from ../Core/Src/main.c:32:
+../Core/Inc/SPIT.h:46:33: warning: backslash and newline separated by space
+   46 |     double: spitFloatDefault    \
+      |                                  
+../Core/Src/main.c: In function 'BNO055_Init':
+../Core/Src/main.c:342:44: error: 'OPR_MODE' undeclared (first use in this function); did you mean 'GPIO_MODE'?
+  342 |     HAL_I2C_Mem_Write(&hi2c1, BNO055_ADDR, OPR_MODE, 1, &config, 1, 100); // setting to config mode
+      |                                            ^~~~~~~~
+      |                                            GPIO_MODE
+../Core/Src/main.c:342:44: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c:343:44: error: 'PWR_MODE' undeclared (first use in this function)
+  343 |     HAL_I2C_Mem_Write(&hi2c1, BNO055_ADDR, PWR_MODE, 1, &pwr,    1, 100); // setting bno055 to normal mode
+      |                                            ^~~~~~~~
+../Core/Src/main.c: In function 'GetAngle':
+../Core/Src/main.c:375:47: error: 'EUL_DATA_START' undeclared (first use in this function)
+  375 |     if (HAL_I2C_Mem_Read(&hi2c1, BNO055_ADDR, EUL_DATA_START, 1, bno_data, 6, 100) == HAL_OK)
+      |                                               ^~~~~~~~~~~~~~
+../Core/Src/main.c:378:9: error: 'current_heading' undeclared (first use in this function); did you mean 'currentHeading'?
+  378 |         current_heading     = -(NormaliseAngle(heading_raw / 16.0f));
+      |         ^~~~~~~~~~~~~~~
+      |         currentHeading
+../Core/Src/main.c: In function 'GetValue':
+../Core/Src/main.c:401:50: error: 'slave_addr' undeclared (first use in this function)
+  401 |     if (HAL_OK == HAL_I2C_Master_Receive(&hi2c2, slave_addr << 1, (uint8_t*)data, data_size, HAL_MAX_DELAY))
+      |                                                  ^~~~~~~~~~
+../Core/Src/main.c:401:83: error: 'data_size' undeclared (first use in this function)
+  401 |     if (HAL_OK == HAL_I2C_Master_Receive(&hi2c2, slave_addr << 1, (uint8_t*)data, data_size, HAL_MAX_DELAY))
+      |                                                                                   ^~~~~~~~~
+../Core/Src/main.c:403:9: error: 'L_joystick_x' undeclared (first use in this function); did you mean 'Joystick'?
+  403 |         L_joystick_x = map(data[0], 0, 255,  127, -127);
+      |         ^~~~~~~~~~~~
+      |         Joystick
+../Core/Src/main.c:404:9: error: 'L_joystick_y' undeclared (first use in this function); did you mean 'Joystick'?
+  404 |         L_joystick_y = map(data[1], 0, 255,  127, -127);
+      |         ^~~~~~~~~~~~
+      |         Joystick
+../Core/Src/main.c:408:9: error: 'right' undeclared (first use in this function)
+  408 |         right    = ((data[2] & (1 << 0)) ? 1 : 0);
+      |         ^~~~~
+../Core/Src/main.c:409:9: error: 'down' undeclared (first use in this function)
+  409 |         down     = ((data[2] & (1 << 1)) ? 1 : 0);
+      |         ^~~~
+../Core/Src/main.c:410:9: error: 'up' undeclared (first use in this function)
+  410 |         up       = ((data[2] & (1 << 2)) ? 1 : 0);
+      |         ^~
+../Core/Src/main.c:411:9: error: 'left' undeclared (first use in this function)
+  411 |         left     = ((data[2] & (1 << 3)) ? 1 : 0);
+      |         ^~~~
+../Core/Src/main.c:412:9: error: 'square' undeclared (first use in this function)
+  412 |         square   = ((data[2] & (1 << 4)) ? 1 : 0);
+      |         ^~~~~~
+../Core/Src/main.c:413:9: error: 'cross' undeclared (first use in this function)
+  413 |         cross    = ((data[2] & (1 << 5)) ? 1 : 0);
+      |         ^~~~~
+../Core/Src/main.c:414:9: error: 'circle' undeclared (first use in this function)
+  414 |         circle   = ((data[2] & (1 << 6)) ? 1 : 0);
+      |         ^~~~~~
+../Core/Src/main.c:415:9: error: 'triangle' undeclared (first use in this function)
+  415 |         triangle = ((data[2] & (1 << 7)) ? 1 : 0);
+      |         ^~~~~~~~
+../Core/Src/main.c: In function 'RotateMotors':
+../Core/Src/main.c:474:18: error: 'm1' undeclared (first use in this function); did you mean 'p1'?
+  474 |     RotateMotor(&m1, p1);
+      |                  ^~
+      |                  p1
+../Core/Src/main.c:475:18: error: 'm2' undeclared (first use in this function); did you mean 'p2'?
+  475 |     RotateMotor(&m2, p2);
+      |                  ^~
+      |                  p2
+../Core/Src/main.c:476:18: error: 'm3' undeclared (first use in this function); did you mean 'p3'?
+  476 |     RotateMotor(&m3, p3);
+      |                  ^~
+      |                  p3
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:491:6: error: conflicting types for 'AngularPIDCompute'; have 'void(void)'
+  491 | void AngularPIDCompute(void)
+      |      ^~~~~~~~~~~~~~~~~
+../Core/Src/main.c:297:6: note: previous declaration of 'AngularPIDCompute' with type 'void(PID_t *)'
+  297 | void AngularPIDCompute(PID_t *pid);
+      |      ^~~~~~~~~~~~~~~~~
+../Core/Src/main.c: In function 'AngularPIDCompute':
+../Core/Src/main.c:493:5: error: 'ERR' undeclared (first use in this function)
+  493 |     ERR     = NormaliseAngle(target_heading - current_heading);
+      |     ^~~
+../Core/Src/main.c:493:30: error: 'target_heading' undeclared (first use in this function); did you mean 'targetHeading'?
+  493 |     ERR     = NormaliseAngle(target_heading - current_heading);
+      |                              ^~~~~~~~~~~~~~
+      |                              targetHeading
+../Core/Src/main.c:493:47: error: 'current_heading' undeclared (first use in this function); did you mean 'currentHeading'?
+  493 |     ERR     = NormaliseAngle(target_heading - current_heading);
+      |                                               ^~~~~~~~~~~~~~~
+      |                                               currentHeading
+../Core/Src/main.c:494:5: error: 'D_error' undeclared (first use in this function); did you mean 'perror'?
+  494 |     D_error = ERR - ERR2;
+      |     ^~~~~~~
+      |     perror
+../Core/Src/main.c:494:21: error: 'ERR2' undeclared (first use in this function); did you mean 'R2'?
+  494 |     D_error = ERR - ERR2;
+      |                     ^~~~
+      |                     R2
+../Core/Src/main.c:497:5: error: 'angPID' undeclared (first use in this function); did you mean 'AngPID'?
+  497 |     angPID.p = ERR * angPID.kp;
+      |     ^~~~~~
+      |     AngPID
+arm-none-eabi-gcc "../Core/Src/sysmem.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/sysmem.d" -MT"Core/Src/sysmem.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/sysmem.o"
+../Core/Src/main.c:501:5: error: 'CORRECTION' undeclared (first use in this function)
+  501 |     CORRECTION = angPID.p + angPID.i + angPID.d;
+      |     ^~~~~~~~~~
+../Core/Src/main.c: In function 'UpdateOdometry':
+../Core/Src/main.c:512:21: error: 'L_enc' undeclared (first use in this function)
+  512 |     update_encoder(&L_enc, &htim1);
+      |                     ^~~~~
+../Core/Src/main.c:513:21: error: 'R_enc' undeclared (first use in this function)
+  513 |     update_encoder(&R_enc, &htim2);
+      |                     ^~~~~
+../Core/Src/main.c:514:21: error: 'F_enc' undeclared (first use in this function)
+  514 |     update_encoder(&F_enc, &htim3);
+      |                     ^~~~~
+../Core/Src/main.c:516:32: error: 'current_heading' undeclared (first use in this function); did you mean 'currentHeading'?
+  516 |     double trueTheta = radians(current_heading);
+      |                                ^~~~~~~~~~~~~~~
+      |                                currentHeading
+../Core/Src/main.c:519:35: error: 'prevTheta' undeclared (first use in this function); did you mean 'delTheta'?
+  519 |     double delTheta = trueTheta - prevTheta;
+      |                                   ^~~~~~~~~
+      |                                   delTheta
+../Core/Src/main.c:527:5: error: 'FCount' undeclared (first use in this function)
+  527 |     FCount = F_enc.position;
+      |     ^~~~~~
+../Core/Src/main.c:528:5: error: 'LCount' undeclared (first use in this function)
+  528 |     LCount = L_enc.position;
+      |     ^~~~~~
+../Core/Src/main.c:530:5: error: 'RCount' undeclared (first use in this function)
+  530 |     RCount = 0;
+      |     ^~~~~~
+../Core/Src/main.c:532:5: error: 'dF' undeclared (first use in this function); did you mean 'dt'?
+  532 |     dF = FCount - prevFCount;
+      |     ^~
+      |     dt
+arm-none-eabi-gcc "../Core/Src/system_stm32f4xx.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/system_stm32f4xx.d" -MT"Core/Src/system_stm32f4xx.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/system_stm32f4xx.o"
+../Core/Src/main.c:532:19: error: 'prevFCount' undeclared (first use in this function)
+  532 |     dF = FCount - prevFCount;
+      |                   ^~~~~~~~~~
+../Core/Src/main.c:533:5: error: 'dL' undeclared (first use in this function); did you mean 'dt'?
+  533 |     dL = LCount - prevLCount;
+      |     ^~
+      |     dt
+../Core/Src/main.c:533:19: error: 'prevLCount' undeclared (first use in this function)
+  533 |     dL = LCount - prevLCount;
+      |                   ^~~~~~~~~~
+../Core/Src/main.c:534:5: error: 'dR' undeclared (first use in this function); did you mean 'dt'?
+  534 |     dR = RCount - prevRCount;
+      |     ^~
+      |     dt
+../Core/Src/main.c:534:19: error: 'prevRCount' undeclared (first use in this function)
+  534 |     dR = RCount - prevRCount;
+      |                   ^~~~~~~~~~
+../Core/Src/main.c:537:5: error: 'deltaX' undeclared (first use in this function)
+  537 |     deltaX = (dF / CPR) * 2 * PI * WHEEL_RADIUS * 650.0 / 625.0;
+      |     ^~~~~~
+../Core/Src/main.c:539:5: error: 'deltaY' undeclared (first use in this function)
+  539 |     deltaY = (dL / CPR) * 2 * PI * WHEEL_RADIUS * 650.0 / 620.0;
+      |     ^~~~~~
+../Core/Src/main.c:551:5: error: 'xPosition' undeclared (first use in this function)
+  551 |     xPosition += deltaX;
+      |     ^~~~~~~~~
+../Core/Src/main.c:552:5: error: 'yPosition' undeclared (first use in this function)
+  552 |     yPosition -= deltaY;
+      |     ^~~~~~~~~
+../Core/Src/main.c:524:12: warning: unused variable 'midTheta' [-Wunused-variable]
+  524 |     double midTheta = prevTheta + (delTheta / 2.0);
+      |            ^~~~~~~~
+../Core/Src/main.c: In function 'Move':
+../Core/Src/main.c:574:5: error: 'target_distance_y' undeclared (first use in this function); did you mean 'targetDistance'?
+  574 |     target_distance_y  = y2 - y1;
+      |     ^~~~~~~~~~~~~~~~~
+      |     targetDistance
+../Core/Src/main.c:575:5: error: 'target_distance_x' undeclared (first use in this function); did you mean 'targetDistance'?
+  575 |     target_distance_x  = x2 - x1;
+      |     ^~~~~~~~~~~~~~~~~
+      |     targetDistance
+../Core/Src/main.c:577:5: error: 'current_distance_y' undeclared (first use in this function); did you mean 'currentDistance'?
+  577 |     current_distance_y = yPosition - y1;
+      |     ^~~~~~~~~~~~~~~~~~
+      |     currentDistance
+../Core/Src/main.c:577:26: error: 'yPosition' undeclared (first use in this function)
+  577 |     current_distance_y = yPosition - y1;
+      |                          ^~~~~~~~~
+../Core/Src/main.c:578:5: error: 'current_distance_x' undeclared (first use in this function); did you mean 'currentDistance'?
+  578 |     current_distance_x = xPosition - x1;
+      |     ^~~~~~~~~~~~~~~~~~
+      |     currentDistance
+../Core/Src/main.c:578:26: error: 'xPosition' undeclared (first use in this function)
+  578 |     current_distance_x = xPosition - x1;
+      |                          ^~~~~~~~~
+../Core/Src/main.c:582:5: error: 'error_y' undeclared (first use in this function); did you mean '_perror_r'?
+  582 |     error_y   = target_distance_y - current_distance_y;
+      |     ^~~~~~~
+      |     _perror_r
+../Core/Src/main.c:583:5: error: 'error_x' undeclared (first use in this function); did you mean '_perror_r'?
+  583 |     error_x   = target_distance_x - current_distance_x;
+      |     ^~~~~~~
+      |     _perror_r
+../Core/Src/main.c:585:5: error: 'd_error_y' undeclared (first use in this function); did you mean '_perror_r'?
+  585 |     d_error_y = error_y - error2_y;
+      |     ^~~~~~~~~
+      |     _perror_r
+../Core/Src/main.c:585:27: error: 'error2_y' undeclared (first use in this function)
+  585 |     d_error_y = error_y - error2_y;
+      |                           ^~~~~~~~
+../Core/Src/main.c:586:5: error: 'd_error_x' undeclared (first use in this function); did you mean '_perror_r'?
+  586 |     d_error_x = error_x - error2_x;
+      |     ^~~~~~~~~
+      |     _perror_r
+../Core/Src/main.c:586:27: error: 'error2_x' undeclared (first use in this function)
+  586 |     d_error_x = error_x - error2_x;
+      |                           ^~~~~~~~
+../Core/Src/main.c:595:9: error: 'PID_t' has no member named 'p'
+  595 |     yPID.p = error_y * yPID.kp;
+      |         ^
+../Core/Src/main.c:596:9: error: 'PID_t' has no member named 'p'
+  596 |     xPID.p = error_x * xPID.kp;
+      |         ^
+../Core/Src/main.c:597:9: error: 'PID_t' has no member named 'i'
+  597 |     yPID.i = yPID.i + (error_y * dt2 * yPID.ki);
+      |         ^
+../Core/Src/main.c:597:18: error: 'PID_t' has no member named 'i'
+  597 |     yPID.i = yPID.i + (error_y * dt2 * yPID.ki);
+      |                  ^
+../Core/Src/main.c:598:9: error: 'PID_t' has no member named 'i'
+  598 |     xPID.i = xPID.i + (error_x * dt2 * xPID.ki);
+      |         ^
+../Core/Src/main.c:598:18: error: 'PID_t' has no member named 'i'
+  598 |     xPID.i = xPID.i + (error_x * dt2 * xPID.ki);
+      |                  ^
+../Core/Src/main.c:599:9: error: 'PID_t' has no member named 'd'
+  599 |     yPID.d = (d_error_y / dt2) * yPID.kd;
+      |         ^
+../Core/Src/main.c:600:9: error: 'PID_t' has no member named 'd'
+  600 |     xPID.d = (d_error_x / dt2) * xPID.kd;
+      |         ^
+../Core/Src/main.c:602:5: error: 'vel_y' undeclared (first use in this function)
+  602 |     vel_y = -(yPID.p + yPID.i + yPID.d);
+      |     ^~~~~
+../Core/Src/main.c:602:19: error: 'PID_t' has no member named 'p'
+  602 |     vel_y = -(yPID.p + yPID.i + yPID.d);
+      |                   ^
+../Core/Src/main.c:602:28: error: 'PID_t' has no member named 'i'
+  602 |     vel_y = -(yPID.p + yPID.i + yPID.d);
+      |                            ^
+../Core/Src/main.c:602:37: error: 'PID_t' has no member named 'd'
+  602 |     vel_y = -(yPID.p + yPID.i + yPID.d);
+      |                                     ^
+../Core/Src/main.c:603:5: error: 'vel_x' undeclared (first use in this function)
+  603 |     vel_x = -(xPID.p + xPID.i + xPID.d);
+      |     ^~~~~
+../Core/Src/main.c:603:19: error: 'PID_t' has no member named 'p'
+  603 |     vel_x = -(xPID.p + xPID.i + xPID.d);
+      |                   ^
+../Core/Src/main.c:603:28: error: 'PID_t' has no member named 'i'
+  603 |     vel_x = -(xPID.p + xPID.i + xPID.d);
+      |                            ^
+../Core/Src/main.c:603:37: error: 'PID_t' has no member named 'd'
+  603 |     vel_x = -(xPID.p + xPID.i + xPID.d);
+      |                                     ^
+../Core/Src/main.c:605:5: error: 'angle' undeclared (first use in this function); did you mean 'navAngle'?
+  605 |     angle = atan2(vel_y, vel_x) - radians(target_heading);
+      |     ^~~~~
+      |     navAngle
+../Core/Src/main.c:605:43: error: 'target_heading' undeclared (first use in this function); did you mean 'targetHeading'?
+  605 |     angle = atan2(vel_y, vel_x) - radians(target_heading);
+      |                                           ^~~~~~~~~~~~~~
+      |                                           targetHeading
+../Core/Src/main.c:606:5: error: 'vel' undeclared (first use in this function)
+  606 |     vel   = sqrtf(powf(vel_y, 2) + powf(vel_x, 2));
+      |     ^~~
+../Core/Src/main.c:608:5: error: 'PWM1' undeclared (first use in this function)
+  608 |     PWM1 = constrain(((vel * cos(angle) - (length * omega))) / radius,                                       -LINEAR_PWM, LINEAR_PWM);
+      |     ^~~~
+../Core/Src/main.c:609:5: error: 'PWM2' undeclared (first use in this function)
+  609 |     PWM2 = constrain(((sqrt(3) * vel * sin(angle) - vel * cos(angle) - 2 * length * omega) / (2 * radius)), -LINEAR_PWM, LINEAR_PWM);
+      |     ^~~~
+../Core/Src/main.c:610:5: error: 'PWM3' undeclared (first use in this function)
+  610 |     PWM3 = constrain((-1 * ((vel * cos(angle) + sqrt(3) * vel * sin(angle) + 2 * length * omega) / (2 * radius))), -LINEAR_PWM, LINEAR_PWM);
+      |     ^~~~
+../Core/Src/main.c:612:5: error: 'pwm1' undeclared (first use in this function); did you mean 'pwmM1'?
+  612 |     pwm1 = (int)constrain(PWM1 + CORRECTION, -MAX_PWM, MAX_PWM);
+      |     ^~~~
+      |     pwmM1
+../Core/Src/main.c:612:34: error: 'CORRECTION' undeclared (first use in this function)
+  612 |     pwm1 = (int)constrain(PWM1 + CORRECTION, -MAX_PWM, MAX_PWM);
+      |                                  ^~~~~~~~~~
+../Core/Src/main.c:613:5: error: 'pwm2' undeclared (first use in this function); did you mean 'pwmM2'?
+  613 |     pwm2 = (int)constrain(PWM2 + CORRECTION, -MAX_PWM, MAX_PWM);
+      |     ^~~~
+      |     pwmM2
+../Core/Src/main.c:614:5: error: 'pwm3' undeclared (first use in this function); did you mean 'pwmM3'?
+  614 |     pwm3 = (int)constrain(PWM3 + CORRECTION, -MAX_PWM, MAX_PWM);
+      |     ^~~~
+      |     pwmM3
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:753:3: warning: implicit declaration of function 'spitfDefault'; did you mean 'spitDefault'? [-Wimplicit-function-declaration]
+  753 |   spitfDefault(&huart3);
+      |   ^~~~~~~~~~~~
+      |   spitDefault
+../Core/Src/main.c:775:38: error: 'CORRECTION' undeclared (first use in this function)
+  775 |               RotateMotors(constrain(CORRECTION + PWM1, -MAX_PWM, MAX_PWM),
+      |                                      ^~~~~~~~~~
+../Core/Src/main.c:775:51: error: 'PWM1' undeclared (first use in this function)
+  775 |               RotateMotors(constrain(CORRECTION + PWM1, -MAX_PWM, MAX_PWM),
+      |                                                   ^~~~
+../Core/Src/main.c:776:47: error: 'PWM2' undeclared (first use in this function)
+  776 |                        constrain(CORRECTION + PWM2, -MAX_PWM, MAX_PWM),
+      |                                               ^~~~
+../Core/Src/main.c:777:67: error: 'PWM3' undeclared (first use in this function)
+  777 |                                            constrain(CORRECTION + PWM3, -MAX_PWM, MAX_PWM));
+      |                                                                   ^~~~
+../Core/Src/main.c:784:15: error: 'pwm1' undeclared (first use in this function); did you mean 'pwmM1'?
+  784 |               pwm1,   pwm2,   pwm3,   current_heading, xPosition, yPosition, i_y);
+      |               ^~~~
+      |               pwmM1
+../Core/Src/main.c:784:23: error: 'pwm2' undeclared (first use in this function); did you mean 'pwmM2'?
+  784 |               pwm1,   pwm2,   pwm3,   current_heading, xPosition, yPosition, i_y);
+      |                       ^~~~
+      |                       pwmM2
+../Core/Src/main.c:784:31: error: 'pwm3' undeclared (first use in this function); did you mean 'pwmM3'?
+  784 |               pwm1,   pwm2,   pwm3,   current_heading, xPosition, yPosition, i_y);
+      |                               ^~~~
+      |                               pwmM3
+../Core/Src/main.c:784:39: error: 'current_heading' undeclared (first use in this function); did you mean 'currentHeading'?
+  784 |               pwm1,   pwm2,   pwm3,   current_heading, xPosition, yPosition, i_y);
+      |                                       ^~~~~~~~~~~~~~~
+      |                                       currentHeading
+../Core/Src/main.c:784:56: error: 'xPosition' undeclared (first use in this function)
+  784 |               pwm1,   pwm2,   pwm3,   current_heading, xPosition, yPosition, i_y);
+      |                                                        ^~~~~~~~~
+../Core/Src/main.c:784:67: error: 'yPosition' undeclared (first use in this function)
+  784 |               pwm1,   pwm2,   pwm3,   current_heading, xPosition, yPosition, i_y);
+      |                                                                   ^~~~~~~~~
+../Core/Src/main.c:784:78: error: 'i_y' undeclared (first use in this function)
+  784 |               pwm1,   pwm2,   pwm3,   current_heading, xPosition, yPosition, i_y);
+      |                                                                              ^~~
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:287:14: warning: inline function 'NormalizeAngle' declared but never defined
+  287 | inline float NormalizeAngle(float angle);
+      |              ^~~~~~~~~~~~~~
+../Core/Src/main.c:286:14: warning: inline function 'Degrees' declared but never defined
+  286 | inline float Degrees(float angle);
+      |              ^~~~~~~
+../Core/Src/main.c:285:14: warning: inline function 'Radians' declared but never defined
+  285 | inline float Radians(float angle);
+      |              ^~~~~~~
+make: *** [Core/Src/subdir.mk:43: Core/Src/main.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+16:15:21 **** Incremental Build of configuration Debug for project 1001_NUCLEO_OMNI_P2P ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+In file included from ../Core/Src/main.c:32:
+../Core/Inc/SPIT.h:46:33: warning: backslash and newline separated by space
+   46 |     double: spitFloatDefault    \
+      |                                  
+../Core/Src/main.c: In function 'OdometryUpdate':
+../Core/Src/main.c:483:12: warning: unused variable 'midTheta' [-Wunused-variable]
+  483 |     double midTheta = Odo->prevTheta + (delTheta / 2.0);
+      |            ^~~~~~~~
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:697:3: warning: implicit declaration of function 'spitfDefault'; did you mean 'spitDefault'? [-Wimplicit-function-declaration]
+  697 |   spitfDefault(&huart3);
+      |   ^~~~~~~~~~~~
+      |   spitDefault
+../Core/Src/main.c:719:38: error: 'CORRECTION' undeclared (first use in this function)
+  719 |               RotateMotors(constrain(CORRECTION + PWM1, -MAX_PWM, MAX_PWM),
+      |                                      ^~~~~~~~~~
+../Core/Src/main.c:719:38: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c:719:51: error: 'PWM1' undeclared (first use in this function)
+  719 |               RotateMotors(constrain(CORRECTION + PWM1, -MAX_PWM, MAX_PWM),
+      |                                                   ^~~~
+../Core/Src/main.c:720:47: error: 'PWM2' undeclared (first use in this function)
+  720 |                        constrain(CORRECTION + PWM2, -MAX_PWM, MAX_PWM),
+      |                                               ^~~~
+../Core/Src/main.c:721:67: error: 'PWM3' undeclared (first use in this function)
+  721 |                                            constrain(CORRECTION + PWM3, -MAX_PWM, MAX_PWM));
+      |                                                                   ^~~~
+../Core/Src/main.c:728:15: error: 'pwm1' undeclared (first use in this function); did you mean 'pwmM1'?
+  728 |               pwm1,   pwm2,   pwm3,   current_heading, xPosition, yPosition, i_y);
+      |               ^~~~
+      |               pwmM1
+../Core/Src/main.c:728:23: error: 'pwm2' undeclared (first use in this function); did you mean 'pwmM2'?
+  728 |               pwm1,   pwm2,   pwm3,   current_heading, xPosition, yPosition, i_y);
+      |                       ^~~~
+      |                       pwmM2
+../Core/Src/main.c:728:31: error: 'pwm3' undeclared (first use in this function); did you mean 'pwmM3'?
+  728 |               pwm1,   pwm2,   pwm3,   current_heading, xPosition, yPosition, i_y);
+      |                               ^~~~
+      |                               pwmM3
+../Core/Src/main.c:728:39: error: 'current_heading' undeclared (first use in this function); did you mean 'currentHeading'?
+  728 |               pwm1,   pwm2,   pwm3,   current_heading, xPosition, yPosition, i_y);
+      |                                       ^~~~~~~~~~~~~~~
+      |                                       currentHeading
+../Core/Src/main.c:728:56: error: 'xPosition' undeclared (first use in this function)
+  728 |               pwm1,   pwm2,   pwm3,   current_heading, xPosition, yPosition, i_y);
+      |                                                        ^~~~~~~~~
+../Core/Src/main.c:728:67: error: 'yPosition' undeclared (first use in this function)
+  728 |               pwm1,   pwm2,   pwm3,   current_heading, xPosition, yPosition, i_y);
+      |                                                                   ^~~~~~~~~
+../Core/Src/main.c:728:78: error: 'i_y' undeclared (first use in this function)
+  728 |               pwm1,   pwm2,   pwm3,   current_heading, xPosition, yPosition, i_y);
+      |                                                                              ^~~
+make: *** [Core/Src/subdir.mk:43: Core/Src/main.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+16:16:41 **** Incremental Build of configuration Debug for project 1001_NUCLEO_OMNI_P2P ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+In file included from ../Core/Src/main.c:32:
+../Core/Inc/SPIT.h:46:33: warning: backslash and newline separated by space
+   46 |     double: spitFloatDefault    \
+      |                                  
+../Core/Src/main.c: In function 'OdometryUpdate':
+../Core/Src/main.c:483:12: warning: unused variable 'midTheta' [-Wunused-variable]
+  483 |     double midTheta = Odo->prevTheta + (delTheta / 2.0);
+      |            ^~~~~~~~
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:719:38: error: 'CORRECTION' undeclared (first use in this function)
+  719 |               RotateMotors(constrain(CORRECTION + PWM1, -MAX_PWM, MAX_PWM),
+      |                                      ^~~~~~~~~~
+../Core/Src/main.c:719:38: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c:719:51: error: 'PWM1' undeclared (first use in this function)
+  719 |               RotateMotors(constrain(CORRECTION + PWM1, -MAX_PWM, MAX_PWM),
+      |                                                   ^~~~
+../Core/Src/main.c:720:47: error: 'PWM2' undeclared (first use in this function)
+  720 |                        constrain(CORRECTION + PWM2, -MAX_PWM, MAX_PWM),
+      |                                               ^~~~
+../Core/Src/main.c:721:67: error: 'PWM3' undeclared (first use in this function)
+  721 |                                            constrain(CORRECTION + PWM3, -MAX_PWM, MAX_PWM));
+      |                                                                   ^~~~
+../Core/Src/main.c:728:15: error: 'pwm1' undeclared (first use in this function); did you mean 'pwmM1'?
+  728 |               pwm1,   pwm2,   pwm3,   current_heading, Odo.xPosition, Odo.yPosition, i_y);
+      |               ^~~~
+      |               pwmM1
+../Core/Src/main.c:728:23: error: 'pwm2' undeclared (first use in this function); did you mean 'pwmM2'?
+  728 |               pwm1,   pwm2,   pwm3,   current_heading, Odo.xPosition, Odo.yPosition, i_y);
+      |                       ^~~~
+      |                       pwmM2
+../Core/Src/main.c:728:31: error: 'pwm3' undeclared (first use in this function); did you mean 'pwmM3'?
+  728 |               pwm1,   pwm2,   pwm3,   current_heading, Odo.xPosition, Odo.yPosition, i_y);
+      |                               ^~~~
+      |                               pwmM3
+../Core/Src/main.c:728:39: error: 'current_heading' undeclared (first use in this function); did you mean 'currentHeading'?
+  728 |               pwm1,   pwm2,   pwm3,   current_heading, Odo.xPosition, Odo.yPosition, i_y);
+      |                                       ^~~~~~~~~~~~~~~
+      |                                       currentHeading
+../Core/Src/main.c:728:86: error: 'i_y' undeclared (first use in this function)
+  728 |               pwm1,   pwm2,   pwm3,   current_heading, Odo.xPosition, Odo.yPosition, i_y);
+      |                                                                                      ^~~
+make: *** [Core/Src/subdir.mk:43: Core/Src/main.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+16:18:41 **** Incremental Build of configuration Debug for project 1001_NUCLEO_OMNI_P2P ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+In file included from ../Core/Src/main.c:32:
+../Core/Inc/SPIT.h:46:33: warning: backslash and newline separated by space
+   46 |     double: spitFloatDefault    \
+      |                                  
+../Core/Src/main.c: In function 'OdometryUpdate':
+../Core/Src/main.c:483:12: warning: unused variable 'midTheta' [-Wunused-variable]
+  483 |     double midTheta = Odo->prevTheta + (delTheta / 2.0);
+      |            ^~~~~~~~
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:719:38: error: 'CORRECTION' undeclared (first use in this function)
+  719 |               RotateMotors(constrain(CORRECTION + PWM1, -MAX_PWM, MAX_PWM),
+      |                                      ^~~~~~~~~~
+../Core/Src/main.c:719:38: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c:719:51: error: 'PWM1' undeclared (first use in this function)
+  719 |               RotateMotors(constrain(CORRECTION + PWM1, -MAX_PWM, MAX_PWM),
+      |                                                   ^~~~
+../Core/Src/main.c:720:47: error: 'PWM2' undeclared (first use in this function)
+  720 |                        constrain(CORRECTION + PWM2, -MAX_PWM, MAX_PWM),
+      |                                               ^~~~
+../Core/Src/main.c:721:67: error: 'PWM3' undeclared (first use in this function)
+  721 |                                            constrain(CORRECTION + PWM3, -MAX_PWM, MAX_PWM));
+      |                                                                   ^~~~
+../Core/Src/main.c:728:15: error: 'pwm1' undeclared (first use in this function); did you mean 'pwmM1'?
+  728 |               pwm1,   pwm2,   pwm3,   currenHeading, Odo.xPosition, Odo.yPosition, i_y);
+      |               ^~~~
+      |               pwmM1
+../Core/Src/main.c:728:23: error: 'pwm2' undeclared (first use in this function); did you mean 'pwmM2'?
+  728 |               pwm1,   pwm2,   pwm3,   currenHeading, Odo.xPosition, Odo.yPosition, i_y);
+      |                       ^~~~
+      |                       pwmM2
+../Core/Src/main.c:728:31: error: 'pwm3' undeclared (first use in this function); did you mean 'pwmM3'?
+  728 |               pwm1,   pwm2,   pwm3,   currenHeading, Odo.xPosition, Odo.yPosition, i_y);
+      |                               ^~~~
+      |                               pwmM3
+../Core/Src/main.c:728:39: error: 'currenHeading' undeclared (first use in this function); did you mean 'currentHeading'?
+  728 |               pwm1,   pwm2,   pwm3,   currenHeading, Odo.xPosition, Odo.yPosition, i_y);
+      |                                       ^~~~~~~~~~~~~
+      |                                       currentHeading
+../Core/Src/main.c:728:84: error: 'i_y' undeclared (first use in this function)
+  728 |               pwm1,   pwm2,   pwm3,   currenHeading, Odo.xPosition, Odo.yPosition, i_y);
+      |                                                                                    ^~~
+make: *** [Core/Src/subdir.mk:43: Core/Src/main.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+16:19:48 **** Incremental Build of configuration Debug for project 1001_NUCLEO_OMNI_P2P ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/SPIT.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/SPIT.d" -MT"Core/Src/SPIT.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/SPIT.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'OdometryUpdate':
+../Core/Src/main.c:483:12: warning: unused variable 'midTheta' [-Wunused-variable]
+  483 |     double midTheta = Odo->prevTheta + (delTheta / 2.0);
+      |            ^~~~~~~~
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:719:38: error: 'CORRECTION' undeclared (first use in this function)
+  719 |               RotateMotors(constrain(CORRECTION + PWM1, -MAX_PWM, MAX_PWM),
+      |                                      ^~~~~~~~~~
+../Core/Src/main.c:719:38: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c:719:51: error: 'PWM1' undeclared (first use in this function)
+  719 |               RotateMotors(constrain(CORRECTION + PWM1, -MAX_PWM, MAX_PWM),
+      |                                                   ^~~~
+../Core/Src/main.c:720:47: error: 'PWM2' undeclared (first use in this function)
+  720 |                        constrain(CORRECTION + PWM2, -MAX_PWM, MAX_PWM),
+      |                                               ^~~~
+../Core/Src/main.c:721:67: error: 'PWM3' undeclared (first use in this function)
+  721 |                                            constrain(CORRECTION + PWM3, -MAX_PWM, MAX_PWM));
+      |                                                                   ^~~~
+../Core/Src/main.c:728:85: error: 'i_y' undeclared (first use in this function)
+  728 |               PWM1,   PWM2,   PWM3,   currentHeading, Odo.xPosition, Odo.yPosition, i_y);
+      |                                                                                     ^~~
+make: *** [Core/Src/subdir.mk:43: Core/Src/main.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+16:20:23 **** Incremental Build of configuration Debug for project 1001_NUCLEO_OMNI_P2P ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'OdometryUpdate':
+../Core/Src/main.c:483:12: warning: unused variable 'midTheta' [-Wunused-variable]
+  483 |     double midTheta = Odo->prevTheta + (delTheta / 2.0);
+      |            ^~~~~~~~
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:719:38: error: 'CORRECTION' undeclared (first use in this function)
+  719 |               RotateMotors(constrain(CORRECTION + PWM1, -MAX_PWM, MAX_PWM),
+      |                                      ^~~~~~~~~~
+../Core/Src/main.c:719:38: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c:719:51: error: 'PWM1' undeclared (first use in this function)
+  719 |               RotateMotors(constrain(CORRECTION + PWM1, -MAX_PWM, MAX_PWM),
+      |                                                   ^~~~
+../Core/Src/main.c:720:47: error: 'PWM2' undeclared (first use in this function)
+  720 |                        constrain(CORRECTION + PWM2, -MAX_PWM, MAX_PWM),
+      |                                               ^~~~
+../Core/Src/main.c:721:67: error: 'PWM3' undeclared (first use in this function)
+  721 |                                            constrain(CORRECTION + PWM3, -MAX_PWM, MAX_PWM));
+      |                                                                   ^~~~
+../Core/Src/main.c:728:93: error: 'i_y' undeclared (first use in this function)
+  728 |                    pwmM1,   pwmM2,   pwmM3,   currentHeading, Odo.xPosition, Odo.yPosition, i_y);
+      |                                                                                             ^~~
+make: *** [Core/Src/subdir.mk:43: Core/Src/main.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+16:20:44 **** Incremental Build of configuration Debug for project 1001_NUCLEO_OMNI_P2P ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'OdometryUpdate':
+../Core/Src/main.c:483:12: warning: unused variable 'midTheta' [-Wunused-variable]
+  483 |     double midTheta = Odo->prevTheta + (delTheta / 2.0);
+      |            ^~~~~~~~
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:719:38: error: 'CORRECTION' undeclared (first use in this function)
+  719 |               RotateMotors(constrain(CORRECTION + PWM1, -MAX_PWM, MAX_PWM),
+      |                                      ^~~~~~~~~~
+../Core/Src/main.c:719:38: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c:719:51: error: 'PWM1' undeclared (first use in this function)
+  719 |               RotateMotors(constrain(CORRECTION + PWM1, -MAX_PWM, MAX_PWM),
+      |                                                   ^~~~
+../Core/Src/main.c:720:47: error: 'PWM2' undeclared (first use in this function)
+  720 |                        constrain(CORRECTION + PWM2, -MAX_PWM, MAX_PWM),
+      |                                               ^~~~
+../Core/Src/main.c:721:67: error: 'PWM3' undeclared (first use in this function)
+  721 |                                            constrain(CORRECTION + PWM3, -MAX_PWM, MAX_PWM));
+      |                                                                   ^~~~
+make: *** [Core/Src/subdir.mk:43: Core/Src/main.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+16:21:13 **** Incremental Build of configuration Debug for project 1001_NUCLEO_OMNI_P2P ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'OdometryUpdate':
+../Core/Src/main.c:483:12: warning: unused variable 'midTheta' [-Wunused-variable]
+  483 |     double midTheta = Odo->prevTheta + (delTheta / 2.0);
+      |            ^~~~~~~~
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:719:38: error: 'CORRECTION' undeclared (first use in this function)
+  719 |               RotateMotors(constrain(CORRECTION + pwmM3, -MAX_PWM, MAX_PWM),
+      |                                      ^~~~~~~~~~
+../Core/Src/main.c:719:38: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [Core/Src/subdir.mk:43: Core/Src/main.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+16:29:50 **** Incremental Build of configuration Debug for project 1001_NUCLEO_OMNI_P2P ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'OdometryUpdate':
+../Core/Src/main.c:483:12: warning: unused variable 'midTheta' [-Wunused-variable]
+  483 |     double midTheta = Odo->prevTheta + (delTheta / 2.0);
+      |            ^~~~~~~~
+arm-none-eabi-gcc -o "1001_NUCLEO_OMNI_P2P.elf" @"objects.list"   -mcpu=cortex-m4 -T"G:\WINDOWS\EVERYTHING\COLLEGE\AUTOMATONS\2026\RYUK\1001_NUCLEO_OMNI_P2P\STM32F446ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="1001_NUCLEO_OMNI_P2P.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+C:/STM/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/bin/ld.exe: ./Core/Src/main.o: in function `GetAngle':
+G:/WINDOWS/EVERYTHING/COLLEGE/AUTOMATONS/2026/RYUK/1001_NUCLEO_OMNI_P2P/Debug/../Core/Src/main.c:370:(.text.GetAngle+0x5c): undefined reference to `NormalizeAngle'
+C:/STM/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/bin/ld.exe: ./Core/Src/main.o: in function `AngularPIDCompute':
+G:/WINDOWS/EVERYTHING/COLLEGE/AUTOMATONS/2026/RYUK/1001_NUCLEO_OMNI_P2P/Debug/../Core/Src/main.c:458:(.text.AngularPIDCompute+0x1c): undefined reference to `NormalizeAngle'
+C:/STM/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/bin/ld.exe: ./Core/Src/main.o: in function `OdometryUpdate':
+G:/WINDOWS/EVERYTHING/COLLEGE/AUTOMATONS/2026/RYUK/1001_NUCLEO_OMNI_P2P/Debug/../Core/Src/main.c:475:(.text.OdometryUpdate+0x2a): undefined reference to `Radians'
+C:/STM/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/bin/ld.exe: ./Core/Src/main.o: in function `Move':
+G:/WINDOWS/EVERYTHING/COLLEGE/AUTOMATONS/2026/RYUK/1001_NUCLEO_OMNI_P2P/Debug/../Core/Src/main.c:554:(.text.Move+0x182): undefined reference to `Radians'
+C:/STM/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/bin/ld.exe: G:/WINDOWS/EVERYTHING/COLLEGE/AUTOMATONS/2026/RYUK/1001_NUCLEO_OMNI_P2P/Debug/../Core/Src/main.c:575:(.text.Move+0x28e): undefined reference to `constrain'
+C:/STM/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/bin/ld.exe: G:/WINDOWS/EVERYTHING/COLLEGE/AUTOMATONS/2026/RYUK/1001_NUCLEO_OMNI_P2P/Debug/../Core/Src/main.c:576:(.text.Move+0x2b4): undefined reference to `constrain'
+C:/STM/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/bin/ld.exe: G:/WINDOWS/EVERYTHING/COLLEGE/AUTOMATONS/2026/RYUK/1001_NUCLEO_OMNI_P2P/Debug/../Core/Src/main.c:577:(.text.Move+0x2da): undefined reference to `constrain'
+C:/STM/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/bin/ld.exe: G:/WINDOWS/EVERYTHING/COLLEGE/AUTOMATONS/2026/RYUK/1001_NUCLEO_OMNI_P2P/Debug/../Core/Src/main.c:592:(.text.Move+0x3a6): undefined reference to `Degrees'
+C:/STM/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/bin/ld.exe: ./Core/Src/main.o: in function `NavigateTo':
+G:/WINDOWS/EVERYTHING/COLLEGE/AUTOMATONS/2026/RYUK/1001_NUCLEO_OMNI_P2P/Debug/../Core/Src/main.c:605:(.text.NavigateTo+0x74): undefined reference to `Degrees'
+C:/STM/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/bin/ld.exe: G:/WINDOWS/EVERYTHING/COLLEGE/AUTOMATONS/2026/RYUK/1001_NUCLEO_OMNI_P2P/Debug/../Core/Src/main.c:623:(.text.NavigateTo+0x164): undefined reference to `Degrees'
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:64: 1001_NUCLEO_OMNI_P2P.elf] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+16:32:07 **** Incremental Build of configuration Debug for project 1001_NUCLEO_OMNI_P2P ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'OdometryUpdate':
+../Core/Src/main.c:483:12: warning: unused variable 'midTheta' [-Wunused-variable]
+  483 |     double midTheta = Odo->prevTheta + (delTheta / 2.0);
+      |            ^~~~~~~~
+arm-none-eabi-gcc -o "1001_NUCLEO_OMNI_P2P.elf" @"objects.list"   -mcpu=cortex-m4 -T"G:\WINDOWS\EVERYTHING\COLLEGE\AUTOMATONS\2026\RYUK\1001_NUCLEO_OMNI_P2P\STM32F446ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="1001_NUCLEO_OMNI_P2P.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 1001_NUCLEO_OMNI_P2P.elf
+ 
+arm-none-eabi-size  1001_NUCLEO_OMNI_P2P.elf 
+arm-none-eabi-objdump -h -S 1001_NUCLEO_OMNI_P2P.elf  > "1001_NUCLEO_OMNI_P2P.list"
+   text	   data	    bss	    dec	    hex	filename
+  53828	    548	   3048	  57424	   e050	1001_NUCLEO_OMNI_P2P.elf
+Finished building: default.size.stdout
+ 
+Finished building: 1001_NUCLEO_OMNI_P2P.list
+ 
+16:40:54 **** Incremental Build of configuration Debug for project 1001_NUCLEO_OMNI_P2P ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'OdometryUpdate':
+../Core/Src/main.c:483:12: warning: unused variable 'midTheta' [-Wunused-variable]
+  483 |     double midTheta = Odo->prevTheta + (delTheta / 2.0);
+      |            ^~~~~~~~
+arm-none-eabi-gcc -o "1001_NUCLEO_OMNI_P2P.elf" @"objects.list"   -mcpu=cortex-m4 -T"G:\WINDOWS\EVERYTHING\COLLEGE\AUTOMATONS\2026\RYUK\1001_NUCLEO_OMNI_P2P\STM32F446ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="1001_NUCLEO_OMNI_P2P.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 1001_NUCLEO_OMNI_P2P.elf
+ 
+arm-none-eabi-size  1001_NUCLEO_OMNI_P2P.elf 
+arm-none-eabi-objdump -h -S 1001_NUCLEO_OMNI_P2P.elf  > "1001_NUCLEO_OMNI_P2P.list"
+   text	   data	    bss	    dec	    hex	filename
+  53828	    548	   3048	  57424	   e050	1001_NUCLEO_OMNI_P2P.elf
+Finished building: default.size.stdout
+ 
+Finished building: 1001_NUCLEO_OMNI_P2P.list
+ 
+19:27:52 **** Incremental Build of configuration Debug for project 1001_NUCLEO_OMNI_P2P ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "1001_NUCLEO_OMNI_P2P.elf" @"objects.list"   -mcpu=cortex-m4 -T"G:\WINDOWS\EVERYTHING\COLLEGE\AUTOMATONS\2026\RYUK\1001_NUCLEO_OMNI_P2P\STM32F446ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="1001_NUCLEO_OMNI_P2P.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 1001_NUCLEO_OMNI_P2P.elf
+ 
+arm-none-eabi-size  1001_NUCLEO_OMNI_P2P.elf 
+arm-none-eabi-objdump -h -S 1001_NUCLEO_OMNI_P2P.elf  > "1001_NUCLEO_OMNI_P2P.list"
+   text	   data	    bss	    dec	    hex	filename
+  53788	    548	   3048	  57384	   e028	1001_NUCLEO_OMNI_P2P.elf
+Finished building: default.size.stdout
+ 
+Finished building: 1001_NUCLEO_OMNI_P2P.list
+ 

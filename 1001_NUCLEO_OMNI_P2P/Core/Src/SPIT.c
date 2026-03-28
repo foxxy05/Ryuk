@@ -14,7 +14,7 @@ void spitCheck(void){
         return;
     }
 
-    spitln("SPIT OK");
+    spitlnf("SPIT OK");
     spitlnf("Buffer : %d bytes", SPIT_BUFFER_SIZE);
     spitlnf("Timeout: %d ms",    SPIT_TIMEOUT);
 }
@@ -117,7 +117,7 @@ void spitf(const char *fmt, ...){
     spitStr(buf);
 }
 
-void spitlnf(const char *fmt, ...){
+void spitLnf(const char *fmt, ...){
     char buf[SPIT_BUFFER_SIZE];
 
     va_list args;

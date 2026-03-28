@@ -43,7 +43,7 @@ void spitLnFloatDefault(double val);
     int: spitInt,               \
     unsigned int: spitUInt,     \
     float: spitFloatDefault,    \
-    double: spitFloatDefault    \  
+    double: spitFloatDefault    \
 )(x)
 
 #define spitln(x) _Generic((x), \

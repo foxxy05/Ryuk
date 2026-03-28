@@ -3,23 +3,25 @@
 	<item key="hasShownOverlayPopupBefore" value="true"/>
 	<item key="replaceBarOpen" value="true"/>
 	<list key="searchhistory">
+		<item value="LinPID"/>
+		<item value="spit"/>
+		<item value="odo"/>
 		<item value="length"/>
 		<item value="odometry"/>
 		<item value="oddmetry"/>
 		<item value="pwr"/>
 		<item value="abs"/>
 		<item value="I2CInit"/>
-		<item value="odo"/>
 		<item value="encoderInstance_t"/>
 		<item value="encoder_instance"/>
 		<item value="PrintOdometry"/>
 		<item value="Odoetry_t"/>
 		<item value="odom"/>
 		<item value="cpr"/>
-		<item value="/* USER CODE BEGIN TIM14_Init 1 */"/>
-		<item value="Fifo"/>
 	</list>
 	<list key="replacehistory">
+		<item value="xPID"/>
+		<item value="spitf"/>
 		<item value="Odo"/>
 		<item value="EncoderInstance_t"/>
 		<item value="encoderInstance_t"/>

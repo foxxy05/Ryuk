@@ -29,6 +29,7 @@
 #include<stdlib.h>
 #include"Encoderlib.h"
 #include"BTS7960.h"
+#include"SPIT.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -143,8 +144,21 @@ typedef struct {
 
 } PID_t;
 
-PID_t LinPID = {
-    .kp         = 1.1f,
+PID_t xPID = {
+    .kp         = 2.3f,
+    .ki         = 0.5f,
+    .kd         = 0.0f,
+    .P          = 0.0f,
+    .I          = 0.0f,
+    .D          = 0.0f,
+    .error      = 0.0f,
+    .prevError  = 0.0f,
+    .dError     = 0.0f,
+    .controlSignal = 0.0f
+};
+
+PID_t yPID = {
+    .kp         = 2.1f,
     .ki         = 0.0f,
     .kd         = 0.0f,
     .P          = 0.0f,
@@ -177,7 +191,7 @@ unsigned long tStart = 0;
 unsigned long tEnd   = 0;
 float dt2            = 0.0f;
 
-// ===================== ODOMETRY VARS =====================
+// ===================== OdoMETRY VARS =====================
 #define CPR          	8192
 #define WHEEL_RADIUS 	(5.4f / 2.0f)
 #define LENGTH1      	13.5f
@@ -268,11 +282,11 @@ static void MX_I2C1_Init(void);
 static void MX_TIM5_Init(void);
 
 /* USER CODE BEGIN PFP */
-float Radians(float angle);
-float Degrees(float angle);
-float NormalizeAngle(float angle);
-float constrain(float num, float min, float max);
-long map(long x, long in_min, long in_max, long out_min, long out_max);
+inline float Radians(float angle);
+inline float Degrees(float angle);
+inline float NormalizeAngle(float angle);
+inline float constrain(float num, float min, float max);
+inline long map(long x, long in_min, long in_max, long out_min, long out_max);
 
 void BNO055_Init(void);
 void GetAngle(void);
@@ -281,7 +295,7 @@ void GetControllerValue(void);
 void RotateMotors(int pwm1, int pwm2, int pwm3);
 
 void AngularPIDCompute(PID_t *pid);
-void OdometryUpdate(Odometry_t *odo);
+void OdometryUpdate(Odometry_t *Odo);
 
 void Move(float x1, float y1, float x2, float y2);
 void NavigateTo(float x1, float y1, float x2, float y2);
@@ -409,6 +423,8 @@ void GetControllerValue(void) {
 //          sprintf(buffer1, "%d \t %d \t %d \t %d \t %d \t %d \t %d    %d \r\n",
 //                  Joystick.LX, Joystick.LY, Joystick.RX, Joystick.RY, data[4], data[5], data[6], omega);
 //          HAL_UART_Transmit(&huart2, (uint8_t*)buffer1, strlen(buffer1), 100);
+        spitf("%d \t %d \t %d \t %d \t %d \t %d \t %d    %d \r\n",
+        		Joystick.LX, Joystick.LY, Joystick.RX, Joystick.RY, data[4], data[5], data[6], omega);
     }
 
 //  else {
@@ -434,6 +450,7 @@ void RotateMotors(int pwm1, int pwm2, int pwm3) {
 
 //  sprintf(msg, "%d    %d   %d   %f \r\n", pwm1, pwm2, pwm3, currentHeading);
 
+
 }
 
 // ===================== PID CONTROL =====================
@@ -449,13 +466,8 @@ void AngularPIDCompute(PID_t *pid) {
     pid->controlSignal = pid->P + pid->I + pid->D;
 }
 
-// ===================== ODOMETRY =====================
-void OdometryUpdate(Odometry_t *odo) {
-
-//  timer_counter1 = __HAL_TIM_GET_COUNTER(&htim1);
-//  timer_counter2 = __HAL_TIM_GET_COUNTER(&htim2);
-//  timer_counter3 = __HAL_TIM_GET_COUNTER(&htim3);
-
+// ===================== OdoMETRY =====================
+void OdometryUpdate(Odometry_t *Odo) {
     update_encoder(&LEnc, &htim1);
     update_encoder(&REnc, &htim2);
     update_encoder(&FEnc, &htim3);
@@ -463,12 +475,12 @@ void OdometryUpdate(Odometry_t *odo) {
     double trueTheta = Radians(currentHeading);
 
     // IMU DELTA THETA
-    double delTheta = trueTheta - odo->prevTheta;
+    double delTheta = trueTheta - Odo->prevTheta;
 
     if (delTheta >  PI) delTheta -= 2 * PI;
     if (delTheta < -PI) delTheta += 2 * PI;
 
-    double midTheta = odo->prevTheta + (delTheta / 2.0);
+//    double midTheta = Odo->prevTheta + (delTheta / 2.0);
 
     // ENCODER READ
     double FCount = FEnc.position;
@@ -476,33 +488,33 @@ void OdometryUpdate(Odometry_t *odo) {
 //  double RCount = REnc.position;
     double RCount = 0;
 
-    odo->dF = FCount - odo->prevFCount;
-    odo->dL = LCount - odo->prevLCount;
-    odo->dR = RCount - odo->prevRCount;
+    Odo->dF = FCount - Odo->prevFCount;
+    Odo->dL = LCount - Odo->prevLCount;
+    Odo->dR = RCount - Odo->prevRCount;
 
     // TRANSLATION
-    odo->deltaX = (odo->dF / CPR) * 2 * PI * WHEEL_RADIUS * X_CALIB;
-    //odo->deltaY = (((odo->dL + odo->dR) / 2.0) / CPR) * 2 * PI * WHEEL_RADIUS;
-    odo->deltaY = (odo->dL / CPR) * 2 * PI * WHEEL_RADIUS * Y_CALIB;
+    Odo->deltaX = (Odo->dF / CPR) * 2 * PI * WHEEL_RADIUS * X_CALIB;
+    //Odo->deltaY = (((Odo->dL + Odo->dR) / 2.0) / CPR) * 2 * PI * WHEEL_RADIUS;
+    Odo->deltaY = (Odo->dL / CPR) * 2 * PI * WHEEL_RADIUS * Y_CALIB;
 
-    //odo->deltaX -= delTheta * LENGTH3;
-    //odo->deltaY -= delTheta * LENGTH1;
+    //Odo->deltaX -= delTheta * LENGTH3;
+    //Odo->deltaY -= delTheta * LENGTH1;
 
     // GLOBAL TRANSFORM
-//  odo->deltaXGlobal = odo->deltaX * cos(midTheta) - odo->deltaY * sin(midTheta);
-//  odo->deltaYGlobal = odo->deltaX * sin(midTheta) + odo->deltaY * cos(midTheta);
+//  Odo->deltaXGlobal = Odo->deltaX * cos(midTheta) - Odo->deltaY * sin(midTheta);
+//  Odo->deltaYGlobal = Odo->deltaX * sin(midTheta) + Odo->deltaY * cos(midTheta);
 //
-//  odo->xPosition -= odo->deltaXGlobal;
-//  odo->yPosition += odo->deltaYGlobal;
-//  odo->thetaPosition = trueTheta;
+//  Odo->xPosition -= Odo->deltaXGlobal;
+//  Odo->yPosition += Odo->deltaYGlobal;
+//  Odo->thetaPosition = trueTheta;
 
-    odo->xPosition += odo->deltaX;
-    odo->yPosition -= odo->deltaY;
+    Odo->xPosition += Odo->deltaX;
+    Odo->yPosition -= Odo->deltaY;
 
-    odo->prevFCount = FCount;
-    odo->prevLCount = LCount;
-    odo->prevRCount = RCount;
-    odo->prevTheta  = trueTheta;
+    Odo->prevFCount = FCount;
+    Odo->prevLCount = LCount;
+    Odo->prevRCount = RCount;
+    Odo->prevTheta  = trueTheta;
 
 //  float LDist = 2 * PI * WHEEL_RADIUS * LEnc.position / CPR;
 //  float RDist = 2 * PI * WHEEL_RADIUS * REnc.position / CPR;
@@ -511,8 +523,8 @@ void OdometryUpdate(Odometry_t *odo) {
 //  float yLocal = FDist - LENGTH1 * Radians(currentHeading);
 //  float xLocal = (LDist + RDist) / 2.0f;
 //
-//  odo->xPosition += xLocal * cos(Radians(currentHeading)) - yLocal * sin(Radians(currentHeading));
-//  odo->yPosition += xLocal * sin(Radians(currentHeading)) + yLocal * cos(Radians(currentHeading));
+//  Odo->xPosition += xLocal * cos(Radians(currentHeading)) - yLocal * sin(Radians(currentHeading));
+//  Odo->yPosition += xLocal * sin(Radians(currentHeading)) + yLocal * cos(Radians(currentHeading));
 
 }
 
@@ -527,8 +539,8 @@ void OdometryUpdate(Odometry_t *odo) {
 //      pwmM3 = constrain((-1 * ((botVel * cos(navAngle) + sqrt(3) * botVel * sin(navAngle) + 2 * length * omega) / (2 * radius))) + AngPID.controlSignal, -MAX_PWM, MAX_PWM);
 //
 //      char buffer1[100];
-//          sprintf(buffer1, "pwm1 = %d \t pwm2 = %d \t pwm3 = %d \r\n", pwmM1, pwmM2, pwmM3);
-//          HAL_UART_Transmit(&huart2, (uint8_t*)buffer1, strlen(buffer1), 100);
+//      sprintf(buffer1, "pwm1 = %d \t pwm2 = %d \t pwm3 = %d \r\n", pwmM1, pwmM2, pwmM3);
+//      HAL_UART_Transmit(&huart2, (uint8_t*)buffer1, strlen(buffer1), 100);
 //  }
 
 void Move(float x1, float y1, float x2, float y2) {
@@ -542,19 +554,19 @@ void Move(float x1, float y1, float x2, float y2) {
     navAngle        = atan2(y2 - Odo.yPosition, x2 - Odo.xPosition) - Radians(targetHeading);
     if (dt2 <= 0.0f) 						dt2 = 0.001f;
 
-    LinPID.error     = targetDistance - currentDistance;
-    LinPID.dError    = LinPID.error - LinPID.prevError;
-    LinPID.prevError = LinPID.error;
+    xPID.error     = targetDistance - currentDistance;
+    xPID.dError    = xPID.error - xPID.prevError;
+    xPID.prevError = xPID.error;
 
-    LinPID.P = LinPID.error * LinPID.kp;
-    LinPID.I = LinPID.I + (LinPID.error * dt2 * LinPID.ki);
-    LinPID.D = (LinPID.dError / dt2) * LinPID.kd;
+    xPID.P = xPID.error * xPID.kp;
+    xPID.I = xPID.I + (xPID.error * dt2 * xPID.ki);
+    xPID.D = (xPID.dError / dt2) * xPID.kd;
 
-    LinPID.controlSignal = -(LinPID.P + LinPID.I + LinPID.D);
+    xPID.controlSignal = -(xPID.P + xPID.I + xPID.D);
 
-//  float PWM1 = constrain(((LinPID.controlSignal * cos(navAngle) - (length * omega))) / radius, -LINEAR_PWM, LINEAR_PWM);
-//  float PWM2 = constrain(((sqrt(3) * LinPID.controlSignal * sin(navAngle) - LinPID.controlSignal * cos(navAngle) - 2 * length * omega) / (2 * radius)), -LINEAR_PWM, LINEAR_PWM);
-//  float PWM3 = constrain((-1 * ((LinPID.controlSignal * cos(navAngle) + sqrt(3) * LinPID.controlSignal * sin(navAngle) + 2 * length * omega) / (2 * radius))), -LINEAR_PWM, LINEAR_PWM);
+//  float PWM1 = constrain(((xPID.controlSignal * cos(navAngle) - (length * omega))) / radius, -LINEAR_PWM, LINEAR_PWM);
+//  float PWM2 = constrain(((sqrt(3) * xPID.controlSignal * sin(navAngle) - xPID.controlSignal * cos(navAngle) - 2 * length * omega) / (2 * radius)), -LINEAR_PWM, LINEAR_PWM);
+//  float PWM3 = constrain((-1 * ((xPID.controlSignal * cos(navAngle) + sqrt(3) * xPID.controlSignal * sin(navAngle) + 2 * length * omega) / (2 * radius))), -LINEAR_PWM, LINEAR_PWM);
 
 //  pwmM1 = constrain(PWM1 + AngPID.controlSignal, -MAX_PWM, MAX_PWM);
 //  pwmM2 = constrain(PWM2 + AngPID.controlSignal, -MAX_PWM, MAX_PWM);
@@ -564,7 +576,7 @@ void Move(float x1, float y1, float x2, float y2) {
     pwmM2 = constrain(AngPID.controlSignal, -MAX_PWM, MAX_PWM);
     pwmM3 = constrain(AngPID.controlSignal, -MAX_PWM, MAX_PWM);
 
-    if (fabs(LinPID.error) < 5) {
+    if (fabs(xPID.error) < 5) {
         reached = true;
         //RotateMotors(0, 0, 0);
     }
@@ -574,8 +586,10 @@ void Move(float x1, float y1, float x2, float y2) {
     }
 
 //  sprintf(msg, "x = %.2f   y = %.2f target = %.2f  current = %.2f error = %.2f angle = %.2f \r\n",
-//          Odo.xPosition, Odo.yPosition, targetDistance, currentDistance, LinPID.error, Degrees(navAngle));
+//          Odo.xPosition, Odo.yPosition, targetDistance, currentDistance, xPID.error, Degrees(navAngle));
 //  HAL_UART_Transmit(&huart3, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
+    spitf("x = %.2f   y = %.2f target = %.2f  current = %.2f error = %.2f angle = %.2f \r\n",
+    	   Odo.xPosition, Odo.yPosition, targetDistance, currentDistance, xPID.error, Degrees(navAngle));
 
 }
 
@@ -584,17 +598,19 @@ void NavigateTo(float x1, float y1, float x2, float y2) {
     if (!vertical) {
         if (!reached) {
             Move(x1, y1, x1, y2);
-            sprintf(msg, "x = %.2f   y = %.2f  pwm1 = %d, pwm2 = %d, pwm3 = %d, angle = %.2f  %.2f %.2f\r\n",
-                    Odo.xPosition, Odo.yPosition, pwmM1, pwmM2, pwmM3,
-                    Degrees(navAngle), currentHeading, LinPID.controlSignal);
-            HAL_UART_Transmit(&huart3, (uint8_t *)msg, strlen(msg), HAL_MAX_DELAY);
+//            sprintf(msg, "x = %.2f   y = %.2f  pwm1 = %d, pwm2 = %d, pwm3 = %d, angle = %.2f  %.2f %.2f\r\n",
+//            		Odo.xPosition, Odo.yPosition, pwmM1, pwmM2, pwmM3, Degrees(navAngle), currentHeading, xPID.controlSignal);
+//            HAL_UART_Transmit(&huart3, (uint8_t *)msg, strlen(msg), HAL_MAX_DELAY);
+            spitf("x = %.2f   y = %.2f  pwm1 = %d, pwm2 = %d, pwm3 = %d, angle = %.2f  %.2f %.2f\r\n",
+            		Odo.xPosition, Odo.yPosition, pwmM1, pwmM2, pwmM3, Degrees(navAngle), currentHeading, xPID.controlSignal);
         }
 
         else {
             vertical = true;
             reached  = false;
-//          sprintf(msg, "x = %.2f   y = %.2f error = %.2f reached vertical \r\n", Odo.xPosition, Odo.yPosition, LinPID.error);
+//          sprintf(msg, "x = %.2f   y = %.2f error = %.2f reached vertical \r\n", Odo.xPosition, Odo.yPosition, xPID.error);
 //          HAL_UART_Transmit(&huart3, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
+            spitf("x = %.2f   y = %.2f error = %.2f reached vertical \r\n", Odo.xPosition, Odo.yPosition, xPID.error);
         }
     }
 
@@ -604,14 +620,15 @@ void NavigateTo(float x1, float y1, float x2, float y2) {
             Move(x1, y2, x2, y2);
             sprintf(msg, "x = %.2f   y = %.2f   pwm1 = %d, pwm2 = %d, pwm3 = %d  angle = %.2f   %.2f %.2f\r\n",
                     Odo.xPosition, Odo.yPosition, pwmM1, pwmM2, pwmM3,
-                    Degrees(navAngle), currentHeading, LinPID.controlSignal);
+                    Degrees(navAngle), currentHeading, xPID.controlSignal);
             HAL_UART_Transmit(&huart3, (uint8_t *)msg, strlen(msg), HAL_MAX_DELAY);
         }
 
         else {
             horizontal = true;
-//          sprintf(msg, "x = %.2f   y = %.2f  error = %.2f  reached \r\n", Odo.xPosition, Odo.yPosition, LinPID.error);
+//          sprintf(msg, "x = %.2f   y = %.2f  error = %.2f  reached \r\n", Odo.xPosition, Odo.yPosition, xPID.error);
 //          HAL_UART_Transmit(&huart3, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
+            spitf("x = %.2f   y = %.2f  error = %.2f  reached \r\n", Odo.xPosition, Odo.yPosition, xPID.error);
         }
 
         if (horizontal && vertical) {
@@ -676,6 +693,9 @@ int main(void)
   HAL_TIM_Encoder_Start(&htim3, TIM_CHANNEL_ALL);
 
 
+  //===================== DEBUG CONFIGURATION =====================
+  spitDefault(&huart3);
+
     /* USER CODE END 2 */
 
     /* Infinite loop */
@@ -686,8 +706,8 @@ int main(void)
 
         /* USER CODE BEGIN 3 */
          tStart = HAL_GetTick();
-	  dt2    = (tStart - tEnd) / 1000.0f;
-	  tEnd   = HAL_GetTick();
+         dt2    = (tStart - tEnd) / 1000.0f;
+         tEnd   = HAL_GetTick();
 
 	      if (imuTick) {
 	          GetAngle();
@@ -696,18 +716,18 @@ int main(void)
 
 	      OdometryUpdate(&Odo);
 	      NavigateTo(0, 0, 0, 0);
-        rotate_motor(constrain(CORRECTION + PWM1, -MAX_PWM, MAX_PWM),
-                     constrain(CORRECTION + PWM2, -MAX_PWM, MAX_PWM),
-                     constrain(CORRECTION + PWM3, -MAX_PWM, MAX_PWM));
+//	      RotateMotors(constrain(CORRECTION + pwmM3, -MAX_PWM, MAX_PWM),
+//                       constrain(CORRECTION + pwmM3, -MAX_PWM, MAX_PWM),
+//					   constrain(CORRECTION + pwmM3, -MAX_PWM, MAX_PWM));
 
-        sprintf(msg, "pwm1 %d pwm2 %d pwm3 %d current %.2f x %.2f y %.2f i = %.2f\r\n",
-                pwm1, pwm2, pwm3, current_heading, xPosition, yPosition, i_y);
-        HAL_UART_Transmit(&huart3, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
+//        sprintf(msg, "pwm1 %d pwm2 %d pwm3 %d current %.2f x %.2f y %.2f i = %.2f\r\n",
+//                pwm1, pwm2, pwm3, current_heading, xPosition, yPosition, i_y);
+//        HAL_UART_Transmit(&huart3, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
 
+        spitf("pwm1 %d pwm2 %d pwm3 %d current %.2f x %.2f y %.2f \r\n",
+        	   pwmM1,   pwmM2,   pwmM3,   currentHeading, Odo.xPosition, Odo.yPosition);
 
-        // spitf("pwm1 %d pwm2 %d pwm3 %d current %.2f x %.2f y %.2f \r\n", pwm1, pwm2, pwm3, current_heading, xPosition, yPosition);
-
-        // ONLY CALL WITHOUT MOVE2
+        // ONLY CALL WITHOUT NavigateTo
         // rotate_motor(pwm1, pwm2, pwm3);
 
         HAL_Delay(10);
