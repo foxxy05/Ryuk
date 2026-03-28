@@ -1240,3 +1240,71 @@ Finished building: default.size.stdout
  
 Finished building: 1001_NUCLEO_OMNI_P2P.list
  
+20:01:29 **** Incremental Build of configuration Debug for project 1001_NUCLEO_OMNI_P2P ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c:109:33: error: expected ';', ',' or ')' before numeric constant
+  109 | #define dt                      0.001
+      |                                 ^~~~~
+../Core/Src/main.c:299:41: note: in expansion of macro 'dt'
+  299 | void LinearPIDCompute(PID_t *pid, float dt);
+      |                                         ^~
+../Core/Src/main.c:109:33: error: expected ';', ',' or ')' before numeric constant
+  109 | #define dt                      0.001
+      |                                 ^~~~~
+../Core/Src/main.c:472:41: note: in expansion of macro 'dt'
+  472 | void LinearPIDCompute(PID_t *pid, float dt){
+      |                                         ^~
+../Core/Src/main.c: In function 'Move':
+../Core/Src/main.c:579:9: error: 'PID_t' has no member named 'kiActive'
+  579 |     yPID.kiActive = (fabs(yPID.error) < 5) ? KI_ACTIVE : KI_INACTIVE;
+      |         ^
+../Core/Src/main.c:580:9: error: 'PID_t' has no member named 'kiActive'
+  580 |     xPID.kiActive = (fabs(xPID.error) < 5) ? KI_ACTIVE : KI_INACTIVE;
+      |         ^
+../Core/Src/main.c:582:5: warning: implicit declaration of function 'LinearPIDCompute'; did you mean 'AngularPIDCompute'? [-Wimplicit-function-declaration]
+  582 |     LinearPIDCompute(&yPID, dt2);
+      |     ^~~~~~~~~~~~~~~~
+      |     AngularPIDCompute
+make: *** [Core/Src/subdir.mk:43: Core/Src/main.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+20:02:41 **** Incremental Build of configuration Debug for project 1001_NUCLEO_OMNI_P2P ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'Move':
+../Core/Src/main.c:579:9: error: 'PID_t' has no member named 'kiActive'
+  579 |     yPID.kiActive = (fabs(yPID.error) < 5) ? KI_ACTIVE : KI_INACTIVE;
+      |         ^
+../Core/Src/main.c:580:9: error: 'PID_t' has no member named 'kiActive'
+  580 |     xPID.kiActive = (fabs(xPID.error) < 5) ? KI_ACTIVE : KI_INACTIVE;
+      |         ^
+make: *** [Core/Src/subdir.mk:43: Core/Src/main.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+20:04:39 **** Incremental Build of configuration Debug for project 1001_NUCLEO_OMNI_P2P ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "1001_NUCLEO_OMNI_P2P.elf" @"objects.list"   -mcpu=cortex-m4 -T"G:\WINDOWS\EVERYTHING\COLLEGE\AUTOMATONS\2026\RYUK\1001_NUCLEO_OMNI_P2P\STM32F446ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="1001_NUCLEO_OMNI_P2P.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 1001_NUCLEO_OMNI_P2P.elf
+ 
+arm-none-eabi-size  1001_NUCLEO_OMNI_P2P.elf 
+arm-none-eabi-objdump -h -S 1001_NUCLEO_OMNI_P2P.elf  > "1001_NUCLEO_OMNI_P2P.list"
+   text	   data	    bss	    dec	    hex	filename
+  54248	    588	   2896	  57732	   e184	1001_NUCLEO_OMNI_P2P.elf
+Finished building: default.size.stdout
+ 
+Finished building: 1001_NUCLEO_OMNI_P2P.list
+ 
+20:05:15 **** Incremental Build of configuration Debug for project 1001_NUCLEO_OMNI_P2P ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "1001_NUCLEO_OMNI_P2P.elf" @"objects.list"   -mcpu=cortex-m4 -T"G:\WINDOWS\EVERYTHING\COLLEGE\AUTOMATONS\2026\RYUK\1001_NUCLEO_OMNI_P2P\STM32F446ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="1001_NUCLEO_OMNI_P2P.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 1001_NUCLEO_OMNI_P2P.elf
+ 
+arm-none-eabi-size  1001_NUCLEO_OMNI_P2P.elf 
+arm-none-eabi-objdump -h -S 1001_NUCLEO_OMNI_P2P.elf  > "1001_NUCLEO_OMNI_P2P.list"
+   text	   data	    bss	    dec	    hex	filename
+  54248	    588	   2896	  57732	   e184	1001_NUCLEO_OMNI_P2P.elf
+Finished building: default.size.stdout
+ 
+Finished building: 1001_NUCLEO_OMNI_P2P.list
+ 

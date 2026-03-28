@@ -106,7 +106,7 @@ int pwmM1, pwmM2, pwmM3;
 #define MAX_PWM     		120
 #define LINEAR_PWM  		50
 #define DEADZONE    		20
-#define DT           		0.001
+#define dt          		0.001
 
 // ===================== KINEMATICS / NAVIGATION STATE =====================
 float botVel;
@@ -190,7 +190,7 @@ float currentDistance = 0.0f;
 
 unsigned long tStart = 0;
 unsigned long tEnd   = 0;
-float deltaTime            = 0.0f;
+float dt2            = 0.0f;
 
 // ===================== OdoMETRY VARS =====================
 #define CPR          	8192
@@ -462,8 +462,8 @@ void AngularPIDCompute(PID_t *pid) {
     pid->prevError = pid->error;
 
     pid->P = pid->error  * pid->kp;
-    pid->I = pid->I + (pid->error * (float)deltaTime * pid->ki);
-    pid->D = (pid->dError / (float)deltaTime) * pid->kd;
+    pid->I = pid->I + (pid->error * (float)dt2 * pid->ki);
+    pid->D = (pid->dError / (float)dt2) * pid->kd;
 
     pid->controlSignal = pid->P + pid->I + pid->D;
 }
@@ -570,23 +570,17 @@ void Move(float x1, float y1, float x2, float y2)
 
     //  navAngle = atan2(y2 - Odo.yPosition, x2 - Odo.xPosition) - Radians(targetHeading);
 
-    if (deltaTime <= 0.0f) deltaTime = 0.001f;
+    if (dt2 <= 0.0f) dt2 = 0.001f;
 
     yPID.error = targetDistanceY - currentDistanceY;
     xPID.error = targetDistanceX - currentDistanceX;
 
     // ki activation — windup guard, only engage near target
-    float kiY = (fabsf(yPID.error) < 5) ? KI_ACTIVE : KI_INACTIVE;
-    float kiX = (fabsf(xPID.error) < 5) ? KI_ACTIVE : KI_INACTIVE;
+    yPID.kiActive = (fabs(yPID.error) < 5) ? KI_ACTIVE : KI_INACTIVE;
+    xPID.kiActive = (fabs(xPID.error) < 5) ? KI_ACTIVE : KI_INACTIVE;
 
-    yPID.ki = kiY;
-    xPID.ki = kiX;
-
-    LinearPIDCompute(&yPID, deltaTime);
-    LinearPIDCompute(&xPID, deltaTime);
-
-    LinearPIDCompute(&yPID, deltaTime);
-    LinearPIDCompute(&xPID, deltaTime);
+    LinearPIDCompute(&yPID, dt2);
+    LinearPIDCompute(&xPID, dt2);
 
     navAngle = atan2f(yPID.controlSignal, xPID.controlSignal) - Radians(targetHeading);
     botVel   = sqrtf(powf(yPID.controlSignal, 2) + powf(xPID.controlSignal, 2));
@@ -733,7 +727,7 @@ int main(void)
 
         /* USER CODE BEGIN 3 */
          tStart = HAL_GetTick();
-         deltaTime    = (tStart - tEnd) / 1000.0f;
+         dt2    = (tStart - tEnd) / 1000.0f;
          tEnd   = HAL_GetTick();
 
 	      if (imuTick) {
