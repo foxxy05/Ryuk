@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;2000&apos; to &apos;2000_I2C_DATA_RECEIVE&apos;" description="Rename resource &apos;2000&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/2000" name="2000_I2C_DATA_RECEIVE" stamp="1774791986155" updateReferences="true"/>&#x0A;<refactoring comment="Delete resource &apos;2000_I2C_DATA_RECEIVE&apos;" deleteContents="true" description="Delete resource &apos;2000_I2C_DATA_RECEIVE&apos;" element1="/2000_I2C_DATA_RECEIVE" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1774792005627"/>
+</session>
