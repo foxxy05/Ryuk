@@ -2498,3 +2498,475 @@ Finished building: default.size.stdout
  
 Finished building: 3001_MECHANISMS_TEST.list
  
+12:40:00 **** Incremental Build of configuration Debug for project 3001_MECHANISMS_TEST ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/BTS7960.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/BTS7960.d" -MT"Core/Src/BTS7960.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/BTS7960.o"
+arm-none-eabi-gcc "../Core/Src/PCA9685.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/PCA9685.d" -MT"Core/Src/PCA9685.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/PCA9685.o"
+arm-none-eabi-gcc "../Core/Src/SPIT.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/SPIT.d" -MT"Core/Src/SPIT.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/SPIT.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+In file included from ../Core/Src/main.c:35:
+../Core/Inc/SPIT.h:46:33: warning: backslash and newline separated by space
+   46 |     double: spitFloatDefault    \
+      |                                  
+../Core/Src/main.c: In function 'KFS_Rotate_Servo':
+../Core/Src/main.c:268:17: warning: implicit declaration of function 'RotateServo'; did you mean 'KFS_Rotate_Servo'? [-Wimplicit-function-declaration]
+  268 |                 RotateServo(&KFS_PCA, KFS_SERVO, KFS_OPEN_ANGLE);
+      |                 ^~~~~~~~~~~
+      |                 KFS_Rotate_Servo
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:398:91: error: 'bus2' undeclared (first use in this function)
+  398 |         InitBTS(&KFS_MOTOR, &htim8, KFS_LPWM, KFS_LPWM_APB_BUS, &htim8, KFS_RPWM_APB_BUS, bus2, KFS_MOTOR_FREQ);
+      |                                                                                           ^~~~
+../Core/Src/main.c:398:91: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c:399:9: error: too few arguments to function 'InitBTS'
+  399 |         InitBTS(&STAFF_MOTOR);
+      |         ^~~~~~~
+In file included from ../Core/Src/main.c:32:
+../Core/Inc/BTS7960.h:35:6: note: declared here
+   35 | void InitBTS(BTS *Motor , TIM_HandleTypeDef *htim1, uint32_t Channel1,uint8_t bus1,TIM_HandleTypeDef *htim2, uint32_t Channel2, uint8_t bus2,uint16_t freq);
+      |      ^~~~~~~
+../Core/Src/main.c:400:9: warning: implicit declaration of function 'InitPCA' [-Wimplicit-function-declaration]
+  400 |         InitPCA(&KFS_PCA,       &hi2c3, KFS_PCA_FREQ);
+      |         ^~~~~~~
+In file included from ../Core/Src/SPIT.c:1:
+../Core/Inc/spit.h:46:33: warning: backslash and newline separated by space
+   46 |     double: spitFloatDefault    \
+      |                                  
+make: *** [Core/Src/subdir.mk:52: Core/Src/main.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+12:42:41 **** Incremental Build of configuration Debug for project 3001_MECHANISMS_TEST ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+In file included from ../Core/Src/main.c:35:
+../Core/Inc/SPIT.h:46:33: warning: backslash and newline separated by space
+   46 |     double: spitFloatDefault    \
+      |                                  
+../Core/Src/main.c: In function 'KFS_Rotate_Servo':
+../Core/Src/main.c:269:17: warning: implicit declaration of function 'RotateServo'; did you mean 'KFS_Rotate_Servo'? [-Wimplicit-function-declaration]
+  269 |                 RotateServo(&KFS_PCA, KFS_SERVO, KFS_OPEN_ANGLE);
+      |                 ^~~~~~~~~~~
+      |                 KFS_Rotate_Servo
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:399:91: error: 'bus2' undeclared (first use in this function)
+  399 |         InitBTS(&KFS_MOTOR, &htim8, KFS_LPWM, KFS_LPWM_APB_BUS, &htim8, KFS_RPWM_APB_BUS, bus2, KFS_MOTOR_FREQ);
+      |                                                                                           ^~~~
+../Core/Src/main.c:399:91: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [Core/Src/subdir.mk:52: Core/Src/main.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+12:43:24 **** Incremental Build of configuration Debug for project 3001_MECHANISMS_TEST ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+In file included from ../Core/Src/main.c:35:
+../Core/Inc/SPIT.h:46:33: warning: backslash and newline separated by space
+   46 |     double: spitFloatDefault    \
+      |                                  
+../Core/Src/main.c: In function 'KFS_Rotate_Servo':
+../Core/Src/main.c:269:17: warning: implicit declaration of function 'RotateServo'; did you mean 'KFS_Rotate_Servo'? [-Wimplicit-function-declaration]
+  269 |                 RotateServo(&KFS_PCA, KFS_SERVO, KFS_OPEN_ANGLE);
+      |                 ^~~~~~~~~~~
+      |                 KFS_Rotate_Servo
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:400:89: error: 'STAFF_RPWM_APB_BUS' undeclared (first use in this function); did you mean 'STAFF_LPWM_APB_BUS'?
+  400 |         InitBTS(&STAFF_MOTOR, &htim8, KFS_LPWM, STAFF_LPWM_APB_BUS, &htim8, STAFF_RPWM, STAFF_RPWM_APB_BUS, STAFF_MOTOR_FREQ);
+      |                                                                                         ^~~~~~~~~~~~~~~~~~
+      |                                                                                         STAFF_LPWM_APB_BUS
+../Core/Src/main.c:400:89: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [Core/Src/subdir.mk:52: Core/Src/main.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+12:44:01 **** Incremental Build of configuration Debug for project 3001_MECHANISMS_TEST ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/PCA9685.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/PCA9685.d" -MT"Core/Src/PCA9685.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/PCA9685.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+In file included from ../Core/Src/main.c:35:
+../Core/Inc/SPIT.h:46:33: warning: backslash and newline separated by space
+   46 |     double: spitFloatDefault    \
+      |                                  
+../Core/Src/main.c: In function 'KFS_Rotate_Servo':
+../Core/Src/main.c:269:17: warning: implicit declaration of function 'RotateServo'; did you mean 'KFS_Rotate_Servo'? [-Wimplicit-function-declaration]
+  269 |                 RotateServo(&KFS_PCA, KFS_SERVO, KFS_OPEN_ANGLE);
+      |                 ^~~~~~~~~~~
+      |                 KFS_Rotate_Servo
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:400:89: error: 'STAFF_RPWM_APB_BUS' undeclared (first use in this function); did you mean 'STAFF_LPWM_APB_BUS'?
+  400 |         InitBTS(&STAFF_MOTOR, &htim8, KFS_LPWM, STAFF_LPWM_APB_BUS, &htim8, STAFF_RPWM, STAFF_RPWM_APB_BUS, STAFF_MOTOR_FREQ);
+      |                                                                                         ^~~~~~~~~~~~~~~~~~
+      |                                                                                         STAFF_LPWM_APB_BUS
+../Core/Src/main.c:400:89: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c:401:9: warning: implicit declaration of function 'InitPCA' [-Wimplicit-function-declaration]
+  401 |         InitPCA(&KFS_PCA,       &hi2c3, KFS_PCA_FREQ);
+      |         ^~~~~~~
+make: *** [Core/Src/subdir.mk:52: Core/Src/main.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+12:44:32 **** Incremental Build of configuration Debug for project 3001_MECHANISMS_TEST ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/PCA9685.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/PCA9685.d" -MT"Core/Src/PCA9685.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/PCA9685.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+In file included from ../Core/Src/main.c:35:
+../Core/Inc/SPIT.h:46:33: warning: backslash and newline separated by space
+   46 |     double: spitFloatDefault    \
+      |                                  
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:400:89: error: 'STAFF_RPWM_APB_BUS' undeclared (first use in this function); did you mean 'STAFF_LPWM_APB_BUS'?
+  400 |         InitBTS(&STAFF_MOTOR, &htim8, KFS_LPWM, STAFF_LPWM_APB_BUS, &htim8, STAFF_RPWM, STAFF_RPWM_APB_BUS, STAFF_MOTOR_FREQ);
+      |                                                                                         ^~~~~~~~~~~~~~~~~~
+      |                                                                                         STAFF_LPWM_APB_BUS
+../Core/Src/main.c:400:89: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [Core/Src/subdir.mk:52: Core/Src/main.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+12:45:33 **** Incremental Build of configuration Debug for project 3001_MECHANISMS_TEST ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/SPIT.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/SPIT.d" -MT"Core/Src/SPIT.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/SPIT.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "3001_MECHANISMS_TEST.elf" @"objects.list"   -mcpu=cortex-m4 -T"G:\WINDOWS\EVERYTHING\COLLEGE\AUTOMATONS\2026\RYUK\3001_MECHANISMS_TEST\STM32F446ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="3001_MECHANISMS_TEST.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 3001_MECHANISMS_TEST.elf
+ 
+arm-none-eabi-size  3001_MECHANISMS_TEST.elf 
+arm-none-eabi-objdump -h -S 3001_MECHANISMS_TEST.elf  > "3001_MECHANISMS_TEST.list"
+   text	   data	    bss	    dec	    hex	filename
+  27924	     92	   2692	  30708	   77f4	3001_MECHANISMS_TEST.elf
+Finished building: default.size.stdout
+ 
+Finished building: 3001_MECHANISMS_TEST.list
+ 
+18:21:32 **** Incremental Build of configuration Debug for project 3001_MECHANISMS_TEST ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c:129: warning: "KFS_PICK_BELT_LPWM" redefined
+  129 | #define KFS_PICK_BELT_LPWM                              TIM_CHANNEL_3
+      | 
+../Core/Src/main.c:128: note: this is the location of the previous definition
+  128 | #define KFS_PICK_BELT_LPWM                              TIM_CHANNEL_2
+      | 
+../Core/Src/main.c:136: warning: "KFS_PICK_TURRET_LPWM" redefined
+  136 | #define KFS_PICK_TURRET_LPWM                    TIM_CHANNEL_3
+      | 
+../Core/Src/main.c:135: note: this is the location of the previous definition
+  135 | #define KFS_PICK_TURRET_LPWM                    TIM_CHANNEL_2
+      | 
+../Core/Src/main.c: In function 'Radians':
+../Core/Src/main.c:232:24: error: 'PI' undeclared (first use in this function); did you mean 'TPI'?
+  232 |     return angle * 2 * PI / 360.0f;
+      |                        ^~
+      |                        TPI
+../Core/Src/main.c:232:24: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c: In function 'Degrees':
+../Core/Src/main.c:236:34: error: 'PI' undeclared (first use in this function); did you mean 'TPI'?
+  236 |     return angle * 360.0f / (2 * PI);
+      |                                  ^~
+      |                                  TPI
+../Core/Src/main.c: In function 'get_value':
+../Core/Src/main.c:259:17: error: 'PS4' undeclared (first use in this function)
+  259 |                 PS4.Up                          = ((data[0] & (1 << 0)) ? 1 : 0);
+      |                 ^~~
+../Core/Src/main.c: In function 'KFS_PLACE_Motor':
+../Core/Src/main.c:313:12: error: 'PS4' undeclared (first use in this function)
+  313 |         if(PS4.L1){
+      |            ^~~
+../Core/Src/main.c: In function 'KFS_PLACE_Servo':
+../Core/Src/main.c:331:12: error: 'PS4' undeclared (first use in this function)
+  331 |         if(PS4.L3){
+      |            ^~~
+../Core/Src/main.c: In function 'STAFF_Motor':
+../Core/Src/main.c:350:12: error: 'PS4' undeclared (first use in this function)
+  350 |         if(PS4.RY){
+      |            ^~~
+../Core/Src/main.c:351:24: error: unknown type name 'inst'
+  351 |                 static inst STAFF_SPEED = constrain(PS4.RY, -MAX_STAFF_PWM, MAX_STAFF_PWM)
+      |                        ^~~~
+../Core/Src/main.c:352:17: error: expected ',' or ';' before 'RotateMotor'
+  352 |                 RotateMotor(&STAFF_MOTOR, STAFF_SPEED);
+      |                 ^~~~~~~~~~~
+../Core/Src/main.c:351:29: warning: unused variable 'STAFF_SPEED' [-Wunused-variable]
+  351 |                 static inst STAFF_SPEED = constrain(PS4.RY, -MAX_STAFF_PWM, MAX_STAFF_PWM)
+      |                             ^~~~~~~~~~~
+../Core/Src/main.c: In function 'STAFF_Servo':
+../Core/Src/main.c:378:12: error: 'PS4' undeclared (first use in this function)
+  378 |         if(PS4.Square && !StaffGripServo.prevState){
+      |            ^~~
+../Core/Src/main.c: In function 'KFS_PICK_Motor':
+../Core/Src/main.c:432:12: error: 'PS4' undeclared (first use in this function)
+  432 |         if(PS4.Up){
+      |            ^~~
+../Core/Src/main.c: In function 'KFS_PICK_Servo':
+../Core/Src/main.c:455:12: error: 'PS4' undeclared (first use in this function)
+  455 |         if(PS4.Circle && !KFSGripServo.prevState){
+      |            ^~~
+../Core/Src/main.c:461:60: error: 'KFS_GRIPPER_2' undeclared (first use in this function); did you mean 'KFS_GRIPPER_1'?
+  461 |                                 RotateServo(&KFS_PICK_PCA, KFS_GRIPPER_2, KFS_GRIPPER_2_GRIP_ANGLE);
+      |                                                            ^~~~~~~~~~~~~
+      |                                                            KFS_GRIPPER_1
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:522:25: error: 'KFS_PICK_BELT_RPWM' undeclared (first use in this function); did you mean 'KFS_PICK_BELT_LPWM'?
+  522 |                         KFS_PICK_BELT_RPWM,     KFS_PICK_BELT_RPWM_APB_BUS,             KFS_PICK_BELT_MOTOR_FREQ);
+      |                         ^~~~~~~~~~~~~~~~~~
+      |                         KFS_PICK_BELT_LPWM
+../Core/Src/main.c:537:25: warning: unused variable 'PS4' [-Wunused-variable]
+  537 |                 PS4Data PS4 = { 0 };
+      |                         ^~~
+../Core/Src/main.c: In function 'Radians':
+../Core/Src/main.c:233:1: warning: control reaches end of non-void function [-Wreturn-type]
+  233 | }
+      | ^
+../Core/Src/main.c: In function 'Degrees':
+../Core/Src/main.c:237:1: warning: control reaches end of non-void function [-Wreturn-type]
+  237 | }
+      | ^
+make: *** [Core/Src/subdir.mk:52: Core/Src/main.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+18:22:27 **** Incremental Build of configuration Debug for project 3001_MECHANISMS_TEST ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c:129: warning: "KFS_PICK_BELT_LPWM" redefined
+  129 | #define KFS_PICK_BELT_LPWM                              TIM_CHANNEL_3
+      | 
+../Core/Src/main.c:128: note: this is the location of the previous definition
+  128 | #define KFS_PICK_BELT_LPWM                              TIM_CHANNEL_2
+      | 
+../Core/Src/main.c:136: warning: "KFS_PICK_TURRET_LPWM" redefined
+  136 | #define KFS_PICK_TURRET_LPWM                    TIM_CHANNEL_3
+      | 
+../Core/Src/main.c:135: note: this is the location of the previous definition
+  135 | #define KFS_PICK_TURRET_LPWM                    TIM_CHANNEL_2
+      | 
+../Core/Src/main.c: In function 'Radians':
+../Core/Src/main.c:233:24: error: 'PI' undeclared (first use in this function); did you mean 'TPI'?
+  233 |     return angle * 2 * PI / 360.0f;
+      |                        ^~
+      |                        TPI
+../Core/Src/main.c:233:24: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c: In function 'Degrees':
+../Core/Src/main.c:237:34: error: 'PI' undeclared (first use in this function); did you mean 'TPI'?
+  237 |     return angle * 360.0f / (2 * PI);
+      |                                  ^~
+      |                                  TPI
+../Core/Src/main.c: In function 'STAFF_Motor':
+../Core/Src/main.c:352:24: error: unknown type name 'inst'
+  352 |                 static inst STAFF_SPEED = constrain(PS4.RY, -MAX_STAFF_PWM, MAX_STAFF_PWM)
+      |                        ^~~~
+../Core/Src/main.c:352:43: error: initializer element is not constant
+  352 |                 static inst STAFF_SPEED = constrain(PS4.RY, -MAX_STAFF_PWM, MAX_STAFF_PWM)
+      |                                           ^~~~~~~~~
+../Core/Src/main.c:353:17: error: expected ',' or ';' before 'RotateMotor'
+  353 |                 RotateMotor(&STAFF_MOTOR, STAFF_SPEED);
+      |                 ^~~~~~~~~~~
+../Core/Src/main.c:352:29: warning: unused variable 'STAFF_SPEED' [-Wunused-variable]
+  352 |                 static inst STAFF_SPEED = constrain(PS4.RY, -MAX_STAFF_PWM, MAX_STAFF_PWM)
+      |                             ^~~~~~~~~~~
+../Core/Src/main.c: In function 'KFS_PICK_Servo':
+../Core/Src/main.c:462:60: error: 'KFS_GRIPPER_2' undeclared (first use in this function); did you mean 'KFS_GRIPPER_1'?
+  462 |                                 RotateServo(&KFS_PICK_PCA, KFS_GRIPPER_2, KFS_GRIPPER_2_GRIP_ANGLE);
+      |                                                            ^~~~~~~~~~~~~
+      |                                                            KFS_GRIPPER_1
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:523:25: error: 'KFS_PICK_BELT_RPWM' undeclared (first use in this function); did you mean 'KFS_PICK_BELT_LPWM'?
+  523 |                         KFS_PICK_BELT_RPWM,     KFS_PICK_BELT_RPWM_APB_BUS,             KFS_PICK_BELT_MOTOR_FREQ);
+      |                         ^~~~~~~~~~~~~~~~~~
+      |                         KFS_PICK_BELT_LPWM
+../Core/Src/main.c: In function 'Radians':
+../Core/Src/main.c:234:1: warning: control reaches end of non-void function [-Wreturn-type]
+  234 | }
+      | ^
+../Core/Src/main.c: In function 'Degrees':
+../Core/Src/main.c:238:1: warning: control reaches end of non-void function [-Wreturn-type]
+  238 | }
+      | ^
+make: *** [Core/Src/subdir.mk:52: Core/Src/main.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+18:24:56 **** Incremental Build of configuration Debug for project 3001_MECHANISMS_TEST ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c:129: warning: "KFS_PICK_BELT_LPWM" redefined
+  129 | #define KFS_PICK_BELT_LPWM                              TIM_CHANNEL_3
+      | 
+../Core/Src/main.c:128: note: this is the location of the previous definition
+  128 | #define KFS_PICK_BELT_LPWM                              TIM_CHANNEL_2
+      | 
+../Core/Src/main.c:136: warning: "KFS_PICK_TURRET_LPWM" redefined
+  136 | #define KFS_PICK_TURRET_LPWM                    TIM_CHANNEL_3
+      | 
+../Core/Src/main.c:135: note: this is the location of the previous definition
+  135 | #define KFS_PICK_TURRET_LPWM                    TIM_CHANNEL_2
+      | 
+../Core/Src/main.c: In function 'Radians':
+../Core/Src/main.c:233:24: error: 'PI' undeclared (first use in this function); did you mean 'TPI'?
+  233 |     return angle * 2 * PI / 360.0f;
+      |                        ^~
+      |                        TPI
+../Core/Src/main.c:233:24: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c: In function 'Degrees':
+../Core/Src/main.c:237:34: error: 'PI' undeclared (first use in this function); did you mean 'TPI'?
+  237 |     return angle * 360.0f / (2 * PI);
+      |                                  ^~
+      |                                  TPI
+../Core/Src/main.c: In function 'STAFF_Motor':
+../Core/Src/main.c:352:45: error: initializer element is not constant
+  352 |                 static int8_t STAFF_SPEED = constrain(PS4.RY, -MAX_STAFF_PWM, MAX_STAFF_PWM)
+      |                                             ^~~~~~~~~
+../Core/Src/main.c:353:17: error: expected ',' or ';' before 'RotateMotor'
+  353 |                 RotateMotor(&STAFF_MOTOR, STAFF_SPEED);
+      |                 ^~~~~~~~~~~
+../Core/Src/main.c:352:31: warning: unused variable 'STAFF_SPEED' [-Wunused-variable]
+  352 |                 static int8_t STAFF_SPEED = constrain(PS4.RY, -MAX_STAFF_PWM, MAX_STAFF_PWM)
+      |                               ^~~~~~~~~~~
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:523:25: error: 'KFS_PICK_BELT_RPWM' undeclared (first use in this function); did you mean 'KFS_PICK_BELT_LPWM'?
+  523 |                         KFS_PICK_BELT_RPWM,     KFS_PICK_BELT_RPWM_APB_BUS,             KFS_PICK_BELT_MOTOR_FREQ);
+      |                         ^~~~~~~~~~~~~~~~~~
+      |                         KFS_PICK_BELT_LPWM
+../Core/Src/main.c: In function 'Radians':
+../Core/Src/main.c:234:1: warning: control reaches end of non-void function [-Wreturn-type]
+  234 | }
+      | ^
+../Core/Src/main.c: In function 'Degrees':
+../Core/Src/main.c:238:1: warning: control reaches end of non-void function [-Wreturn-type]
+  238 | }
+      | ^
+make: *** [Core/Src/subdir.mk:52: Core/Src/main.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+18:25:13 **** Incremental Build of configuration Debug for project 3001_MECHANISMS_TEST ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'Radians':
+../Core/Src/main.c:233:24: error: 'PI' undeclared (first use in this function); did you mean 'TPI'?
+  233 |     return angle * 2 * PI / 360.0f;
+      |                        ^~
+      |                        TPI
+../Core/Src/main.c:233:24: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c: In function 'Degrees':
+../Core/Src/main.c:237:34: error: 'PI' undeclared (first use in this function); did you mean 'TPI'?
+  237 |     return angle * 360.0f / (2 * PI);
+      |                                  ^~
+      |                                  TPI
+../Core/Src/main.c: In function 'STAFF_Motor':
+../Core/Src/main.c:352:45: error: initializer element is not constant
+  352 |                 static int8_t STAFF_SPEED = constrain(PS4.RY, -MAX_STAFF_PWM, MAX_STAFF_PWM)
+      |                                             ^~~~~~~~~
+../Core/Src/main.c:353:17: error: expected ',' or ';' before 'RotateMotor'
+  353 |                 RotateMotor(&STAFF_MOTOR, STAFF_SPEED);
+      |                 ^~~~~~~~~~~
+../Core/Src/main.c:352:31: warning: unused variable 'STAFF_SPEED' [-Wunused-variable]
+  352 |                 static int8_t STAFF_SPEED = constrain(PS4.RY, -MAX_STAFF_PWM, MAX_STAFF_PWM)
+      |                               ^~~~~~~~~~~
+../Core/Src/main.c: In function 'Radians':
+../Core/Src/main.c:234:1: warning: control reaches end of non-void function [-Wreturn-type]
+  234 | }
+      | ^
+../Core/Src/main.c: In function 'Degrees':
+../Core/Src/main.c:238:1: warning: control reaches end of non-void function [-Wreturn-type]
+  238 | }
+      | ^
+make: *** [Core/Src/subdir.mk:52: Core/Src/main.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+18:25:57 **** Incremental Build of configuration Debug for project 3001_MECHANISMS_TEST ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'Radians':
+../Core/Src/main.c:233:24: error: 'PI' undeclared (first use in this function); did you mean 'TPI'?
+  233 |     return angle * 2 * PI / 360.0f;
+      |                        ^~
+      |                        TPI
+../Core/Src/main.c:233:24: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c: In function 'Degrees':
+../Core/Src/main.c:237:34: error: 'PI' undeclared (first use in this function); did you mean 'TPI'?
+  237 |     return angle * 360.0f / (2 * PI);
+      |                                  ^~
+      |                                  TPI
+../Core/Src/main.c: In function 'STAFF_Motor':
+../Core/Src/main.c:352:46: error: initializer element is not constant
+  352 |                 static int16_t STAFF_SPEED = constrain(PS4.RY, -MAX_STAFF_PWM, MAX_STAFF_PWM)
+      |                                              ^~~~~~~~~
+../Core/Src/main.c:353:17: error: expected ',' or ';' before 'RotateMotor'
+  353 |                 RotateMotor(&STAFF_MOTOR, STAFF_SPEED);
+      |                 ^~~~~~~~~~~
+../Core/Src/main.c:352:32: warning: unused variable 'STAFF_SPEED' [-Wunused-variable]
+  352 |                 static int16_t STAFF_SPEED = constrain(PS4.RY, -MAX_STAFF_PWM, MAX_STAFF_PWM)
+      |                                ^~~~~~~~~~~
+../Core/Src/main.c: In function 'Radians':
+../Core/Src/main.c:234:1: warning: control reaches end of non-void function [-Wreturn-type]
+  234 | }
+      | ^
+../Core/Src/main.c: In function 'Degrees':
+../Core/Src/main.c:238:1: warning: control reaches end of non-void function [-Wreturn-type]
+  238 | }
+      | ^
+make: *** [Core/Src/subdir.mk:52: Core/Src/main.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+18:26:06 **** Incremental Build of configuration Debug for project 3001_MECHANISMS_TEST ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'Radians':
+../Core/Src/main.c:233:24: error: 'PI' undeclared (first use in this function); did you mean 'TPI'?
+  233 |     return angle * 2 * PI / 360.0f;
+      |                        ^~
+      |                        TPI
+../Core/Src/main.c:233:24: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c: In function 'Degrees':
+../Core/Src/main.c:237:34: error: 'PI' undeclared (first use in this function); did you mean 'TPI'?
+  237 |     return angle * 360.0f / (2 * PI);
+      |                                  ^~
+      |                                  TPI
+../Core/Src/main.c: In function 'STAFF_Motor':
+../Core/Src/main.c:352:46: error: initializer element is not constant
+  352 |                 static int16_t STAFF_SPEED = constrain(PS4.RY, -MAX_STAFF_PWM, MAX_STAFF_PWM);
+      |                                              ^~~~~~~~~
+../Core/Src/main.c: In function 'Radians':
+../Core/Src/main.c:234:1: warning: control reaches end of non-void function [-Wreturn-type]
+  234 | }
+      | ^
+../Core/Src/main.c: In function 'Degrees':
+../Core/Src/main.c:238:1: warning: control reaches end of non-void function [-Wreturn-type]
+  238 | }
+      | ^
+make: *** [Core/Src/subdir.mk:52: Core/Src/main.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+18:29:20 **** Incremental Build of configuration Debug for project 3001_MECHANISMS_TEST ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'STAFF_Motor':
+../Core/Src/main.c:361:46: error: initializer element is not constant
+  361 |                 static int16_t STAFF_SPEED = constrain(PS4.RY, -MAX_STAFF_PWM, MAX_STAFF_PWM);
+      |                                              ^~~~~~~~~
+make: *** [Core/Src/subdir.mk:52: Core/Src/main.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+18:29:58 **** Incremental Build of configuration Debug for project 3001_MECHANISMS_TEST ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "3001_MECHANISMS_TEST.elf" @"objects.list"   -mcpu=cortex-m4 -T"G:\WINDOWS\EVERYTHING\COLLEGE\AUTOMATONS\2026\RYUK\3001_MECHANISMS_TEST\STM32F446ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="3001_MECHANISMS_TEST.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+C:/STM/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/bin/ld.exe: ./Core/Src/main.o: in function `map':
+G:/WINDOWS/EVERYTHING/COLLEGE/AUTOMATONS/2026/RYUK/3001_MECHANISMS_TEST/Debug/../Core/Src/main.c:249: multiple definition of `map'; ./Core/Src/PCA9685.o:G:/WINDOWS/EVERYTHING/COLLEGE/AUTOMATONS/2026/RYUK/3001_MECHANISMS_TEST/Debug/../Core/Src/PCA9685.c:16: first defined here
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:64: 3001_MECHANISMS_TEST.elf] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+18:32:04 **** Incremental Build of configuration Debug for project 3001_MECHANISMS_TEST ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "3001_MECHANISMS_TEST.elf" @"objects.list"   -mcpu=cortex-m4 -T"G:\WINDOWS\EVERYTHING\COLLEGE\AUTOMATONS\2026\RYUK\3001_MECHANISMS_TEST\STM32F446ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="3001_MECHANISMS_TEST.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+C:/STM/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/bin/ld.exe: ./Core/Src/main.o: in function `map':
+G:/WINDOWS/EVERYTHING/COLLEGE/AUTOMATONS/2026/RYUK/3001_MECHANISMS_TEST/Debug/../Core/Src/main.c:249: multiple definition of `map'; ./Core/Src/PCA9685.o:G:/WINDOWS/EVERYTHING/COLLEGE/AUTOMATONS/2026/RYUK/3001_MECHANISMS_TEST/Debug/../Core/Src/PCA9685.c:16: first defined here
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:64: 3001_MECHANISMS_TEST.elf] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+18:35:53 **** Incremental Build of configuration Debug for project 3001_MECHANISMS_TEST ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "3001_MECHANISMS_TEST.elf" @"objects.list"   -mcpu=cortex-m4 -T"G:\WINDOWS\EVERYTHING\COLLEGE\AUTOMATONS\2026\RYUK\3001_MECHANISMS_TEST\STM32F446ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="3001_MECHANISMS_TEST.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 3001_MECHANISMS_TEST.elf
+ 
+arm-none-eabi-size  3001_MECHANISMS_TEST.elf 
+arm-none-eabi-objdump -h -S 3001_MECHANISMS_TEST.elf  > "3001_MECHANISMS_TEST.list"
+   text	   data	    bss	    dec	    hex	filename
+  28300	     92	   2748	  31140	   79a4	3001_MECHANISMS_TEST.elf
+Finished building: default.size.stdout
+ 
+Finished building: 3001_MECHANISMS_TEST.list
+ 
+18:36:12 **** Incremental Build of configuration Debug for project 3001_MECHANISMS_TEST ****
+make -j4 all 
+arm-none-eabi-size  3001_MECHANISMS_TEST.elf 
+   text	   data	    bss	    dec	    hex	filename
+  28300	     92	   2748	  31140	   79a4	3001_MECHANISMS_TEST.elf
+Finished building: default.size.stdout
+ 

@@ -158,7 +158,7 @@ Button KFSGripServo = { 0 };
 #define KFS_GRIPPER_1_RELEASE_ANGLE		160
 #define KFS_GRIPPER_2_RELEASE_ANGLE		160
 
-
+#
 // ================== DATA ==================
 int8_t data[DATA_SIZE];
 char msg[300];
@@ -246,9 +246,9 @@ float Degrees(float angle) {
     return angle * 360.0f / (2 * PI);
 }
 
-//long map(long x, long in_min, long in_max, long out_min, long out_max) {
-//    return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
-//}
+long map(long x, long in_min, long in_max, long out_min, long out_max) {
+    return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
+}
 
 float constrain(float num, float min, float max) {
 
@@ -358,8 +358,8 @@ void KFS_PLACE_Motion(){
 //=================== STAFF PICKING ===================
 void STAFF_Motor(){
 	if(PS4.RY){
-		int8_t beltSpeed = constrain(PS4.RY, -MAX_STAFF_PWM, MAX_STAFF_PWM);
-		RotateMotor(&STAFF_MOTOR, beltSpeed);
+		static int16_t STAFF_SPEED = constrain(PS4.RY, -MAX_STAFF_PWM, MAX_STAFF_PWM);
+		RotateMotor(&STAFF_MOTOR, STAFF_SPEED);
 	}
 	else{
 		StopMotor(&STAFF_MOTOR);
@@ -528,10 +528,10 @@ int main(void)
   	InitBTS(&STAFF_MOTOR, 		&htim8, KFS_PLACE_LPWM, 	STAFF_LPWM_APB_BUS, 		&htim8,
   			STAFF_RPWM, 		STAFF_RPWM_APB_BUS, 		STAFF_MOTOR_FREQ);
 
-  	InitBTS(&KFS_PICK_BELT_MOTOR, 		&htim8, 	KFS_PICK_BELT_LPWM, 	KFS_PICK_BELT_LPWM_APB_BUS, 	&htim8,
-  			KFS_PICK_BELT_RPWM, 		KFS_PICK_BELT_RPWM_APB_BUS, 		KFS_PICK_BELT_MOTOR_FREQ);
-	InitBTS(&KFS_PICK_TURRET_MOTOR, 	&htim8, 	KFS_PICK_TURRET_LPWM, 	KFS_PICK_TURRET_LPWM_APB_BUS, 	&htim8,
-			KFS_PICK_TURRET_RPWM, 		KFS_PICK_TURRET_RPWM_APB_BUS, 		KFS_PICK_TURRET_MOTOR_FREQ);
+  	InitBTS(&KFS_PICK_BELT_MOTOR, 	&htim8, 	KFS_PICK_BELT_LPWM, 	KFS_PICK_BELT_LPWM_APB_BUS, 	&htim8,
+  			KFS_PICK_BELT_RPWM, 	KFS_PICK_BELT_RPWM_APB_BUS, 		KFS_PICK_BELT_MOTOR_FREQ);
+	InitBTS(&KFS_PICK_BELT_MOTOR, 	&htim8, 	KFS_PICK_BELT_LPWM, 	KFS_PICK_BELT_LPWM_APB_BUS, 	&htim8,
+			KFS_PICK_BELT_RPWM, 	KFS_PICK_BELT_RPWM_APB_BUS, 		KFS_PICK_BELT_MOTOR_FREQ);
 
 	InitPCA(&KFS_PLACE_PCA, 	&hi2c3, KFS_PLACE_PCA_FREQ);
 	InitPCA(&STAFF_PCA, 		&hi2c3, STAFF_PCA_FREQ);
@@ -547,11 +547,7 @@ int main(void)
 
 		get_value();
 		KFS_PLACE_Motion();
-		KFS_PICK_Motion();
 		STAFF_Motion();
-
-
-
 //		RotateMotor(&KFS_PLACE_MOTOR, 50);
 //		RotateMotor(&KFS_PLACE_MOTOR,   -KFS_PLACE_CONVEYOR_SPEED);
 

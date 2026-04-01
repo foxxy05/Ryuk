@@ -14,7 +14,7 @@ void spitCheck(void){
         return;
     }
 
-    spitlnf("SPIT OK");
+    spitln("SPIT OK");
     spitlnf("Buffer : %d bytes", SPIT_BUFFER_SIZE);
     spitlnf("Timeout: %d ms",    SPIT_TIMEOUT);
 }
