@@ -160,12 +160,20 @@ void get_value() {
 //
 //		//sprintf(msg,"%d   %d\r\n" data[4], data[5]);
 //		HAL_UART_Transmit(&huart3, (uint8_t*) msg, strlen(msg), HAL_MAX_DELAY);
-			spitf("SQ %d  X %d  O %d  TRI %d  LEFT %d  RIGHT %d  UP %d  DOWN %d  PS %d  TOUCHPAD %d  OPT %d  SHARE %d  R3 %d  L3 %d  R1 %d  L1 %d  LX %d  LY %d  RX %d  RY %d  OMEGA %d\r\n",
-							PS4.Square, PS4.Cross, PS4.Circle, PS4.Triangle,
-							PS4.Left, PS4.Down, PS4.Right, PS4.Up,
-							PS4.PS, PS4.Touchpad, PS4.Options, PS4.Share,
-							PS4.R3, PS4.L3, PS4.R1, PS4.L1,
-							Joystick.LX, Joystick.LY, Joystick.RX, Joystick.RY, Joystick.Omega);
+//			spitf("SQ %d  X %d  O %d  TRI %d  LEFT %d  RIGHT %d  UP %d  DOWN %d  PS %d  TOUCHPAD %d  OPT %d  SHARE %d  R3 %d  L3 %d  R1 %d  L1 %d  LX %d  LY %d  RX %d  RY %d  OMEGA %d\r\n",
+//							PS4.Square, PS4.Cross, PS4.Circle, PS4.Triangle,
+//							PS4.Left, PS4.Down, PS4.Right, PS4.Up,
+//							PS4.PS, PS4.Touchpad, PS4.Options, PS4.Share,
+//							PS4.R3, PS4.L3, PS4.R1, PS4.L1,
+//							Joystick.LX, Joystick.LY, Joystick.RX, Joystick.RY, Joystick.Omega);
+
+			sprintf(msg,"SQ %d  X %d  O %d  TRI %d  LEFT %d  RIGHT %d  UP %d  DOWN %d  PS %d  TOUCH %d  OPT %d  SHARE %d  R3 %d  L3 %d  R1 %d  L1 %d  LX %d  LY %d  RX %d  RY %d  OMEGA %d\r\n",
+							PS4.Square, 	PS4.Cross, 		PS4.Circle, 	PS4.Triangle,
+							PS4.Left,		PS4.Down, 		PS4.Right, 		PS4.Up,
+							PS4.PS,			PS4.Touchpad,	PS4.Options,	PS4.Share,
+							PS4.R3, 		PS4.L3, 		PS4.R1, 		PS4.L1,
+							Joystick.LX,	Joystick.LY, 	Joystick.RX, 	Joystick.RY, 	Joystick.Omega);
+					HAL_UART_Transmit(&huart3, (uint8_t*) msg, strlen(msg), HAL_MAX_DELAY);
 
 	}
 }
@@ -205,7 +213,7 @@ int main(void)
   MX_USART3_UART_Init();
   MX_TIM2_Init();
   /* USER CODE BEGIN 2 */
-
+  spitDefault(&huart3);
   /* USER CODE END 2 */
 
   /* Infinite loop */

@@ -1543,3 +1543,958 @@ Finished building: default.size.stdout
  
 Finished building: 3000_COMMUNICATION_ONLY.list
  
+18:38:27 **** Incremental Build of configuration Debug for project 2000_I2C_DATA_RECEIVE ****
+make -j4 all 
+arm-none-eabi-size  2000_I2C_DATA_RECEIVE.elf 
+   text	   data	    bss	    dec	    hex	filename
+  12768	     12	   2892	  15672	   3d38	2000_I2C_DATA_RECEIVE.elf
+Finished building: default.size.stdout
+ 
+18:38:29 **** Incremental Build of configuration Debug for project 3000_COMMUNICATION_ONLY ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "3000_COMMUNICATION_ONLY.elf" @"objects.list"   -mcpu=cortex-m4 -T"G:\WINDOWS\EVERYTHING\COLLEGE\AUTOMATONS\2026\RYUK\3000_COMMUNICATION_ONLY\STM32F446ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="3000_COMMUNICATION_ONLY.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 3000_COMMUNICATION_ONLY.elf
+ 
+arm-none-eabi-size  3000_COMMUNICATION_ONLY.elf 
+arm-none-eabi-objdump -h -S 3000_COMMUNICATION_ONLY.elf  > "3000_COMMUNICATION_ONLY.list"
+   text	   data	    bss	    dec	    hex	filename
+  18212	     92	   2180	  20484	   5004	3000_COMMUNICATION_ONLY.elf
+Finished building: default.size.stdout
+ 
+Finished building: 3000_COMMUNICATION_ONLY.list
+ 
+19:58:24 **** Build of configuration Debug for project 3001_MECHANISMS_TEST ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/BTS7960.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/BTS7960.d" -MT"Core/Src/BTS7960.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/BTS7960.o"
+arm-none-eabi-gcc "../Core/Src/Cytron.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/Cytron.d" -MT"Core/Src/Cytron.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Cytron.o"
+arm-none-eabi-gcc "../Core/Src/Encoderlib.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/Encoderlib.d" -MT"Core/Src/Encoderlib.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Encoderlib.o"
+arm-none-eabi-gcc "../Core/Src/PCA9685.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/PCA9685.d" -MT"Core/Src/PCA9685.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/PCA9685.o"
+arm-none-eabi-gcc "../Core/Src/SPIT.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/SPIT.d" -MT"Core/Src/SPIT.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/SPIT.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/stm32f4xx_hal_msp.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f4xx_hal_msp.d" -MT"Core/Src/stm32f4xx_hal_msp.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f4xx_hal_msp.o"
+arm-none-eabi-gcc "../Core/Src/stm32f4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f4xx_it.d" -MT"Core/Src/stm32f4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f4xx_it.o"
+../Core/Src/main.c:59:1: error: unknown type name 'BTS'
+   59 | BTS KFS_Motor;
+      | ^~~
+../Core/Src/main.c: In function 'KFS_Motion':
+../Core/Src/main.c:197:49: warning: implicit declaration of function 'RotateMotor'; did you mean 'RotateMoter'? [-Wimplicit-function-declaration]
+  197 |         if(PS4.L1)                              RotateMotor(&KFS_Motor,  KFS_CONVEYOR_SPEED);
+      |                                                 ^~~~~~~~~~~
+      |                                                 RotateMoter
+../Core/Src/main.c:199:49: warning: implicit declaration of function 'RotateServo'; did you mean 'RotateReverse'? [-Wimplicit-function-declaration]
+  199 |         if(PS4.L3)                              RotateServo(&KFS_PCA, KFS_SERVO, KFS_OPEN_ANGLE);
+      |                                                 ^~~~~~~~~~~
+      |                                                 RotateReverse
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:242:9: warning: implicit declaration of function 'InitBTS' [-Wimplicit-function-declaration]
+  242 |         InitBTS(&KFS_Motor, &htim5, KFS_LPWM, &htim8, KFS_RPWM, KFS_ACTIVE_CHANNEL, KFS_MOTOR_FREQ);
+      |         ^~~~~~~
+../Core/Src/main.c:243:9: warning: implicit declaration of function 'InitPCA' [-Wimplicit-function-declaration]
+  243 |         InitPCA(&KFS_PCA, hi2c3, KFS_PCA_FREQ);
+      |         ^~~~~~~
+../Core/Src/main.c:243:27: error: 'hi2c3' undeclared (first use in this function); did you mean 'hi2c2'?
+  243 |         InitPCA(&KFS_PCA, hi2c3, KFS_PCA_FREQ);
+      |                           ^~~~~
+      |                           hi2c2
+../Core/Src/main.c:243:27: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [Core/Src/subdir.mk:52: Core/Src/main.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+19:59:17 **** Incremental Build of configuration Debug for project 3001_MECHANISMS_TEST ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/stm32f4xx_hal_msp.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f4xx_hal_msp.d" -MT"Core/Src/stm32f4xx_hal_msp.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f4xx_hal_msp.o"
+../Core/Src/main.c:59:1: error: unknown type name 'BTS'
+   59 | BTS KFS_Motor;
+      | ^~~
+../Core/Src/main.c: In function 'get_value':
+../Core/Src/main.c:139:64: error: 'hi2c1' undeclared (first use in this function); did you mean 'hi2c3'?
+  139 |         HAL_StatusTypeDef I2C_Status = HAL_I2C_Master_Receive(&hi2c1,
+      |                                                                ^~~~~
+      |                                                                hi2c3
+../Core/Src/main.c:139:64: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c: In function 'KFS_Motion':
+../Core/Src/main.c:195:49: warning: implicit declaration of function 'RotateMotor'; did you mean 'RotateMoter'? [-Wimplicit-function-declaration]
+  195 |         if(PS4.L1)                              RotateMotor(&KFS_Motor,  KFS_CONVEYOR_SPEED);
+      |                                                 ^~~~~~~~~~~
+      |                                                 RotateMoter
+../Core/Src/main.c:197:49: warning: implicit declaration of function 'RotateServo'; did you mean 'RotateReverse'? [-Wimplicit-function-declaration]
+  197 |         if(PS4.L3)                              RotateServo(&KFS_PCA, KFS_SERVO, KFS_OPEN_ANGLE);
+      |                                                 ^~~~~~~~~~~
+      |                                                 RotateReverse
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:239:9: warning: implicit declaration of function 'InitBTS' [-Wimplicit-function-declaration]
+  239 |         InitBTS(&KFS_Motor, &htim5, KFS_LPWM, &htim8, KFS_RPWM, KFS_ACTIVE_CHANNEL, KFS_MOTOR_FREQ);
+      |         ^~~~~~~
+../Core/Src/main.c:240:9: warning: implicit declaration of function 'InitPCA' [-Wimplicit-function-declaration]
+  240 |         InitPCA(&KFS_PCA, hi2c3, KFS_PCA_FREQ);
+      |         ^~~~~~~
+make: *** [Core/Src/subdir.mk:52: Core/Src/main.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+20:00:54 **** Incremental Build of configuration Debug for project 3001_MECHANISMS_TEST ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/stm32f4xx_hal_msp.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f4xx_hal_msp.d" -MT"Core/Src/stm32f4xx_hal_msp.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f4xx_hal_msp.o"
+../Core/Src/main.c:59:1: error: unknown type name 'BTS'
+   59 | BTS KFS_Motor;
+      | ^~~
+../Core/Src/main.c: In function 'KFS_Motion':
+../Core/Src/main.c:197:49: warning: implicit declaration of function 'RotateMotor'; did you mean 'RotateMoter'? [-Wimplicit-function-declaration]
+  197 |         if(PS4.L1)                              RotateMotor(&KFS_Motor,  KFS_CONVEYOR_SPEED);
+      |                                                 ^~~~~~~~~~~
+      |                                                 RotateMoter
+../Core/Src/main.c:199:49: warning: implicit declaration of function 'RotateServo'; did you mean 'RotateReverse'? [-Wimplicit-function-declaration]
+  199 |         if(PS4.L3)                              RotateServo(&KFS_PCA, KFS_SERVO, KFS_OPEN_ANGLE);
+      |                                                 ^~~~~~~~~~~
+      |                                                 RotateReverse
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:242:9: warning: implicit declaration of function 'InitBTS' [-Wimplicit-function-declaration]
+  242 |         InitBTS(&KFS_Motor, &htim5, KFS_LPWM, &htim8, KFS_RPWM, KFS_ACTIVE_CHANNEL, KFS_MOTOR_FREQ);
+      |         ^~~~~~~
+../Core/Src/main.c:243:9: warning: implicit declaration of function 'InitPCA' [-Wimplicit-function-declaration]
+  243 |         InitPCA(&KFS_PCA, hi2c3, KFS_PCA_FREQ);
+      |         ^~~~~~~
+make: *** [Core/Src/subdir.mk:52: Core/Src/main.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+20:01:48 **** Incremental Build of configuration Debug for project 3001_MECHANISMS_TEST ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/PCA9685.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/PCA9685.d" -MT"Core/Src/PCA9685.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/PCA9685.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c:59:1: error: unknown type name 'BTS'
+   59 | BTS KFS_Motor;
+      | ^~~
+../Core/Src/main.c: In function 'KFS_Motion':
+../Core/Src/main.c:197:49: warning: implicit declaration of function 'RotateMotor'; did you mean 'RotateMoter'? [-Wimplicit-function-declaration]
+  197 |         if(PS4.L1)                              RotateMotor(&KFS_Motor,  KFS_CONVEYOR_SPEED);
+      |                                                 ^~~~~~~~~~~
+      |                                                 RotateMoter
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:242:9: warning: implicit declaration of function 'InitBTS' [-Wimplicit-function-declaration]
+  242 |         InitBTS(&KFS_Motor, &htim5, KFS_LPWM, &htim8, KFS_RPWM, KFS_ACTIVE_CHANNEL, KFS_MOTOR_FREQ);
+      |         ^~~~~~~
+../Core/Src/main.c:243:27: error: incompatible type for argument 2 of 'InitPCA'
+  243 |         InitPCA(&KFS_PCA, hi2c3, KFS_PCA_FREQ);
+      |                           ^~~~~
+      |                           |
+      |                           I2C_HandleTypeDef
+In file included from ../Core/Src/main.c:32:
+../Core/Inc/PCA9685.h:24:44: note: expected 'I2C_HandleTypeDef *' but argument is of type 'I2C_HandleTypeDef'
+   24 | void InitPCA(PCA_t *pca,I2C_HandleTypeDef *hi2c, uint16_t frequency);
+      |                         ~~~~~~~~~~~~~~~~~~~^~~~
+make: *** [Core/Src/subdir.mk:52: Core/Src/main.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+20:02:01 **** Incremental Build of configuration Debug for project 3001_MECHANISMS_TEST ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c:59:1: error: unknown type name 'BTS'
+   59 | BTS KFS_Motor;
+      | ^~~
+../Core/Src/main.c: In function 'KFS_Motion':
+../Core/Src/main.c:197:49: warning: implicit declaration of function 'RotateMotor'; did you mean 'RotateMoter'? [-Wimplicit-function-declaration]
+  197 |         if(PS4.L1)                              RotateMotor(&KFS_Motor,  KFS_CONVEYOR_SPEED);
+      |                                                 ^~~~~~~~~~~
+      |                                                 RotateMoter
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:242:9: warning: implicit declaration of function 'InitBTS' [-Wimplicit-function-declaration]
+  242 |         InitBTS(&KFS_Motor, &htim5, KFS_LPWM, &htim8, KFS_RPWM, KFS_ACTIVE_CHANNEL, KFS_MOTOR_FREQ);
+      |         ^~~~~~~
+../Core/Src/main.c:243:27: error: incompatible type for argument 2 of 'InitPCA'
+  243 |         InitPCA(&KFS_PCA, hi2c3, KFS_PCA_FREQ);
+      |                           ^~~~~
+      |                           |
+      |                           I2C_HandleTypeDef
+In file included from ../Core/Src/main.c:32:
+../Core/Inc/PCA9685.h:24:44: note: expected 'I2C_HandleTypeDef *' but argument is of type 'I2C_HandleTypeDef'
+   24 | void InitPCA(PCA_t *pca,I2C_HandleTypeDef *hi2c, uint16_t frequency);
+      |                         ~~~~~~~~~~~~~~~~~~~^~~~
+make: *** [Core/Src/subdir.mk:52: Core/Src/main.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+20:02:42 **** Incremental Build of configuration Debug for project 3001_MECHANISMS_TEST ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c:59:1: error: unknown type name 'BTS'
+   59 | BTS KFS_Motor;
+      | ^~~
+../Core/Src/main.c: In function 'KFS_Motion':
+../Core/Src/main.c:197:49: warning: implicit declaration of function 'RotateMotor'; did you mean 'RotateMoter'? [-Wimplicit-function-declaration]
+  197 |         if(PS4.L1)                              RotateMotor(&KFS_Motor,  KFS_CONVEYOR_SPEED);
+      |                                                 ^~~~~~~~~~~
+      |                                                 RotateMoter
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:242:9: warning: implicit declaration of function 'InitBTS' [-Wimplicit-function-declaration]
+  242 |         InitBTS(&KFS_Motor, &htim5, KFS_LPWM, &htim8, KFS_RPWM, KFS_ACTIVE_CHANNEL, KFS_MOTOR_FREQ);
+      |         ^~~~~~~
+make: *** [Core/Src/subdir.mk:52: Core/Src/main.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+20:04:20 **** Incremental Build of configuration Debug for project 3001_MECHANISMS_TEST ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/BTS7960.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/BTS7960.d" -MT"Core/Src/BTS7960.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/BTS7960.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c:59:1: error: unknown type name 'BTS'
+   59 | BTS KFS_MOTOR;
+      | ^~~
+../Core/Src/main.c: In function 'KFS_Motion':
+../Core/Src/main.c:197:49: warning: implicit declaration of function 'RotateMotor'; did you mean 'RotateMoter'? [-Wimplicit-function-declaration]
+  197 |         if(PS4.L1)                              RotateMotor(&KFS_Motor,  KFS_CONVEYOR_SPEED);
+      |                                                 ^~~~~~~~~~~
+      |                                                 RotateMoter
+../Core/Src/main.c:197:62: error: 'KFS_Motor' undeclared (first use in this function); did you mean 'KFS_Motion'?
+  197 |         if(PS4.L1)                              RotateMotor(&KFS_Motor,  KFS_CONVEYOR_SPEED);
+      |                                                              ^~~~~~~~~
+      |                                                              KFS_Motion
+../Core/Src/main.c:197:62: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:242:9: warning: implicit declaration of function 'InitBTS' [-Wimplicit-function-declaration]
+  242 |         InitBTS(&KFS_Motor, &htim5, KFS_LPWM, &htim8, KFS_RPWM, KFS_ACTIVE_CHANNEL, KFS_MOTOR_FREQ);
+      |         ^~~~~~~
+../Core/Src/main.c:242:18: error: 'KFS_Motor' undeclared (first use in this function); did you mean 'KFS_Motion'?
+  242 |         InitBTS(&KFS_Motor, &htim5, KFS_LPWM, &htim8, KFS_RPWM, KFS_ACTIVE_CHANNEL, KFS_MOTOR_FREQ);
+      |                  ^~~~~~~~~
+      |                  KFS_Motion
+make: *** [Core/Src/subdir.mk:52: Core/Src/main.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+20:05:30 **** Incremental Build of configuration Debug for project 3001_MECHANISMS_TEST ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c:59:1: error: unknown type name 'BTS'
+   59 | BTS KFS_MOTOR;
+      | ^~~
+../Core/Src/main.c: In function 'KFS_Motion':
+../Core/Src/main.c:197:49: warning: implicit declaration of function 'RotateMotor'; did you mean 'RotateMoter'? [-Wimplicit-function-declaration]
+  197 |         if(PS4.L1)                              RotateMotor(&KFS_Motor,  KFS_CONVEYOR_SPEED);
+      |                                                 ^~~~~~~~~~~
+      |                                                 RotateMoter
+../Core/Src/main.c:197:62: error: 'KFS_Motor' undeclared (first use in this function); did you mean 'KFS_Motion'?
+  197 |         if(PS4.L1)                              RotateMotor(&KFS_Motor,  KFS_CONVEYOR_SPEED);
+      |                                                              ^~~~~~~~~
+      |                                                              KFS_Motion
+../Core/Src/main.c:197:62: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:242:9: warning: implicit declaration of function 'InitBTS' [-Wimplicit-function-declaration]
+  242 |         InitBTS(&KFS_MOTOR, &htim5, KFS_LPWM, &htim8, KFS_RPWM, KFS_ACTIVE_CHANNEL, KFS_MOTOR_FREQ);
+      |         ^~~~~~~
+make: *** [Core/Src/subdir.mk:52: Core/Src/main.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+20:06:55 **** Incremental Build of configuration Debug for project 3001_MECHANISMS_TEST ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c:59:1: error: unknown type name 'BTS'
+   59 | BTS KFS_MOTOR;
+      | ^~~
+../Core/Src/main.c: In function 'KFS_Motion':
+../Core/Src/main.c:197:49: warning: implicit declaration of function 'RotateMotor'; did you mean 'RotateMoter'? [-Wimplicit-function-declaration]
+  197 |         if(PS4.L1)                              RotateMotor(&KFS_MOTOR,  KFS_CONVEYOR_SPEED);
+      |                                                 ^~~~~~~~~~~
+      |                                                 RotateMoter
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:242:9: warning: implicit declaration of function 'InitBTS' [-Wimplicit-function-declaration]
+  242 |         InitBTS(&KFS_MOTOR, &htim5, KFS_LPWM, &htim8, KFS_RPWM, KFS_APB_BUS, KFS_MOTOR_FREQ);
+      |         ^~~~~~~
+make: *** [Core/Src/subdir.mk:52: Core/Src/main.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+20:07:47 **** Incremental Build of configuration Debug for project 3001_MECHANISMS_TEST ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "3001_MECHANISMS_TEST.elf" @"objects.list"   -mcpu=cortex-m4 -T"G:\WINDOWS\EVERYTHING\COLLEGE\AUTOMATONS\2026\RYUK\3001_MECHANISMS_TEST\STM32F446ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="3001_MECHANISMS_TEST.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 3001_MECHANISMS_TEST.elf
+ 
+arm-none-eabi-size  3001_MECHANISMS_TEST.elf 
+arm-none-eabi-objdump -h -S 3001_MECHANISMS_TEST.elf  > "3001_MECHANISMS_TEST.list"
+   text	   data	    bss	    dec	    hex	filename
+  26280	     92	   2356	  28728	   7038	3001_MECHANISMS_TEST.elf
+Finished building: default.size.stdout
+ 
+Finished building: 3001_MECHANISMS_TEST.list
+ 
+20:10:44 **** Incremental Build of configuration Debug for project 3001_MECHANISMS_TEST ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "3001_MECHANISMS_TEST.elf" @"objects.list"   -mcpu=cortex-m4 -T"G:\WINDOWS\EVERYTHING\COLLEGE\AUTOMATONS\2026\RYUK\3001_MECHANISMS_TEST\STM32F446ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="3001_MECHANISMS_TEST.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 3001_MECHANISMS_TEST.elf
+ 
+arm-none-eabi-size  3001_MECHANISMS_TEST.elf 
+arm-none-eabi-objdump -h -S 3001_MECHANISMS_TEST.elf  > "3001_MECHANISMS_TEST.list"
+   text	   data	    bss	    dec	    hex	filename
+  26280	     92	   2356	  28728	   7038	3001_MECHANISMS_TEST.elf
+Finished building: default.size.stdout
+ 
+Finished building: 3001_MECHANISMS_TEST.list
+ 
+20:32:28 **** Incremental Build of configuration Debug for project 3001_MECHANISMS_TEST ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "3001_MECHANISMS_TEST.elf" @"objects.list"   -mcpu=cortex-m4 -T"G:\WINDOWS\EVERYTHING\COLLEGE\AUTOMATONS\2026\RYUK\3001_MECHANISMS_TEST\STM32F446ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="3001_MECHANISMS_TEST.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 3001_MECHANISMS_TEST.elf
+ 
+arm-none-eabi-size  3001_MECHANISMS_TEST.elf 
+arm-none-eabi-objdump -h -S 3001_MECHANISMS_TEST.elf  > "3001_MECHANISMS_TEST.list"
+   text	   data	    bss	    dec	    hex	filename
+  24296	     92	   2356	  26744	   6878	3001_MECHANISMS_TEST.elf
+Finished building: default.size.stdout
+ 
+Finished building: 3001_MECHANISMS_TEST.list
+ 
+20:33:21 **** Incremental Build of configuration Debug for project 3001_MECHANISMS_TEST ****
+make -j4 all 
+arm-none-eabi-size  3001_MECHANISMS_TEST.elf 
+   text	   data	    bss	    dec	    hex	filename
+  24296	     92	   2356	  26744	   6878	3001_MECHANISMS_TEST.elf
+Finished building: default.size.stdout
+ 
+20:38:34 **** Incremental Build of configuration Debug for project 3001_MECHANISMS_TEST ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "3001_MECHANISMS_TEST.elf" @"objects.list"   -mcpu=cortex-m4 -T"G:\WINDOWS\EVERYTHING\COLLEGE\AUTOMATONS\2026\RYUK\3001_MECHANISMS_TEST\STM32F446ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="3001_MECHANISMS_TEST.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 3001_MECHANISMS_TEST.elf
+ 
+arm-none-eabi-size  3001_MECHANISMS_TEST.elf 
+arm-none-eabi-objdump -h -S 3001_MECHANISMS_TEST.elf  > "3001_MECHANISMS_TEST.list"
+   text	   data	    bss	    dec	    hex	filename
+  24112	     92	   2652	  26856	   68e8	3001_MECHANISMS_TEST.elf
+Finished building: default.size.stdout
+ 
+Finished building: 3001_MECHANISMS_TEST.list
+ 
+20:38:44 **** Incremental Build of configuration Debug for project 3001_MECHANISMS_TEST ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "3001_MECHANISMS_TEST.elf" @"objects.list"   -mcpu=cortex-m4 -T"G:\WINDOWS\EVERYTHING\COLLEGE\AUTOMATONS\2026\RYUK\3001_MECHANISMS_TEST\STM32F446ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="3001_MECHANISMS_TEST.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 3001_MECHANISMS_TEST.elf
+ 
+arm-none-eabi-size  3001_MECHANISMS_TEST.elf 
+arm-none-eabi-objdump -h -S 3001_MECHANISMS_TEST.elf  > "3001_MECHANISMS_TEST.list"
+   text	   data	    bss	    dec	    hex	filename
+  24112	     92	   2652	  26856	   68e8	3001_MECHANISMS_TEST.elf
+Finished building: default.size.stdout
+ 
+Finished building: 3001_MECHANISMS_TEST.list
+ 
+20:48:11 **** Incremental Build of configuration Debug for project 3001_MECHANISMS_TEST ****
+make -j4 all 
+arm-none-eabi-size  3001_MECHANISMS_TEST.elf 
+   text	   data	    bss	    dec	    hex	filename
+  24112	     92	   2652	  26856	   68e8	3001_MECHANISMS_TEST.elf
+Finished building: default.size.stdout
+ 
+22:08:12 **** Incremental Build of configuration Debug for project 3001_MECHANISMS_TEST ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'KFS_Motion':
+../Core/Src/main.c:199:44: warning: pointer targets in passing argument 2 of 'HAL_UART_Transmit' differ in signedness [-Wpointer-sign]
+  199 |                 HAL_UART_Transmit(&huart3, msg, sizeof(msg), 100);
+      |                                            ^~~
+      |                                            |
+      |                                            char *
+In file included from ../Core/Inc/stm32f4xx_hal_conf.h:411,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:745:79: note: expected 'const uint8_t *' {aka 'const unsigned char *'} but argument is of type 'char *'
+  745 | HAL_StatusTypeDef HAL_UART_Transmit(UART_HandleTypeDef *huart, const uint8_t *pData, uint16_t Size, uint32_t Timeout);
+      |                                                                ~~~~~~~~~~~~~~~^~~~~
+../Core/Src/main.c:204:44: warning: pointer targets in passing argument 2 of 'HAL_UART_Transmit' differ in signedness [-Wpointer-sign]
+  204 |                 HAL_UART_Transmit(&huart3, msg, sizeof(msg), 100);
+      |                                            ^~~
+      |                                            |
+      |                                            char *
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:745:79: note: expected 'const uint8_t *' {aka 'const unsigned char *'} but argument is of type 'char *'
+  745 | HAL_StatusTypeDef HAL_UART_Transmit(UART_HandleTypeDef *huart, const uint8_t *pData, uint16_t Size, uint32_t Timeout);
+      |                                                                ~~~~~~~~~~~~~~~^~~~~
+../Core/Src/main.c:209:44: warning: pointer targets in passing argument 2 of 'HAL_UART_Transmit' differ in signedness [-Wpointer-sign]
+  209 |                 HAL_UART_Transmit(&huart3, msg, sizeof(msg), 100);
+      |                                            ^~~
+      |                                            |
+      |                                            char *
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:745:79: note: expected 'const uint8_t *' {aka 'const unsigned char *'} but argument is of type 'char *'
+  745 | HAL_StatusTypeDef HAL_UART_Transmit(UART_HandleTypeDef *huart, const uint8_t *pData, uint16_t Size, uint32_t Timeout);
+      |                                                                ~~~~~~~~~~~~~~~^~~~~
+../Core/Src/main.c:214:44: warning: pointer targets in passing argument 2 of 'HAL_UART_Transmit' differ in signedness [-Wpointer-sign]
+  214 |                 HAL_UART_Transmit(&huart3, msg, sizeof(msg), 100);
+      |                                            ^~~
+      |                                            |
+      |                                            char *
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:745:79: note: expected 'const uint8_t *' {aka 'const unsigned char *'} but argument is of type 'char *'
+  745 | HAL_StatusTypeDef HAL_UART_Transmit(UART_HandleTypeDef *huart, const uint8_t *pData, uint16_t Size, uint32_t Timeout);
+      |                                                                ~~~~~~~~~~~~~~~^~~~~
+arm-none-eabi-gcc -o "3001_MECHANISMS_TEST.elf" @"objects.list"   -mcpu=cortex-m4 -T"G:\WINDOWS\EVERYTHING\COLLEGE\AUTOMATONS\2026\RYUK\3001_MECHANISMS_TEST\STM32F446ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="3001_MECHANISMS_TEST.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 3001_MECHANISMS_TEST.elf
+ 
+arm-none-eabi-size  3001_MECHANISMS_TEST.elf 
+arm-none-eabi-objdump -h -S 3001_MECHANISMS_TEST.elf  > "3001_MECHANISMS_TEST.list"
+   text	   data	    bss	    dec	    hex	filename
+  23832	     92	   2652	  26576	   67d0	3001_MECHANISMS_TEST.elf
+Finished building: default.size.stdout
+ 
+Finished building: 3001_MECHANISMS_TEST.list
+ 
+22:09:10 **** Incremental Build of configuration Debug for project 3001_MECHANISMS_TEST ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "3001_MECHANISMS_TEST.elf" @"objects.list"   -mcpu=cortex-m4 -T"G:\WINDOWS\EVERYTHING\COLLEGE\AUTOMATONS\2026\RYUK\3001_MECHANISMS_TEST\STM32F446ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="3001_MECHANISMS_TEST.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 3001_MECHANISMS_TEST.elf
+ 
+arm-none-eabi-size  3001_MECHANISMS_TEST.elf 
+arm-none-eabi-objdump -h -S 3001_MECHANISMS_TEST.elf  > "3001_MECHANISMS_TEST.list"
+   text	   data	    bss	    dec	    hex	filename
+  23832	     92	   2652	  26576	   67d0	3001_MECHANISMS_TEST.elf
+Finished building: default.size.stdout
+ 
+Finished building: 3001_MECHANISMS_TEST.list
+ 
+22:09:18 **** Incremental Build of configuration Debug for project 3001_MECHANISMS_TEST ****
+make -j4 all 
+arm-none-eabi-size  3001_MECHANISMS_TEST.elf 
+   text	   data	    bss	    dec	    hex	filename
+  23832	     92	   2652	  26576	   67d0	3001_MECHANISMS_TEST.elf
+Finished building: default.size.stdout
+ 
+22:10:07 **** Incremental Build of configuration Debug for project 3001_MECHANISMS_TEST ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "3001_MECHANISMS_TEST.elf" @"objects.list"   -mcpu=cortex-m4 -T"G:\WINDOWS\EVERYTHING\COLLEGE\AUTOMATONS\2026\RYUK\3001_MECHANISMS_TEST\STM32F446ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="3001_MECHANISMS_TEST.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 3001_MECHANISMS_TEST.elf
+ 
+arm-none-eabi-size  3001_MECHANISMS_TEST.elf 
+arm-none-eabi-objdump -h -S 3001_MECHANISMS_TEST.elf  > "3001_MECHANISMS_TEST.list"
+   text	   data	    bss	    dec	    hex	filename
+  23848	     92	   2652	  26592	   67e0	3001_MECHANISMS_TEST.elf
+Finished building: default.size.stdout
+Finished building: 3001_MECHANISMS_TEST.list
+ 
+ 
+22:17:11 **** Incremental Build of configuration Debug for project 3001_MECHANISMS_TEST ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "3001_MECHANISMS_TEST.elf" @"objects.list"   -mcpu=cortex-m4 -T"G:\WINDOWS\EVERYTHING\COLLEGE\AUTOMATONS\2026\RYUK\3001_MECHANISMS_TEST\STM32F446ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="3001_MECHANISMS_TEST.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 3001_MECHANISMS_TEST.elf
+ 
+arm-none-eabi-size  3001_MECHANISMS_TEST.elf 
+arm-none-eabi-objdump -h -S 3001_MECHANISMS_TEST.elf  > "3001_MECHANISMS_TEST.list"
+   text	   data	    bss	    dec	    hex	filename
+  24072	     92	   2652	  26816	   68c0	3001_MECHANISMS_TEST.elf
+Finished building: default.size.stdout
+ 
+Finished building: 3001_MECHANISMS_TEST.list
+ 
+22:20:41 **** Incremental Build of configuration Debug for project 3001_MECHANISMS_TEST ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/stm32f4xx_hal_msp.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f4xx_hal_msp.d" -MT"Core/Src/stm32f4xx_hal_msp.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f4xx_hal_msp.o"
+arm-none-eabi-gcc -o "3001_MECHANISMS_TEST.elf" @"objects.list"   -mcpu=cortex-m4 -T"G:\WINDOWS\EVERYTHING\COLLEGE\AUTOMATONS\2026\RYUK\3001_MECHANISMS_TEST\STM32F446ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="3001_MECHANISMS_TEST.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 3001_MECHANISMS_TEST.elf
+ 
+arm-none-eabi-size  3001_MECHANISMS_TEST.elf 
+arm-none-eabi-objdump -h -S 3001_MECHANISMS_TEST.elf  > "3001_MECHANISMS_TEST.list"
+   text	   data	    bss	    dec	    hex	filename
+  25064	     92	   2652	  27808	   6ca0	3001_MECHANISMS_TEST.elf
+Finished building: default.size.stdout
+ 
+Finished building: 3001_MECHANISMS_TEST.list
+ 
+22:21:28 **** Incremental Build of configuration Debug for project 3001_MECHANISMS_TEST ****
+make -j4 all 
+arm-none-eabi-size  3001_MECHANISMS_TEST.elf 
+   text	   data	    bss	    dec	    hex	filename
+  25064	     92	   2652	  27808	   6ca0	3001_MECHANISMS_TEST.elf
+Finished building: default.size.stdout
+ 
+18:39:03 **** Build of configuration Debug for project 3001_MECHANISMS_TEST ****
+make -j4 all 
+arm-none-eabi-size  3001_MECHANISMS_TEST.elf 
+   text	   data	    bss	    dec	    hex	filename
+  25064	     92	   2652	  27808	   6ca0	3001_MECHANISMS_TEST.elf
+Finished building: default.size.stdout
+ 
+00:39:18 **** Incremental Build of configuration Debug for project 3001_MECHANISMS_TEST ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "3001_MECHANISMS_TEST.elf" @"objects.list"   -mcpu=cortex-m4 -T"G:\WINDOWS\EVERYTHING\COLLEGE\AUTOMATONS\2026\RYUK\3001_MECHANISMS_TEST\STM32F446ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="3001_MECHANISMS_TEST.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 3001_MECHANISMS_TEST.elf
+ 
+arm-none-eabi-size  3001_MECHANISMS_TEST.elf 
+arm-none-eabi-objdump -h -S 3001_MECHANISMS_TEST.elf  > "3001_MECHANISMS_TEST.list"
+   text	   data	    bss	    dec	    hex	filename
+  25060	     92	   2652	  27804	   6c9c	3001_MECHANISMS_TEST.elf
+Finished building: default.size.stdout
+ 
+Finished building: 3001_MECHANISMS_TEST.list
+ 
+09:23:31 **** Incremental Build of configuration Debug for project 3001_MECHANISMS_TEST ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/BTS7960.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/BTS7960.d" -MT"Core/Src/BTS7960.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/BTS7960.o"
+arm-none-eabi-gcc "../Core/Src/Cytron.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/Cytron.d" -MT"Core/Src/Cytron.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Cytron.o"
+arm-none-eabi-gcc "../Core/Src/Encoderlib.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/Encoderlib.d" -MT"Core/Src/Encoderlib.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Encoderlib.o"
+arm-none-eabi-gcc "../Core/Src/PCA9685.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/PCA9685.d" -MT"Core/Src/PCA9685.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/PCA9685.o"
+arm-none-eabi-gcc "../Core/Src/SPIT.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/SPIT.d" -MT"Core/Src/SPIT.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/SPIT.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/stm32f4xx_hal_msp.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f4xx_hal_msp.d" -MT"Core/Src/stm32f4xx_hal_msp.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f4xx_hal_msp.o"
+arm-none-eabi-gcc "../Core/Src/stm32f4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f4xx_it.d" -MT"Core/Src/stm32f4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f4xx_it.o"
+arm-none-eabi-gcc -o "3001_MECHANISMS_TEST.elf" @"objects.list"   -mcpu=cortex-m4 -T"G:\WINDOWS\EVERYTHING\COLLEGE\AUTOMATONS\2026\RYUK\3001_MECHANISMS_TEST\STM32F446ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="3001_MECHANISMS_TEST.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 3001_MECHANISMS_TEST.elf
+ 
+arm-none-eabi-size  3001_MECHANISMS_TEST.elf 
+arm-none-eabi-objdump -h -S 3001_MECHANISMS_TEST.elf  > "3001_MECHANISMS_TEST.list"
+   text	   data	    bss	    dec	    hex	filename
+  24924	     92	   2652	  27668	   6c14	3001_MECHANISMS_TEST.elf
+Finished building: default.size.stdout
+ 
+Finished building: 3001_MECHANISMS_TEST.list
+ 
+09:31:20 **** Incremental Build of configuration Debug for project 3001_MECHANISMS_TEST ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "3001_MECHANISMS_TEST.elf" @"objects.list"   -mcpu=cortex-m4 -T"G:\WINDOWS\EVERYTHING\COLLEGE\AUTOMATONS\2026\RYUK\3001_MECHANISMS_TEST\STM32F446ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="3001_MECHANISMS_TEST.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 3001_MECHANISMS_TEST.elf
+ 
+arm-none-eabi-size  3001_MECHANISMS_TEST.elf 
+arm-none-eabi-objdump -h -S 3001_MECHANISMS_TEST.elf  > "3001_MECHANISMS_TEST.list"
+   text	   data	    bss	    dec	    hex	filename
+  24952	     92	   2652	  27696	   6c30	3001_MECHANISMS_TEST.elf
+Finished building: default.size.stdout
+ 
+Finished building: 3001_MECHANISMS_TEST.list
+ 
+09:38:59 **** Incremental Build of configuration Debug for project 3000_COMMUNICATION_ONLY ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/SPIT.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/SPIT.d" -MT"Core/Src/SPIT.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/SPIT.o"
+arm-none-eabi-gcc -o "3000_COMMUNICATION_ONLY.elf" @"objects.list"   -mcpu=cortex-m4 -T"G:\WINDOWS\EVERYTHING\COLLEGE\AUTOMATONS\2026\RYUK\3000_COMMUNICATION_ONLY\STM32F446ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="3000_COMMUNICATION_ONLY.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 3000_COMMUNICATION_ONLY.elf
+ 
+arm-none-eabi-size  3000_COMMUNICATION_ONLY.elf 
+arm-none-eabi-objdump -h -S 3000_COMMUNICATION_ONLY.elf  > "3000_COMMUNICATION_ONLY.list"
+   text	   data	    bss	    dec	    hex	filename
+  18212	     92	   2180	  20484	   5004	3000_COMMUNICATION_ONLY.elf
+Finished building: default.size.stdout
+ 
+Finished building: 3000_COMMUNICATION_ONLY.list
+ 
+09:40:33 **** Incremental Build of configuration Debug for project 3000_COMMUNICATION_ONLY ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "3000_COMMUNICATION_ONLY.elf" @"objects.list"   -mcpu=cortex-m4 -T"G:\WINDOWS\EVERYTHING\COLLEGE\AUTOMATONS\2026\RYUK\3000_COMMUNICATION_ONLY\STM32F446ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="3000_COMMUNICATION_ONLY.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 3000_COMMUNICATION_ONLY.elf
+ 
+arm-none-eabi-size  3000_COMMUNICATION_ONLY.elf 
+arm-none-eabi-objdump -h -S 3000_COMMUNICATION_ONLY.elf  > "3000_COMMUNICATION_ONLY.list"
+   text	   data	    bss	    dec	    hex	filename
+  18032	     92	   2476	  20600	   5078	3000_COMMUNICATION_ONLY.elf
+Finished building: default.size.stdout
+ 
+Finished building: 3000_COMMUNICATION_ONLY.list
+ 
+09:45:30 **** Incremental Build of configuration Debug for project 3001_MECHANISMS_TEST ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "3001_MECHANISMS_TEST.elf" @"objects.list"   -mcpu=cortex-m4 -T"G:\WINDOWS\EVERYTHING\COLLEGE\AUTOMATONS\2026\RYUK\3001_MECHANISMS_TEST\STM32F446ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="3001_MECHANISMS_TEST.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 3001_MECHANISMS_TEST.elf
+ 
+arm-none-eabi-size  3001_MECHANISMS_TEST.elf 
+arm-none-eabi-objdump -h -S 3001_MECHANISMS_TEST.elf  > "3001_MECHANISMS_TEST.list"
+   text	   data	    bss	    dec	    hex	filename
+  21124	     92	   2644	  23860	   5d34	3001_MECHANISMS_TEST.elf
+Finished building: default.size.stdout
+ 
+Finished building: 3001_MECHANISMS_TEST.list
+ 
+09:46:54 **** Incremental Build of configuration Debug for project 3001_MECHANISMS_TEST ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "3001_MECHANISMS_TEST.elf" @"objects.list"   -mcpu=cortex-m4 -T"G:\WINDOWS\EVERYTHING\COLLEGE\AUTOMATONS\2026\RYUK\3001_MECHANISMS_TEST\STM32F446ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="3001_MECHANISMS_TEST.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 3001_MECHANISMS_TEST.elf
+ 
+arm-none-eabi-size  3001_MECHANISMS_TEST.elf 
+arm-none-eabi-objdump -h -S 3001_MECHANISMS_TEST.elf  > "3001_MECHANISMS_TEST.list"
+   text	   data	    bss	    dec	    hex	filename
+  21124	     92	   2644	  23860	   5d34	3001_MECHANISMS_TEST.elf
+Finished building: default.size.stdout
+ 
+Finished building: 3001_MECHANISMS_TEST.list
+ 
+09:47:39 **** Incremental Build of configuration Debug for project 3001_MECHANISMS_TEST ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "3001_MECHANISMS_TEST.elf" @"objects.list"   -mcpu=cortex-m4 -T"G:\WINDOWS\EVERYTHING\COLLEGE\AUTOMATONS\2026\RYUK\3001_MECHANISMS_TEST\STM32F446ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="3001_MECHANISMS_TEST.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 3001_MECHANISMS_TEST.elf
+ 
+arm-none-eabi-size  3001_MECHANISMS_TEST.elf 
+arm-none-eabi-objdump -h -S 3001_MECHANISMS_TEST.elf  > "3001_MECHANISMS_TEST.list"
+   text	   data	    bss	    dec	    hex	filename
+  25556	     92	   2652	  28300	   6e8c	3001_MECHANISMS_TEST.elf
+Finished building: default.size.stdout
+ 
+Finished building: 3001_MECHANISMS_TEST.list
+ 
+09:49:56 **** Incremental Build of configuration Debug for project 3001_MECHANISMS_TEST ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "3001_MECHANISMS_TEST.elf" @"objects.list"   -mcpu=cortex-m4 -T"G:\WINDOWS\EVERYTHING\COLLEGE\AUTOMATONS\2026\RYUK\3001_MECHANISMS_TEST\STM32F446ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="3001_MECHANISMS_TEST.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 3001_MECHANISMS_TEST.elf
+ 
+arm-none-eabi-size  3001_MECHANISMS_TEST.elf 
+arm-none-eabi-objdump -h -S 3001_MECHANISMS_TEST.elf  > "3001_MECHANISMS_TEST.list"
+   text	   data	    bss	    dec	    hex	filename
+  25560	     92	   2652	  28304	   6e90	3001_MECHANISMS_TEST.elf
+Finished building: default.size.stdout
+ 
+Finished building: 3001_MECHANISMS_TEST.list
+ 
+09:54:20 **** Incremental Build of configuration Debug for project 3001_MECHANISMS_TEST ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "3001_MECHANISMS_TEST.elf" @"objects.list"   -mcpu=cortex-m4 -T"G:\WINDOWS\EVERYTHING\COLLEGE\AUTOMATONS\2026\RYUK\3001_MECHANISMS_TEST\STM32F446ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="3001_MECHANISMS_TEST.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 3001_MECHANISMS_TEST.elf
+ 
+arm-none-eabi-size  3001_MECHANISMS_TEST.elf 
+arm-none-eabi-objdump -h -S 3001_MECHANISMS_TEST.elf  > "3001_MECHANISMS_TEST.list"
+   text	   data	    bss	    dec	    hex	filename
+  25584	     92	   2652	  28328	   6ea8	3001_MECHANISMS_TEST.elf
+Finished building: default.size.stdout
+ 
+Finished building: 3001_MECHANISMS_TEST.list
+ 
+09:55:46 **** Incremental Build of configuration Debug for project 3001_MECHANISMS_TEST ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "3001_MECHANISMS_TEST.elf" @"objects.list"   -mcpu=cortex-m4 -T"G:\WINDOWS\EVERYTHING\COLLEGE\AUTOMATONS\2026\RYUK\3001_MECHANISMS_TEST\STM32F446ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="3001_MECHANISMS_TEST.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 3001_MECHANISMS_TEST.elf
+ 
+arm-none-eabi-size  3001_MECHANISMS_TEST.elf 
+arm-none-eabi-objdump -h -S 3001_MECHANISMS_TEST.elf  > "3001_MECHANISMS_TEST.list"
+   text	   data	    bss	    dec	    hex	filename
+  25580	     92	   2652	  28324	   6ea4	3001_MECHANISMS_TEST.elf
+Finished building: default.size.stdout
+ 
+Finished building: 3001_MECHANISMS_TEST.list
+ 
+10:09:45 **** Incremental Build of configuration Debug for project 3001_MECHANISMS_TEST ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'KFS_Motion':
+../Core/Src/main.c:210:30: error: 'KFS_PCA' undeclared (first use in this function)
+  210 |                 RotateServo(&KFS_PCA, KFS_SERVO, KFS_OPEN_ANGLE);
+      |                              ^~~~~~~
+../Core/Src/main.c:210:30: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [Core/Src/subdir.mk:52: Core/Src/main.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+10:10:52 **** Incremental Build of configuration Debug for project 3001_MECHANISMS_TEST ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'KFS_Motion':
+../Core/Src/main.c:210:30: error: 'KFS_PCA' undeclared (first use in this function)
+  210 |                 RotateServo(&KFS_PCA, KFS_SERVO, KFS_OPEN_ANGLE);
+      |                              ^~~~~~~
+../Core/Src/main.c:210:30: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [Core/Src/subdir.mk:52: Core/Src/main.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+10:11:12 **** Incremental Build of configuration Debug for project 3001_MECHANISMS_TEST ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "3001_MECHANISMS_TEST.elf" @"objects.list"   -mcpu=cortex-m4 -T"G:\WINDOWS\EVERYTHING\COLLEGE\AUTOMATONS\2026\RYUK\3001_MECHANISMS_TEST\STM32F446ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="3001_MECHANISMS_TEST.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 3001_MECHANISMS_TEST.elf
+ 
+arm-none-eabi-size  3001_MECHANISMS_TEST.elf 
+arm-none-eabi-objdump -h -S 3001_MECHANISMS_TEST.elf  > "3001_MECHANISMS_TEST.list"
+   text	   data	    bss	    dec	    hex	filename
+  25580	     92	   2652	  28324	   6ea4	3001_MECHANISMS_TEST.elf
+Finished building: default.size.stdout
+ 
+Finished building: 3001_MECHANISMS_TEST.list
+ 
+10:12:28 **** Incremental Build of configuration Debug for project 3001_MECHANISMS_TEST ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "3001_MECHANISMS_TEST.elf" @"objects.list"   -mcpu=cortex-m4 -T"G:\WINDOWS\EVERYTHING\COLLEGE\AUTOMATONS\2026\RYUK\3001_MECHANISMS_TEST\STM32F446ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="3001_MECHANISMS_TEST.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 3001_MECHANISMS_TEST.elf
+ 
+arm-none-eabi-size  3001_MECHANISMS_TEST.elf 
+arm-none-eabi-objdump -h -S 3001_MECHANISMS_TEST.elf  > "3001_MECHANISMS_TEST.list"
+   text	   data	    bss	    dec	    hex	filename
+  25560	     92	   2652	  28304	   6e90	3001_MECHANISMS_TEST.elf
+Finished building: default.size.stdout
+ 
+Finished building: 3001_MECHANISMS_TEST.list
+ 
+10:14:40 **** Incremental Build of configuration Debug for project 3001_MECHANISMS_TEST ****
+make -j4 all 
+arm-none-eabi-size  3001_MECHANISMS_TEST.elf 
+   text	   data	    bss	    dec	    hex	filename
+  25560	     92	   2652	  28304	   6e90	3001_MECHANISMS_TEST.elf
+Finished building: default.size.stdout
+ 
+10:18:13 **** Incremental Build of configuration Debug for project 3001_MECHANISMS_TEST ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "3001_MECHANISMS_TEST.elf" @"objects.list"   -mcpu=cortex-m4 -T"G:\WINDOWS\EVERYTHING\COLLEGE\AUTOMATONS\2026\RYUK\3001_MECHANISMS_TEST\STM32F446ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="3001_MECHANISMS_TEST.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 3001_MECHANISMS_TEST.elf
+ 
+arm-none-eabi-size  3001_MECHANISMS_TEST.elf 
+arm-none-eabi-objdump -h -S 3001_MECHANISMS_TEST.elf  > "3001_MECHANISMS_TEST.list"
+   text	   data	    bss	    dec	    hex	filename
+  25560	     92	   2652	  28304	   6e90	3001_MECHANISMS_TEST.elf
+Finished building: default.size.stdout
+ 
+Finished building: 3001_MECHANISMS_TEST.list
+ 
+10:21:09 **** Incremental Build of configuration Debug for project 3001_MECHANISMS_TEST ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "3001_MECHANISMS_TEST.elf" @"objects.list"   -mcpu=cortex-m4 -T"G:\WINDOWS\EVERYTHING\COLLEGE\AUTOMATONS\2026\RYUK\3001_MECHANISMS_TEST\STM32F446ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="3001_MECHANISMS_TEST.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 3001_MECHANISMS_TEST.elf
+ 
+arm-none-eabi-size  3001_MECHANISMS_TEST.elf 
+arm-none-eabi-objdump -h -S 3001_MECHANISMS_TEST.elf  > "3001_MECHANISMS_TEST.list"
+   text	   data	    bss	    dec	    hex	filename
+  25384	     92	   2652	  28128	   6de0	3001_MECHANISMS_TEST.elf
+Finished building: default.size.stdout
+ 
+Finished building: 3001_MECHANISMS_TEST.list
+ 
+10:23:12 **** Incremental Build of configuration Debug for project 3001_MECHANISMS_TEST ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "3001_MECHANISMS_TEST.elf" @"objects.list"   -mcpu=cortex-m4 -T"G:\WINDOWS\EVERYTHING\COLLEGE\AUTOMATONS\2026\RYUK\3001_MECHANISMS_TEST\STM32F446ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="3001_MECHANISMS_TEST.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 3001_MECHANISMS_TEST.elf
+ 
+arm-none-eabi-size  3001_MECHANISMS_TEST.elf 
+arm-none-eabi-objdump -h -S 3001_MECHANISMS_TEST.elf  > "3001_MECHANISMS_TEST.list"
+   text	   data	    bss	    dec	    hex	filename
+  25384	     92	   2652	  28128	   6de0	3001_MECHANISMS_TEST.elf
+Finished building: default.size.stdout
+ 
+Finished building: 3001_MECHANISMS_TEST.list
+ 
+10:24:43 **** Incremental Build of configuration Debug for project 3001_MECHANISMS_TEST ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "3001_MECHANISMS_TEST.elf" @"objects.list"   -mcpu=cortex-m4 -T"G:\WINDOWS\EVERYTHING\COLLEGE\AUTOMATONS\2026\RYUK\3001_MECHANISMS_TEST\STM32F446ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="3001_MECHANISMS_TEST.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 3001_MECHANISMS_TEST.elf
+ 
+arm-none-eabi-size  3001_MECHANISMS_TEST.elf 
+arm-none-eabi-objdump -h -S 3001_MECHANISMS_TEST.elf  > "3001_MECHANISMS_TEST.list"
+   text	   data	    bss	    dec	    hex	filename
+  25344	     92	   2652	  28088	   6db8	3001_MECHANISMS_TEST.elf
+Finished building: default.size.stdout
+ 
+Finished building: 3001_MECHANISMS_TEST.list
+ 
+10:33:37 **** Incremental Build of configuration Debug for project 3001_MECHANISMS_TEST ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/BTS7960.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/BTS7960.d" -MT"Core/Src/BTS7960.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/BTS7960.o"
+arm-none-eabi-gcc -o "3001_MECHANISMS_TEST.elf" @"objects.list"   -mcpu=cortex-m4 -T"G:\WINDOWS\EVERYTHING\COLLEGE\AUTOMATONS\2026\RYUK\3001_MECHANISMS_TEST\STM32F446ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="3001_MECHANISMS_TEST.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 3001_MECHANISMS_TEST.elf
+ 
+arm-none-eabi-size  3001_MECHANISMS_TEST.elf 
+arm-none-eabi-objdump -h -S 3001_MECHANISMS_TEST.elf  > "3001_MECHANISMS_TEST.list"
+   text	   data	    bss	    dec	    hex	filename
+  25344	     92	   2652	  28088	   6db8	3001_MECHANISMS_TEST.elf
+Finished building: default.size.stdout
+ 
+Finished building: 3001_MECHANISMS_TEST.list
+ 
+10:38:37 **** Incremental Build of configuration Debug for project 3001_MECHANISMS_TEST ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "3001_MECHANISMS_TEST.elf" @"objects.list"   -mcpu=cortex-m4 -T"G:\WINDOWS\EVERYTHING\COLLEGE\AUTOMATONS\2026\RYUK\3001_MECHANISMS_TEST\STM32F446ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="3001_MECHANISMS_TEST.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 3001_MECHANISMS_TEST.elf
+ 
+arm-none-eabi-size  3001_MECHANISMS_TEST.elf 
+arm-none-eabi-objdump -h -S 3001_MECHANISMS_TEST.elf  > "3001_MECHANISMS_TEST.list"
+   text	   data	    bss	    dec	    hex	filename
+  25344	     92	   2652	  28088	   6db8	3001_MECHANISMS_TEST.elf
+Finished building: default.size.stdout
+ 
+Finished building: 3001_MECHANISMS_TEST.list
+ 
+10:39:55 **** Incremental Build of configuration Debug for project 3001_MECHANISMS_TEST ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "3001_MECHANISMS_TEST.elf" @"objects.list"   -mcpu=cortex-m4 -T"G:\WINDOWS\EVERYTHING\COLLEGE\AUTOMATONS\2026\RYUK\3001_MECHANISMS_TEST\STM32F446ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="3001_MECHANISMS_TEST.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 3001_MECHANISMS_TEST.elf
+ 
+arm-none-eabi-size  3001_MECHANISMS_TEST.elf 
+arm-none-eabi-objdump -h -S 3001_MECHANISMS_TEST.elf  > "3001_MECHANISMS_TEST.list"
+   text	   data	    bss	    dec	    hex	filename
+  14832	     12	   1996	  16840	   41c8	3001_MECHANISMS_TEST.elf
+Finished building: default.size.stdout
+ 
+Finished building: 3001_MECHANISMS_TEST.list
+ 
+10:41:09 **** Incremental Build of configuration Debug for project 3001_MECHANISMS_TEST ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "3001_MECHANISMS_TEST.elf" @"objects.list"   -mcpu=cortex-m4 -T"G:\WINDOWS\EVERYTHING\COLLEGE\AUTOMATONS\2026\RYUK\3001_MECHANISMS_TEST\STM32F446ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="3001_MECHANISMS_TEST.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 3001_MECHANISMS_TEST.elf
+ 
+arm-none-eabi-size  3001_MECHANISMS_TEST.elf 
+arm-none-eabi-objdump -h -S 3001_MECHANISMS_TEST.elf  > "3001_MECHANISMS_TEST.list"
+   text	   data	    bss	    dec	    hex	filename
+  14832	     12	   1996	  16840	   41c8	3001_MECHANISMS_TEST.elf
+Finished building: default.size.stdout
+ 
+Finished building: 3001_MECHANISMS_TEST.list
+ 
+10:43:01 **** Incremental Build of configuration Debug for project 3001_MECHANISMS_TEST ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "3001_MECHANISMS_TEST.elf" @"objects.list"   -mcpu=cortex-m4 -T"G:\WINDOWS\EVERYTHING\COLLEGE\AUTOMATONS\2026\RYUK\3001_MECHANISMS_TEST\STM32F446ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="3001_MECHANISMS_TEST.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 3001_MECHANISMS_TEST.elf
+ 
+arm-none-eabi-size  3001_MECHANISMS_TEST.elf 
+arm-none-eabi-objdump -h -S 3001_MECHANISMS_TEST.elf  > "3001_MECHANISMS_TEST.list"
+   text	   data	    bss	    dec	    hex	filename
+  25344	     92	   2652	  28088	   6db8	3001_MECHANISMS_TEST.elf
+Finished building: default.size.stdout
+ 
+Finished building: 3001_MECHANISMS_TEST.list
+ 
+10:52:59 **** Incremental Build of configuration Debug for project 3001_MECHANISMS_TEST ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/BTS7960.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/BTS7960.d" -MT"Core/Src/BTS7960.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/BTS7960.o"
+arm-none-eabi-gcc "../Core/Src/Cytron.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/Cytron.d" -MT"Core/Src/Cytron.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Cytron.o"
+arm-none-eabi-gcc "../Core/Src/Encoderlib.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/Encoderlib.d" -MT"Core/Src/Encoderlib.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Encoderlib.o"
+arm-none-eabi-gcc "../Core/Src/PCA9685.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/PCA9685.d" -MT"Core/Src/PCA9685.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/PCA9685.o"
+arm-none-eabi-gcc "../Core/Src/SPIT.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/SPIT.d" -MT"Core/Src/SPIT.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/SPIT.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/stm32f4xx_hal_msp.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f4xx_hal_msp.d" -MT"Core/Src/stm32f4xx_hal_msp.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f4xx_hal_msp.o"
+arm-none-eabi-gcc "../Core/Src/stm32f4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f4xx_it.d" -MT"Core/Src/stm32f4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f4xx_it.o"
+arm-none-eabi-gcc -o "3001_MECHANISMS_TEST.elf" @"objects.list"   -mcpu=cortex-m4 -T"G:\WINDOWS\EVERYTHING\COLLEGE\AUTOMATONS\2026\RYUK\3001_MECHANISMS_TEST\STM32F446ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="3001_MECHANISMS_TEST.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 3001_MECHANISMS_TEST.elf
+ 
+arm-none-eabi-size  3001_MECHANISMS_TEST.elf 
+arm-none-eabi-objdump -h -S 3001_MECHANISMS_TEST.elf  > "3001_MECHANISMS_TEST.list"
+   text	   data	    bss	    dec	    hex	filename
+  25308	     92	   2652	  28052	   6d94	3001_MECHANISMS_TEST.elf
+Finished building: default.size.stdout
+ 
+Finished building: 3001_MECHANISMS_TEST.list
+ 
+10:55:28 **** Incremental Build of configuration Debug for project 3001_MECHANISMS_TEST ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/BTS7960.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/BTS7960.d" -MT"Core/Src/BTS7960.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/BTS7960.o"
+arm-none-eabi-gcc "../Core/Src/Cytron.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/Cytron.d" -MT"Core/Src/Cytron.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Cytron.o"
+arm-none-eabi-gcc "../Core/Src/Encoderlib.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/Encoderlib.d" -MT"Core/Src/Encoderlib.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Encoderlib.o"
+arm-none-eabi-gcc "../Core/Src/PCA9685.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/PCA9685.d" -MT"Core/Src/PCA9685.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/PCA9685.o"
+arm-none-eabi-gcc "../Core/Src/SPIT.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/SPIT.d" -MT"Core/Src/SPIT.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/SPIT.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/stm32f4xx_hal_msp.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f4xx_hal_msp.d" -MT"Core/Src/stm32f4xx_hal_msp.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f4xx_hal_msp.o"
+arm-none-eabi-gcc "../Core/Src/stm32f4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f4xx_it.d" -MT"Core/Src/stm32f4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f4xx_it.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:291:35: error: 'GPIOx' undeclared (first use in this function); did you mean 'GPIOH'?
+  291 |                 HAL_GPIO_WritePin(GPIOx, GPIO_Pin_8, 1);
+      |                                   ^~~~~
+      |                                   GPIOH
+../Core/Src/main.c:291:35: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c:291:42: error: 'GPIO_Pin_8' undeclared (first use in this function); did you mean 'GPIO_PIN_8'?
+  291 |                 HAL_GPIO_WritePin(GPIOx, GPIO_Pin_8, 1);
+      |                                          ^~~~~~~~~~
+      |                                          GPIO_PIN_8
+make: *** [Core/Src/subdir.mk:52: Core/Src/main.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+10:55:44 **** Incremental Build of configuration Debug for project 3001_MECHANISMS_TEST ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:291:42: error: 'GPIO_Pin_8' undeclared (first use in this function); did you mean 'GPIO_PIN_8'?
+  291 |                 HAL_GPIO_WritePin(GPIOC, GPIO_Pin_8, 1);
+      |                                          ^~~~~~~~~~
+      |                                          GPIO_PIN_8
+../Core/Src/main.c:291:42: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [Core/Src/subdir.mk:52: Core/Src/main.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+10:56:03 **** Incremental Build of configuration Debug for project 3001_MECHANISMS_TEST ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "3001_MECHANISMS_TEST.elf" @"objects.list"   -mcpu=cortex-m4 -T"G:\WINDOWS\EVERYTHING\COLLEGE\AUTOMATONS\2026\RYUK\3001_MECHANISMS_TEST\STM32F446ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="3001_MECHANISMS_TEST.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 3001_MECHANISMS_TEST.elf
+ 
+arm-none-eabi-size  3001_MECHANISMS_TEST.elf 
+arm-none-eabi-objdump -h -S 3001_MECHANISMS_TEST.elf  > "3001_MECHANISMS_TEST.list"
+   text	   data	    bss	    dec	    hex	filename
+  23508	     92	   2652	  26252	   668c	3001_MECHANISMS_TEST.elf
+Finished building: default.size.stdout
+ 
+Finished building: 3001_MECHANISMS_TEST.list
+ 
+10:57:36 **** Incremental Build of configuration Debug for project 3001_MECHANISMS_TEST ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/BTS7960.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/BTS7960.d" -MT"Core/Src/BTS7960.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/BTS7960.o"
+arm-none-eabi-gcc "../Core/Src/Cytron.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/Cytron.d" -MT"Core/Src/Cytron.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Cytron.o"
+arm-none-eabi-gcc "../Core/Src/Encoderlib.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/Encoderlib.d" -MT"Core/Src/Encoderlib.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Encoderlib.o"
+arm-none-eabi-gcc "../Core/Src/PCA9685.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/PCA9685.d" -MT"Core/Src/PCA9685.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/PCA9685.o"
+arm-none-eabi-gcc "../Core/Src/SPIT.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/SPIT.d" -MT"Core/Src/SPIT.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/SPIT.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/stm32f4xx_hal_msp.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f4xx_hal_msp.d" -MT"Core/Src/stm32f4xx_hal_msp.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f4xx_hal_msp.o"
+arm-none-eabi-gcc "../Core/Src/stm32f4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f4xx_it.d" -MT"Core/Src/stm32f4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f4xx_it.o"
+arm-none-eabi-gcc -o "3001_MECHANISMS_TEST.elf" @"objects.list"   -mcpu=cortex-m4 -T"G:\WINDOWS\EVERYTHING\COLLEGE\AUTOMATONS\2026\RYUK\3001_MECHANISMS_TEST\STM32F446ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="3001_MECHANISMS_TEST.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 3001_MECHANISMS_TEST.elf
+ 
+arm-none-eabi-size  3001_MECHANISMS_TEST.elf 
+arm-none-eabi-objdump -h -S 3001_MECHANISMS_TEST.elf  > "3001_MECHANISMS_TEST.list"
+   text	   data	    bss	    dec	    hex	filename
+  25264	     92	   2652	  28008	   6d68	3001_MECHANISMS_TEST.elf
+Finished building: default.size.stdout
+ 
+Finished building: 3001_MECHANISMS_TEST.list
+ 
+11:01:30 **** Incremental Build of configuration Debug for project 3001_MECHANISMS_TEST ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "3001_MECHANISMS_TEST.elf" @"objects.list"   -mcpu=cortex-m4 -T"G:\WINDOWS\EVERYTHING\COLLEGE\AUTOMATONS\2026\RYUK\3001_MECHANISMS_TEST\STM32F446ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="3001_MECHANISMS_TEST.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 3001_MECHANISMS_TEST.elf
+ 
+arm-none-eabi-size  3001_MECHANISMS_TEST.elf 
+arm-none-eabi-objdump -h -S 3001_MECHANISMS_TEST.elf  > "3001_MECHANISMS_TEST.list"
+   text	   data	    bss	    dec	    hex	filename
+  25272	     92	   2652	  28016	   6d70	3001_MECHANISMS_TEST.elf
+Finished building: default.size.stdout
+ 
+Finished building: 3001_MECHANISMS_TEST.list
+ 
+11:02:19 **** Incremental Build of configuration Debug for project 3001_MECHANISMS_TEST ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "3001_MECHANISMS_TEST.elf" @"objects.list"   -mcpu=cortex-m4 -T"G:\WINDOWS\EVERYTHING\COLLEGE\AUTOMATONS\2026\RYUK\3001_MECHANISMS_TEST\STM32F446ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="3001_MECHANISMS_TEST.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 3001_MECHANISMS_TEST.elf
+ 
+arm-none-eabi-size  3001_MECHANISMS_TEST.elf 
+arm-none-eabi-objdump -h -S 3001_MECHANISMS_TEST.elf  > "3001_MECHANISMS_TEST.list"
+   text	   data	    bss	    dec	    hex	filename
+  25276	     92	   2652	  28020	   6d74	3001_MECHANISMS_TEST.elf
+Finished building: default.size.stdout
+ 
+Finished building: 3001_MECHANISMS_TEST.list
+ 
+11:03:47 **** Incremental Build of configuration Debug for project 3001_MECHANISMS_TEST ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "3001_MECHANISMS_TEST.elf" @"objects.list"   -mcpu=cortex-m4 -T"G:\WINDOWS\EVERYTHING\COLLEGE\AUTOMATONS\2026\RYUK\3001_MECHANISMS_TEST\STM32F446ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="3001_MECHANISMS_TEST.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 3001_MECHANISMS_TEST.elf
+ 
+arm-none-eabi-size  3001_MECHANISMS_TEST.elf 
+arm-none-eabi-objdump -h -S 3001_MECHANISMS_TEST.elf  > "3001_MECHANISMS_TEST.list"
+   text	   data	    bss	    dec	    hex	filename
+  25276	     92	   2652	  28020	   6d74	3001_MECHANISMS_TEST.elf
+Finished building: default.size.stdout
+ 
+Finished building: 3001_MECHANISMS_TEST.list
+ 
+11:04:23 **** Incremental Build of configuration Debug for project 3001_MECHANISMS_TEST ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "3001_MECHANISMS_TEST.elf" @"objects.list"   -mcpu=cortex-m4 -T"G:\WINDOWS\EVERYTHING\COLLEGE\AUTOMATONS\2026\RYUK\3001_MECHANISMS_TEST\STM32F446ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="3001_MECHANISMS_TEST.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 3001_MECHANISMS_TEST.elf
+ 
+arm-none-eabi-size  3001_MECHANISMS_TEST.elf 
+arm-none-eabi-objdump -h -S 3001_MECHANISMS_TEST.elf  > "3001_MECHANISMS_TEST.list"
+   text	   data	    bss	    dec	    hex	filename
+  25264	     92	   2652	  28008	   6d68	3001_MECHANISMS_TEST.elf
+Finished building: default.size.stdout
+ 
+Finished building: 3001_MECHANISMS_TEST.list
+ 
