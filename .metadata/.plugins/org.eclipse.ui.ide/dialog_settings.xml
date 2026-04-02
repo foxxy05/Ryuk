@@ -7,6 +7,7 @@
 		<item key="WizardProjectsImportPage.STORE_CLOSE_CREATED_PROJECTS_ID" value="false"/>
 		<item key="WizardProjectsImportPage.STORE_HIDE_CONFLICTING_PROJECTS_ID" value="false"/>
 		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="D:\GitHub\Robocon-2026\Stage2\R1\Communication Test\STM32\001_communication_i2c_master"/>
 			<item value="D:\GitHub\Robocon-2026\Stage2\R1\001_communication_i2c_master"/>
 			<item value="G:\WINDOWS\EVERYTHING\COLLEGE\AUTOMATONS\STM32_\0018_3_WHEEL_OMNI_CAN_ODOMETRY"/>
 		</list>

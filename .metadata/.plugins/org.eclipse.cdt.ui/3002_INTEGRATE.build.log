@@ -1,0 +1,149 @@
+19:16:51 **** Incremental Build of configuration Debug for project 3002_INTEGRATE ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'InitMechanisms':
+../Core/Src/main.c:304:25: error: incompatible type for argument 1 of 'InitBTS'
+  304 |                 InitBTS(KFS_Place, KFS_Place.htim1, KFS_Place.LPWM, KFS_Place.bus1, KFS_Place.htim2, KFS_Place.RPWM, KFS_Place.bus2, KFS_Place.freq);
+      |                         ^~~~~~~~~
+      |                         |
+      |                         BTSMotor_t
+In file included from ../Core/Src/main.c:32:
+../Core/Inc/BTS7960.h:35:19: note: expected 'BTS *' but argument is of type 'BTSMotor_t'
+   35 | void InitBTS(BTS *Motor , TIM_HandleTypeDef *htim1, uint32_t Channel1,uint8_t bus1,TIM_HandleTypeDef *htim2, uint32_t Channel2, uint8_t bus2,uint16_t freq);
+      |              ~~~~~^~~~~
+../Core/Src/main.c:306:28: error: incompatible type for argument 1 of 'InitCytron'
+  306 |                 InitCytron(STAFF_Motor, STAFF_Motor.timer, STAFF_Motor.channel, STAFF_Motor.dirGPIO, STAFF_Motor.dirPIN, STAFF_Motor.direction);
+      |                            ^~~~~~~~~~~
+      |                            |
+      |                            CytronMotor_t
+In file included from ../Core/Src/main.c:33:
+../Core/Inc/Cytron.h:27:25: note: expected 'Cytron *' but argument is of type 'CytronMotor_t'
+   27 | void InitCytron(Cytron *Motor , TIM_HandleTypeDef *htim, uint32_t Channel, GPIO_TypeDef* GPIO_DIR_PORT, uint16_t GPIO_DIR_PIN, uint8_t Direction);
+      |                 ~~~~~~~~^~~~~
+../Core/Src/main.c:307:28: error: incompatible type for argument 1 of 'InitCytron'
+  307 |                 InitCytron(KFS_Turret, KFS_Turret.timer, KFS_Turret.channel, KFS_Turret.dirGPIO, KFS_Turret.dirPIN, KFS_Turret.direction);
+      |                            ^~~~~~~~~~
+      |                            |
+      |                            CytronMotor_t
+../Core/Inc/Cytron.h:27:25: note: expected 'Cytron *' but argument is of type 'CytronMotor_t'
+   27 | void InitCytron(Cytron *Motor , TIM_HandleTypeDef *htim, uint32_t Channel, GPIO_TypeDef* GPIO_DIR_PORT, uint16_t GPIO_DIR_PIN, uint8_t Direction);
+      |                 ~~~~~~~~^~~~~
+../Core/Src/main.c:308:28: error: incompatible type for argument 1 of 'InitCytron'
+  308 |                 InitCytron(KFS_Belt, KFS_Belt.timer, KFS_Belt.channel, KFS_Belt.dirGPIO, KFS_Belt.dirPIN, KFS_Belt.direction);
+      |                            ^~~~~~~~
+      |                            |
+      |                            CytronMotor_t
+../Core/Inc/Cytron.h:27:25: note: expected 'Cytron *' but argument is of type 'CytronMotor_t'
+   27 | void InitCytron(Cytron *Motor , TIM_HandleTypeDef *htim, uint32_t Channel, GPIO_TypeDef* GPIO_DIR_PORT, uint16_t GPIO_DIR_PIN, uint8_t Direction);
+      |                 ~~~~~~~~^~~~~
+../Core/Src/main.c: In function 'KFS_Place_Motor':
+../Core/Src/main.c:317:37: error: incompatible type for argument 1 of 'RotateMotor'
+  317 |                         RotateMotor(KFS_Place,  KFS_Place.maxPWM);
+      |                                     ^~~~~~~~~
+      |                                     |
+      |                                     BTSMotor_t
+../Core/Inc/BTS7960.h:36:23: note: expected 'BTS *' but argument is of type 'BTSMotor_t'
+   36 | void RotateMotor(BTS *Motor , int16_t Value);
+      |                  ~~~~~^~~~~
+../Core/Src/main.c:320:37: error: incompatible type for argument 1 of 'RotateMotor'
+  320 |                         RotateMotor(KFS_Place, -KFS_Place.maxPWM);
+      |                                     ^~~~~~~~~
+      |                                     |
+      |                                     BTSMotor_t
+../Core/Inc/BTS7960.h:36:23: note: expected 'BTS *' but argument is of type 'BTSMotor_t'
+   36 | void RotateMotor(BTS *Motor , int16_t Value);
+      |                  ~~~~~^~~~~
+../Core/Src/main.c:323:35: error: incompatible type for argument 1 of 'StopMotor'
+  323 |                         StopMotor(KFS_Place);
+      |                                   ^~~~~~~~~
+      |                                   |
+      |                                   BTSMotor_t
+../Core/Inc/BTS7960.h:37:21: note: expected 'BTS *' but argument is of type 'BTSMotor_t'
+   37 | void StopMotor(BTS *Motor);
+      |                ~~~~~^~~~~
+../Core/Src/main.c: In function 'KFS_Pick_Motor':
+../Core/Src/main.c:354:38: error: incompatible type for argument 1 of 'RotateCytron'
+  354 |                         RotateCytron(KFS_Belt,  KFS_Belt.maxPWM);
+      |                                      ^~~~~~~~
+      |                                      |
+      |                                      CytronMotor_t
+../Core/Inc/Cytron.h:28:27: note: expected 'Cytron *' but argument is of type 'CytronMotor_t'
+   28 | void RotateCytron(Cytron *Motor , int16_t Value);
+      |                   ~~~~~~~~^~~~~
+../Core/Src/main.c:357:38: error: incompatible type for argument 1 of 'RotateCytron'
+  357 |                         RotateCytron(KFS_Belt, -KFS_Belt.maxPWM);
+      |                                      ^~~~~~~~
+      |                                      |
+      |                                      CytronMotor_t
+../Core/Inc/Cytron.h:28:27: note: expected 'Cytron *' but argument is of type 'CytronMotor_t'
+   28 | void RotateCytron(Cytron *Motor , int16_t Value);
+      |                   ~~~~~~~~^~~~~
+../Core/Src/main.c:360:36: error: incompatible type for argument 1 of 'StopCytron'
+  360 |                         StopCytron(KFS_Belt);
+      |                                    ^~~~~~~~
+      |                                    |
+      |                                    CytronMotor_t
+../Core/Inc/Cytron.h:31:25: note: expected 'Cytron *' but argument is of type 'CytronMotor_t'
+   31 | void StopCytron(Cytron *Motor);
+      |                 ~~~~~~~~^~~~~
+../Core/Src/main.c:366:38: error: incompatible type for argument 1 of 'RotateCytron'
+  366 |                         RotateCytron(KFS_Turret,  KFS_Turret.maxPWM);
+      |                                      ^~~~~~~~~~
+      |                                      |
+      |                                      CytronMotor_t
+../Core/Inc/Cytron.h:28:27: note: expected 'Cytron *' but argument is of type 'CytronMotor_t'
+   28 | void RotateCytron(Cytron *Motor , int16_t Value);
+      |                   ~~~~~~~~^~~~~
+../Core/Src/main.c:369:38: error: incompatible type for argument 1 of 'RotateCytron'
+  369 |                         RotateCytron(KFS_Turret, -KFS_Turret.maxPWM);
+      |                                      ^~~~~~~~~~
+      |                                      |
+      |                                      CytronMotor_t
+../Core/Inc/Cytron.h:28:27: note: expected 'Cytron *' but argument is of type 'CytronMotor_t'
+   28 | void RotateCytron(Cytron *Motor , int16_t Value);
+      |                   ~~~~~~~~^~~~~
+../Core/Src/main.c:372:36: error: incompatible type for argument 1 of 'StopCytron'
+  372 |                         StopCytron(KFS_Turret);
+      |                                    ^~~~~~~~~~
+      |                                    |
+      |                                    CytronMotor_t
+../Core/Inc/Cytron.h:31:25: note: expected 'Cytron *' but argument is of type 'CytronMotor_t'
+   31 | void StopCytron(Cytron *Motor);
+      |                 ~~~~~~~~^~~~~
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:403:14: error: 'STAFF_Motor' redeclared as different kind of symbol
+  403 |         void STAFF_Motor(){
+      |              ^~~~~~~~~~~
+../Core/Src/main.c:212:23: note: previous definition of 'STAFF_Motor' with type 'CytronMotor_t'
+  212 |         CytronMotor_t STAFF_Motor = {
+      |                       ^~~~~~~~~~~
+../Core/Src/main.c: In function 'STAFF_Motor':
+../Core/Src/main.c:405:54: warning: implicit declaration of function 'constrain' [-Wimplicit-function-declaration]
+  405 |                         int16_t beltSpeed = (int16_t)constrain(PS4.RY, -MAX_STAFF_PWM, MAX_STAFF_PWM);
+      |                                                      ^~~~~~~~~
+../Core/Src/main.c:405:73: error: 'MAX_STAFF_PWM' undeclared (first use in this function)
+  405 |                         int16_t beltSpeed = (int16_t)constrain(PS4.RY, -MAX_STAFF_PWM, MAX_STAFF_PWM);
+      |                                                                         ^~~~~~~~~~~~~
+../Core/Src/main.c:405:73: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c:406:39: error: 'STAFF_MOTOR' undeclared (first use in this function); did you mean 'STAFF_Motor'?
+  406 |                         RotateCytron(&STAFF_MOTOR, beltSpeed);
+      |                                       ^~~~~~~~~~~
+      |                                       STAFF_Motor
+../Core/Src/main.c:409:36: warning: passing argument 1 of 'StopCytron' from incompatible pointer type [-Wincompatible-pointer-types]
+  409 |                         StopCytron(STAFF_Motor);
+      |                                    ^~~~~~~~~~~
+      |                                    |
+      |                                    void (*)()
+../Core/Inc/Cytron.h:31:25: note: expected 'Cytron *' but argument is of type 'void (*)()'
+   31 | void StopCytron(Cytron *Motor);
+      |                 ~~~~~~~~^~~~~
+../Core/Src/main.c: In function 'STAFF_Servo':
+../Core/Src/main.c:438:37: error: 'AttackServo' undeclared (first use in this function); did you mean 'AttackServo_t'?
+  438 |                 if(PS4.Triangle && !AttackServo.prevState){
+      |                                     ^~~~~~~~~~~
+      |                                     AttackServo_t
+make: *** [Core/Src/subdir.mk:49: Core/Src/main.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+
+19:16:52 Build Failed. 18 errors, 2 warnings. (took 864ms)
+

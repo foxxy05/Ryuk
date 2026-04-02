@@ -3,28 +3,56 @@
 	<item key="hasShownOverlayPopupBefore" value="true"/>
 	<item key="replaceBarOpen" value="true"/>
 	<list key="searchhistory">
-		<item value="LinPID"/>
-		<item value="spit"/>
-		<item value="odo"/>
-		<item value="length"/>
-		<item value="odometry"/>
-		<item value="oddmetry"/>
-		<item value="pwr"/>
-		<item value="abs"/>
-		<item value="I2CInit"/>
-		<item value="encoderInstance_t"/>
-		<item value="encoder_instance"/>
-		<item value="PrintOdometry"/>
-		<item value="Odoetry_t"/>
-		<item value="odom"/>
-		<item value="cpr"/>
+		<item value="data"/>
+		<item value="KFS_PICK_PCA"/>
+		<item value="STAFF_PCA"/>
+		<item value="KFS_PLACE_PCA"/>
+		<item value="KFSPlaceServo"/>
+		<item value="PS4.X"/>
+		<item value="R1"/>
+		<item value="L1"/>
+		<item value="KFS_PLACE"/>
+		<item value="KFS_PLACE_"/>
+		<item value="KFS_PLACE_ANGLE"/>
+		<item value="PS4"/>
+		<item value="Button"/>
+		<item value="GPIO"/>
+		<item value="STAFF"/>
 	</list>
 	<list key="replacehistory">
+		<item value="PCA"/>
+		<item value="_TURRET"/>
+		<item value="RADIUS"/>
+		<item value="LENGTH"/>
+		<item value="LENGT"/>
+		<item value="KFS_BELT_LPWM"/>
+		<item value="KFS_GRIPPER_2"/>
+		<item value="KFSGripServo"/>
+		<item value="StaffGripServo"/>
+		<item value="PS4"/>
+		<item value="KFS_Place"/>
+		<item value="KFS_PLACE"/>
 		<item value="xPID"/>
 		<item value="spitf"/>
 		<item value="Odo"/>
-		<item value="EncoderInstance_t"/>
-		<item value="encoderInstance_t"/>
-		<item value="Odometry_t"/>
 	</list>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
+		<item key="wrap" value="true"/>
+		<item key="casesensitive" value="false"/>
+		<item key="wholeword" value="false"/>
+		<item key="incremental" value="false"/>
+		<item key="isRegEx" value="false"/>
+		<list key="findhistory">
+			<item value="18:29:58 **** Incremental Build of configuration Debug for project 3001_MECHANISMS_TEST ****"/>
+		</list>
+		<list key="replacehistory">
+		</list>
+	</section>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
+		<item key="DIALOG_X_ORIGIN" value="762"/>
+		<item key="DIALOG_Y_ORIGIN" value="259"/>
+		<item key="DIALOG_WIDTH" value="412"/>
+		<item key="DIALOG_HEIGHT" value="434"/>
+		<item key="DIALOG_FONT_NAME" value="1|Segoe UI|10.5|0|WINDOWS|1|-14|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI"/>
+	</section>
 </section>

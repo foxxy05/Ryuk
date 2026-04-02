@@ -131,7 +131,7 @@ void get_value() {
 			PS4.L3 			= ((data[1] & (1 << 2)) ? 1 : 0);
 			PS4.R3 			= ((data[1] & (1 << 3)) ? 1 : 0);
 			PS4.Share 		= ((data[1] & (1 << 4)) ? 1 : 0);
-			PS4.Options 		= ((data[1] & (1 << 5)) ? 1 : 0);
+			PS4.Options 	= ((data[1] & (1 << 5)) ? 1 : 0);
 			PS4.Touchpad 	= ((data[1] & (1 << 6)) ? 1 : 0);
 			PS4.PS 			= ((data[1] & (1 << 7)) ? 1 : 0);
 

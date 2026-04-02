@@ -53,10 +53,19 @@
 #define LINEAR_PWM  		50
 #define DEADZONE    		20
 #define dt          		0.001
+#define CYTRON_FORWARD		1
+#define CYTRON_BACKWARD     0
+
+typedef struct{
+	bool prevState;
+	bool flag;
+}Button;
 
 // ================== KFS PLACING ==================
 BTS KFS_PLACE_MOTOR;
-PCA_t KFS_PLACE_PCA;
+PCA_t PCA;
+
+Button KFSPlaceServo = { 0 };
 
 #define KFS_PLACE_CONVEYOR_SPEED 	60
 #define KFS_PLACE_MOTOR_FREQ		1000
@@ -65,98 +74,117 @@ PCA_t KFS_PLACE_PCA;
 #define KFS_PLACE_LPWM 				TIM_CHANNEL_2
 #define KFS_PLACE_RPWM 				TIM_CHANNEL_3
 
-#define KFS_PLACE_OPEN_ANGLE 		90
+#define KFS_PLACE_OPEN_ANGLE 		180
 #define KFS_PLACE_CLOSE_ANGLE     	0
+
 #define KFS_PLACE_SERVO 			12
-#define KFS_PLACE_PCA_FREQ 			50
+#define PCA_FREQ 			50
 
 
 // ================== STAFF ==================
-BTS STAFF_MOTOR;
-PCA_t STAFF_PCA;
-
-typedef struct{
-	bool prevState;
-	bool flag;
-}Button;
+Cytron STAFF_MOTOR;
+PCA_t PCA;
 
 Button StaffGripServo   = { 0 };
 Button AttackServo = { 0 };
 
 #define MAX_STAFF_PWM 40
 
-#define GRIP_SERVO_1					1
-#define GRIP_SERVO_2					2
-#define GRIP_SERVO_3					3
-#define GRIP_SERVO_4					4
+#define GRIP_SERVO_1					0
+#define GRIP_SERVO_2					8
+#define GRIP_SERVO_3					11
+#define GRIP_SERVO_4					1
 
 #define GRIP_SERVO_1_GRIP_ANGLE			180
-#define GRIP_SERVO_2_GRIP_ANGLE			180
+#define GRIP_SERVO_2_GRIP_ANGLE			110
 #define GRIP_SERVO_3_GRIP_ANGLE			180
 #define GRIP_SERVO_4_GRIP_ANGLE			180
 
 #define GRIP_SERVO_1_RELEASE_ANGLE		0
-#define GRIP_SERVO_2_RELEASE_ANGLE		0
+#define GRIP_SERVO_2_RELEASE_ANGLE		50
 #define GRIP_SERVO_3_RELEASE_ANGLE		0
 #define GRIP_SERVO_4_RELEASE_ANGLE		0
 
-#define ATTACK_SERVO_1					5
-#define ATTACK_SERVO_2					6
-#define ATTACK_SERVO_3					7
-#define ATTACK_SERVO_4					8
-
-#define ATTACK_SERVO_1_ATTACK_ANGLE		45
-#define ATTACK_SERVO_2_ATTACK_ANGLE		45
-#define ATTACK_SERVO_3_ATTACK_ANGLE		45
-#define ATTACK_SERVO_4_ATTACK_ANGLE		45
+#define ATTACK_SERVO_1					0
+#define ATTACK_SERVO_2					12
+#define ATTACK_SERVO_3					10
+#define ATTACK_SERVO_4					2
 
 #define ATTACK_SERVO_1_NORMAL_ANGLE		0
-#define ATTACK_SERVO_2_NORMAL_ANGLE		0
-#define ATTACK_SERVO_3_NORMAL_ANGLE		0
-#define ATTACK_SERVO_4_NORMAL_ANGLE		0
+#define ATTACK_SERVO_2_NORMAL_ANGLE		110
+#define ATTACK_SERVO_3_NORMAL_ANGLE		15
+#define ATTACK_SERVO_4_NORMAL_ANGLE		67
 
-#define STAFF_ROPE_SPEED 				60
-#define STAFF_MOTOR_FREQ				1000
-#define STAFF_LPWM_APB_BUS  			2
-#define STAFF_RPWM_APB_BUS  			2
-#define STAFF_LPWM 						TIM_CHANNEL_2
-#define STAFF_RPWM 						TIM_CHANNEL_3
+#define ATTACK_SERVO_1_ATTACK_ANGLE		45
+#define ATTACK_SERVO_2_ATTACK_ANGLE		110 - 47
+#define ATTACK_SERVO_3_ATTACK_ANGLE		58
+#define ATTACK_SERVO_4_ATTACK_ANGLE		110
 
-#define STAFF_SERVO 					12
-#define STAFF_PCA_FREQ 					50
+
+//BTS
+//#define STAFF_ROPE_SPEED 				60
+//#define STAFF_MOTOR_FREQ				1000
+//#define STAFF_LPWM_APB_BUS  			2
+//#define STAFF_RPWM_APB_BUS  			2
+//#define STAFF_LPWM 						TIM_CHANNEL_2
+//#define STAFF_RPWM 						TIM_CHANNEL_3
+
+// CYTRON
+#define STAFF_ROPE_SPEED 			60
+#define STAFF_PWM_PIN 				PC6					//PC6
+#define STAFF_DIR_PIN 				GPIO_PIN_3			//PA3
+#define STAFF_GPIO	 				GPIOA
+#define STAFF_TIM_CHANNEL			TIM_CHANNEL_1		//TIM8
+
+#define STAFF_SERVO 				12
+#define PCA_FREQ 					50
 
 // ================== KFS PICKING  ==================
-BTS KFS_PICK_TURRET_MOTOR;
-BTS KFS_PICK_BELT_MOTOR;
-PCA_t KFS_PICK_PCA;
+Cytron KFS_PICK_TURRET_MOTOR;
+Cytron KFS_PICK_BELT_MOTOR;
+PCA_t PCA;
 
+// BTS
+//#define KFS_PICK_BELT_SPEED 			60
+//#define KFS_PICK_BELT_MOTOR_FREQ		1000
+//#define KFS_PICK_BELT_LPWM_APB_BUS  	2
+//#define KFS_PICK_BELT_RPWM_APB_BUS  	2
+//#define KFS_PICK_BELT_LPWM 				TIM_CHANNEL_2
+//#define KFS_PICK_BELT_RPWM 				TIM_CHANNEL_3
+//
+//#define KFS_PICK_TURRET_SPEED 			60
+//#define KFS_PICK_TURRET_MOTOR_FREQ		1000
+//#define KFS_PICK_TURRET_LPWM_APB_BUS  	2
+//#define KFS_PICK_TURRET_RPWM_APB_BUS  	2
+//#define KFS_PICK_TURRET_LPWM 			TIM_CHANNEL_2
+//#define KFS_PICK_TURRET_RPWM 			TIM_CHANNEL_3
+
+// CYTRON
 #define KFS_PICK_BELT_SPEED 			60
-#define KFS_PICK_BELT_MOTOR_FREQ		1000
-#define KFS_PICK_BELT_LPWM_APB_BUS  	2
-#define KFS_PICK_BELT_RPWM_APB_BUS  	2
-#define KFS_PICK_BELT_LPWM 				TIM_CHANNEL_2
-#define KFS_PICK_BELT_RPWM 				TIM_CHANNEL_3
+#define KFS_PICK_BELT_PWM_PIN 			PB14		//PB14
+#define KFS_PICK_BELT_DIR_PIN 			GPIO_PIN_15		//PB15
+#define KFS_PICK_BELT_GPIO	 			GPIOD
+#define KFS_PICK_BELT_TIM_CHANNEL		TIM_CHANNEL_1
 
+// CYTRON
 #define KFS_PICK_TURRET_SPEED 			60
-#define KFS_PICK_TURRET_MOTOR_FREQ		1000
-#define KFS_PICK_TURRET_LPWM_APB_BUS  	2
-#define KFS_PICK_TURRET_RPWM_APB_BUS  	2
-#define KFS_PICK_TURRET_LPWM 			TIM_CHANNEL_2
-#define KFS_PICK_TURRET_RPWM 			TIM_CHANNEL_3
-
+#define KFS_PICK_TURRET_PWM_PIN 		PA1		//PA1
+#define KFS_PICK_TURRET_DIR_PIN 		GPIO_PIN_2		//PA2
+#define KFS_PICK_TURRET_GPIO	 		GPIOA
+#define KFS_PICK_TURRET_TIM_CHANNEL		TIM_CHANNEL_2		//TIM5
 
 Button KFSGripServo = { 0 };
 
 #define KFS_PICK_SERVO 					12
-#define KFS_PICK_PCA_FREQ 				50
+#define PCA_FREQ 				50
 
-#define KFS_GRIPPER_1 					9
-#define KFS_GRIPPER_2					10
+#define KFS_GRIPPER_1 					4
+#define KFS_GRIPPER_2					7
 
 #define KFS_GRIPPER_1_GRIP_ANGLE		60
-#define KFS_GRIPPER_2_GRIP_ANGLE		60
+#define KFS_GRIPPER_2_GRIP_ANGLE		160
 #define KFS_GRIPPER_1_RELEASE_ANGLE		160
-#define KFS_GRIPPER_2_RELEASE_ANGLE		160
+#define KFS_GRIPPER_2_RELEASE_ANGLE		60
 
 
 // ================== DATA ==================
@@ -164,32 +192,46 @@ int8_t data[DATA_SIZE];
 char msg[300];
 
 typedef struct {
-	int8_t LX;
-	int8_t LY;
-	int8_t RX;
-	int8_t RY;
-	int8_t Omega;
+	int LX;
+	int LY;
+	int RX;
+	int RY;
+	int Omega;
 
+	bool Up;
 	bool Right;
 	bool Down;
-	bool Up;
 	bool Left;
-	bool Square;
-	bool Cross;
-	bool Circle;
 	bool Triangle;
+	bool Circle;
+	bool Cross;
+	bool Square;
 
-	bool PS;
-	bool Touchpad;
-	bool Options;
-	bool Share;
-	bool R3;
-	bool L3;
-	bool R1;
 	bool L1;
+	bool R1;
+	bool L3;
+	bool R3;
+	bool Share;
+	bool Options;
+	bool Touchpad;
+	bool PS;
 } PS4Data;
 
 PS4Data PS4 = { 0 };
+
+int L_joystick_x = 0, L_joystick_y = 0, R_joystick_x = 0, R_joystick_y = 0, omega;
+bool right;
+bool down;
+bool up;
+bool left;
+bool square;
+bool cross;
+bool circle;
+bool triangle;
+
+bool PS , Touchpad , Options , Share , R3 , L3 , R1 , L1;
+
+
 
 // ================== PCA ==================
 //#define PCA9685_ADDR 	(0x40 << 1) // PCA9685 I2C Address (shifted for STM32)
@@ -210,6 +252,7 @@ I2C_HandleTypeDef hi2c3;
 
 TIM_HandleTypeDef htim5;
 TIM_HandleTypeDef htim8;
+TIM_HandleTypeDef htim12;
 
 UART_HandleTypeDef huart3;
 
@@ -225,7 +268,7 @@ static void MX_TIM5_Init(void);
 static void MX_TIM8_Init(void);
 static void MX_I2C3_Init(void);
 static void MX_I2C1_Init(void);
-
+static void MX_TIM12_Init(void);
 /* USER CODE BEGIN PFP */
 float Radians(float angle);
 float Degrees(float angle);
@@ -251,7 +294,6 @@ float Degrees(float angle) {
 //}
 
 float constrain(float num, float min, float max) {
-
     if (num > max) 					return max;
     else if (num < min) 			return min;
     else 							return num;
@@ -263,59 +305,124 @@ float NormalizeAngle(float angle) {
     return angle;
 }
 
-void get_value() {
-	HAL_StatusTypeDef I2C_Status = HAL_I2C_Master_Receive(&hi2c1, SLAVE_ADDR << 1, (uint8_t*) data, DATA_SIZE, HAL_MAX_DELAY);
-	if (I2C_Status == HAL_OK) {
-		PS4.Up 				= ((data[0] & (1 << 0)) ? 1 : 0);
-		PS4.Right 			= ((data[0] & (1 << 1)) ? 1 : 0);
-		PS4.Down 			= ((data[0] & (1 << 2)) ? 1 : 0);
-		PS4.Left 			= ((data[0] & (1 << 3)) ? 1 : 0);
-		PS4.Triangle 		= ((data[0] & (1 << 4)) ? 1 : 0);
-		PS4.Circle 			= ((data[0] & (1 << 5)) ? 1 : 0);
-		PS4.Cross 			= ((data[0] & (1 << 6)) ? 1 : 0);
-		PS4.Square 			= ((data[0] & (1 << 7)) ? 1 : 0);
+//void get_value() {
+//	if(HAL_OK == (HAL_I2C_Master_Receive(&hi2c1, SLAVE_ADDR << 1, (uint8_t*) data, DATA_SIZE, HAL_MAX_DELAY))){
+//		PS4.Up 				= ((data[0] & (1 << 0)) ? 1 : 0);
+//		PS4.Right 			= ((data[0] & (1 << 1)) ? 1 : 0);
+//		PS4.Down 			= ((data[0] & (1 << 2)) ? 1 : 0);
+//		PS4.Left 			= ((data[0] & (1 << 3)) ? 1 : 0);
+//		PS4.Triangle 		= ((data[0] & (1 << 4)) ? 1 : 0);
+//		PS4.Circle 			= ((data[0] & (1 << 5)) ? 1 : 0);
+//		PS4.Cross 			= ((data[0] & (1 << 6)) ? 1 : 0);
+//		PS4.Square 			= ((data[0] & (1 << 7)) ? 1 : 0);
+//
+//		PS4.L1 				= ((data[1] & (1 << 0)) ? 1 : 0);
+//		PS4.R1 				= ((data[1] & (1 << 1)) ? 1 : 0);
+//		PS4.L3 				= ((data[1] & (1 << 2)) ? 1 : 0);
+//		PS4.R3 				= ((data[1] & (1 << 3)) ? 1 : 0);
+//		PS4.Share 			= ((data[1] & (1 << 4)) ? 1 : 0);
+//		PS4.Options 		= ((data[1] & (1 << 5)) ? 1 : 0);
+//		PS4.Touchpad 		= ((data[1] & (1 << 6)) ? 1 : 0);
+//		PS4.PS 				= ((data[1] & (1 << 7)) ? 1 : 0);
+//
+//		PS4.LX 				= data[2];
+//		PS4.LY 				= data[3];
+//		PS4.RX 				= data[4];
+//		PS4.RY 				= data[5];
+//		PS4.Omega 			= data[6];
+//
+//		if (abs(PS4.LX) < DEADZONE) {
+//			PS4.LX = 0;
+//		}
+//		if (abs(PS4.LY) < DEADZONE) {
+//			PS4.LY = 0;
+//		}
+//		if (abs(PS4.Omega) < DEADZONE) {
+//			PS4.Omega = 0;
+//		}
+////
+////		sprintf(msg,"SQ %d  X %d  O %d  TRI %d  LEFT %d  RIGHT %d  UP %d  DOWN %d  PS %d  TOUCH %d  OPT %d  SHARE %d  R3 %d  L3 %d  R1 %d  L1 %d  LX %d  LY %d  RX %d  RY %d  OMEGA %d\r\n",
+////				PS4.Square, 	PS4.Cross, 		PS4.Circle, 	PS4.Triangle,
+////				PS4.Left,		PS4.Down, 		PS4.Right, 		PS4.Up,
+////				PS4.PS,			PS4.Touchpad,	PS4.Options,	PS4.Share,
+////				PS4.R3, 		PS4.L3, 		PS4.R1, 		PS4.L1,
+////				PS4.LX,	PS4.LY, 	PS4.RX, 	PS4.RY, 	PS4.Omega);
+////		HAL_UART_Transmit(&huart3, (uint8_t*) msg, strlen(msg), HAL_MAX_DELAY);
+//
+////		spitf("SQ %d  X %d  O %d  TRI %d  LEFT %d  RIGHT %d  UP %d  DOWN %d  PS %d  TOUCH %d  OPT %d  SHARE %d  R3 %d  L3 %d  R1 %d  L1 %d  LX %d  LY %d  RX %d  RY %d  OMEGA %d\r\n",
+////				PS4.Square, 	PS4.Cross, 		PS4.Circle, 	PS4.Triangle,
+////				PS4.Left,		PS4.Down, 		PS4.Right, 		PS4.Up,
+////				PS4.PS,			PS4.Touchpad,	PS4.Options,	PS4.Share,
+////				PS4.R3, 		PS4.L3, 		PS4.R1, 		PS4.L1,
+////				PS4.LX,	PS4.LY, 	PS4.RX, 	PS4.RY, 	PS4.Omega);
+//
+//		sprintf(msg,"SQ %d  X %d  O %d  TRI %d  LEFT %d  RIGHT %d  UP %d  DOWN %d  PS %d  TOUCH %d  OPT %d  SHARE %d  R3 %d  L3 %d  R1 %d  L1 %d  LX %d  LY %d  RX %d  RY %d  OMEGA %d\r\n",
+//		        PS4.Square,  PS4.Cross,    PS4.Circle,   PS4.Triangle,
+//		        PS4.Left,    PS4.Right,    PS4.Up,       PS4.Down,
+//		        PS4.PS,      PS4.Touchpad, PS4.Options,  PS4.Share,
+//		        PS4.R3,      PS4.L3,       PS4.R1,       PS4.L1,
+//		        PS4.LX,      PS4.LY,       PS4.RX,       PS4.RY, PS4.Omega);
+//	}
+//	else{
+//		sprintf(msg, "I2C NOT OK!");
+//		HAL_UART_Transmit(&huart3, (uint8_t*) msg, strlen(msg), HAL_MAX_DELAY);
+//	}
+//}
 
-		PS4.L1 				= ((data[1] & (1 << 0)) ? 1 : 0);
-		PS4.R1 				= ((data[1] & (1 << 1)) ? 1 : 0);
-		PS4.L3 				= ((data[1] & (1 << 2)) ? 1 : 0);
-		PS4.R3 				= ((data[1] & (1 << 3)) ? 1 : 0);
-		PS4.Share 			= ((data[1] & (1 << 4)) ? 1 : 0);
-		PS4.Options 		= ((data[1] & (1 << 5)) ? 1 : 0);
-		PS4.Touchpad 		= ((data[1] & (1 << 6)) ? 1 : 0);
-		PS4.PS 				= ((data[1] & (1 << 7)) ? 1 : 0);
+void get_value(){
 
-		PS4.Omega 		= data[6];
-		PS4.RY 		= data[5];
-		PS4.RX 		= data[4];
-		PS4.LY 		= data[3];
-		PS4.LX 		= data[2];
 
-		if (abs(PS4.LX) < DEADZONE) {
-			PS4.LX = 0;
-		}
-		if (abs(PS4.LY) < DEADZONE) {
-			PS4.LY = 0;
-		}
-		if (abs(PS4.Omega) < DEADZONE) {
-			PS4.Omega = 0;
-		}
+      if(HAL_OK == (HAL_I2C_Master_Receive(&hi2c1, SLAVE_ADDR << 1, (uint8_t*) data, DATA_SIZE, HAL_MAX_DELAY))){
 
-		sprintf(msg,"SQ %d  X %d  O %d  TRI %d  LEFT %d  RIGHT %d  UP %d  DOWN %d  PS %d  TOUCH %d  OPT %d  SHARE %d  R3 %d  L3 %d  R1 %d  L1 %d  LX %d  LY %d  RX %d  RY %d  OMEGA %d\r\n",
-				PS4.Square, 	PS4.Cross, 		PS4.Circle, 	PS4.Triangle,
-				PS4.Left,		PS4.Down, 		PS4.Right, 		PS4.Up,
-				PS4.PS,			PS4.Touchpad,	PS4.Options,	PS4.Share,
-				PS4.R3, 		PS4.L3, 		PS4.R1, 		PS4.L1,
-				PS4.LX,	PS4.LY, 	PS4.RX, 	PS4.RY, 	PS4.Omega);
-		HAL_UART_Transmit(&huart3, (uint8_t*) msg, strlen(msg), HAL_MAX_DELAY);
 
-//		spitf("SQ %d  X %d  O %d  TRI %d  LEFT %d  RIGHT %d  UP %d  DOWN %d  PS %d  TOUCH %d  OPT %d  SHARE %d  R3 %d  L3 %d  R1 %d  L1 %d  LX %d  LY %d  RX %d  RY %d  OMEGA %d\r\n",
-//				PS4.Square, 	PS4.Cross, 		PS4.Circle, 	PS4.Triangle,
-//				PS4.Left,		PS4.Down, 		PS4.Right, 		PS4.Up,
-//				PS4.PS,			PS4.Touchpad,	PS4.Options,	PS4.Share,
-//				PS4.R3, 		PS4.L3, 		PS4.R1, 		PS4.L1,
-//				PS4.LX,	PS4.LY, 	PS4.RX, 	PS4.RY, 	PS4.Omega);
-	}
-}
+    	  	 up = ((data[0] & (1 << 0)) ? 1 : 0);
+	 	     right = ((data[0] & (1 << 1)) ? 1 : 0);
+	 	     down = ((data[0] & (1 << 2)) ? 1 : 0);
+	 	     left = ((data[0] & (1 << 3)) ? 1 : 0);
+	         triangle = ((data[0] & (1 << 4)) ? 1 : 0);
+	   	     circle = ((data[0] & (1 << 5)) ? 1 : 0);
+	   	     cross = ((data[0] & (1 << 6)) ? 1 : 0);
+	   	     square = ((data[0] & (1 << 7)) ? 1 : 0);
+
+	   	  L1 = ((data[1] & (1 << 0)) ? 1 : 0);
+	   	  R1 = ((data[1] & (1 << 1)) ? 1 : 0);
+	   	  L3 = ((data[1] & (1 << 2)) ? 1 : 0);
+	   	  R3 = ((data[1] & (1 << 3)) ? 1 : 0);
+	   	  Share = ((data[1] & (1 << 4)) ? 1 : 0);
+	   	  Options = ((data[1] & (1 << 5)) ? 1 : 0);
+	   	  Touchpad = ((data[1] & (1 << 6)) ? 1 : 0);
+	   	  PS = ((data[1] & (1 << 7)) ? 1 : 0);
+
+	            omega = data[6];
+	            R_joystick_y = data[5];
+	            R_joystick_x = data[4];
+	            L_joystick_x = data[2];
+	            L_joystick_y = data[3];
+
+
+	            if(abs(L_joystick_x) < DEADZONE)
+	              	 	  {
+	              	 		  L_joystick_x = 0;
+	              	 	  }
+	              	 	  if(abs(L_joystick_y) < DEADZONE)
+	              	 		  {
+	              	 			  L_joystick_y = 0;
+	              	 		  }
+	              	 	  if(abs(omega) < DEADZONE)
+	              	 		  {
+	              	 			  omega = 0;
+	              	 		  }
+
+
+                  sprintf(msg," sq %d x %d o %d tri %d left %d down %d right %d up %d  PS %d Touchpad %d Options %d Share %d R3 %d L3 %d R1 %d L1 %d lx %d ly %d rx %d ry%d omega %d \r\n",square, cross, circle, triangle, left, down, right, up, PS , Touchpad , Options , Share , R3 , L3 , R1 , L1, L_joystick_x, L_joystick_y, R_joystick_x, R_joystick_y, omega);
+
+	              	 	//sprintf(msg,"%d   %d\r\n" data[4], data[5]);
+	  	  HAL_UART_Transmit(&huart3, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
+
+
+      }
+      }
+
 
 
 //=================== KFS PLACING ===================
@@ -338,15 +445,32 @@ void KFS_PLACE_Motor(){
 }
 
 void KFS_PLACE_Servo(){
-	if(PS4.L3){
-		RotateServo(&KFS_PLACE_PCA, KFS_PLACE_SERVO, KFS_PLACE_OPEN_ANGLE);
-//		sprintf(msg, "L3 Pushed!\r\n");
-//		HAL_UART_Transmit(&huart3, (uint8_t*) msg, sizeof(msg), 100);
+// 	WITHOUT TOGGLE
+//	if(PS4.L3){
+//		RotateServo(&PCA, KFS_PLACE_SERVO, KFS_PLACE_OPEN_ANGLE);
+////		sprintf(msg, "L3 Pushed!\r\n");
+////		HAL_UART_Transmit(&huart3, (uint8_t*) msg, sizeof(msg), 100);
+//	}
+//	if(PS4.R3){
+//		RotateServo(&PCA, KFS_PLACE_SERVO, KFS_PLACE_CLOSE_ANGLE);
+////		sprintf(msg, "R3 Pushed!\r\n");
+////		HAL_UART_Transmit(&huart3, (uint8_t*) msg, sizeof(msg), 100);
+//	}
+
+	// GRIP SERVO
+	if(PS4.Cross && !KFSPlaceServo.prevState){
+		KFSPlaceServo.prevState = true;
+		KFSPlaceServo.flag 		= !KFSPlaceServo.flag;
+
+		if(KFSPlaceServo.flag){
+			RotateServo(&PCA, KFS_PLACE_SERVO, KFS_PLACE_OPEN_ANGLE);
+		}
+		else{
+			RotateServo(&PCA, KFS_PLACE_SERVO, KFS_PLACE_CLOSE_ANGLE);
+		}
 	}
-	if(PS4.R3){
-		RotateServo(&KFS_PLACE_PCA, KFS_PLACE_SERVO, KFS_PLACE_CLOSE_ANGLE);
-//		sprintf(msg, "R3 Pushed!\r\n");
-//		HAL_UART_Transmit(&huart3, (uint8_t*) msg, sizeof(msg), 100);
+	else if (!PS4.Cross){
+		KFSPlaceServo.prevState = false;
 	}
 }
 
@@ -358,30 +482,14 @@ void KFS_PLACE_Motion(){
 //=================== STAFF PICKING ===================
 void STAFF_Motor(){
 	if(PS4.RY){
-		int8_t beltSpeed = constrain(PS4.RY, -MAX_STAFF_PWM, MAX_STAFF_PWM);
-		RotateMotor(&STAFF_MOTOR, beltSpeed);
+		int16_t beltSpeed = (int16_t)constrain(PS4.RY, -MAX_STAFF_PWM, MAX_STAFF_PWM);
+		RotateCytron(&STAFF_MOTOR, beltSpeed);
 	}
 	else{
-		StopMotor(&STAFF_MOTOR);
+		StopCytron(&STAFF_MOTOR);
 	}
 }
-// ON-PRESS LOGIC
-//	if(PS4.Up){
-//		RotateMotor(&STAFF_MOTOR,  STAFF_ROPE_SPEED);
-//		//		sprintf(msg, "UP Pushed!\r\n");
-//		//		HAL_UART_Transmit(&huart3, (uint8_t*) msg, sizeof(msg), 100);
-//	}
-//	else if(PS4.Down){
-//		RotateMotor(&STAFF_MOTOR, -STAFF_ROPE_SPEED);
-//		//		sprintf(msg, "DOWN Pushed!\r\n");
-//		//		HAL_UART_Transmit(&huart3, (uint8_t*) msg, sizeof(msg), 100);
-//	}
-//	else{
-//		StopMotor(&STAFF_MOTOR);
-//		//		sprintf(msg, "STOP!!!\r\n");
-//		//		HAL_UART_Transmit(&huart3, (uint8_t*) msg, sizeof(msg), 100);
-//	}
-//}
+
 
 void STAFF_Servo(){
 	// GRIP SERVO
@@ -390,16 +498,16 @@ void STAFF_Servo(){
 		StaffGripServo.flag 		= !StaffGripServo.flag;
 
 		if(StaffGripServo.flag){
-//			RotateServo(&STAFF_PCA, GRIP_SERVO_1, GRIP_SERVO_1_GRIP_ANGLE);
-			RotateServo(&STAFF_PCA, GRIP_SERVO_2, GRIP_SERVO_2_GRIP_ANGLE);
-			RotateServo(&STAFF_PCA, GRIP_SERVO_3, GRIP_SERVO_3_GRIP_ANGLE);
-			RotateServo(&STAFF_PCA, GRIP_SERVO_4, GRIP_SERVO_4_GRIP_ANGLE);
+//			RotateServo(&PCA, GRIP_SERVO_1, GRIP_SERVO_1_GRIP_ANGLE);
+			RotateServo(&PCA, GRIP_SERVO_2, GRIP_SERVO_2_GRIP_ANGLE);
+			RotateServo(&PCA, GRIP_SERVO_3, GRIP_SERVO_3_GRIP_ANGLE);
+			RotateServo(&PCA, GRIP_SERVO_4, GRIP_SERVO_4_GRIP_ANGLE);
 		}
 		else{
-//			RotateServo(&STAFF_PCA, GRIP_SERVO_1, GRIP_SERVO_1_RELEASE_ANGLE);
-			RotateServo(&STAFF_PCA, GRIP_SERVO_2, GRIP_SERVO_2_RELEASE_ANGLE);
-			RotateServo(&STAFF_PCA, GRIP_SERVO_3, GRIP_SERVO_3_RELEASE_ANGLE);
-			RotateServo(&STAFF_PCA, GRIP_SERVO_4, GRIP_SERVO_4_RELEASE_ANGLE);
+//			RotateServo(&PCA, GRIP_SERVO_1, GRIP_SERVO_1_RELEASE_ANGLE);
+			RotateServo(&PCA, GRIP_SERVO_2, GRIP_SERVO_2_RELEASE_ANGLE);
+			RotateServo(&PCA, GRIP_SERVO_3, GRIP_SERVO_3_RELEASE_ANGLE);
+			RotateServo(&PCA, GRIP_SERVO_4, GRIP_SERVO_4_RELEASE_ANGLE);
 		}
 	}
 	else if (!PS4.Square){
@@ -412,16 +520,16 @@ void STAFF_Servo(){
 		AttackServo.flag 	  = !AttackServo.flag;
 
 		if(AttackServo.flag){
-//			RotateServo(&STAFF_PCA, ATTACK_SERVO_1, ATTACK_SERVO_1_ATTACK_ANGLE);
-//			RotateServo(&STAFF_PCA, ATTACK_SERVO_2, ATTACK_SERVO_2_ATTACK_ANGLE);
-//			RotateServo(&STAFF_PCA, ATTACK_SERVO_3, ATTACK_SERVO_3_ATTACK_ANGLE);
-			RotateServo(&STAFF_PCA, ATTACK_SERVO_4, ATTACK_SERVO_4_ATTACK_ANGLE);
+//			RotateServo(&PCA, ATTACK_SERVO_1, ATTACK_SERVO_1_ATTACK_ANGLE);
+//			RotateServo(&PCA, ATTACK_SERVO_2, ATTACK_SERVO_2_ATTACK_ANGLE);
+//			RotateServo(&PCA, ATTACK_SERVO_3, ATTACK_SERVO_3_ATTACK_ANGLE);
+			RotateServo(&PCA, ATTACK_SERVO_4, ATTACK_SERVO_4_ATTACK_ANGLE);
 		}
 		else{
-//			RotateServo(&STAFF_PCA, ATTACK_SERVO_1, ATTACK_SERVO_1_NORMAL_ANGLE);
-//			RotateServo(&STAFF_PCA, ATTACK_SERVO_2, ATTACK_SERVO_2_NORMAL_ANGLE);
-//			RotateServo(&STAFF_PCA, ATTACK_SERVO_3, ATTACK_SERVO_3_NORMAL_ANGLE);
-			RotateServo(&STAFF_PCA, ATTACK_SERVO_4, ATTACK_SERVO_4_NORMAL_ANGLE);
+//			RotateServo(&PCA, ATTACK_SERVO_1, ATTACK_SERVO_1_NORMAL_ANGLE);
+//			RotateServo(&PCA, ATTACK_SERVO_2, ATTACK_SERVO_2_NORMAL_ANGLE);
+//			RotateServo(&PCA, ATTACK_SERVO_3, ATTACK_SERVO_3_NORMAL_ANGLE);
+			RotateServo(&PCA, ATTACK_SERVO_4, ATTACK_SERVO_4_NORMAL_ANGLE);
 		}
 	}
 	else if(!PS4.Triangle){
@@ -432,7 +540,7 @@ void STAFF_Servo(){
 
 void STAFF_Motion(){
 	STAFF_Motor();
-	STAFF_Servo();
+//	STAFF_Servo();
 }
 
 
@@ -440,24 +548,31 @@ void STAFF_Motion(){
 void KFS_PICK_Motor(){
 	// BELT-MOTOR
 	if(PS4.Up){
-		RotateMotor(&KFS_PICK_BELT_MOTOR,  KFS_PICK_BELT_SPEED);
+//		RotateMotor(&KFS_PICK_BELT_MOTOR,  KFS_PICK_BELT_SPEED);		// BTS
+		RotateCytron(&KFS_PICK_BELT_MOTOR,   KFS_PICK_BELT_SPEED);
 	}
 	else if(PS4.Down){
-		RotateMotor(&KFS_PICK_BELT_MOTOR, -KFS_PICK_BELT_SPEED);
+//		RotateMotor(&KFS_PICK_BELT_MOTOR, -KFS_PICK_BELT_SPEED);		//BTS
+		RotateCytron(&KFS_PICK_BELT_MOTOR,  -KFS_PICK_BELT_SPEED);
 	}
 	else{
-		StopMotor(&KFS_PICK_BELT_MOTOR);
+//		StopMotor(&KFS_PICK_BELT_MOTOR);		//BTS
+		StopCytron(&KFS_PICK_BELT_MOTOR);
 	}
 
 	// TURRET-MOTOR
 	if(PS4.Right){
-		RotateMotor(&KFS_PICK_TURRET_MOTOR,  KFS_PICK_TURRET_SPEED);
+//		RotateMotor(&KFS_PICK_TURRET_MOTOR,  KFS_PICK_TURRET_SPEED);	//BTS
+		RotateCytron(&KFS_PICK_TURRET_MOTOR,   KFS_PICK_TURRET_SPEED);
 	}
 	else if(PS4.Left){
-		RotateMotor(&KFS_PICK_TURRET_MOTOR, -KFS_PICK_TURRET_SPEED);
+//		RotateMotor(&KFS_PICK_TURRET_MOTOR, -KFS_PICK_TURRET_SPEED);	//BTS
+		RotateCytron(&KFS_PICK_TURRET_MOTOR,  -KFS_PICK_TURRET_SPEED);
+
 	}
 	else{
-		StopMotor(&KFS_PICK_TURRET_MOTOR);
+//		StopMotor(&KFS_PICK_TURRET_MOTOR);		//BTS
+		StopCytron(&KFS_PICK_TURRET_MOTOR);
 	}
 }
 
@@ -467,12 +582,12 @@ void KFS_PICK_Servo(){
 		KFSGripServo.flag 		= !KFSGripServo.flag;
 
 			if(KFSGripServo.flag){
-				RotateServo(&KFS_PICK_PCA, KFS_GRIPPER_1, KFS_GRIPPER_1_GRIP_ANGLE);
-				RotateServo(&KFS_PICK_PCA, KFS_GRIPPER_2, KFS_GRIPPER_2_GRIP_ANGLE);
+				RotateServo(&PCA, KFS_GRIPPER_1, KFS_GRIPPER_1_GRIP_ANGLE);
+				RotateServo(&PCA, KFS_GRIPPER_2, KFS_GRIPPER_2_GRIP_ANGLE);
 			}
 			else{
-				RotateServo(&KFS_PICK_PCA, KFS_GRIPPER_1, KFS_GRIPPER_1_RELEASE_ANGLE);
-				RotateServo(&KFS_PICK_PCA, KFS_GRIPPER_2, KFS_GRIPPER_2_RELEASE_ANGLE);
+				RotateServo(&PCA, KFS_GRIPPER_1, KFS_GRIPPER_1_RELEASE_ANGLE);
+				RotateServo(&PCA, KFS_GRIPPER_2, KFS_GRIPPER_2_RELEASE_ANGLE);
 			}
 		}
 		else if (!PS4.Circle){
@@ -521,21 +636,32 @@ int main(void)
   MX_TIM8_Init();
   MX_I2C3_Init();
   MX_I2C1_Init();
+  MX_TIM12_Init();
   /* USER CODE BEGIN 2 */
 //	spitDefault(&huart3);
   	InitBTS(&KFS_PLACE_MOTOR, 	&htim8, KFS_PLACE_LPWM, 	KFS_PLACE_LPWM_APB_BUS, 	&htim8,
   			KFS_PLACE_RPWM, 	KFS_PLACE_RPWM_APB_BUS, 	KFS_PLACE_MOTOR_FREQ);
-  	InitBTS(&STAFF_MOTOR, 		&htim8, KFS_PLACE_LPWM, 	STAFF_LPWM_APB_BUS, 		&htim8,
-  			STAFF_RPWM, 		STAFF_RPWM_APB_BUS, 		STAFF_MOTOR_FREQ);
+//  	InitBTS(&STAFF_MOTOR, 		&htim8, KFS_PLACE_LPWM, 	STAFF_LPWM_APB_BUS, 		&htim8,
+//  			STAFF_RPWM, 		STAFF_RPWM_APB_BUS, 		STAFF_MOTOR_FREQ);
 
-  	InitBTS(&KFS_PICK_BELT_MOTOR, 		&htim8, 	KFS_PICK_BELT_LPWM, 	KFS_PICK_BELT_LPWM_APB_BUS, 	&htim8,
-  			KFS_PICK_BELT_RPWM, 		KFS_PICK_BELT_RPWM_APB_BUS, 		KFS_PICK_BELT_MOTOR_FREQ);
-	InitBTS(&KFS_PICK_TURRET_MOTOR, 	&htim8, 	KFS_PICK_TURRET_LPWM, 	KFS_PICK_TURRET_LPWM_APB_BUS, 	&htim8,
-			KFS_PICK_TURRET_RPWM, 		KFS_PICK_TURRET_RPWM_APB_BUS, 		KFS_PICK_TURRET_MOTOR_FREQ);
 
-	InitPCA(&KFS_PLACE_PCA, 	&hi2c3, KFS_PLACE_PCA_FREQ);
-	InitPCA(&STAFF_PCA, 		&hi2c3, STAFF_PCA_FREQ);
-	InitPCA(&KFS_PICK_PCA, &hi2c3, KFS_PICK_PCA_FREQ);
+  	// BTS
+//  	InitBTS(&KFS_PICK_BELT_MOTOR, 		&htim8, 	KFS_PICK_BELT_LPWM, 	KFS_PICK_BELT_LPWM_APB_BUS, 	&htim8,
+//  			KFS_PICK_BELT_RPWM, 		KFS_PICK_BELT_RPWM_APB_BUS, 		KFS_PICK_BELT_MOTOR_FREQ);
+//	InitBTS(&KFS_PICK_TURRET_MOTOR, 	&htim8, 	KFS_PICK_TURRET_LPWM, 	KFS_PICK_TURRET_LPWM_APB_BUS, 	&htim8,
+//			KFS_PICK_TURRET_RPWM, 		KFS_PICK_TURRET_RPWM_APB_BUS, 		KFS_PICK_TURRET_MOTOR_FREQ);
+
+  	// CYTRON
+  	InitCytron(&KFS_PICK_BELT_MOTOR, 		&htim8, 				KFS_PICK_BELT_TIM_CHANNEL,
+  				KFS_PICK_BELT_GPIO, 		KFS_PICK_BELT_DIR_PIN, 	CYTRON_FORWARD);
+  	InitCytron(&KFS_PICK_TURRET_MOTOR, 		&htim8, 				KFS_PICK_TURRET_TIM_CHANNEL,
+  				KFS_PICK_TURRET_GPIO, 		KFS_PICK_TURRET_DIR_PIN, CYTRON_FORWARD);
+  	InitCytron(&STAFF_MOTOR, 				&htim8, 				STAFF_TIM_CHANNEL,
+  				STAFF_GPIO, 				STAFF_DIR_PIN, 			CYTRON_FORWARD);
+
+	InitPCA(&PCA, 	&hi2c3, 		PCA_FREQ);
+//	InitPCA(&PCA, 		&hi2c3, 		PCA_FREQ);
+//	InitPCA(&PCA, 		&hi2c3, 		PCA_FREQ);
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -784,6 +910,10 @@ static void MX_TIM8_Init(void)
   sConfigOC.OCFastMode = TIM_OCFAST_DISABLE;
   sConfigOC.OCIdleState = TIM_OCIDLESTATE_RESET;
   sConfigOC.OCNIdleState = TIM_OCNIDLESTATE_RESET;
+  if (HAL_TIM_PWM_ConfigChannel(&htim8, &sConfigOC, TIM_CHANNEL_1) != HAL_OK)
+  {
+    Error_Handler();
+  }
   if (HAL_TIM_PWM_ConfigChannel(&htim8, &sConfigOC, TIM_CHANNEL_2) != HAL_OK)
   {
     Error_Handler();
@@ -807,6 +937,58 @@ static void MX_TIM8_Init(void)
 
   /* USER CODE END TIM8_Init 2 */
   HAL_TIM_MspPostInit(&htim8);
+
+}
+
+/**
+  * @brief TIM12 Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_TIM12_Init(void)
+{
+
+  /* USER CODE BEGIN TIM12_Init 0 */
+
+  /* USER CODE END TIM12_Init 0 */
+
+  TIM_ClockConfigTypeDef sClockSourceConfig = {0};
+  TIM_OC_InitTypeDef sConfigOC = {0};
+
+  /* USER CODE BEGIN TIM12_Init 1 */
+
+  /* USER CODE END TIM12_Init 1 */
+  htim12.Instance = TIM12;
+  htim12.Init.Prescaler = 351;
+  htim12.Init.CounterMode = TIM_COUNTERMODE_UP;
+  htim12.Init.Period = 65535;
+  htim12.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
+  htim12.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
+  if (HAL_TIM_Base_Init(&htim12) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  sClockSourceConfig.ClockSource = TIM_CLOCKSOURCE_INTERNAL;
+  if (HAL_TIM_ConfigClockSource(&htim12, &sClockSourceConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  if (HAL_TIM_PWM_Init(&htim12) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  sConfigOC.OCMode = TIM_OCMODE_PWM1;
+  sConfigOC.Pulse = 0;
+  sConfigOC.OCPolarity = TIM_OCPOLARITY_HIGH;
+  sConfigOC.OCFastMode = TIM_OCFAST_DISABLE;
+  if (HAL_TIM_PWM_ConfigChannel(&htim12, &sConfigOC, TIM_CHANNEL_1) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN TIM12_Init 2 */
+
+  /* USER CODE END TIM12_Init 2 */
+  HAL_TIM_MspPostInit(&htim12);
 
 }
 
@@ -850,6 +1032,7 @@ static void MX_USART3_UART_Init(void)
   */
 static void MX_GPIO_Init(void)
 {
+  GPIO_InitTypeDef GPIO_InitStruct = {0};
   /* USER CODE BEGIN MX_GPIO_Init_1 */
 
   /* USER CODE END MX_GPIO_Init_1 */
@@ -857,9 +1040,29 @@ static void MX_GPIO_Init(void)
   /* GPIO Ports Clock Enable */
   __HAL_RCC_GPIOC_CLK_ENABLE();
   __HAL_RCC_GPIOH_CLK_ENABLE();
-  __HAL_RCC_GPIOD_CLK_ENABLE();
   __HAL_RCC_GPIOA_CLK_ENABLE();
   __HAL_RCC_GPIOB_CLK_ENABLE();
+  __HAL_RCC_GPIOD_CLK_ENABLE();
+
+  /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_2|GPIO_PIN_3, GPIO_PIN_RESET);
+
+  /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_15, GPIO_PIN_RESET);
+
+  /*Configure GPIO pins : PA2 PA3 */
+  GPIO_InitStruct.Pin = GPIO_PIN_2|GPIO_PIN_3;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+
+  /*Configure GPIO pin : PB15 */
+  GPIO_InitStruct.Pin = GPIO_PIN_15;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
 
   /* USER CODE BEGIN MX_GPIO_Init_2 */
 
