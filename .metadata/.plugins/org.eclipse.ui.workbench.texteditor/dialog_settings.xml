@@ -3,38 +3,38 @@
 	<item key="hasShownOverlayPopupBefore" value="true"/>
 	<item key="replaceBarOpen" value="true"/>
 	<list key="searchhistory">
-		<item value="data"/>
-		<item value="KFS_PICK_PCA"/>
-		<item value="STAFF_PCA"/>
-		<item value="KFS_PLACE_PCA"/>
-		<item value="KFSPlaceServo"/>
-		<item value="PS4.X"/>
-		<item value="R1"/>
-		<item value="L1"/>
-		<item value="KFS_PLACE"/>
-		<item value="KFS_PLACE_"/>
-		<item value="KFS_PLACE_ANGLE"/>
-		<item value="PS4"/>
-		<item value="Button"/>
-		<item value="GPIO"/>
-		<item value="STAFF"/>
+		<item value="find_wheel_vel"/>
+		<item value="BNO055_init"/>
+		<item value="msg"/>
+		<item value="msg1"/>
+		<item value="HAL_UART"/>
+		<item value="get"/>
+		<item value="getV"/>
+		<item value="map"/>
+		<item value="sqrt"/>
+		<item value="i2c1"/>
+		<item value="i2c2"/>
+		<item value="huart"/>
+		<item value="KFSGripServo"/>
+		<item value="huart3"/>
+		<item value="Cytron"/>
 	</list>
 	<list key="replacehistory">
-		<item value="PCA"/>
-		<item value="_TURRET"/>
-		<item value="RADIUS"/>
-		<item value="LENGTH"/>
-		<item value="LENGT"/>
-		<item value="KFS_BELT_LPWM"/>
-		<item value="KFS_GRIPPER_2"/>
-		<item value="KFSGripServo"/>
-		<item value="StaffGripServo"/>
+		<item value="StaffAttackServo"/>
+		<item value="SM1"/>
+		<item value="jhala"/>
+		<item value="vidhani"/>
+		<item value="constrain"/>
+		<item value="dirPIN"/>
+		<item value="CytronMotor_t"/>
+		<item value="PCA_Ch"/>
+		<item value="Channel"/>
+		<item value="getValue"/>
+		<item value="MSG"/>
+		<item value="DATA"/>
+		<item value="SLAVE_ADDR"/>
+		<item value="DATA_SIZE"/>
 		<item value="PS4"/>
-		<item value="KFS_Place"/>
-		<item value="KFS_PLACE"/>
-		<item value="xPID"/>
-		<item value="spitf"/>
-		<item value="Odo"/>
 	</list>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item key="wrap" value="true"/>

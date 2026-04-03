@@ -1,4 +1,5 @@
 DeviceConfigurationTool.AskToDoCodeGenerationOnIocSave=false
+DeviceConfigurationTool.AskToSwitchToCdtPerspective=false
 DeviceConfigurationTool.AskToSwitchToCubeMxPerspective=false
 DeviceConfigurationTool.DoCodeGenerationOnIocSave=true
 DeviceConfigurationTool.SwitchToCubeMxPerspective=true
