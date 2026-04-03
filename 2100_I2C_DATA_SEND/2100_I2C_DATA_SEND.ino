@@ -33,9 +33,9 @@ byte sendData[size]  =   {0};       //use pointers
 #define chooseButton_1 B11111111  //choose the button which needs to be used;  0: not to be used; 1: to be used
 
 // Byte 1: [NA | Omega | RY | RX | LY | LX | R2 | L2]
-#define chooseButton_2 B01101100  //choose the button which needs to be used;  0: not to be used; 1: to be used
+#define chooseButton_2 B01111100  //choose the button which needs to be used;  0: not to be used; 1: to be used
 
-#define buttonMode_0   B00001100  // 0: on press; 1: on click
+#define buttonMode_0   B11110000  // 0: on press; 1: on click
 #define buttonMode_1   B11001100  // 0: on press; 1: on click
 
 #define buttonDown_0   B11111111  // 0: button released; 1: button pressed
@@ -44,7 +44,6 @@ byte sendData[size]  =   {0};       //use pointers
 #define printData_0    B00000000  // choose which button data to be printed
 #define printData_1    B00000000  // choose which button data to be printed
 #define printData_2    B00000000  // choose which button data to be printed
-
 int bytesToSend =      0;
 int L2, R2, DIFF;
 int val;
@@ -280,7 +279,7 @@ void psData(){
     R2 = PS4.R2Value();
     L2 = PS4.L2Value();
     DIFF = R2 - L2;
-    DIFF = map(DIFF, -255, 255, -127, 128);
+    DIFF = map(DIFF, -255, 255, -127, 127);
     if(abs(DIFF) < 10)
       DIFF = 0;
 
@@ -290,6 +289,9 @@ void psData(){
   }
   Serial.println();
 }
+
+
+
 
 int dataToSend(){
   if(flag){

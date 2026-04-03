@@ -1,0 +1,16 @@
+13:28:07 **** Build of configuration Debug for project 5000_VIDHANI ****
+make -j4 all 
+arm-none-eabi-gcc -o "5000_VIDHANI.elf" @"objects.list"   -mcpu=cortex-m4 -T"G:\WINDOWS\EVERYTHING\COLLEGE\AUTOMATONS\2026\RYUK\5000_VIDHANI\STM32F446ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="5000_VIDHANI.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 5000_VIDHANI.elf
+ 
+arm-none-eabi-size  5000_VIDHANI.elf 
+arm-none-eabi-objdump -h -S 5000_VIDHANI.elf  > "5000_VIDHANI.list"
+   text	   data	    bss	    dec	    hex	filename
+  29268	     92	   2660	  32020	   7d14	5000_VIDHANI.elf
+Finished building: default.size.stdout
+ 
+Finished building: 5000_VIDHANI.list
+ 
+
+13:28:26 Build Finished. 0 errors, 0 warnings. (took 19s.227ms)
+
