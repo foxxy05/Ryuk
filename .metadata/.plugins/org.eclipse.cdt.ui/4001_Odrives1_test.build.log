@@ -1,0 +1,17 @@
+19:53:14 **** Incremental Build of configuration Debug for project 4001_Odrives1_test ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "4001_Odrives1_test.elf" @"objects.list"   -mcpu=cortex-m4 -T"G:\WINDOWS\EVERYTHING\COLLEGE\AUTOMATONS\2026\RYUK\4001_Odrives1_test\STM32F446ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="4001_Odrives1_test.map" -Wl,--gc-sections -static -u _printf_float --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 4001_Odrives1_test.elf
+ 
+arm-none-eabi-size  4001_Odrives1_test.elf 
+arm-none-eabi-objdump -h -S 4001_Odrives1_test.elf  > "4001_Odrives1_test.list"
+   text	   data	    bss	    dec	    hex	filename
+  25260	    468	   1980	  27708	   6c3c	4001_Odrives1_test.elf
+Finished building: default.size.stdout
+ 
+Finished building: 4001_Odrives1_test.list
+ 
+
+19:53:19 Build Finished. 0 errors, 0 warnings. (took 4s.522ms)
+
