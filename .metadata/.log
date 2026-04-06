@@ -5345,3 +5345,102 @@ java.util.ConcurrentModificationException
 
 !ENTRY org.eclipse.cdt.core 1 0 2026-04-03 13:27:52.787
 !MESSAGE Indexed '5000_VIDHANI' (29 sources, 137 headers) in 13 sec: 15,675 declarations; 83,418 references; 1 unresolved inclusions; 92 syntax errors; 240 unresolved names (0.24%)
+!SESSION 2026-04-05 11:21:40.354 -----------------------------------------------
+eclipse.buildId=Version 1.19.0
+java.version=21.0.3
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_IN
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2026-04-05 11:22:40.973
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2026-04-05 11:22:41.008
+!MESSAGE Log4j2 initialized with config file G:\WINDOWS\EVERYTHING\COLLEGE\AUTOMATONS\2026\RYUK\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2026-04-05 11:22:51.933
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.cdt.core 1 0 2026-04-05 11:24:09.223
+!MESSAGE Indexed 'r1_full' (30 sources, 138 headers) in 9.04 sec: 16,037 declarations; 84,685 references; 1 unresolved inclusions; 92 syntax errors; 240 unresolved names (0.24%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2026-04-05 11:24:53.647
+!MESSAGE Indexed '5002_INTEGRATE' (0 sources, 0 headers) in 0 sec: 0 declarations; 0 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2026-04-05 16:00:16.369
+!MESSAGE Indexed '5003_UART_INTEGRATE' (33 sources, 174 headers) in 13.5 sec: 19,559 declarations; 96,019 references; 17 unresolved inclusions; 1,476 syntax errors; 3,276 unresolved names (2.8%)
+
+!ENTRY org.eclipse.cdt.ui 4 0 2026-04-05 16:08:07.946
+!MESSAGE Error in CDT UI during reconcile
+!STACK 1
+C Model Exception: C Model Status [Element main.c does not exist.]
+	at org.eclipse.cdt.internal.core.model.CElement.newNotPresentException(CElement.java:485)
+	at org.eclipse.cdt.internal.core.model.TranslationUnit.makeConsistent(TranslationUnit.java:583)
+	at org.eclipse.cdt.internal.core.model.ReconcileWorkingCopyOperation.executeOperation(ReconcileWorkingCopyOperation.java:65)
+	at org.eclipse.cdt.internal.core.model.CModelOperation.execute(CModelOperation.java:346)
+	at org.eclipse.cdt.internal.core.model.CModelOperation.run(CModelOperation.java:613)
+	at org.eclipse.cdt.internal.core.model.CModelOperation.runOperation(CModelOperation.java:641)
+	at org.eclipse.cdt.internal.core.model.WorkingCopy.reconcile(WorkingCopy.java:365)
+	at org.eclipse.cdt.internal.ui.text.CReconcilingStrategy.reconcile(CReconcilingStrategy.java:79)
+	at org.eclipse.cdt.internal.ui.text.CReconcilingStrategy.reconcile(CReconcilingStrategy.java:64)
+	at org.eclipse.cdt.internal.ui.text.CompositeReconcilingStrategy.reconcile(CompositeReconcilingStrategy.java:89)
+	at org.eclipse.cdt.internal.ui.text.CCompositeReconcilingStrategy.reconcile(CCompositeReconcilingStrategy.java:90)
+	at org.eclipse.jface.text.reconciler.MonoReconciler.process(MonoReconciler.java:78)
+	at org.eclipse.cdt.internal.ui.text.CReconciler.process(CReconciler.java:346)
+	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:207)
+!SUBENTRY 1 org.eclipse.cdt.core 4 969 2026-04-05 16:08:08.053
+!MESSAGE Element main.c does not exist.
+!SESSION 2026-04-06 15:38:59.879 -----------------------------------------------
+eclipse.buildId=Version 1.19.0
+java.version=21.0.3
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_IN
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY org.eclipse.core.resources 2 10035 2026-04-06 15:39:01.831
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2026-04-06 15:39:07.253
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2026-04-06 15:39:07.254
+!MESSAGE Log4j2 initialized with config file G:\WINDOWS\EVERYTHING\COLLEGE\AUTOMATONS\2026\RYUK\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2026-04-06 15:39:18.300
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.cdt.core 1 0 2026-04-06 19:45:18.088
+!MESSAGE Indexed '011_Odrives1_test' (21 sources, 123 headers) in 6.39 sec: 12,056 declarations; 48,442 references; 1 unresolved inclusions; 92 syntax errors; 240 unresolved names (0.4%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2026-04-06 19:45:29.579
+!MESSAGE Indexed '4001_Odrives1_test' (0 sources, 0 headers) in 0.001 sec: 0 declarations; 0 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2026-04-06 19:54:07.332
+!MESSAGE Indexed '4003_OdriveS1_Test' (22 sources, 153 headers) in 3.04 sec: 14,075 declarations; 51,490 references; 13 unresolved inclusions; 125 syntax errors; 1,193 unresolved names (1.8%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2026-04-06 19:54:29.296
+!MESSAGE Indexed '4002_OdriveS1_Test' (21 sources, 123 headers) in 1.85 sec: 12,056 declarations; 48,442 references; 1 unresolved inclusions; 92 syntax errors; 240 unresolved names (0.4%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2026-04-06 19:56:58.788
+!MESSAGE Indexed '4002_ODrive_Integrate' (21 sources, 123 headers) in 1.88 sec: 12,056 declarations; 48,442 references; 1 unresolved inclusions; 92 syntax errors; 240 unresolved names (0.4%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2026-04-06 20:00:09.621
+!MESSAGE Indexed 'r1_full_uart' (30 sources, 138 headers) in 2.68 sec: 16,046 declarations; 84,778 references; 1 unresolved inclusions; 92 syntax errors; 240 unresolved names (0.24%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2026-04-06 20:00:47.078
+!MESSAGE Indexed '5004_R1_UART' (0 sources, 0 headers) in 0.001 sec: 0 declarations; 0 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2026-04-06 20:12:12.616
+!MESSAGE Indexed 'r1_full_uart' (0 sources, 0 headers) in 0.003 sec: 0 declarations; 0 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)
+
+!ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2026-04-06 20:34:43.505
+!MESSAGE Error - No active DSF-Session. tmpSessionId = 9 (contextManager row 121)
+
+!ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2026-04-06 20:34:43.541
+!MESSAGE Existing sessions are:
+
+!ENTRY org.eclipse.cdt.core 1 0 2026-04-06 23:01:28.408
+!MESSAGE Indexed '5000_R1_FULL_UART_IMPORT' (30 sources, 138 headers) in 4.83 sec: 16,046 declarations; 84,778 references; 1 unresolved inclusions; 92 syntax errors; 240 unresolved names (0.24%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2026-04-06 23:01:46.401
+!MESSAGE Indexed '5004_R1_FULL_UART_IMPORT' (0 sources, 0 headers) in 0.002 sec: 0 declarations; 0 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)
