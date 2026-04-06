@@ -13,11 +13,11 @@
 #define PRE_SCALE 0xFE
 #define LED0_ON_L 0x06
 
-float map(float x, float in_min, float in_max, float out_min, float out_max) {
+float Map(float x, float in_min, float in_max, float out_min, float out_max) {
 	return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
 }
 
-void PCA_init(PCA_t *pca, I2C_HandleTypeDef *hi2c, uint16_t frequency) {
+void InitPCA(PCA_t *pca, I2C_HandleTypeDef *hi2c, uint16_t frequency) {
 
 	pca->hi2c = hi2c;
 	pca->frequency = frequency;
@@ -65,7 +65,7 @@ void PCA_init(PCA_t *pca, I2C_HandleTypeDef *hi2c, uint16_t frequency) {
 
 void RotateServo(PCA_t *pca, uint8_t channel, uint8_t angle) {
 
-	double time_for_high = map(angle, 0, 200, 0.5, 2.5);
+	double time_for_high = Map(angle, 0, 200, 0.5, 2.5);
 	// double time_for_high = 2.5;
 	double time_for_off = 20 - time_for_high;
 	double off_count_start = 4096 - (4096.0 * time_for_off) / 20.0;
