@@ -1,7 +1,7 @@
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/arch=x86_64
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/name=Local
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/os=win32
-configDescList=org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:4002_ODrive_Integrate,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:4001_Odrives1_test Debug (1),org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:4001_Odrives1_test Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:4002_ODrive_Integrate Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:r1_full_uart Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:5004_R1_FULL_UART_IMPORT Debug
+configDescList=org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:4002_ODrive_Integrate,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:4001_Odrives1_test Debug (1),org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:4001_Odrives1_test Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:5004_R1_FULL_UART_IMPORT Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:4002_ODrive_Integrate Debug
 eclipse.preferences.version=1
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:001_communication_i2c_master\ Debug/activeLaunchMode=run
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:001_communication_i2c_master\ Debug/activeLaunchTarget=null\:---
