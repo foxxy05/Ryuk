@@ -1,0 +1,28 @@
+15:28:09 **** Incremental Build of configuration Debug for project 3003_FMPI2C_TEST ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/BNO055_FMPI2C.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/BNO055_FMPI2C.d" -MT"Core/Src/BNO055_FMPI2C.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/BNO055_FMPI2C.o"
+In file included from ../Core/Src/BNO055_FMPI2C.c:8:
+../Core/Inc/BNO055_STM32_FMPI2C.h: In function '_bno055_assignFMPI2C':
+../Core/Inc/BNO055_STM32_FMPI2C.h:50:3: error: '_bno055_i2c_port' undeclared (first use in this function); did you mean '_bno055_fmpi2c_port'?
+   50 |   _bno055_i2c_port    = NULL;
+      |   ^~~~~~~~~~~~~~~~
+      |   _bno055_fmpi2c_port
+../Core/Inc/BNO055_STM32_FMPI2C.h:50:3: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Inc/BNO055_STM32_FMPI2C.h: In function 'bno055_writeData':
+../Core/Inc/BNO055_STM32_FMPI2C.h:136:25: error: 'HAL_FMPI2C_STATE_TIMEOUT' undeclared (first use in this function); did you mean 'HAL_FMPI2C_STATE_ABORT'?
+  136 |     } else if (state == HAL_FMPI2C_STATE_TIMEOUT) {
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~~
+      |                         HAL_FMPI2C_STATE_ABORT
+../Core/Inc/BNO055_STM32_FMPI2C.h:138:25: error: 'HAL_FMPI2C_STATE_ERROR' undeclared (first use in this function); did you mean 'HAL_FMPI2C_STATE_ABORT'?
+  138 |     } else if (state == HAL_FMPI2C_STATE_ERROR) {
+      |                         ^~~~~~~~~~~~~~~~~~~~~~
+      |                         HAL_FMPI2C_STATE_ABORT
+../Core/Inc/BNO055_STM32_FMPI2C.h: At top level:
+../Core/Inc/BNO055_STM32_FMPI2C.h:184:1: error: expected identifier or '(' before '}' token
+  184 | }
+      | ^
+make: *** [Core/Src/subdir.mk:37: Core/Src/BNO055_FMPI2C.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+
+15:28:10 Build Failed. 5 errors, 0 warnings. (took 1s.132ms)
+
