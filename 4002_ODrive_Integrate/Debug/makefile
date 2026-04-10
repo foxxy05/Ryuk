@@ -34,34 +34,34 @@ $(wildcard ../makefile.init) \
 $(wildcard ../makefile.targets) \
 
 
-BUILD_ARTIFACT_NAME := 4002_ODrive_Integrate
+BUILD_ARTIFACT_NAME := 4002_ODRIVE_INTEGRATE
 BUILD_ARTIFACT_EXTENSION := elf
 BUILD_ARTIFACT_PREFIX :=
 BUILD_ARTIFACT := $(BUILD_ARTIFACT_PREFIX)$(BUILD_ARTIFACT_NAME)$(if $(BUILD_ARTIFACT_EXTENSION),.$(BUILD_ARTIFACT_EXTENSION),)
 
 # Add inputs and outputs from these tool invocations to the build variables 
 EXECUTABLES += \
-4002_ODrive_Integrate.elf \
+4002_ODRIVE_INTEGRATE.elf \
 
 MAP_FILES += \
-4002_ODrive_Integrate.map \
+4002_ODRIVE_INTEGRATE.map \
 
 SIZE_OUTPUT += \
 default.size.stdout \
 
 OBJDUMP_LIST += \
-4002_ODrive_Integrate.list \
+4002_ODRIVE_INTEGRATE.list \
 
 
 # All Target
 all: main-build
 
 # Main-build Target
-main-build: 4002_ODrive_Integrate.elf secondary-outputs
+main-build: 4002_ODRIVE_INTEGRATE.elf secondary-outputs
 
 # Tool invocations
-4002_ODrive_Integrate.elf 4002_ODrive_Integrate.map: $(OBJS) $(USER_OBJS) G:\WINDOWS\EVERYTHING\COLLEGE\AUTOMATONS\2026\RYUK\4002_ODrive_Integrate\STM32F446ZETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "4002_ODrive_Integrate.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"G:\WINDOWS\EVERYTHING\COLLEGE\AUTOMATONS\2026\RYUK\4002_ODrive_Integrate\STM32F446ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="4002_ODrive_Integrate.map" -Wl,--gc-sections -static -u _printf_float --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+4002_ODRIVE_INTEGRATE.elf 4002_ODRIVE_INTEGRATE.map: $(OBJS) $(USER_OBJS) G:\WINDOWS\EVERYTHING\COLLEGE\AUTOMATONS\2026\RYUK\4002_ODRIVE_INTEGRATE\STM32F446ZETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "4002_ODRIVE_INTEGRATE.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"G:\WINDOWS\EVERYTHING\COLLEGE\AUTOMATONS\2026\RYUK\4002_ODRIVE_INTEGRATE\STM32F446ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="4002_ODRIVE_INTEGRATE.map" -Wl,--gc-sections -static -u _printf_float --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
@@ -70,14 +70,14 @@ default.size.stdout: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
 	@echo 'Finished building: $@'
 	@echo ' '
 
-4002_ODrive_Integrate.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "4002_ODrive_Integrate.list"
+4002_ODRIVE_INTEGRATE.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "4002_ODRIVE_INTEGRATE.list"
 	@echo 'Finished building: $@'
 	@echo ' '
 
 # Other Targets
 clean:
-	-$(RM) 4002_ODrive_Integrate.elf 4002_ODrive_Integrate.list 4002_ODrive_Integrate.map default.size.stdout
+	-$(RM) 4002_ODRIVE_INTEGRATE.elf 4002_ODRIVE_INTEGRATE.list 4002_ODRIVE_INTEGRATE.map default.size.stdout
 	-@echo ' '
 
 secondary-outputs: $(SIZE_OUTPUT) $(OBJDUMP_LIST)
