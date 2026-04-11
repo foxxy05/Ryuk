@@ -114,9 +114,14 @@ float current_heading, current_roll, current_pitch;
 
 char buffer[100];
 
-#define radius       1
-#define length       1
-#define MAX_PWM      100
+// 00:70:07:3a:2d:82
+
+#define radius       	1
+#define length       	1
+#define MAX_PWM      	100
+
+float PWM_MULTIPLIER = 1.05f;
+
 #define LINEAR_PWM   60
 #define DEADZONE     30
 #define dt           0.001
@@ -332,16 +337,16 @@ void find_wheel_vel() {
 
 	pwm1 = constrain(
 			((bot_vel * cos(theta) - (length * omega)) / radius) + CORRECTION,
-			-MAX_PWM, MAX_PWM) * 1.5;
+			-MAX_PWM, MAX_PWM) * PWM_MULTIPLIER;
 	pwm2 = constrain(
 			((sqrt(3) * bot_vel * sin(theta) - bot_vel * cos(theta)
 					- 2 * length * omega) / (2 * radius)) + CORRECTION,
-			-MAX_PWM, MAX_PWM) * 1.5;
+			-MAX_PWM, MAX_PWM) * PWM_MULTIPLIER;
 	pwm3 = constrain(
 			(-1
 					* ((bot_vel * cos(theta) + sqrt(3) * bot_vel * sin(theta)
 							+ 2 * length * omega) / (2 * radius))) + CORRECTION,
-			-MAX_PWM, MAX_PWM) * 1.5;
+			-MAX_PWM, MAX_PWM) * PWM_MULTIPLIER;
 
 }
 
@@ -366,6 +371,7 @@ void PID2() {
 	}
 
 	CORRECTION = p + i + d;
+	CORRECTION = constrain(CORRECTION, -50, 50);
 }
 
 void STAFF_Motor() {
@@ -401,16 +407,16 @@ void STAFF_Servo() {
 		if (StaffGripServo.flag) {
 			//			RotateServo(&PCA, GRIP_SERVO_1, GRIP_SERVO_1_GRIP_ANGLE);
 			//			RotateServo(&PCA, 8, 90);
-			RotateServo(&PCA, 11, 20);
-
-			RotateServo(&PCA, 1, 50);
+//			RotateServo(&PCA, 11, 20);
+//
+//			RotateServo(&PCA, 1, 50);
 			RotateServo(&PCA, 8, 0);
 		} else {
 			//			RotateServo(&PCA, GRIP_SERVO_1, GRIP_SERVO_1_RELEASE_ANGLE);
 			//			RotateServo(&PCA, 8, 150);
-			RotateServo(&PCA, 11, 180);
-
-			RotateServo(&PCA, 1, 170);
+//			RotateServo(&PCA, 11, 180);
+//
+//			RotateServo(&PCA, 1, 170);
 			RotateServo(&PCA, 8, 70);
 		}
 	} else if (!square) {
@@ -489,24 +495,23 @@ float turretRampUpdate(float current, float target, bool noInput) {
 
 void TurretMotor() {
 
-    float target = 0;
+	float target = 0;
 
-    if (right) {
-        target = 70;
-    }
-    else if (left) {
-        target = -70;
-    }
+	if (right) {
+		target = 70;
+	} else if (left) {
+		target = -70;
+	}
 
-    bool noInput = (!right && !left);
+	bool noInput = (!right && !left);
 
-    turretRamp = turretRampUpdate(turretRamp, target, noInput);
+	turretRamp = turretRampUpdate(turretRamp, target, noInput);
 
-    if (fabs(turretRamp) < 2.0f) {
-        StopCytron(&Turret);
-    } else {
-        RotateCytron(&Turret, (int)turretRamp);
-    }
+	if (fabs(turretRamp) < 2.0f) {
+		StopCytron(&Turret);
+	} else {
+		RotateCytron(&Turret, (int) turretRamp);
+	}
 }
 
 void BeltMotor() {
@@ -587,10 +592,10 @@ OdriveS1 M1;
 //
 //		if (ODrive.flag) {
 //			//ODrive_goTo(OdriveS1 *dev, float position, float velocity)
-//			ODrive_goTo(&M1, 48.0f, 25.0f);
+//			ODrive_goTo(&M1, 48.0f, 60.0f);
 //			hehe = false;
 //		} else {
-//			ODrive_goTo(&M1, 0.0f, 25.0f);
+//			ODrive_goTo(&M1, 0.0f, 60.0f);
 //			hehe = true;
 //		}
 //	} else if (!Touchpad) {
@@ -603,10 +608,10 @@ OdriveS1 M1;
 //
 //		if (ODrivePlace.flag) {
 //			//ODrive_goTo(OdriveS1 *dev, float position, float velocity)
-//			ODrive_goTo(&M1, 10.0f, 25.0f);
+//			ODrive_goTo(&M1, 10.0f, 60.0f);
 //			hehe = false;
 //		} else {
-////			ODrive_goTo(&M1, 0.0f, 25.0f);
+////			ODrive_goTo(&M1, 0.0f, 60.0f);
 //			hehe = true;
 //		}
 //	} else if (!Share) {
@@ -656,16 +661,16 @@ void M1_ODrive() {
 
 	switch (ODrivePos) {
 	case HOME:
-		ODrive_goTo(&M1, 0.0f, 25.0f);
+		ODrive_goTo(&M1, 0.0f, 60.0f);
 		break;
 	case PLACE:
-		ODrive_goTo(&M1, 6.0f, 25.0f);
+		ODrive_goTo(&M1, 6.0f, 60.0f);
 		break;
 	case REACH:
-		ODrive_goTo(&M1, 48.0f, 25.0f);
+		ODrive_goTo(&M1, 48.0f, 60.0f);
 		break;
 	default:
-		ODrive_goTo(&M1, 0.0f, 25.0f);
+		ODrive_goTo(&M1, 0.0f, 00);
 		break;
 	}
 }
@@ -714,9 +719,9 @@ void M1_ODrive() {
 //    return current + (error > 0 ? RAMP_STEP : -RAMP_STEP);
 //}
 
-#define RAMP_UP     20
+#define RAMP_UP     25
 #define RAMP_DOWN   30
-#define STOP_THRESH 2
+#define STOP_THRESH 5
 
 float ramp1 = 0.0f;
 float ramp2 = 0.0f;
@@ -747,6 +752,23 @@ void updateAllRamps(bool isZeroInput) {
 	ramp1 = linear_ramp(ramp1, (float) pwm1, isZeroInput);
 	ramp2 = linear_ramp(ramp2, (float) pwm2, isZeroInput);
 	ramp3 = linear_ramp(ramp3, (float) pwm3, isZeroInput);
+}
+
+ToggleButton SetVelocity = { 0 };
+void setVelocity() {
+	if (Options && !SetVelocity.prevState) {
+		SetVelocity.prevState = true;
+		SetVelocity.flag 	  = !SetVelocity.flag;
+
+		if (SetVelocity.flag) {
+			PWM_MULTIPLIER = 1.5f;
+
+		} else {
+			PWM_MULTIPLIER = 1.05f;
+		}
+	} else if (!Options) {
+		SetVelocity.prevState = false;
+	}
 }
 
 /* USER CODE END 0 */
@@ -832,6 +854,7 @@ int main(void) {
 		t_end = t_start;
 
 		process_data();
+		setVelocity();
 		//           	    if(L_joystick_x == -127 || L_joystick_y == -127 || R_joystick_x == -127 || R_joystick_y == -127 || omega == -50){
 		//           	    	L_joystick_x = L_joystick_y = R_joystick_x = R_joystick_y = omega = 0;
 		//           	    }
@@ -861,7 +884,8 @@ int main(void) {
 			PID2();
 		}
 
-		bool isZeroInput =	(L_joystick_x == 0 && L_joystick_y == 0 && omega == 0);
+		bool isZeroInput =
+				(L_joystick_x == 0 && L_joystick_y == 0 && omega == 0);
 		find_wheel_vel();
 //		rotate_motor(pwm1, pwm2, pwm3);
 
