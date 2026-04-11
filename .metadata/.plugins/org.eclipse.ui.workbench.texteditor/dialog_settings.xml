@@ -3,6 +3,12 @@
 	<item key="hasShownOverlayPopupBefore" value="true"/>
 	<item key="replaceBarOpen" value="true"/>
 	<list key="searchhistory">
+		<item value="turret_ramp"/>
+		<item value="turret_ramp_update"/>
+		<item value="no_input"/>
+		<item value="turret"/>
+		<item value="current_pwm"/>
+		<item value="target_pwm"/>
 		<item value="find_wheel_vel"/>
 		<item value="BNO055_init"/>
 		<item value="msg"/>
@@ -12,14 +18,13 @@
 		<item value="getV"/>
 		<item value="map"/>
 		<item value="sqrt"/>
-		<item value="i2c1"/>
-		<item value="i2c2"/>
-		<item value="huart"/>
-		<item value="KFSGripServo"/>
-		<item value="huart3"/>
-		<item value="Cytron"/>
 	</list>
 	<list key="replacehistory">
+		<item value="turretRamp"/>
+		<item value="turretRampUpdate"/>
+		<item value="noInput"/>
+		<item value="currentPWM"/>
+		<item value="targetPWM"/>
 		<item value="StaffAttackServo"/>
 		<item value="SM1"/>
 		<item value="jhala"/>
@@ -30,11 +35,6 @@
 		<item value="PCA_Ch"/>
 		<item value="Channel"/>
 		<item value="getValue"/>
-		<item value="MSG"/>
-		<item value="DATA"/>
-		<item value="SLAVE_ADDR"/>
-		<item value="DATA_SIZE"/>
-		<item value="PS4"/>
 	</list>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item key="wrap" value="true"/>

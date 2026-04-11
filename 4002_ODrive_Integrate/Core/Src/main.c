@@ -646,8 +646,8 @@ int main(void)
 
 	InitBTS(&conveyer, &htim9, TIM_CHANNEL_1, &htim9, TIM_CHANNEL_2, 2, 1000);
 	InitCytron(&m1, &htim11, TIM_CHANNEL_1, GPIOF, GPIO_PIN_6, 1); // DIR PF6   PWM PF7
-	InitCytron(&m2, &htim4, TIM_CHANNEL_2, GPIOD, GPIO_PIN_12, 1); // DIR PD12  PWM PD13   L2
-	InitCytron(&m3, &htim4, TIM_CHANNEL_4, GPIOD, GPIO_PIN_14, 0); // DIR PD14  PWM PD15   L1
+	InitCytron(&m2, &htim4, TIM_CHANNEL_2, GPIOD, GPIO_PIN_12, 1); // DIR PD12  PWM PD13
+	InitCytron(&m3, &htim4, TIM_CHANNEL_4, GPIOD, GPIO_PIN_14, 0); // DIR PD14  PWM PD15
 	InitCytron(&SM1, &htim8, TIM_CHANNEL_1, GPIOA, GPIO_PIN_3, 1); // DIR PA3   PWM PC6
 	InitCytron(&Turret, &htim5, TIM_CHANNEL_2, GPIOA, GPIO_PIN_2, 0); // DIR PA2   PWM PA1
 	InitCytron(&Belt, &htim13, TIM_CHANNEL_1, GPIOF, GPIO_PIN_9, 1); // DIR PF9   PWM PF8
