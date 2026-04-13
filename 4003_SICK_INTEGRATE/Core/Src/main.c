@@ -877,6 +877,7 @@ int main(void) {
 		}
 		if (!omega && flag) {
 			flag = false;
+			HAL_Delay(200);
 			pid = true;
 			target_heading = current_heading;
 		}

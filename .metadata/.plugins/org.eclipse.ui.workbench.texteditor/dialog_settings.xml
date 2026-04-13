@@ -3,6 +3,12 @@
 	<item key="hasShownOverlayPopupBefore" value="true"/>
 	<item key="replaceBarOpen" value="true"/>
 	<list key="searchhistory">
+		<item value="rotate"/>
+		<item value="turretMotor"/>
+		<item value="isZeroInput"/>
+		<item value="25.0f"/>
+		<item value="MAX"/>
+		<item value="cross"/>
 		<item value="turret_ramp"/>
 		<item value="turret_ramp_update"/>
 		<item value="no_input"/>
@@ -12,14 +18,9 @@
 		<item value="find_wheel_vel"/>
 		<item value="BNO055_init"/>
 		<item value="msg"/>
-		<item value="msg1"/>
-		<item value="HAL_UART"/>
-		<item value="get"/>
-		<item value="getV"/>
-		<item value="map"/>
-		<item value="sqrt"/>
 	</list>
 	<list key="replacehistory">
+		<item value="60.0f"/>
 		<item value="turretRamp"/>
 		<item value="turretRampUpdate"/>
 		<item value="noInput"/>
@@ -34,7 +35,6 @@
 		<item value="CytronMotor_t"/>
 		<item value="PCA_Ch"/>
 		<item value="Channel"/>
-		<item value="getValue"/>
 	</list>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item key="wrap" value="true"/>
