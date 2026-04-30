@@ -171,8 +171,8 @@ float Ki = 0;
 float Kd = 0;
 
 float KP = 7; // angular pid
-//float KI = 4.5;
-float KI = 0;
+float KI = 4.5;
+//float KI = 0;
 float KD = 0.8;
 
 float vel;
@@ -318,15 +318,13 @@ void find_wheel_vel() {
 					- 2 * length * omega) / (2 * radius)) + CORRECTION,
 			-MAX_PWM, MAX_PWM) * 1.5;
 	pwm3 = constrain(
-			(-1
-					* ((bot_vel * cos(theta) + sqrt(3) * bot_vel * sin(theta)
-							+ 2 * length * omega) / (2 * radius))) + CORRECTION,
+			(-1 * ((bot_vel * cos(theta) + sqrt(3) * bot_vel * sin(theta)
+					+ 2 * length * omega) / (2 * radius))) + CORRECTION,
 			-MAX_PWM, MAX_PWM) * 1.5;
 
 }
 
 void rotate_motor(int pwm1, int pwm2, int pwm3) {
-
 	RotateCytron(&m1, pwm1);
 	RotateCytron(&m2, pwm2);
 	RotateCytron(&m3, pwm3);
@@ -379,17 +377,17 @@ void STAFF_Servo() {
 		if (StaffGripServo.flag) {
 			//			RotateServo(&PCA, GRIP_SERVO_1, GRIP_SERVO_1_GRIP_ANGLE);
 			//			RotateServo(&PCA, 8, 90);
-			RotateServo(&PCA, 11, 20);
+//			RotateServo(&PCA, 11, 20);b
 
-			RotateServo(&PCA, 1, 50);
+			RotateServo(&PCA, 1, 0);
 			RotateServo(&PCA, 8, 0);
 		} else {
 			//			RotateServo(&PCA, GRIP_SERVO_1, GRIP_SERVO_1_RELEASE_ANGLE);
 			//			RotateServo(&PCA, 8, 150);
-			RotateServo(&PCA, 11, 180);
+//			RotateServo(&PCA, 11, 180);
 
-			RotateServo(&PCA, 1, 170);
-			RotateServo(&PCA, 8, 70);
+			RotateServo(&PCA, 1, 90);
+			RotateServo(&PCA, 8, 90);
 		}
 	} else if (!square) {
 		StaffGripServo.prevState = false;
@@ -402,14 +400,14 @@ void STAFF_Servo() {
 
 		if (StaffAttackServo.flag) {
 			//			RotateServo(&PCA, ATTACK_SERVO_1, ATTACK_SERVO_1_ATTACK_ANGLE);
-			RotateServo(&PCA, 12, 110);
-			RotateServo(&PCA, 10, 15);
-			RotateServo(&PCA, 2, 67);
+			RotateServo(&PCA, 12, 115);
+			RotateServo(&PCA, 10, 115);
+//			RotateServo(&PCA, 2, 67);
 		} else {
 			//			RotateServo(&PCA, ATTACK_SERVO_1, ATTACK_SERVO_1_NORMAL_ANGLE);
-			RotateServo(&PCA, 12, 150);
-			RotateServo(&PCA, 10, 58);
-			RotateServo(&PCA, 2, 110);
+			RotateServo(&PCA, 12, 90);
+			RotateServo(&PCA, 10, 90);
+//			RotateServo(&PCA, 2, 110);
 		}
 	} else if (!triangle) {
 		StaffAttackServo.prevState = false;

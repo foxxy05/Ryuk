@@ -66,7 +66,7 @@ PS4Data PS4 = { 0 };
 #define	PID_CONSTRAIN		100.0f
 typedef struct {
 	float kp, ki, kd;
-	float error, prev_error;
+	float error, prevError;
 	float P, I, D;
 	float Output;
 } PID_t;
@@ -364,23 +364,26 @@ void ChassiMotorsRotate(int pwm1, int pwm2, int pwm3) {
 }
 
 void AngularPIDCompute() {
-	AngularPID.error = normaliseAngle(IMU.target - IMU.current);
-	float deltaError = AngularPID.error - AngularPID.prev_error;
+    AngularPID.error = normaliseAngle(IMU.target - IMU.current);
+    float deltaError = AngularPID.error - AngularPID.prevError;
+    AngularPID.prevError = AngularPID.error;
 
-	if (fabs(AngularPID.error) < INTEGRAL_THRESHOLD) {
-		AngularPID.I += AngularPID.error * dT * AngularPID.ki;
-	} else {
-		AngularPID.I = 0;
-	}
+    AngularPID.P = AngularPID.error * AngularPID.kp;
 
-	if (dT > 0.0f) {
-		AngularPID.D = (deltaError / dT) * AngularPID.kd;
-	} else {
-		AngularPID.D = 0.0f;
-	}
+    if (fabs(AngularPID.error) < INTEGRAL_THRESHOLD) {
+        AngularPID.I += AngularPID.error * dT * AngularPID.ki;
+    } else {
+        AngularPID.I = 0;
+    }
 
-	AngularPID.Output = constrain(AngularPID.P + AngularPID.I + AngularPID.D,
-			-PID_CONSTRAIN, PID_CONSTRAIN);
+    if (dT > 0.0f) {
+        AngularPID.D = (deltaError / dT) * AngularPID.kd;
+    } else {
+        AngularPID.D = 0.0f;
+    }
+
+    AngularPID.Output = constrain(AngularPID.P + AngularPID.I + AngularPID.D,
+            -PID_CONSTRAIN, PID_CONSTRAIN);
 }
 
 void STAFF_Motor() {
@@ -654,8 +657,8 @@ void getCurrentCoordinates() {
 
 void linearPIDCompute(float targetDist, float currentDist) {
 	LinearPID.error = targetDist - currentDist;
-	float deltaError = LinearPID.error - LinearPID.prev_error;
-	LinearPID.prev_error = LinearPID.error;
+	float deltaError = LinearPID.error - LinearPID.prevError;
+	LinearPID.prevError = LinearPID.error;
 
 	LinearPID.P = LinearPID.error * LinearPID.kp;
 
@@ -776,6 +779,21 @@ void handleNavButton() {
 	}
 }
 
+void setVelocity() {
+    if (PS4.Options && !SetVelocity.prevState) {
+        SetVelocity.prevState = true;
+        SetVelocity.flag = !SetVelocity.flag;
+
+        if (SetVelocity.flag) {
+            PWM_MULTIPLIER = 1.5f;
+        } else {
+            PWM_MULTIPLIER = 1.05f;
+        }
+    } else if (!PS4.Options) {
+        SetVelocity.prevState = false;
+    }
+}
+
 /* USER CODE END 0 */
 
 /**
@@ -882,6 +900,7 @@ int main(void) {
 			IMU.IMUready = false;
 		}
 
+		setVelocity();
 		//  Subsystems
 		STAFF_Motion();
 		KFS_PICK_Motion();

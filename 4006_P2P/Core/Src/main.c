@@ -687,32 +687,32 @@ void get_current_coordinates() {
 	ADS1115_readSingleEnded(ADS1115_MUX_AIN2, &ch2_mV);
 
 	voltage0 = ch0_mV / 1000.0f;
-	dist0 = ((voltage0 - 0.19f) / 4.97f) * total_dis; //Sick 1
+	dist0 = ((voltage0 - 0.19f) / 4.97f) * total_dis; //Sick 0
 
 	voltage1 = ch1_mV / 1000.0f;
-	dist1 = ((voltage1 - 0.21f) / 4.96f) * total_dis; //Sick 2
+	dist1 = ((voltage1 - 0.21f) / 4.96f) * total_dis; //Sick 1
 
 	voltage2 = ch2_mV / 1000.0f;
-	dist2 = ((voltage2 - 0.36f) / 4.77f) * total_dis; //Sick 3
+	dist2 = ((voltage2 - 0.36f) / 4.77f) * total_dis; //Sick 2
 
-	//This is only done for Printing data on Terminal as we can't print float Directly
-	// Split floats into integer + decimal parts
-	dist_int0 = (int) dist0;
-	dist_dec0 = (int) ((dist0 - dist_int0) * 10);     // 1 decimal place
-
-	// Split floats into integer + decimal parts
-	dist_int1 = (int) dist1;
-	dist_dec1 = (int) ((dist1 - dist_int1) * 10);     // 1 decimal place
-
-	// Split floats into integer + decimal parts
-	dist_int2 = (int) dist2;
-	dist_dec2 = (int) ((dist2 - dist_int2) * 10);     // 1 decimal place
-
-	int len = snprintf(msg, sizeof(msg),
-			" D0:%d.%d CM  ||   D1:%d.%d CM ||  D2:%d.%d CM\r\n", dist_int0,
-			dist_dec0, dist_int1, dist_dec1, dist_int2, dist_dec2);
-
-	HAL_UART_Transmit(&huart3, (uint8_t*) msg, len, HAL_MAX_DELAY);
+//	//This is only done for Printing data on Terminal as we can't print float Directly
+//	// Split floats into integer + decimal parts
+//	dist_int0 = (int) dist0;
+//	dist_dec0 = (int) ((dist0 - dist_int0) * 10);     // 1 decimal place
+//
+//	// Split floats into integer + decimal parts
+//	dist_int1 = (int) dist1;
+//	dist_dec1 = (int) ((dist1 - dist_int1) * 10);     // 1 decimal place
+//
+//	// Split floats into integer + decimal parts
+//	dist_int2 = (int) dist2;
+//	dist_dec2 = (int) ((dist2 - dist_int2) * 10);     // 1 decimal place
+//
+//	int len = snprintf(msg, sizeof(msg),
+//			" D0:%d.%d CM  ||   D1:%d.%d CM ||  D2:%d.%d CM\r\n", dist_int0,
+//			dist_dec0, dist_int1, dist_dec1, dist_int2, dist_dec2);
+//
+//	HAL_UART_Transmit(&huart3, (uint8_t*) msg, len, HAL_MAX_DELAY);
 }
 
 void move1(float x1, float y1, float x2, float y2) {

@@ -394,8 +394,8 @@ ToggleButton StaffAttackServo = { 0 };
 
 void STAFF_Init() {
 	RotateServo(&PCA, 12, 180);
-//	RotateServo(&PCA, 10, 180);
-//	RotateServo(&PCA, 2, 130);
+	RotateServo(&PCA, 10, 180);
+	RotateServo(&PCA, 2, 130);
 }
 
 void STAFF_Servo() {
@@ -407,17 +407,17 @@ void STAFF_Servo() {
 		if (StaffGripServo.flag) {
 			//			RotateServo(&PCA, GRIP_SERVO_1, GRIP_SERVO_1_GRIP_ANGLE);
 			//			RotateServo(&PCA, 8, 90);
-//			RotateServo(&PCA, 11, 20);
-//
-//			RotateServo(&PCA, 1, 50);
+//			RotateServo(&PCA, 11, 20);b
+
+			RotateServo(&PCA, 1, 0);
 			RotateServo(&PCA, 8, 0);
 		} else {
 			//			RotateServo(&PCA, GRIP_SERVO_1, GRIP_SERVO_1_RELEASE_ANGLE);
 			//			RotateServo(&PCA, 8, 150);
 //			RotateServo(&PCA, 11, 180);
-//
-//			RotateServo(&PCA, 1, 170);
-			RotateServo(&PCA, 8, 70);
+
+			RotateServo(&PCA, 1, 90);
+			RotateServo(&PCA, 8, 90);
 		}
 	} else if (!square) {
 		StaffGripServo.prevState = false;
@@ -430,13 +430,13 @@ void STAFF_Servo() {
 
 		if (StaffAttackServo.flag) {
 			//			RotateServo(&PCA, ATTACK_SERVO_1, ATTACK_SERVO_1_ATTACK_ANGLE);
-			RotateServo(&PCA, 12, 120);
-//			RotateServo(&PCA, 10, 15);
+			RotateServo(&PCA, 12, 115);
+			RotateServo(&PCA, 10, 115);
 //			RotateServo(&PCA, 2, 67);
 		} else {
 			//			RotateServo(&PCA, ATTACK_SERVO_1, ATTACK_SERVO_1_NORMAL_ANGLE);
 			RotateServo(&PCA, 12, 90);
-//			RotateServo(&PCA, 10, 58);`
+			RotateServo(&PCA, 10, 90);
 //			RotateServo(&PCA, 2, 110);
 		}
 	} else if (!triangle) {
