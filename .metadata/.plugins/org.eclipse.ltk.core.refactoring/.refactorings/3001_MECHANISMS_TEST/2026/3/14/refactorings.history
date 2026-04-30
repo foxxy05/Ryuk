@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename resource &apos;3001_MECHANISMS_TEST/3000_COMMUNICATION_ONLY.ioc&apos; to &apos;3001_MECHANISMS_TEST.ioc&apos;" description="Rename resource &apos;3000_COMMUNICATION_ONLY.ioc&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="3000_COMMUNICATION_ONLY.ioc" name="3001_MECHANISMS_TEST.ioc" stamp="1774962546529" updateReferences="true"/>
-</session>

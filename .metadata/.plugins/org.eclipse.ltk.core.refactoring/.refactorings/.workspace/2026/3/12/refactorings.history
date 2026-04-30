@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Delete resource &apos;0006_3_WHEEL_OMNI_I2C&apos;" deleteContents="true" description="Delete resource &apos;0006_3_WHEEL_OMNI_I2C&apos;" element1="/0006_3_WHEEL_OMNI_I2C" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1774093896512"/>
-</session>

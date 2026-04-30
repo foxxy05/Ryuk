@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename resource &apos;0003_3_DEAD_WHEEL_ONLY/0002_3_DEAD_WHEEL.ioc&apos; to &apos;0003_3_DEAD_WHEEL_ONLY.ioc&apos;" description="Rename resource &apos;0002_3_DEAD_WHEEL.ioc&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="0002_3_DEAD_WHEEL.ioc" name="0003_3_DEAD_WHEEL_ONLY.ioc" stamp="1773054624373" updateReferences="true"/>
-</session>

@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename resource &apos;5000_VIDHANI/lund Debug.launch&apos; to &apos;5000_VIDHANI Debug.launch&apos;" description="Rename resource &apos;lund Debug.launch&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="lund Debug.launch" name="5000_VIDHANI Debug.launch" stamp="1775154897202" updateReferences="true"/>
-</session>

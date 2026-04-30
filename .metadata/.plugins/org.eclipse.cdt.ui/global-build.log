@@ -1,7 +1,0 @@
-11:11:10 **** Build of configuration Debug for project 4007_CLEAN_P2P ****
-make -j4 all 
-arm-none-eabi-size  4007_CLEAN_P2P.elf 
-   text	   data	    bss	    dec	    hex	filename
-  61156	    624	   3632	  65412	   ff84	4007_CLEAN_P2P.elf
-Finished building: default.size.stdout
- 

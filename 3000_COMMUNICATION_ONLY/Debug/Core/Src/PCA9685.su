@@ -1,3 +1,0 @@
-../Core/Src/PCA9685.c:16:7:map	32	static
-../Core/Src/PCA9685.c:20:6:PCA_init	48	static
-../Core/Src/PCA9685.c:66:6:rotate	64	static

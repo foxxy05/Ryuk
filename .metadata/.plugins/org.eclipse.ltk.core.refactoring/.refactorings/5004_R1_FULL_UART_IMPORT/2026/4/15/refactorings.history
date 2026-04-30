@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename resource &apos;5004_R1_FULL_UART_IMPORT/r1_full_uart Debug.launch&apos; to &apos;5004_R1_FULL_UART_IMPORT Debug.launch&apos;" description="Rename resource &apos;r1_full_uart Debug.launch&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="r1_full_uart Debug.launch" name="5004_R1_FULL_UART_IMPORT Debug.launch" stamp="1775496734260" updateReferences="true"/>
-</session>

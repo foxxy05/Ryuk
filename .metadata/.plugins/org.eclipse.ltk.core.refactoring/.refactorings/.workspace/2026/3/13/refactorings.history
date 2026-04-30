@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename resource &apos;NUCLEO_OMNI_I2C&apos; to &apos;1000_NUCLEO_OMNI_I2C&apos;" description="Rename resource &apos;NUCLEO_OMNI_I2C&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/NUCLEO_OMNI_I2C" name="1000_NUCLEO_OMNI_I2C" stamp="1774373475881" updateReferences="true"/>
-</session>

@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename resource &apos;0006_3_WHEEL_OMNI_I2C/0001_3_WHEEL_OMNI_INIT.ioc&apos; to &apos;0006_3_WHEEL_OMNI_I2C.ioc&apos;" description="Rename resource &apos;0001_3_WHEEL_OMNI_INIT.ioc&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="0001_3_WHEEL_OMNI_INIT.ioc" name="0006_3_WHEEL_OMNI_I2C.ioc" stamp="1774093957361" updateReferences="true"/>
-</session>

@@ -1,0 +1,125 @@
+# ================================================================
+#  .gitignore — STM32CubeIDE Projects
+#  Atreya Bhatt | foxxy05
+#  Works for: RYUK (F446ZE), STM32-F407-HAL, any CubeIDE project
+#
+#  FIRST-TIME SETUP (run once after adding this file):
+#    git rm -r --cached .
+#    git add .
+#    git commit -m "chore: apply .gitignore, untrack build artifacts"
+#    git push
+#  This removes already-tracked junk without deleting local files.
+# ================================================================
+
+
+# ── STM32CubeIDE Build Outputs ──────────────────────────────────
+Debug/
+Release/
+*.elf
+*.bin
+*.hex
+*.map
+*.lst
+*.su
+*.d
+*.o
+*.a
+*.i
+*.s
+
+
+# ── STM32CubeIDE Workspace Metadata ─────────────────────────────
+# These are your LOCAL IDE state — not project code.
+# Every teammate has their own, never share these.
+.metadata/
+.settings/
+.cproject
+.project
+*.launch
+*.prefs
+
+
+# ── Auto-generated Makefiles ─────────────────────────────────────
+# CubeIDE regenerates these every build from your .ioc config.
+# Committing them causes constant noise in diffs.
+makefile
+Makefile
+*.mk
+
+
+# ── STM32 HAL/CMSIS Drivers ─────────────────────────────────────
+# DECISION POINT — choose one:
+#
+# Option A: You have NOT modified any HAL source files (common).
+#           Uncomment the lines below. CubeIDE re-generates these
+#           from the .ioc, so they don't need to be versioned.
+#
+# Drivers/STM32F4xx_HAL_Driver/
+# Drivers/CMSIS/
+#
+# Option B: You HAVE modified HAL files (e.g. custom IRQ handlers
+#           inside stm32f4xx_it.c, HAL_GPIO_EXTI_Callback, etc.)
+#           Leave the lines above commented. Keep Drivers/ tracked.
+#
+# For RYUK: keep Drivers/ tracked (competition code, custom ISRs).
+# For STM32-F407-HAL: can safely ignore Drivers/ (reference repo).
+
+
+# ── FreeRTOS / Middlewares ───────────────────────────────────────
+# Keep tracked — FreeRTOSConfig.h and task configs are YOUR code.
+# Middlewares/
+
+
+# ── WHAT TO ALWAYS COMMIT ────────────────────────────────────────
+# ✓ Core/Src/*.c  Core/Inc/*.h      (your application code)
+# ✓ *.ioc                           (hardware pin/clock config)
+# ✓ README.md, CHANGELOG.md
+# ✓ Drivers/ (if you modified HAL)
+# ✓ Middlewares/Third_Party/FreeRTOS/  (FreeRTOS config files)
+# ✓ 0000_LIBRARIES/ (your shared libs — this is your HAL wrapper)
+
+
+# ── Secrets — NEVER commit these ────────────────────────────────
+secrets.h
+config_private.h
+credentials.h
+private_config.h
+wifi_config.h
+
+
+# ── Python Tooling (calibration scripts, analysis) ───────────────
+__pycache__/
+*.pyc
+*.pyo
+.env
+venv/
+
+
+# ── IDE / Editor Spillover ───────────────────────────────────────
+.vscode/
+*.code-workspace
+*.suo
+*.user
+*.ncb
+*.sdf
+*.opensdf
+ipch/
+
+
+# ── OS Junk ──────────────────────────────────────────────────────
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+desktop.ini
+$RECYCLE.BIN/
+
+
+# ── Logs & Temp ──────────────────────────────────────────────────
+*.log
+*.tmp
+*.bak
+*.swp
+*~
